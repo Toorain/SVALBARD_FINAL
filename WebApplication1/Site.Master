@@ -1,0 +1,158 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="fr">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Mon ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <style>
+        #container {
+            min-width: 90vw;
+            margin: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">Nom de l'application</a>
+                </div>
+                <div class="navbar-collapse" id="navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">À propos de</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/FetchData">FetchData</a></li>
+                    </ul>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item"><a class="nav-link" runat="server" href="~/Account/Register">Inscrire</a></li>
+                                <li class="nav-item"><a class="nav-link" runat="server" href="~/Account/Login">Se connecter</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content" id="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Mon ASP.NET Application</p>
+            </footer>
+        </div>
+    </form>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script>        
+        $(document).ready(function () {
+            $("#midget-spinner").css("display", "block");
+            $("#testTable").css("display", "none");
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                async: true,
+                url: "DataFetchService.asmx/GetData",
+                success: function (data) {
+                    $("#midget-spinner").css("display", "none");
+                    $("#testTable").css("display", "block");
+                    var datatableVariable = $('#testTable').DataTable({
+                        "bAutoWidth": true,
+                        data: data,
+                        columns: [
+                            { 'data': 'ID' },
+                            {
+                                'data': 'Versement', 'render': function (date) {
+                                    var date = new Date(parseInt(date.substr(6)));
+                                    var month = date.getMonth() + 1;
+                                    if (month < 10) {
+                                        month = "0" + (date.getMonth() + 1);
+                                    }
+                                    let day = date.getDate();
+                                    if (day < 10) {
+                                        day = "0" + date.getDate();
+                                    }
+                                    return day + "/" + month + "/" + date.getFullYear();
+                                }
+                            },
+                            { 'data': 'Etablissement' },
+                            { 'data': 'Direction' },
+                            { 'data': 'Service' },
+                            { 'data': 'Dossiers' },
+                            { 'data': 'Extremes' },
+                            { 'data': 'Elimination' },
+                            { 'data': 'Communication' },
+                            { 'data': 'Cote' },
+                            { 'data': 'Localisation' },
+                            { 'data': 'CL' },
+                            { 'data': 'Chrono' },
+                            { 'data': 'Calc' },
+                        ]
+                    });
+                    $('#testTable tfoot th').each(function () {
+                        var placeHolderTitle = $('#testTable thead th').eq($(this).index()).text();
+                        $(this).html('<input type="text" class="form-control input input-sm" placeholder = "Search ' + placeHolderTitle + '" />');
+                    }); 
+                    datatableVariable.columns().every(function () {
+                        var column = this;
+                        $(this.footer()).find('input').on('keyup change', function () {
+                            column.search(this.value).draw();
+                        });
+                    });                    
+                    $('.showHide').on('click', function () {
+                        var tableColumn = datatableVariable.column($(this).attr('data-columnindex'));
+                        tableColumn.visible(!tableColumn.visible());
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
