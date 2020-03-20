@@ -1,7 +1,6 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
 }
 
 /* Wrapping element */
@@ -35,4 +34,20 @@ input[type="select"] {
     .body-content {
         padding: 0;
     }
+}
+
+#container {
+    margin: 10px 0;
+    min-height: 90vh;
+    min-width: 90vw;
+}
+
+/* Page is not shown until it's fully loaded */
+#testTable {
+    display: none;
+}
+
+/* Change the hover color on DataTable (jQuery) */
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #FFFFDD;
 }

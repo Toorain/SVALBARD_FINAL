@@ -10,8 +10,10 @@ using Microsoft.AspNet.Identity;
 
 namespace WebApplication1
 {
+    
     public partial class SiteMaster : MasterPage
     {
+        public const string appName = "SVALBARD";
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;

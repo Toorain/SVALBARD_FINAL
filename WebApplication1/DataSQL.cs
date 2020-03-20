@@ -7,7 +7,7 @@ namespace WebApplication1
 {
     public class DataSQL
     {
-        public int ID { get; set; }
+        /*public int ID { get; set; }*/
         public DateTime Versement { get; set; }
         public string Etablissement { get; set; }
         public string Direction { get; set; }
@@ -18,8 +18,8 @@ namespace WebApplication1
         public string Communication { get; set; }
         public string Cote { get; set; }
         public string Localisation { get; set; }
-        public float CL { get; set; }
+        /* public float CL { get; set; }
         public float Chrono { get; set; }
-        public string Calc { get; set; }
+        public string Calc { get; set; }*/
     }
 }
