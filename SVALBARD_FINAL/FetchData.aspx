@@ -10,7 +10,7 @@
         </div>
         <div class="hiddenLoad">
             <span>Effectuer une demande d'ajout à l'archive :</span>
-            <a href="#" class="btn btn-success">Ajouter</a>
+            <a href="#" class="btn btn-danger">Ajouter</a>
         </div>
         <table id="testTable" class="table table-striped table-hover hiddenLoad">
             <thead>
