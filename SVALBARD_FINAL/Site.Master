@@ -42,13 +42,11 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span class="navbar-toggler-icon"></span>
                     </button>
                     <a class="navbar-brand" runat="server" href="~/"><%: appName %></a>
                 </div>
-                <div class="navbar-collapse" id="navbar-collapse">
+                <div class="navbar-collapse collapsed collapse" id="navbar-collapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/About">À propos de</a></li>
