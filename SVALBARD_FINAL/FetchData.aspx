@@ -8,10 +8,15 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <table id="testTable" class="table table-striped table-hover">
+        <div class="hiddenLoad">
+            <span>Effectuer une demande d'ajout à l'archive :</span>
+            <a href="#" class="btn btn-success">Ajouter</a>
+        </div>
+        <table id="testTable" class="table table-striped table-hover hiddenLoad">
             <thead>
                 <tr>
-                    <!-- <th>ID</th> -->
+                    <!-- WARNING : Don't comment <th>ID</th> or <th>Versement</th> will break  -->
+                    <th>ID</th>
                     <th>Versement</th>
                     <th>Etablissement</th>
                     <th>Direction</th>

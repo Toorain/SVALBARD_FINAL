@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Web.Services;
+using System.Windows.Forms;
 
 namespace WebApplication1
 {
@@ -34,7 +35,7 @@ namespace WebApplication1
                 {
                     var dataSQL = new DataSQL
                     {
-                        /*ID = Convert.ToInt32(dr["ID"].ToString()),*/
+                        ID = Convert.ToInt32(dr["ID"].ToString()),
                         Versement = string.IsNullOrEmpty(dr["versement"].ToString()) ? new DateTime(1900, 1, 1) : Convert.ToDateTime(dr["versement"].ToString()),
                         Etablissement = dr["etablissement"].ToString(),
                         Direction = dr["direction"].ToString(),
@@ -52,7 +53,6 @@ namespace WebApplication1
                     datas.Add(dataSQL);
                 }
                 Context.Response.Write(JsonConvert.SerializeObject(datas));
-                sqlConn.Close();
             }
         }
     }

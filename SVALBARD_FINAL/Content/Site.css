@@ -43,7 +43,7 @@ input[type="select"] {
 }
 
 /* Page is not shown until it's fully loaded */
-#testTable {
+.hiddenLoad {
     display: none;
 }
 

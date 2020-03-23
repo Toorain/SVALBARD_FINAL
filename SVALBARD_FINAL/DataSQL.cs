@@ -7,7 +7,7 @@ namespace WebApplication1
 {
     public class DataSQL
     {
-        /*public int ID { get; set; }*/
+        public int ID { get; set; }
         public DateTime Versement { get; set; }
         public string Etablissement { get; set; }
         public string Direction { get; set; }
