@@ -33,7 +33,7 @@ namespace WebApplication1
 
                 while (dr.Read())
                 {
-                    var dataSQL = new DataSQL
+                    DataSQL dataSQL = new DataSQL
                     {
                         ID = Convert.ToInt32(dr["ID"].ToString()),
                         Versement = string.IsNullOrEmpty(dr["versement"].ToString()) ? new DateTime(1900, 1, 1) : Convert.ToDateTime(dr["versement"].ToString()),

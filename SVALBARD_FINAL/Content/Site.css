@@ -42,6 +42,9 @@ input[type="select"] {
     min-width: 90vw;
 }
 
+.d-none{
+    display: none;
+}
 /* Page is not shown until it's fully loaded */
 .hiddenLoad {
     display: none;
@@ -50,4 +53,20 @@ input[type="select"] {
 /* Change the hover color on DataTable (jQuery) */
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
     background-color: #FFFFDD;
+}
+
+.modal-dialog{
+    min-width: 50vw;
+}
+
+#modalSize {
+    min-width: 70vw;
+}
+
+tr:hover {
+    cursor: pointer;
+}
+
+.vertical-line {
+    border-left: 2px solid black;
 }
