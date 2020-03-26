@@ -14,5 +14,6 @@ namespace WebApplication1
         public string IssuerEts { get; set; }
         public string IssuerService { get; set; }
         public string ArchiveID { get; set; }
+        public int Action { get; set; }
     }
 }

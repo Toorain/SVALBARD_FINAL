@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <asp:Panel ID="alertAlreadyRequested" runat="server" Visible="false">
             <div class="alert alert-warning alert-dismissible fade show text-center " role="alert">
-                <p id="alertRequestedText" runat="server"></p>
+                <h5 id="alertRequestedText" runat="server"></h5>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,7 +12,7 @@
         </asp:Panel>
         <asp:Panel ID="alertRequestSuccess" runat="server" Visible="false">
             <div class="alert alert-success alert-dismissible fade show text-center " role="alert">
-                <p id="alertSuccessText" runat="server"></p>
+                <h5 id="alertSuccessText" runat="server"></h5>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -64,7 +64,7 @@
                                     <span id="archiveCommentaire"></span>
                                 </p>
                                 <hr />
-                                <div class="needs-validation">
+                                <form class="needs-validation" novalidate>
                                     <div class="form-row">
                                         <h5>Merci de renseigner votre établissement, la direction à laquelle vous appartenez ainsi que le service auquel vous appartenez</h5>
                                         <small>Par exemple : SIEGE / Port de cannes / Compta</small>
@@ -73,7 +73,7 @@
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3">
                                             <label for="validationEts">Etablissement</label>
-                                            <asp:TextBox runat="server" ID="validationEts" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="validationEts" CssClass="form-control" ClientIDMode="Static" required="required"></asp:TextBox>
                                             <!-- <input type="text" class="form-control" id="validationEts" placeholder="Etablissement" required> -->
                                             <div class="valid-feedback">
                                                 Looks good!
@@ -81,7 +81,7 @@
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="validationDir">Direction</label>
-                                            <asp:TextBox runat="server" ID="validationDir" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="validationDir" CssClass="form-control" ClientIDMode="Static" required="required"></asp:TextBox>
                                             <!-- <input type="text" class="form-control" id="validationDir" placeholder="Direction" required> -->
                                             <div class="valid-feedback">
                                                 Looks good!
@@ -89,19 +89,20 @@
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="validationService">Service</label>
-                                            <asp:TextBox runat="server" ID="validationService" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="validationService" CssClass="form-control" ClientIDMode="Static" required="required"></asp:TextBox>
                                             <!-- <input type="text" class="form-control" id="validationService" placeholder="Service" required> -->
                                             <div class="valid-feedback">
                                                 Looks good!
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <asp:Button runat="server" OnClick="LogRetirerArchive" Text="Retirer l'archive" CssClass="btn btn-warning" />
+                        <asp:Button runat="server" OnClick="LogRetirerArchive" Text="Detruire" CssClass="submitModal btn btn-outline-danger" ClientIDMode="Static"  />
+                        <asp:Button runat="server" OnClick="LogRetirerArchive" Text="Retirer" CssClass="submitModal btn btn-warning" ClientIDMode="Static"  />
                     </div>
                 </div>
             </div>
