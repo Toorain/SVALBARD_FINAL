@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using Microsoft.AspNet.Identity;
 
 namespace WebApplication1
@@ -17,7 +19,6 @@ namespace WebApplication1
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
-
         protected void Page_Init(object sender, EventArgs e)
         {
             // Le code ci-dessous vous aide à vous protéger des attaques XSRF
@@ -70,6 +71,37 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            adminPanel.Visible = false;
+            if (!IsPostBack)
+            {
+                var user = HttpContext.Current.User.Identity;
+                if (user.IsAuthenticated)
+                {
+                    string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-WebApplication1-20200317091700;Integrated Security=True";
+
+                    // Connect to the Database
+                    using (SqlConnection sqlConn = new SqlConnection(connectionString))
+                    {
+                        SqlCommand cmd = new SqlCommand("Select * FROM AspNetUserRoles", sqlConn);
+                        sqlConn.Open();
+
+                        var dr = cmd.ExecuteReader();
+
+                        while (dr.Read())
+                        {
+                            if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "1")
+                            {
+                                adminPanel.Visible = true;
+                            } else
+                            {
+                                adminPanel.Visible = false;
+                            }
+                        }
+                        sqlConn.Close();
+                    }
+                }
+            }
+            
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

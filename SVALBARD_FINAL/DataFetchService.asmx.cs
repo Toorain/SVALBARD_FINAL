@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Web.Services;
-using System.Windows.Forms;
 
 namespace WebApplication1
 {
@@ -19,7 +18,8 @@ namespace WebApplication1
     {
 
         [WebMethod]
-        public void GetData()
+
+        public void GetDataArchives()
         {
             string connectionString = @"Data Source=SHOGUN;Initial Catalog=archives;Integrated Security=True";
 
@@ -55,5 +55,7 @@ namespace WebApplication1
                 Context.Response.Write(JsonConvert.SerializeObject(datas));
             }
         }
+
+        
     }
 }

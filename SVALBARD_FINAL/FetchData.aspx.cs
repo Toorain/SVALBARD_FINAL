@@ -75,6 +75,7 @@ namespace WebApplication1
                 {
                     ID = count + 1,
                     Date = DateTime.Now,
+                    // Detects if user is logged-in, if False an alert is emmited and user is prompted to log-in, Insert does not complete.
                     IssuerID = User.Identity.IsAuthenticated ? User.Identity.GetUserId() : Convert.ToString(connError = true),
                     IssuerEts = validationEts.Text,
                     IssuerDir = validationDir.Text,

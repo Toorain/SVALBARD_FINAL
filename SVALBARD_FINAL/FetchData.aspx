@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container-fluid">
+        <!-- #region Alert -->
         <asp:Panel ID="alertAlreadyRequested" runat="server" Visible="false">
             <div class="alert alert-warning alert-dismissible fade show text-center " role="alert">
                 <h5 id="alertRequestedText" runat="server"></h5>
@@ -18,6 +19,7 @@
                 </button>
             </div>
         </asp:Panel>
+        <!-- #endregion Alert -->
         <div class="text-center" id="midget-spinner">
             <h1 class="text-center">Please stand-by</h1>
             <div class="spinner-border" role="status">
@@ -27,7 +29,7 @@
         <div class="hiddenLoad">
             <h1>Cliquer sur un élément pour en afficher les détails</h1>
         </div>
-        <!-- Modal -->
+        <!-- #region Modal -->
         <div class="modal fade" id="modalGetArchive" tabindex="-1" role="dialog" aria-labelledby="modalGetArchive" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -107,6 +109,7 @@
                 </div>
             </div>
         </div>
+        <!-- #endregion Modal -->
     <table id="testTable" class="table table-striped table-hover hiddenLoad">
         <thead>
             <tr>

@@ -1,21 +1,22 @@
 ﻿$(document).ready(function () {
     // Doesn't call WebService if not on Datatable displaying page.
-    if (window.location.pathname === "/FetchData") {
-        $("#midget-spinner").css("display", "block");
+    if (window.location.pathname === "/Demandes") {    
         $.ajax({
+            serverSide: true, 
             type: "POST",
             dataType: "json",
             async: true,
-            url: "DataFetchService.asmx/GetDataArchives",
+            url: "UserRequestService.asmx/GetDataIssuer",
+            data: { userID: $("#userID").val() },
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8", 
+            crossDomain: true,
             success: function (data) {
-                $("#midget-spinner").css("display", "none");
-                $(".hiddenLoad").css("display", "block");
-                var datatableVariable = $('#testTable').DataTable({
+                var datatableVariable = $('#tableDemandes').DataTable({
                     data: data,
                     columns: [
-                        { 'data': 'ID' },
+                        { data: 'ID' },
                         {
-                            'data': 'Versement', 'render': (date) => {
+                            data: 'Date', 'render': (date) => {
                                 var d = new Date(date),
                                     month = '' + (d.getMonth() + 1),
                                     day = '' + d.getDate(),
@@ -27,30 +28,38 @@
                                 return [day, month, year].join('/');
                             }
                         },
-                        { 'data': 'Etablissement' },
-                        { 'data': 'Direction' },
-                        { 'data': 'Service' },
-                        { 'data': 'Dossiers' },
-                        { 'data': 'Extremes' },
-                        { 'data': 'Elimination' },
-                        { 'data': 'Communication' },
-                        { 'data': 'Cote' },
-                        { 'data': 'Localisation' },
-                        /*{ 'data': 'CL' },
-                        { 'data': 'Chrono' },
-                        { 'data': 'Calc' },*/
+                        { data: 'IssuerID' },
+                        { data: 'IssuerDir' },
+                        { data: 'IssuerEts' },
+                        { data: 'IssuerService' },
+                        { data: 'ArchiveID' },
+                        {
+                            data: 'Action', 'render': (data) => {
+                                switch (data) {
+                                    case (1):
+                                        return "Ajout";
+                                        break;
+                                    case (2):
+                                        return "Retrait";
+                                        break;
+                                    case (3):
+                                        return "Destruction";
+                                        break;
+                                };
+                            }
+                        }
                     ]
                 });
                 $("body").keydown(function (e) {
                     if (e.keyCode == 37) { // left
-                        $("#testTable_previous").click();
+                        $("#tableDemandes_previous").click();
                     }
                     else if (e.keyCode == 39) { // right
-                        $("#testTable_next").click();
+                        $("#tableDemandes_next").click();
                     }
                 });
-                $('#testTable tfoot th').each(function () {
-                    var placeHolderTitle = $('#testTable thead th').eq($(this).index()).text();
+                $('#tableDemandes tfoot th').each(function () {
+                    var placeHolderTitle = $('#tableDemandes thead th').eq($(this).index()).text();
                     $(this).html('<input type="text" class="form-control input input-sm" placeholder = "Search ' + placeHolderTitle + '" />');
                 });
                 datatableVariable.columns().every(function () {
@@ -62,9 +71,10 @@
                 $('.showHide').on('click', function () {
                     var tableColumn = datatableVariable.column($(this).attr('data-columnindex'));
                     tableColumn.visible(!tableColumn.visible());
-                });
+                });  
+            
                 // This is the 'Click to see more' part, when you click on <tr></tr> element you get more info about it and you can request targeted element.
-                $('#testTable tbody').on('click', 'tr', function () {
+                /*$('#tableDemandes tbody').on('click', 'tr', function () {
                     // Close all alerts with a click on Table Row
                     $(".alert").alert('close');
                     // Open/Close modal on click depending on previous status
@@ -94,7 +104,7 @@
                     } else {
                         $("#archiveElimination").text(data.Elimination);
                     }
-                });
+                });*/
             }
         });
     };

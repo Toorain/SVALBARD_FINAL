@@ -11,25 +11,16 @@ namespace WebApplication1
 {
 
 
-    public partial class SiteMaster
+    public partial class Demandes
     {
 
         /// <summary>
-        /// Contrôle adminPanel.
+        /// Contrôle userID.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor adminPanel;
-
-        /// <summary>
-        /// Contrôle MainContent.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.HiddenField userID;
     }
 }
