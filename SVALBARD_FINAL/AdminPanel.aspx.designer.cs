@@ -15,13 +15,40 @@ namespace WebApplication1
     {
 
         /// <summary>
-        /// Contrôle clickedAdmin.
+        /// Contrôle alertRequestSuccess.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label clickedAdmin;
+        protected global::System.Web.UI.WebControls.Panel alertRequestSuccess;
+
+        /// <summary>
+        /// Contrôle alertSuccessText.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertSuccessText;
+
+        /// <summary>
+        /// Contrôle userIdAdmin.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField userIdAdmin;
+
+        /// <summary>
+        /// Contrôle UserRoleId.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label UserRoleId;
 
         /// <summary>
         /// Contrôle RoleList.
