@@ -212,6 +212,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="DataFetchService.asmx" />
+    <Content Include="RetreiveRole.asmx" />
     <Content Include="Scripts\DataTableAdmin.js" />
     <Content Include="Scripts\DataTableDemandes.js" />
     <Content Include="Default.aspx" />
@@ -522,6 +523,10 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="NavigationEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RetreiveRole.asmx.cs">
+      <DependentUpon>RetreiveRole.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

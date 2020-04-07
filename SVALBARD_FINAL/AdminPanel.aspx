@@ -3,7 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Label runat="server" ID="jsonData" ClientIDMode="Static" CssClass="d-none"><%: jsonData %></asp:Label>
     <% if (pageRender) {%>
-        <!--hiddenLoad -->
+    <!-- #region Alert -->
+        <asp:Panel ID="alertRequestSuccess" runat="server" Visible="false">
+            <div class="alert alert-success alert-dismissible fade show text-center " role="alert">
+                <h5 id="alertSuccessText" runat="server"></h5>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </asp:Panel>
+        <!-- #endregion Alert -->
         <div class="modal fade" id="modalGetAdmin" tabindex="-1" role="dialog" aria-labelledby="modalGetAdmin" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -16,8 +25,9 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-lg-4">
-                                <asp:Label runat="server" ID="clickedAdmin" ClientIDMode="Static"></asp:Label>
+                                <asp:HiddenField ID="userIdAdmin" runat="server" ClientIDMode="Static" />
                                 <p>Changer le status de l'utilisateur :</p>
+                                <p>Ancien status : <asp:Label runat="server" ID="UserRoleId" ClientIDMode="Static"></asp:Label></p>
                                 <asp:DropDownList id="RoleList" runat="server">
                                     <asp:ListItem Value="3"> Consultation </asp:ListItem>
                                     <asp:ListItem Value="2"> Gestion </asp:ListItem>

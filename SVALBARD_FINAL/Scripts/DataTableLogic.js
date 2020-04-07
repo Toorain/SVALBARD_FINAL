@@ -3,6 +3,7 @@
     if (window.location.pathname === "/FetchData") {
         $("#midget-spinner").css("display", "block");
         $.ajax({
+            serverSide: true,
             type: "POST",
             dataType: "json",
             async: true,
