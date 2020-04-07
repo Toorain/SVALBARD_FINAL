@@ -25,7 +25,7 @@ namespace WebApplication1
 
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("Select * FROM logsAjoutArchive", sqlConn);
+                SqlCommand cmd = new SqlCommand("Select * FROM logsArchive", sqlConn);
                 sqlConn.Open();
 
                 var dr = cmd.ExecuteReader();

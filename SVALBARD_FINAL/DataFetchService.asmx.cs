@@ -55,7 +55,5 @@ namespace WebApplication1
                 Context.Response.Write(JsonConvert.SerializeObject(datas));
             }
         }
-
-        
     }
 }

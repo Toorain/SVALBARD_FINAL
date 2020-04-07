@@ -92,6 +92,7 @@ namespace WebApplication1
                             if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "1")
                             {
                                 adminPanel.Visible = true;
+                                return;
                             } else
                             {
                                 adminPanel.Visible = false;

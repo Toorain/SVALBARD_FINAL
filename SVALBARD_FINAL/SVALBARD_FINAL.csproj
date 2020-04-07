@@ -212,6 +212,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="DataFetchService.asmx" />
+    <Content Include="Scripts\DataTableAdmin.js" />
     <Content Include="Scripts\DataTableDemandes.js" />
     <Content Include="Default.aspx" />
     <Content Include="Demandes.aspx" />
@@ -487,6 +488,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseUser.cs" />
     <Compile Include="DataSQL.cs" />
     <Compile Include="DataFetchService.asmx.cs">
       <DependentUpon>DataFetchService.asmx</DependentUpon>

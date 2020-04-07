@@ -29,7 +29,7 @@ namespace WebApplication1
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
                 // Then request "ID" & "archiveID" columns
-                SqlCommand cmd = new SqlCommand("Select ID, archiveID from logsAjoutArchive", sqlConn);
+                SqlCommand cmd = new SqlCommand("Select ID, archiveID from logsArchive", sqlConn);
                 sqlConn.Open();
 
                 var dr = cmd.ExecuteReader();
@@ -90,7 +90,7 @@ namespace WebApplication1
             if (canRequestArchive && !connError)
             {
 
-                string cmdString = "INSERT INTO [dbo].[logsAjoutArchive] (ID,date,issuerID,issuerEts,issuerDir,issuerService,receiverID,archiveID,action) VALUES (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9)";
+                string cmdString = "INSERT INTO [dbo].[logsArchive] (ID,date,issuerID,issuerEts,issuerDir,issuerService,receiverID,archiveID,action) VALUES (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9)";
                 using (SqlConnection sqlConn = new SqlConnection(connectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand())

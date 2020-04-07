@@ -28,11 +28,13 @@
                                 return [day, month, year].join('/');
                             }
                         },
+                        /*
                         { data: 'IssuerID' },
                         { data: 'IssuerDir' },
                         { data: 'IssuerEts' },
                         { data: 'IssuerService' },
-                        { data: 'ArchiveID' },
+                         */
+                        { data: 'ArchiveID' },                       
                         {
                             data: 'Action', 'render': (data) => {
                                 switch (data) {
