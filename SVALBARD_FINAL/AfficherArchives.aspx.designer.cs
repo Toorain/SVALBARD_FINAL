@@ -11,7 +11,7 @@ namespace WebApplication1
 {
 
 
-    public partial class FetchData
+    public partial class AfficherArchives
     {
 
         /// <summary>

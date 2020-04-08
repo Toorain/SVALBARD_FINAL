@@ -54,6 +54,11 @@ namespace WebApplication1
                 sqlConn.Close();
             }
         }
+
+        /// <summary>
+        ///     RenderTable displays the list of users registered on the Application
+        /// </summary>
+        /// 
         protected void RenderTable()
         {
             // CRITICAL : Change this connection string to the one where users are actually stored (Needs to be changed : Source)

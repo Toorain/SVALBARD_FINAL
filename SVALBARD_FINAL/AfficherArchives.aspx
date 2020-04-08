@@ -1,4 +1,4 @@
-﻿<%@ Page Title="FetchData" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FetchData.aspx.cs" Inherits="WebApplication1.FetchData" %>
+﻿<%@ Page Title="AfficherArchives" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AfficherArchives.aspx.cs" Inherits="WebApplication1.AfficherArchives" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container-fluid">
@@ -110,7 +110,7 @@
             </div>
         </div>
         <!-- #endregion Modal -->
-    <table id="testTable" class="table table-striped table-hover hiddenLoad">
+    <table id="tableArchive" class="table table-striped table-hover hiddenLoad">
         <thead>
             <tr>
                 <!-- WARNING : Don't comment <th>ID</th> or <th>Versement</th> will break  -->

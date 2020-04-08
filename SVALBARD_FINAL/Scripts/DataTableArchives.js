@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
     // Doesn't call WebService if not on Datatable displaying page.
-    if (window.location.pathname === "/FetchData") {
+    if (window.location.pathname === "/AfficherArchives") {
         $("#midget-spinner").css("display", "block");
         $.ajax({
             serverSide: true,
@@ -11,7 +11,7 @@
             success: function (data) {
                 $("#midget-spinner").css("display", "none");
                 $(".hiddenLoad").css("display", "block");
-                var datatableVariable = $('#testTable').DataTable({
+                var datatableVariable = $('#tableArchive').DataTable({
                     data: data,
                     columns: [
                         { 'data': 'ID' },
@@ -44,14 +44,14 @@
                 });
                 $("body").keydown(function (e) {
                     if (e.keyCode == 37) { // left
-                        $("#testTable_previous").click();
+                        $("#tableArchive_previous").click();
                     }
                     else if (e.keyCode == 39) { // right
-                        $("#testTable_next").click();
+                        $("#tableArchive_next").click();
                     }
                 });
-                $('#testTable tfoot th').each(function () {
-                    var placeHolderTitle = $('#testTable thead th').eq($(this).index()).text();
+                $('#tableArchive tfoot th').each(function () {
+                    var placeHolderTitle = $('#tableArchive thead th').eq($(this).index()).text();
                     $(this).html('<input type="text" class="form-control input input-sm" placeholder = "Search ' + placeHolderTitle + '" />');
                 });
                 datatableVariable.columns().every(function () {
@@ -65,7 +65,7 @@
                     tableColumn.visible(!tableColumn.visible());
                 });
                 // This is the 'Click to see more' part, when you click on <tr></tr> element you get more info about it and you can request targeted element.
-                $('#testTable tbody').on('click', 'tr', function () {
+                $('#tableArchive tbody').on('click', 'tr', function () {
                     // Close all alerts with a click on Table Row
                     $(".alert").alert('close');
                     // Open/Close modal on click depending on previous status

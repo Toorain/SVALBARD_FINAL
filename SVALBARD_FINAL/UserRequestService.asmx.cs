@@ -16,7 +16,30 @@ namespace WebApplication1
     // [System.Web.Script.Services.ScriptService]
     public class UserRequestService : WebService
     {
-
+        /// <summary>
+        /// A WebService to retreive every users in DB
+        /// </summary>
+        /// <remarks>
+        /// Parameter userID is given by an Ajax call in DataTablesDemandes.js :
+        /// <example>
+        /// <code>
+        /// $.ajax({
+        /// serverSide: true, 
+        ///         type: "POST",
+        ///         dataType: "json",
+        ///         async: true,
+        ///         url: "UserRequestService.asmx/GetDataIssuer",
+        ///         data: { userID: $("#userID").val() },
+        ///         contentType: "application/x-www-form-urlencoded; charset=UTF-8", 
+        ///         crossDomain: true,
+        /// </code>
+        /// </example>
+        /// Then GetDataIssuer connects to logsArchive Database and fetch this user's requests on the archive
+        /// </remarks>
+        /// <returns>
+        /// Returns a JSON when a POST call is made with an unique identifier
+        /// </returns>
+        /// <param name="userID">An unique user identifier retreived from <see cref="Demandes.Page_Load(object, EventArgs)"/></param>
         [WebMethod]
         public void GetDataIssuer(string userID)
         {

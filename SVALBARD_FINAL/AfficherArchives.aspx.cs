@@ -6,7 +6,7 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication1
 {
-    public partial class FetchData : Page
+    public partial class AfficherArchives : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
