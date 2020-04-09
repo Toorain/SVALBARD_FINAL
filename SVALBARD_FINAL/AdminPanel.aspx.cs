@@ -71,7 +71,7 @@ namespace WebApplication1
             // CRITICAL : Change this connection string to the one where users are actually stored (Needs to be changed : Source)
             string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
-            // Connect to the Database
+            // Connect to the Database.
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
                 string cmdString = "SELECT Id, Email, PhoneNumber, UserName FROM AspNetUsers";
