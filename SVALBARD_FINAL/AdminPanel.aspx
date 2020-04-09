@@ -24,7 +24,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-lg-5">
                                 <asp:HiddenField ID="userIdAdmin" runat="server" ClientIDMode="Static" />
                                 <p>Changer le status de l'utilisateur :</p>
                                 <p>Ancien status : <asp:Label runat="server" ID="UserRoleId" ClientIDMode="Static"></asp:Label></p>
@@ -33,9 +33,11 @@
                                     <asp:ListItem Value="2"> Gestion </asp:ListItem>
                                     <asp:ListItem Value="1"> Administration </asp:ListItem>
                                 </asp:DropDownList>
-                                <asp:Button runat="server" OnClick="ChangeUserStatus" Text="Changer de status" CssClass="submitModal btn btn-primary mt-4" ClientIDMode="Static"  />
+                                <asp:Button runat="server" ID="changeUserStatus" OnClick="ChangeUserStatus" Text="Changer de status" CssClass="submitModal btn btn-primary mt-4" ClientIDMode="Static"  />
+                                <p class="confirmAdmin" hidden>Attention, vous allez donner les droits d'administration à cette personne.<br /> Êtes-vous certain(e) de vouloir continuer ?</p>
+                                <button id="confirmAdminButton" class="btn btn-success confirmAdmin" hidden>Confirmer</button>
                             </div>
-                            <div class="col-lg-4"></div>
+                            <div class="col-lg-3"></div>
                             <div class="col-lg-4"></div>
                         </div>
                     </div>

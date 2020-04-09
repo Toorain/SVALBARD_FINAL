@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -24,7 +25,7 @@ namespace WebApplication1
         [WebMethod]
         public void ClickedModal(string UserId)
         {
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-WebApplication1-20200317091700;Integrated Security=True";
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
             string cmdString = " SELECT Name FROM AspNetUserRoles" 
                             + " LEFT JOIN AspNetRoles"
@@ -38,8 +39,6 @@ namespace WebApplication1
                     cmd.CommandText = cmdString;
                     cmd.Parameters.AddWithValue("@val1", UserId);
                     sqlConn.Open();
-
-                    // var logs = cmd.ExecuteNonQuery();
 
                     var dr = cmd.ExecuteReader();
 

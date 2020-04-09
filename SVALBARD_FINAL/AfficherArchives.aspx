@@ -57,15 +57,14 @@
                                         <asp:Label ID="archiveService" runat="server" ClientIDMode="Static"></asp:Label></span>
                                 </p>
                                 <p>Élimination : <span id="archiveElimination"></span></p>
-                                <asp:HiddenField ID="archiveID" runat="server" ClientIDMode="Static" />
-                            </div>
-                            <div class="col-md-7 vertical-line">
                                 <p>
                                     Information complémentaires :
                                     <br />
                                     <span id="archiveCommentaire"></span>
                                 </p>
-                                <hr />
+                                <asp:HiddenField ID="archiveID" runat="server" ClientIDMode="Static" />
+                            </div>
+                            <div class="col-md-7 vertical-line">
                                 <form class="needs-validation" novalidate>
                                     <div class="form-row">
                                         <h5>Merci de renseigner votre établissement, la direction à laquelle vous appartenez ainsi que le service auquel vous appartenez</h5>

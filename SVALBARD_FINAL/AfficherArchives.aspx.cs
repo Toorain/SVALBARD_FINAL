@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -22,7 +23,7 @@ namespace WebApplication1
             string requestStatusText;
             bool connError = false;
             bool canRequestArchive = true;
-            string connectionString = @"Data Source=SHOGUN;Initial Catalog=logsArchives;Integrated Security=True";
+            string connectionString = ConfigurationManager.ConnectionStrings["LogsArchive"].ConnectionString;
             Logs log;
 
             // Connect to the Database

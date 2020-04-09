@@ -1,12 +1,14 @@
 ﻿$(document).ready(function () {
     // Doesn't call WebService if not on Datatable displaying page.
-    if (window.location.pathname === "/Demandes") {    
+    if (window.location.pathname === "/Demandes") {
         $.ajax({
             serverSide: true, 
             type: "POST",
             dataType: "json",
             async: true,
+            // URL of the webservice I use to retreive data of the issuer
             url: "UserRequestService.asmx/GetDataIssuer",
+            // Data I send to the POST method (userID)
             data: { userID: $("#userID").val() },
             contentType: "application/x-www-form-urlencoded; charset=UTF-8", 
             crossDomain: true,
@@ -14,7 +16,7 @@
                 var datatableVariable = $('#tableDemandes').DataTable({
                     data: data,
                     columns: [
-                        { data: 'ID' },
+                        /*{ data: 'ID' },*/
                         {
                             data: 'Date', 'render': (date) => {
                                 var d = new Date(date),
@@ -60,6 +62,20 @@
                         $("#tableDemandes_next").click();
                     }
                 });
+                // Change background color according to request Add/Remove/Delete
+                /*$('#tableDemandes tbody tr').each(function () {
+                    switch ($(this).find("td")[2].innerText) {
+                        case "Ajout":
+                            $(this).addClass("bg-success");
+                            break;
+                        case "Retrait":
+                            $(this).addClass("bg-warning");
+                            break;
+                        case "Destruction":
+                            $(this).addClass("bg-danger");
+                            break;
+                    }
+                });*/
                 $('#tableDemandes tfoot th').each(function () {
                     var placeHolderTitle = $('#tableDemandes thead th').eq($(this).index()).text();
                     $(this).html('<input type="text" class="form-control input input-sm" placeholder = "Search ' + placeHolderTitle + '" />');

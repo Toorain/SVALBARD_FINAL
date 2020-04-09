@@ -51,9 +51,9 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/About">À propos de</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/AfficherArchives">Afficher les archives</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/AjouterArchive">Ajouter une archive</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Demandes">Demandes</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="archivesPanel" href="~/AfficherArchives">Afficher les archives</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="ajouterPanel" href="~/AjouterArchive">Ajouter une archive</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="demandesPanel" href="~/Demandes">Demandes</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="adminPanel" href="~/AdminPanel">Admin Panel</a></li>
                         <!-- <li class="nav-item"><a class="nav-link" runat="server" href="~/AdminPanel">Admin Panel</a></li> -->     
                     </ul>
@@ -82,12 +82,13 @@
         </div>
     </form>
     <footer>
-        <p>&copy; <%: DateTime.Now.Year %> - Mon ASP.NET Application</p>
+        <p>&copy; 2020 - <%: DateTime.Now.Year %> | <%: appName %></p>
     </footer>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/DataTableArchives.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/FetchData.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/DataTableDemandes.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/DataTableAdmin.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/AdminPanel.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Security.Claims;
 using System.Security.Principal;
@@ -71,16 +72,20 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            archivesPanel.Visible = false;
+            ajouterPanel.Visible = false;
+            demandesPanel.Visible = false;
             adminPanel.Visible = false;
-            if (!IsPostBack)
-            {
+
+            /*if (!IsPostBack)
+            {*/
                 var user = HttpContext.Current.User.Identity;
                 if (user.IsAuthenticated)
                 {
-                    string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-WebApplication1-20200317091700;Integrated Security=True";
+                    string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
-                    // Connect to the Database
-                    using (SqlConnection sqlConn = new SqlConnection(connectionString))
+                // Connect to the Database
+                using (SqlConnection sqlConn = new SqlConnection(connectionString))
                     {
                         SqlCommand cmd = new SqlCommand("Select * FROM AspNetUserRoles", sqlConn);
                         sqlConn.Open();
@@ -91,17 +96,33 @@ namespace WebApplication1
                         {
                             if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "1")
                             {
+                                archivesPanel.Visible = true;
+                                ajouterPanel.Visible = true;
+                                demandesPanel.Visible = true;
                                 adminPanel.Visible = true;
+                                return;
+                            } else if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "2")
+                            {
+                                archivesPanel.Visible = true;
+                                ajouterPanel.Visible = true;
+                                demandesPanel.Visible = true;
+                                return;
+                            } else if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "3")
+                            {
+                                archivesPanel.Visible = true;
                                 return;
                             } else
                             {
+                                archivesPanel.Visible = false;
+                                ajouterPanel.Visible = false;
+                                demandesPanel.Visible = false;
                                 adminPanel.Visible = false;
                             }
                         }
                         sqlConn.Close();
                     }
                 }
-            }
+            /*}*/
             
         }
 

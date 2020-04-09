@@ -213,6 +213,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="DataFetchService.asmx" />
     <Content Include="RetreiveRole.asmx" />
+    <Content Include="Scripts\AdminPanel.js" />
     <Content Include="Scripts\DataTableAdmin.js" />
     <Content Include="Scripts\DataTableDemandes.js" />
     <Content Include="Default.aspx" />

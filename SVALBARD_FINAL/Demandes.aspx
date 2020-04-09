@@ -4,7 +4,7 @@
     <table id="tableDemandes" class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>ID</th>
+                <!-- <th>ID</th> -->
                 <th>Date</th>
                 <!-- <th>IssuerID</th>
                 <th>IssuerEts</th>

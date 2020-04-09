@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -27,32 +28,38 @@ namespace WebApplication1
             var user = HttpContext.Current.User.Identity;
 
             // CRITICAL : Change this connection string to the one where users are actually stored (Needs to be changed : Source)
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-WebApplication1-20200317091700;Integrated Security=True";
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM AspNetUserRoles", sqlConn);
-                sqlConn.Open();
-
-                var dr = cmd.ExecuteReader();
-
-                while (dr.Read())
+                string cmdString = "SELECT * FROM AspNetUserRoles";
+                using (SqlCommand cmd = new SqlCommand())
                 {
-                    // TODO : CHANGE TO TRUE TO WORK WITHOUT LOGGING IN
-                    if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "1")
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
                     {
-                        RenderTable();
-                        pageRender = true;
-                        return;
-                    }
-                    else
-                    {
-                        pageRender = false;
+                        // TODO : CHANGE TO TRUE TO WORK WITHOUT LOGGING IN
+                        if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "1")
+                        {
+                            RenderTable();
+                            pageRender = true;
+                            return;
+                        }
+                        else
+                        {
+                            pageRender = false;
+                        }
                     }
                 }
-                sqlConn.Close();
             }
+            
         }
 
         /// <summary>
@@ -62,30 +69,35 @@ namespace WebApplication1
         protected void RenderTable()
         {
             // CRITICAL : Change this connection string to the one where users are actually stored (Needs to be changed : Source)
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-WebApplication1-20200317091700;Integrated Security=True";
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT Id, Email, PhoneNumber, UserName FROM AspNetUsers", sqlConn);
-                sqlConn.Open();
-
-                var dr = cmd.ExecuteReader();
-                List<DatabaseUser> datas = new List<DatabaseUser>();
-
-                while (dr.Read())
+                string cmdString = "SELECT Id, Email, PhoneNumber, UserName FROM AspNetUsers";
+                using (SqlCommand cmd = new SqlCommand())
                 {
-                    DatabaseUser userSQL = new DatabaseUser
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+                    List<DatabaseUser> datas = new List<DatabaseUser>();
+
+                    while (dr.Read())
                     {
-                        ID = dr["Id"].ToString(),
-                        Email = dr["Email"].ToString(),
-                        PhoneNumber = dr["PhoneNumber"].ToString(),
-                        UserName = dr["UserName"].ToString()
-                    };
-                    datas.Add(userSQL);
+                        DatabaseUser userSQL = new DatabaseUser
+                        {
+                            ID = dr["Id"].ToString(),
+                            Email = dr["Email"].ToString(),
+                            PhoneNumber = dr["PhoneNumber"].ToString(),
+                            UserName = dr["UserName"].ToString()
+                        };
+                        datas.Add(userSQL);
+                    }
+                    jsonData = JsonConvert.SerializeObject(datas);
                 }
-                jsonData = JsonConvert.SerializeObject(datas);
-                sqlConn.Close();
             }
         }
         protected void ChangeUserStatus(object sender, EventArgs e)
@@ -93,7 +105,7 @@ namespace WebApplication1
             string UserId = userIdAdmin.Value;
             string RoleId = RoleList.SelectedItem.Value;
 
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-WebApplication1-20200317091700;Integrated Security=True";
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
             string cmdString = 
             "IF EXISTS(SELECT 'True' FROM AspNetUserRoles WHERE UserId = @val1)"

@@ -63,6 +63,10 @@ input[type="select"] {
     min-width: 70vw;
 }
 
+.submitModal {
+    display: block;
+}
+
 tr:hover {
     cursor: pointer;
 }

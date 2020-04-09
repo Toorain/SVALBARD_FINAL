@@ -14,14 +14,14 @@
         });
         $("body").keydown(function (e) {
             if (e.keyCode == 37) { // left
-                $("#testTable_previous").click();
+                $("#adminTable_previous").click();
             }
             else if (e.keyCode == 39) { // right
-                $("#testTable_next").click();
+                $("#adminTable_next").click();
             }
         });
         $('#adminTable tfoot th').each(function () {
-            var placeHolderTitle = $('#testTable thead th').eq($(this).index()).text();
+            var placeHolderTitle = $('#adminTable thead th').eq($(this).index()).text();
             $(this).html('<input type="text" class="form-control input input-sm" placeholder = "Search ' + placeHolderTitle + '" />');
         });
         datatableVariable.columns().every(function () {
@@ -49,6 +49,17 @@
                 data: "userId=" + data.ID,
                 success: function (data) {
                     $("#UserRoleId").text(data.charAt(0).toUpperCase() + data.slice(1));
+                    switch(data) {
+                        case "admin":
+                            $("#MainContent_RoleList").find($("#MainContent_RoleList").val("1")).attr("selected", "selected");
+                            break;
+                        case "gestionnaire":
+                            $("#MainContent_RoleList").find($("#MainContent_RoleList").val("2")).attr("selected", "selected");
+                            break;
+                        case "consultation":
+                            $("#MainContent_RoleList").find($("#MainContent_RoleList").val("3")).attr("selected", "selected");
+                            break;
+                    }
                 }
             });
         });
