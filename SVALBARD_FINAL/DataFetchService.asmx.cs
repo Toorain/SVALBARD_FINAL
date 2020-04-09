@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.Services;
-using System.Windows.Forms;
 
 namespace WebApplication1
 {
@@ -19,40 +19,47 @@ namespace WebApplication1
     {
 
         [WebMethod]
-        public void GetData()
+
+        public void GetDataArchives()
         {
-            string connectionString = @"Data Source=SHOGUN;Initial Catalog=archives;Integrated Security=True";
+            string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
 
             var datas = new List<DataSQL>();
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("Select * from ArchivesV2", sqlConn);
-                sqlConn.Open();
-
-                var dr = cmd.ExecuteReader();
-
-                while (dr.Read())
+                string cmdString = "Select * from ArchivesV2";
+                using (SqlCommand cmd = new SqlCommand()) 
                 {
-                    var dataSQL = new DataSQL
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
                     {
-                        ID = Convert.ToInt32(dr["ID"].ToString()),
-                        Versement = string.IsNullOrEmpty(dr["versement"].ToString()) ? new DateTime(1900, 1, 1) : Convert.ToDateTime(dr["versement"].ToString()),
-                        Etablissement = dr["etablissement"].ToString(),
-                        Direction = dr["direction"].ToString(),
-                        Service = dr["service"].ToString(),
-                        Dossiers = dr["dossiers"].ToString(),
-                        Extremes = dr["extremes"].ToString(),
-                        Elimination = dr["elimination"].ToString(),
-                        Communication = dr["communication"].ToString(),
-                        Cote = dr["cote"].ToString(),
-                        Localisation = dr["localisation"].ToString()
-                        /* CL = string.IsNullOrEmpty(dr["CL"].ToString()) ? 0 : Convert.ToInt32(dr["CL"].ToString()),
-                        Chrono = string.IsNullOrEmpty(dr["chrono"].ToString()) ? 0 : Convert.ToInt32(dr["chrono"].ToString()),
-                        Calc = dr["calc"].ToString()*/
-                    };
-                    datas.Add(dataSQL);
-                }
-                Context.Response.Write(JsonConvert.SerializeObject(datas));
+                        DataSQL dataSQL = new DataSQL
+                        {
+                            ID = Convert.ToInt32(dr["ID"].ToString()),
+                            Versement = string.IsNullOrEmpty(dr["versement"].ToString()) ? new DateTime(1900, 1, 1) : Convert.ToDateTime(dr["versement"].ToString()),
+                            Etablissement = dr["etablissement"].ToString(),
+                            Direction = dr["direction"].ToString(),
+                            Service = dr["service"].ToString(),
+                            Dossiers = dr["dossiers"].ToString(),
+                            Extremes = dr["extremes"].ToString(),
+                            Elimination = dr["elimination"].ToString(),
+                            Communication = dr["communication"].ToString(),
+                            Cote = dr["cote"].ToString(),
+                            Localisation = dr["localisation"].ToString()
+                            /* CL = string.IsNullOrEmpty(dr["CL"].ToString()) ? 0 : Convert.ToInt32(dr["CL"].ToString()),
+                            Chrono = string.IsNullOrEmpty(dr["chrono"].ToString()) ? 0 : Convert.ToInt32(dr["chrono"].ToString()),
+                            Calc = dr["calc"].ToString()*/
+                        };
+                        datas.Add(dataSQL);
+                    }
+                    Context.Response.Write(JsonConvert.SerializeObject(datas));
+                } 
             }
         }
     }
