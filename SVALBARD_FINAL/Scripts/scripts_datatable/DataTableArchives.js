@@ -1,24 +1,22 @@
 ﻿$(document).ready(function () {
     // Doesn't call WebService if not on Datatable displaying page.
-    if (window.location.pathname === "/Demandes") {
+    if (window.location.pathname === "/AfficherArchives") {
+        $("#midget-spinner").css("display", "block");
         $.ajax({
-            serverSide: true, 
+            serverSide: true,
             type: "POST",
             dataType: "json",
             async: true,
-            // URL of the webservice I use to retreive data of the issuer
-            url: "UserRequestService.asmx/GetDataIssuer",
-            // Data I send to the POST method (userID)
-            data: { userID: $("#userID").val() },
-            contentType: "application/x-www-form-urlencoded; charset=UTF-8", 
-            crossDomain: true,
+            url: "WebServices/DataFetchService.asmx/GetDataArchives",
             success: function (data) {
-                var datatableVariable = $('#tableDemandes').DataTable({
+                $("#midget-spinner").css("display", "none");
+                $(".hiddenLoad").css("display", "block");
+                var datatableVariable = $('#tableArchive').DataTable({
                     data: data,
                     columns: [
-                        /*{ data: 'ID' },*/
+                        { 'data': 'ID' },
                         {
-                            data: 'Date', 'render': (date) => {
+                            'data': 'Versement', 'render': (date) => {
                                 var d = new Date(date),
                                     month = '' + (d.getMonth() + 1),
                                     day = '' + d.getDate(),
@@ -30,54 +28,30 @@
                                 return [day, month, year].join('/');
                             }
                         },
-                        /*
-                        { data: 'IssuerID' },
-                        { data: 'IssuerDir' },
-                        { data: 'IssuerEts' },
-                        { data: 'IssuerService' },
-                         */
-                        { data: 'ArchiveID' },                       
-                        {
-                            data: 'Action', 'render': (data) => {
-                                switch (data) {
-                                    case (1):
-                                        return "Ajout";
-                                        break;
-                                    case (2):
-                                        return "Retrait";
-                                        break;
-                                    case (3):
-                                        return "Destruction";
-                                        break;
-                                };
-                            }
-                        }
+                        { 'data': 'Etablissement' },
+                        { 'data': 'Direction' },
+                        { 'data': 'Service' },
+                        { 'data': 'Dossiers' },
+                        { 'data': 'Extremes' },
+                        { 'data': 'Elimination' },
+                        { 'data': 'Communication' },
+                        { 'data': 'Cote' },
+                        { 'data': 'Localisation' },
+                        /*{ 'data': 'CL' },
+                        { 'data': 'Chrono' },
+                        { 'data': 'Calc' },*/
                     ]
                 });
                 $("body").keydown(function (e) {
                     if (e.keyCode == 37) { // left
-                        $("#tableDemandes_previous").click();
+                        $("#tableArchive_previous").click();
                     }
                     else if (e.keyCode == 39) { // right
-                        $("#tableDemandes_next").click();
+                        $("#tableArchive_next").click();
                     }
                 });
-                // Change background color according to request Add/Remove/Delete
-                /*$('#tableDemandes tbody tr').each(function () {
-                    switch ($(this).find("td")[2].innerText) {
-                        case "Ajout":
-                            $(this).addClass("bg-success");
-                            break;
-                        case "Retrait":
-                            $(this).addClass("bg-warning");
-                            break;
-                        case "Destruction":
-                            $(this).addClass("bg-danger");
-                            break;
-                    }
-                });*/
-                $('#tableDemandes tfoot th').each(function () {
-                    var placeHolderTitle = $('#tableDemandes thead th').eq($(this).index()).text();
+                $('#tableArchive tfoot th').each(function () {
+                    var placeHolderTitle = $('#tableArchive thead th').eq($(this).index()).text();
                     $(this).html('<input type="text" class="form-control input input-sm" placeholder = "Search ' + placeHolderTitle + '" />');
                 });
                 datatableVariable.columns().every(function () {
@@ -89,10 +63,9 @@
                 $('.showHide').on('click', function () {
                     var tableColumn = datatableVariable.column($(this).attr('data-columnindex'));
                     tableColumn.visible(!tableColumn.visible());
-                });  
-            
+                });
                 // This is the 'Click to see more' part, when you click on <tr></tr> element you get more info about it and you can request targeted element.
-                /*$('#tableDemandes tbody').on('click', 'tr', function () {
+                $('#tableArchive tbody').on('click', 'tr', function () {
                     // Close all alerts with a click on Table Row
                     $(".alert").alert('close');
                     // Open/Close modal on click depending on previous status
@@ -122,7 +95,7 @@
                     } else {
                         $("#archiveElimination").text(data.Elimination);
                     }
-                });*/
+                });
             }
         });
     };
