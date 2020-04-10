@@ -45,7 +45,7 @@
             $(".userNameAdmin").text(data.UserName);
             $.ajax({
                 type: "POST",
-                url: "RetreiveRole.asmx/ClickedModal",
+                url: "/WebServices/RetreiveRole.asmx/ClickedModal",
                 data: "userId=" + data.ID,
                 success: function (data) {
                     $("#UserRoleId").text(data.charAt(0).toUpperCase() + data.slice(1));
