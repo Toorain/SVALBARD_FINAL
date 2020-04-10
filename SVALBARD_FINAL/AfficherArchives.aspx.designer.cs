@@ -15,6 +15,15 @@ namespace WebApplication1
     {
 
         /// <summary>
+        /// Contrôle mainContainer.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mainContainer;
+
+        /// <summary>
         /// Contrôle alertAlreadyRequested.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace WebApplication1
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertSuccessText;
+
+        /// <summary>
+        /// Contrôle consutlationMode.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl consutlationMode;
 
         /// <summary>
         /// Contrôle archiveEtablissement.
@@ -87,6 +105,15 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.HiddenField archiveID;
 
         /// <summary>
+        /// Contrôle formRetrait.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl formRetrait;
+
+        /// <summary>
         /// Contrôle validationEts.
         /// </summary>
         /// <remarks>
@@ -112,5 +139,14 @@ namespace WebApplication1
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox validationService;
+
+        /// <summary>
+        /// Contrôle modalFooter.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl modalFooter;
     }
 }

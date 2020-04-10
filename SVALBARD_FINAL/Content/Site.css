@@ -71,6 +71,10 @@ tr:hover {
     cursor: pointer;
 }
 
+.table {
+    width: 100% !important;
+}
+
 .vertical-line {
     border-left: 2px solid black;
 }

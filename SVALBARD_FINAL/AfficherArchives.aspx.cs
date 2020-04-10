@@ -9,8 +9,41 @@ namespace WebApplication1
 {
     public partial class AfficherArchives : Page
     {
+        protected string requestStatusText;
         protected void Page_Load(object sender, EventArgs e)
         {
+            mainContainer.Visible = false;
+
+            string DbAuthorization = DatabaseUser.GetUserAuthorization(User.Identity.GetUserId());
+            switch (DbAuthorization)
+            {
+                case "NoUser":
+                    // TODO : Add a personnal response redirect if user is not connected
+                    Response.Redirect("~/");
+                    break;
+                // 1 = Admin
+                case "1":
+                    mainContainer.Visible = true;
+                    break;
+                // 2 = Gestion
+                case "2":
+                    mainContainer.Visible = true;
+                    break;
+                // 3 = Consultation
+                case "3":
+                    mainContainer.Visible = true;
+                    modalFooter.Visible = false;
+                    formRetrait.Visible = false;
+                    consutlationMode.Attributes.Add("class", "col-md-8 offset-md-2 text-center");
+                    break;
+                default:
+                    mainContainer.Visible = false;
+                    requestStatusText = "Vous n'avez pas les droits requis pour consulter cet élément, contactez votre DSI pour plus d'informations";
+                    alertRequestSuccess.Visible = false;
+                    alertAlreadyRequested.Visible = true;
+                    alertRequestedText.InnerText = requestStatusText;
+                    break;
+            }
         }
 
         protected void LogRetirerArchive(object sender, EventArgs e)
@@ -20,7 +53,7 @@ namespace WebApplication1
             // Capture it in a variable
             string buttonText = btn.Text;
 
-            string requestStatusText;
+            
             bool connError = false;
             bool canRequestArchive = true;
             string connectionString = ConfigurationManager.ConnectionStrings["LogsArchive"].ConnectionString;
@@ -29,63 +62,67 @@ namespace WebApplication1
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
+                string cmdString = "Select ID, archiveID from logsArchive";
                 // Then request "ID" & "archiveID" columns
-                SqlCommand cmd = new SqlCommand("Select ID, archiveID from logsArchive", sqlConn);
-                sqlConn.Open();
-
-                var dr = cmd.ExecuteReader();
-                int count = 0;
-
-                // Count how much entries we have in the Database
-                while (dr.Read())
+                using (SqlCommand cmd = new SqlCommand())
                 {
-                    if (dr["ID"].ToString() != "" || dr["ID"] != null)
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+                    int count = 0;
+
+                    // Count how much entries we have in the Database
+                    while (dr.Read())
                     {
-                        count++;
+                        if (dr["ID"].ToString() != "" || dr["ID"] != null)
+                        {
+                            count++;
+                        }
+                        // We check if a request has already been made in the "log" table, if so user won't be able to request another withdraw
+                        if (dr["archiveID"].ToString() == archiveID.Value)
+                        {
+                            // Change canRequestArchive so the next part won't be called and will send a Bootstrap alert
+                            canRequestArchive = false;
+                        }
                     }
-                    // We check if a request has already been made in the "log" table, if so user won't be able to request another withdraw
-                    if (dr["archiveID"].ToString() == archiveID.Value)
+                    /* String value becomes an int code
+                     * ajouter = 1
+                     * retirer = 2
+                     * detruire = 3
+                     */
+                    int codeAction;
+                    switch (buttonText.ToLower())
                     {
-                        // Change canRequestArchive so the next part won't be called and will send a Bootstrap alert
-                        canRequestArchive = false;
+                        case "ajouter":
+                            codeAction = 1;
+                            break;
+                        case "retirer":
+                            codeAction = 2;
+                            break;
+                        case "detruire":
+                            codeAction = 3;
+                            break;
+                        default:
+                            codeAction = 0;
+                            break;
                     }
-                }
-                /* String value becomes an int code
-                 * ajouter = 1
-                 * retirer = 2
-                 * detruire = 3
-                 */
-                int codeAction;
-                switch(buttonText.ToLower())
-                {
-                    case "ajouter":
-                        codeAction = 1;
-                        break;
-                    case "retirer":
-                        codeAction = 2;
-                        break;
-                    case "detruire":
-                        codeAction = 3;
-                        break;
-                    default:
-                        codeAction = 0;
-                        break;
-                }
-                // Generate a new Logs object
-                log = new Logs
-                {
-                    ID = count + 1,
-                    Date = DateTime.Now,
-                    // Detects if user is logged-in, if False an alert is emmited and user is prompted to log-in, Insert does not complete.
-                    IssuerID = User.Identity.IsAuthenticated ? User.Identity.GetUserId() : Convert.ToString(connError = true),
-                    IssuerEts = validationEts.Text,
-                    IssuerDir = validationDir.Text,
-                    IssuerService = validationService.Text,
-                    ArchiveID = canRequestArchive ? archiveID.Value : "ALREADY REQUESTED",
-                    Action = codeAction
-                };
-
-                sqlConn.Close();
+                    // Generate a new Logs object
+                    log = new Logs
+                    {
+                        ID = count + 1,
+                        Date = DateTime.Now,
+                        // Detects if user is logged-in, if False an alert is emmited and user is prompted to log-in, Insert does not complete.
+                        IssuerID = User.Identity.IsAuthenticated ? User.Identity.GetUserId() : Convert.ToString(connError = true),
+                        IssuerEts = validationEts.Text,
+                        IssuerDir = validationDir.Text,
+                        IssuerService = validationService.Text,
+                        ArchiveID = canRequestArchive ? archiveID.Value : "ALREADY REQUESTED",
+                        Action = codeAction
+                    };
+                } 
             }
             // If request is allowed (not yet requested), we target Table and insert elements to it.
             if (canRequestArchive && !connError)

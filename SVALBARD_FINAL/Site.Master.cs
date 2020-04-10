@@ -77,53 +77,35 @@ namespace WebApplication1
             demandesPanel.Visible = false;
             adminPanel.Visible = false;
 
-            /*if (!IsPostBack)
-            {*/
-                var user = HttpContext.Current.User.Identity;
-                if (user.IsAuthenticated)
+            var user = HttpContext.Current.User.Identity;
+
+            if (user.IsAuthenticated)
+            {
+                string userId = DatabaseUser.GetUserAuthorization(user.GetUserId());
+                switch (userId)
                 {
-                    string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-
-                // Connect to the Database
-                using (SqlConnection sqlConn = new SqlConnection(connectionString))
-                    {
-                        SqlCommand cmd = new SqlCommand("Select * FROM AspNetUserRoles", sqlConn);
-                        sqlConn.Open();
-
-                        var dr = cmd.ExecuteReader();
-
-                        while (dr.Read())
-                        {
-                            if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "1")
-                            {
-                                archivesPanel.Visible = true;
-                                ajouterPanel.Visible = true;
-                                demandesPanel.Visible = true;
-                                adminPanel.Visible = true;
-                                return;
-                            } else if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "2")
-                            {
-                                archivesPanel.Visible = true;
-                                ajouterPanel.Visible = true;
-                                demandesPanel.Visible = true;
-                                return;
-                            } else if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "3")
-                            {
-                                archivesPanel.Visible = true;
-                                return;
-                            } else
-                            {
-                                archivesPanel.Visible = false;
-                                ajouterPanel.Visible = false;
-                                demandesPanel.Visible = false;
-                                adminPanel.Visible = false;
-                            }
-                        }
-                        sqlConn.Close();
-                    }
+                    case "1":
+                        archivesPanel.Visible = true;
+                        ajouterPanel.Visible = true;
+                        demandesPanel.Visible = true;
+                        adminPanel.Visible = true;
+                        break;
+                    case "2":
+                        archivesPanel.Visible = true;
+                        ajouterPanel.Visible = true;
+                        demandesPanel.Visible = true;
+                        break;
+                    case "3":
+                        archivesPanel.Visible = true;
+                        break;
+                    default:
+                        archivesPanel.Visible = false;
+                        ajouterPanel.Visible = false;
+                        demandesPanel.Visible = false;
+                        adminPanel.Visible = false;
+                        break;
                 }
-            /*}*/
-            
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

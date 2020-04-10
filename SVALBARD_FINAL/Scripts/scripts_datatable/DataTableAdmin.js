@@ -3,6 +3,7 @@
     if (window.location.pathname === "/AdminPanel") {
         $("#midget-spinner").css("display", "block");
         let jsonData = JSON.parse(document.getElementById("jsonData").innerHTML);
+        
         let datatableVariable = $('#adminTable').DataTable({
             data: jsonData,
             columns: [

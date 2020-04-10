@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="AfficherArchives" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AfficherArchives.aspx.cs" Inherits="WebApplication1.AfficherArchives" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container-fluid">
+<asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">
+    <div runat="server" id="mainContainer" class="container-fluid">
         <!-- #region Alert -->
         <asp:Panel ID="alertAlreadyRequested" runat="server" Visible="false">
             <div class="alert alert-warning alert-dismissible fade show text-center " role="alert">
@@ -34,14 +34,14 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLongTitle">Effectuer une demande de retrait de l'archive</h5>
+                        <h5 class="modal-title w-100 text-center pl-4" id="modalLongTitle">Informations</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div runat="server" id="consutlationMode" class="col-md-5">
                                 <p>Archive : <span id="archiveCote"></span></p>
                                 <p>Ajoutée le : <span id="archiveVersement"></span></p>
                                 <p>
@@ -64,7 +64,7 @@
                                 </p>
                                 <asp:HiddenField ID="archiveID" runat="server" ClientIDMode="Static" />
                             </div>
-                            <div class="col-md-7 vertical-line">
+                            <div runat="server" id="formRetrait" class="col-md-7 vertical-line">
                                 <form class="needs-validation" novalidate>
                                     <div class="form-row">
                                         <h5>Merci de renseigner votre établissement, la direction à laquelle vous appartenez ainsi que le service auquel vous appartenez</h5>
@@ -101,7 +101,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
+                    <div runat="server" id="modalFooter" class="modal-footer">
                         <asp:Button runat="server" OnClick="LogRetirerArchive" Text="Detruire" CssClass="submitModal btn btn-outline-danger" ClientIDMode="Static"  />
                         <asp:Button runat="server" OnClick="LogRetirerArchive" Text="Retirer" CssClass="submitModal btn btn-warning" ClientIDMode="Static"  />
                     </div>
@@ -112,7 +112,6 @@
     <table id="tableArchive" class="table table-striped table-hover hiddenLoad">
         <thead>
             <tr>
-                <!-- WARNING : Don't comment <th>ID</th> or <th>Versement</th> will break  -->
                 <th>ID</th>
                 <th>Versement</th>
                 <th>Etablissement</th>

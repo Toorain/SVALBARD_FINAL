@@ -59,7 +59,7 @@
             </tfoot>
         </table>
     <%} else {
-            Response.Redirect("/Default.aspx");
+            Response.Redirect("~/");
         } %>
 </asp:Content>
 
