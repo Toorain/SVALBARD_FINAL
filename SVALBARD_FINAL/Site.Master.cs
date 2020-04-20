@@ -84,19 +84,27 @@ namespace WebApplication1
                 string userId = DatabaseUser.GetUserAuthorization(user.GetUserId());
                 switch (userId)
                 {
+                    // Administrateur
                     case "1":
                         archivesPanel.Visible = true;
                         ajouterPanel.Visible = true;
                         demandesPanel.Visible = true;
                         adminPanel.Visible = true;
                         break;
+                    // Gestionnaire
                     case "2":
                         archivesPanel.Visible = true;
                         ajouterPanel.Visible = true;
                         demandesPanel.Visible = true;
                         break;
+                    // Consultation
                     case "3":
                         archivesPanel.Visible = true;
+                        break;
+                    // Archiviste
+                    case "4":
+                        archivesPanel.Visible = true;
+                        demandesPanel.Visible = true;
                         break;
                     default:
                         archivesPanel.Visible = false;

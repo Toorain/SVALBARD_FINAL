@@ -40,9 +40,10 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <asp:Button runat="server" ID="modifyArchive" OnClick="ModifyArchive_Click" Text="Modifier" UseSubmitBehavior="false" />
                         <div class="row">
                             <div runat="server" id="consutlationMode" class="col-md-5">
-                                <p>Archive : <span id="archiveCote"></span></p>
+                                <p>Archive : <span runat="server" id="archiveCote"></span></p>
                                 <p>Ajoutée le : <span id="archiveVersement"></span></p>
                                 <p>
                                     Par :
@@ -62,6 +63,8 @@
                                     <br />
                                     <span id="archiveCommentaire"></span>
                                 </p>
+                                <!-- Used in Scripts/scripts_datatable/dataTableArchives.js  line:75-->
+                                <asp:HiddenField ID="archiveCoteID" runat="server" ClientIDMode="Static" />
                                 <asp:HiddenField ID="archiveID" runat="server" ClientIDMode="Static" />
                             </div>
                             <div runat="server" id="formRetrait" class="col-md-7 vertical-line">

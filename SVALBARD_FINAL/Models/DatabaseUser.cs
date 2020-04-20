@@ -44,9 +44,7 @@ namespace WebApplication1
             } else
             {
                 return "NoUser";
-            }            
+            }
         }
     }
-
-    
 }

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace WebApplication1
 {
@@ -18,5 +21,50 @@ namespace WebApplication1
         /* public float CL { get; set; }
         public float Chrono { get; set; }
         public string Calc { get; set; }*/
+
+        public static void ModifyArchive(string CurrentRow)
+        {
+            var newArray = new List<DataSQL>();
+            string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            {
+                string cmdString = "SELECT * FROM [dbo].[ArchivesV2] WHERE ID = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", CurrentRow);
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+                    
+                    while (dr.Read())
+                    {
+                        DataSQL dataSQL = new DataSQL
+                        {
+                            ID = Convert.ToInt32(dr["ID"].ToString()),
+                            Versement = string.IsNullOrEmpty(dr["versement"].ToString()) ? new DateTime(1900, 1, 1) : Convert.ToDateTime(dr["versement"].ToString()),
+                            Etablissement = dr["etablissement"].ToString(),
+                            Direction = dr["direction"].ToString(),
+                            Service = dr["service"].ToString(),
+                            Dossiers = dr["dossiers"].ToString(),
+                            Extremes = dr["extremes"].ToString(),
+                            Elimination = dr["elimination"].ToString(),
+                            Communication = dr["communication"].ToString(),
+                            Cote = dr["cote"].ToString(),
+                            Localisation = dr["localisation"].ToString()
+                            /* CL = string.IsNullOrEmpty(dr["CL"].ToString()) ? 0 : Convert.ToInt32(dr["CL"].ToString()),
+                            Chrono = string.IsNullOrEmpty(dr["chrono"].ToString()) ? 0 : Convert.ToInt32(dr["chrono"].ToString()),
+                            Calc = dr["calc"].ToString()*/
+                        };
+                        newArray.Add(dataSQL);
+                    }
+                }
+            }
+        }
     }
+
+    
 }

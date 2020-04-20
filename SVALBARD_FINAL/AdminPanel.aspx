@@ -31,6 +31,7 @@
                                 <asp:DropDownList id="RoleList" runat="server">
                                     <asp:ListItem Value="3"> Consultation </asp:ListItem>
                                     <asp:ListItem Value="2"> Gestion </asp:ListItem>
+                                    <asp:ListItem Value="4"> Archiviste </asp:ListItem>
                                     <asp:ListItem Value="1"> Administration </asp:ListItem>
                                 </asp:DropDownList>
                                 <asp:Button runat="server" ID="changeUserStatus" OnClick="ChangeUserStatus" Text="Changer de status" CssClass="submitModal btn btn-primary mt-4" ClientIDMode="Static"  />

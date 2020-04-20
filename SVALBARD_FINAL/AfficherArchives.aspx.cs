@@ -36,6 +36,9 @@ namespace WebApplication1
                     formRetrait.Visible = false;
                     consutlationMode.Attributes.Add("class", "col-md-8 offset-md-2 text-center");
                     break;
+                case "4":
+                    mainContainer.Visible = true;
+                    break;
                 default:
                     mainContainer.Visible = false;
                     requestStatusText = "Vous n'avez pas les droits requis pour consulter cet élément, contactez votre DSI pour plus d'informations";
@@ -128,7 +131,7 @@ namespace WebApplication1
             if (canRequestArchive && !connError)
             {
 
-                string cmdString = "INSERT INTO [dbo].[logsArchive] (ID,date,issuerID,issuerEts,issuerDir,issuerService,receiverID,archiveID,action) VALUES (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9)";
+                string cmdString = "INSERT INTO [dbo].[logsArchive] (ID,date,issuerID,issuerEts,issuerDir,issuerService,receiverID,archiveID,action,status) VALUES (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10)";
                 using (SqlConnection sqlConn = new SqlConnection(connectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand())
@@ -144,6 +147,7 @@ namespace WebApplication1
                         cmd.Parameters.AddWithValue("@val7", "");
                         cmd.Parameters.AddWithValue("@val8", log.ArchiveID);
                         cmd.Parameters.AddWithValue("@val9", log.Action);
+                        cmd.Parameters.AddWithValue("@val10", 1);
 
                         sqlConn.Open();
                         cmd.ExecuteNonQuery();
@@ -170,6 +174,11 @@ namespace WebApplication1
                 alertAlreadyRequested.Visible = true;
                 alertRequestedText.InnerText = requestStatusText;
             }            
+        }
+
+        protected void ModifyArchive_Click(object sender, EventArgs e)
+        {
+            DataSQL.ModifyArchive(archiveID.Value);
         }
     }
 }

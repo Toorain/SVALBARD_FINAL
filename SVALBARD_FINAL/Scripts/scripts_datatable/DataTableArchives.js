@@ -25,7 +25,7 @@
                                 if (month.length < 2) month = '0' + month;
                                 if (day.length < 2) day = '0' + day;
 
-                                return [day, month, year].join('/');
+                                return [year, month, day].join('/');
                             }
                         },
                         { 'data': 'Etablissement' },
@@ -72,7 +72,8 @@
                     $("#modalGetArchive").modal("toggle");
                     var data = datatableVariable.row(this).data();
 
-                    $("#archiveID").val(data.Cote);
+                    $("#archiveID").val(data.ID);
+                    $("#archiveCoteID").val(data.Cote);
                     $("#archiveCote").text(data.Cote);
                     var d = new Date(data.Versement),
                         month = '' + (d.getMonth() + 1),

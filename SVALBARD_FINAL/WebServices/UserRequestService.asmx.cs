@@ -49,7 +49,7 @@ namespace WebApplication1
 
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                string cmdString = "Select * FROM logsArchive";
+                string cmdString = "SELECT [dbo].[logsArchive].*, [dbo].[status].status_name FROM [dbo].[logsArchive] LEFT JOIN [dbo].[status] ON [dbo].[logsArchive].status = dbo.status.status_id";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -72,7 +72,8 @@ namespace WebApplication1
                                 IssuerDir = dr["issuerDir"].ToString(),
                                 IssuerService = dr["issuerService"].ToString(),
                                 ArchiveID = dr["ArchiveID"].ToString(),
-                                Action = Convert.ToInt32(dr["action"])
+                                Action = Convert.ToInt32(dr["action"]),
+                                Status = dr["status_name"].ToString()
                             };
                             datas.Add(logs);
                         };

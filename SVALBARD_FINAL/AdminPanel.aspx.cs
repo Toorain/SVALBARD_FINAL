@@ -23,7 +23,7 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             // Change bg-secondary to any color you prefer.
-            RoleList.Items[2].Attributes.Add("class", "bg-secondary");
+            RoleList.Items[3].Attributes.Add("class", "bg-secondary");
 
             var user = HttpContext.Current.User.Identity;
 
