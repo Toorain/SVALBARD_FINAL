@@ -85,7 +85,7 @@
                     if (day.length < 2)
                         day = '0' + day;
 
-                    var dateFormat = [day, month, year].join('/');
+                    var dateFormat = [year, month, day].join('/');
                     $("#archiveVersement").text(dateFormat);
                     $("#archiveCommentaire").text(data.Dossiers);
                     $("#archiveEtablissement").text(data.Etablissement);

@@ -60,6 +60,9 @@
                         case "consultation":
                             $("#MainContent_RoleList").find($("#MainContent_RoleList").val("3")).attr("selected", "selected");
                             break;
+                        case "archiviste":
+                            $("#MainContent_RoleList").find($("#MainContent_RoleList").val("4")).attr("selected", "selected");
+                            break;
                     }
                 }
             });

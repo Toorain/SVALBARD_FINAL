@@ -40,10 +40,10 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <asp:Button runat="server" ID="modifyArchive" OnClick="ModifyArchive_Click" Text="Modifier" UseSubmitBehavior="false" />
+                        <button runat="server" id="archiviste_modify" class="btn btn-secondary">Modifier</button>
                         <div class="row">
                             <div runat="server" id="consutlationMode" class="col-md-5">
-                                <p>Archive : <span runat="server" id="archiveCote"></span></p>
+                                <p>Archive : <span id="archiveCote" ></span></p>
                                 <p>Ajoutée le : <span id="archiveVersement"></span></p>
                                 <p>
                                     Par :

@@ -85,7 +85,7 @@ namespace WebApplication1
                             count++;
                         }
                         // We check if a request has already been made in the "log" table, if so user won't be able to request another withdraw
-                        if (dr["archiveID"].ToString() == archiveID.Value)
+                        if (dr["archiveID"].ToString() == archiveCoteID.Value)
                         {
                             // Change canRequestArchive so the next part won't be called and will send a Bootstrap alert
                             canRequestArchive = false;
@@ -122,7 +122,7 @@ namespace WebApplication1
                         IssuerEts = validationEts.Text,
                         IssuerDir = validationDir.Text,
                         IssuerService = validationService.Text,
-                        ArchiveID = canRequestArchive ? archiveID.Value : "ALREADY REQUESTED",
+                        ArchiveID = canRequestArchive ? archiveCoteID.Value : "ALREADY REQUESTED",
                         Action = codeAction
                     };
                 } 
