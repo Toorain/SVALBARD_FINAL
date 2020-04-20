@@ -72,6 +72,7 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            archivistePanel.Visible = false;
             archivesPanel.Visible = false;
             ajouterPanel.Visible = false;
             demandesPanel.Visible = false;
@@ -81,7 +82,7 @@ namespace WebApplication1
 
             if (user.IsAuthenticated)
             {
-                string userId = DatabaseUser.GetUserAuthorization(user.GetUserId());
+                string userId = DatabaseUser.GetCurrentUserAuthorization(user.GetUserId());
                 switch (userId)
                 {
                     // Administrateur
@@ -103,10 +104,11 @@ namespace WebApplication1
                         break;
                     // Archiviste
                     case "4":
+                        archivistePanel.Visible = true;
                         archivesPanel.Visible = true;
-                        demandesPanel.Visible = true;
                         break;
                     default:
+                        archivistePanel.Visible = false;
                         archivesPanel.Visible = false;
                         ajouterPanel.Visible = false;
                         demandesPanel.Visible = false;

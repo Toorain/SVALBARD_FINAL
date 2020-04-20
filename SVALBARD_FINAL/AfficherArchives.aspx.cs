@@ -14,7 +14,7 @@ namespace WebApplication1
         {
             mainContainer.Visible = false;
 
-            string DbAuthorization = DatabaseUser.GetUserAuthorization(User.Identity.GetUserId());
+            string DbAuthorization = DatabaseUser.GetCurrentUserAuthorization(User.Identity.GetUserId());
             switch (DbAuthorization)
             {
                 case "NoUser":
@@ -65,7 +65,7 @@ namespace WebApplication1
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                string cmdString = "Select ID, archiveID from logsArchive";
+                string cmdString = "SELECT ID, archiveID FROM logsArchive";
                 // Then request "ID" & "archiveID" columns
                 using (SqlCommand cmd = new SqlCommand())
                 {
@@ -82,7 +82,7 @@ namespace WebApplication1
                     {
                         if (dr["ID"].ToString() != "" || dr["ID"] != null)
                         {
-                            count++;
+                            count = Convert.ToInt32(dr["ID"]);
                         }
                         // We check if a request has already been made in the "log" table, if so user won't be able to request another withdraw
                         if (dr["archiveID"].ToString() == archiveCoteID.Value)
@@ -123,6 +123,7 @@ namespace WebApplication1
                         IssuerDir = validationDir.Text,
                         IssuerService = validationService.Text,
                         ArchiveID = canRequestArchive ? archiveCoteID.Value : "ALREADY REQUESTED",
+                        Localization = localization.Value,
                         Action = codeAction
                     };
                 } 
@@ -131,9 +132,10 @@ namespace WebApplication1
             if (canRequestArchive && !connError)
             {
 
-                string cmdString = "INSERT INTO [dbo].[logsArchive] (ID,date,issuerID,issuerEts,issuerDir,issuerService,receiverID,archiveID,action,status) VALUES (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10)";
+                string cmdString = "INSERT INTO [dbo].[logsArchive] (ID,date,issuerID,issuerEts,issuerDir,issuerService,receiverID,archiveID,localization,action,status) VALUES (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11)";
                 using (SqlConnection sqlConn = new SqlConnection(connectionString))
                 {
+                    string archivisteID = Logs.AssignArchiviste();
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.Connection = sqlConn;
@@ -144,10 +146,11 @@ namespace WebApplication1
                         cmd.Parameters.AddWithValue("@val4", log.IssuerEts);
                         cmd.Parameters.AddWithValue("@val5", log.IssuerDir);
                         cmd.Parameters.AddWithValue("@val6", log.IssuerService);
-                        cmd.Parameters.AddWithValue("@val7", "");
+                        cmd.Parameters.AddWithValue("@val7", archivisteID);
                         cmd.Parameters.AddWithValue("@val8", log.ArchiveID);
-                        cmd.Parameters.AddWithValue("@val9", log.Action);
-                        cmd.Parameters.AddWithValue("@val10", 1);
+                        cmd.Parameters.AddWithValue("@val9", log.Localization);
+                        cmd.Parameters.AddWithValue("@val10", log.Action);
+                        cmd.Parameters.AddWithValue("@val11", 1);
 
                         sqlConn.Open();
                         cmd.ExecuteNonQuery();
@@ -156,6 +159,7 @@ namespace WebApplication1
                         alertRequestSuccess.Visible = true;
                         alertAlreadyRequested.Visible = false;
                         alertSuccessText.InnerText = requestStatusText;
+                        
                     }                    
                 }
             } 

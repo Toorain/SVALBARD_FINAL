@@ -15,7 +15,7 @@ namespace WebApplication1
         public string PhoneNumber { get; set; }
         public string UserName { get; set; }
 
-        public static string GetUserAuthorization(string CurrentUser)
+        public static string GetCurrentUserAuthorization(string CurrentUser)
         {
             if (CurrentUser != null)
             {
@@ -47,4 +47,5 @@ namespace WebApplication1
             }
         }
     }
+
 }

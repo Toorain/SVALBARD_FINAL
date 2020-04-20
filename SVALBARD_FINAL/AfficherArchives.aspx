@@ -66,6 +66,7 @@
                                 <!-- Used in Scripts/scripts_datatable/dataTableArchives.js  line:75-->
                                 <asp:HiddenField ID="archiveCoteID" runat="server" ClientIDMode="Static" />
                                 <asp:HiddenField ID="archiveID" runat="server" ClientIDMode="Static" />
+                                <asp:HiddenField ID="localization" runat="server" ClientIDMode="Static" />
                             </div>
                             <div runat="server" id="formRetrait" class="col-md-7 vertical-line">
                                 <form class="needs-validation" novalidate>

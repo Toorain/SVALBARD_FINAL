@@ -54,6 +54,7 @@
                         <li class="nav-item"><a class="nav-link" runat="server" id="archivesPanel" href="~/AfficherArchives">Afficher les archives</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="ajouterPanel" href="~/AjouterArchive">Ajouter une archive</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="demandesPanel" href="~/Demandes">Demandes</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="archivistePanel" href="~/ArchivistePanel">Archiviste Panel</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="adminPanel" href="~/AdminPanel">Admin Panel</a></li>
                         <!-- <li class="nav-item"><a class="nav-link" runat="server" href="~/AdminPanel">Admin Panel</a></li> -->     
                     </ul>
@@ -86,6 +87,7 @@
     </footer>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableArchives.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableArchiviste.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableDemandes.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableAdmin.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/FetchData.js"></script>

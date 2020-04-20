@@ -71,10 +71,12 @@
                     // Open/Close modal on click depending on previous status
                     $("#modalGetArchive").modal("toggle");
                     var data = datatableVariable.row(this).data();
+                    console.log(data);
 
                     $("#archiveID").val(data.ID);
                     $("#archiveCoteID").val(data.Cote);
                     $("#archiveCote").text(data.Cote);
+                    $("#localization").val(data.Localisation);
                     var d = new Date(data.Versement),
                         month = '' + (d.getMonth() + 1),
                         day = '' + d.getDate(),

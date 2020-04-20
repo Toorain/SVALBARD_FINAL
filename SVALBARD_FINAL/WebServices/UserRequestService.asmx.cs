@@ -72,6 +72,23 @@ namespace WebApplication1
                                 IssuerDir = dr["issuerDir"].ToString(),
                                 IssuerService = dr["issuerService"].ToString(),
                                 ArchiveID = dr["ArchiveID"].ToString(),
+                                Localization = dr["localization"].ToString(),
+                                Action = Convert.ToInt32(dr["action"]),
+                                Status = dr["status_name"].ToString()
+                            };
+                            datas.Add(logs);
+                        } else if (dr["receiverID"].ToString() == userID) 
+                        {
+                            Logs logs = new Logs
+                            {
+                                ID = Convert.ToInt32(dr["ID"]),
+                                Date = Convert.ToDateTime(dr["date"].ToString()),
+                                IssuerID = dr["issuerID"].ToString(),
+                                IssuerEts = dr["issuerEts"].ToString(),
+                                IssuerDir = dr["issuerDir"].ToString(),
+                                IssuerService = dr["issuerService"].ToString(),
+                                ArchiveID = dr["ArchiveID"].ToString(),
+                                Localization = dr["localization"].ToString(),
                                 Action = Convert.ToInt32(dr["action"]),
                                 Status = dr["status_name"].ToString()
                             };

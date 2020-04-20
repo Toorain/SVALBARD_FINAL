@@ -78,15 +78,6 @@ namespace WebApplication1
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl consutlationMode;
 
         /// <summary>
-        /// Contrôle archiveCote.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl archiveCote;
-
-        /// <summary>
         /// Contrôle archiveEtablissement.
         /// </summary>
         /// <remarks>
@@ -130,6 +121,15 @@ namespace WebApplication1
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField archiveID;
+
+        /// <summary>
+        /// Contrôle localization.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField localization;
 
         /// <summary>
         /// Contrôle formRetrait.
