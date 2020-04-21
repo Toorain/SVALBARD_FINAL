@@ -84,30 +84,7 @@
                     $("#modalArchiviste").modal("toggle");
                     var data = datatableVariable.row(this).data();
                     console.log(data);
-                    /*
-                    $("#archiveID").val(data.Cote);
-                    $("#archiveCote").text(data.Cote);
-                    var d = new Date(data.Versement),
-                        month = '' + (d.getMonth() + 1),
-                        day = '' + d.getDate(),
-                        year = d.getFullYear();
-
-                    if (month.length < 2)
-                        month = '0' + month;
-                    if (day.length < 2)
-                        day = '0' + day;
-
-                    var dateFormat = [day, month, year].join('/');
-                    $("#archiveVersement").text(dateFormat);
-                    $("#archiveCommentaire").text(data.Dossiers);
-                    $("#archiveEtablissement").text(data.Etablissement);
-                    $("#archiveDirection").text(data.Direction);
-                    $("#archiveService").text(data.Service);
-                    if (data.Elimination == "") {
-                        $("#archiveElimination").text("n/a");
-                    } else {
-                        $("#archiveElimination").text(data.Elimination);
-                    }*/
+                    $("#ArchiveCote").val(data.ArchiveID);
                 });
             }
         });

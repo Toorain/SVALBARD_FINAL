@@ -60,15 +60,6 @@ namespace WebApplication1
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertSuccessText;
 
         /// <summary>
-        /// Contrôle archiviste_modify.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton archiviste_modify;
-
-        /// <summary>
         /// Contrôle consutlationMode.
         /// </summary>
         /// <remarks>

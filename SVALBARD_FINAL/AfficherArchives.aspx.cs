@@ -59,7 +59,7 @@ namespace WebApplication1
             
             bool connError = false;
             bool canRequestArchive = true;
-            string connectionString = ConfigurationManager.ConnectionStrings["LogsArchive"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
             Logs log;
 
             // Connect to the Database

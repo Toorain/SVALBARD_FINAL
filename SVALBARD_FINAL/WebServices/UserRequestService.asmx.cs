@@ -44,7 +44,7 @@ namespace WebApplication1
         [WebMethod]
         public void GetDataIssuer(string userID)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["LogsArchive"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
             var datas = new List<Logs>();
 
             using (SqlConnection sqlConn = new SqlConnection(connectionString))

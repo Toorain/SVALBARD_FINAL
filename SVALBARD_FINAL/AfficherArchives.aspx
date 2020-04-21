@@ -40,7 +40,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <button runat="server" id="archiviste_modify" class="btn btn-secondary">Modifier</button>
                         <div class="row">
                             <div runat="server" id="consutlationMode" class="col-md-5">
                                 <p>Archive : <span id="archiveCote" ></span></p>

@@ -21,10 +21,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <asp:HiddenField runat="server" ID="ArchiveCote" ClientIDMode="Static"/>
                     <div class="row">
-                        <asp:DropDownList id="StatusList" runat="server">
-                            
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="StatusList" runat="server" CssClass="form-control m-3 w-25"></asp:DropDownList>
+                        <asp:Button runat="server" ID="ModifyStatus" Text="Modifier le status" CssClass="btn btn-success" />
                     </div>
                 </div>
                 <div class="modal-footer">

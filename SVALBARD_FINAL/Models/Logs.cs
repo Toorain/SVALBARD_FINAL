@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 
@@ -53,6 +56,62 @@ namespace WebApplication1
                     }
                 }
                 return archivisteId;
+            }
+        }
+
+        public static string GetActionType(string currentArchiveRef)
+        {
+            string actionType = "";
+            string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
+
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            {
+                string cmdString = "SELECT action FROM logsArchive WHERE archiveID = '@val1'";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", currentArchiveRef);
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        actionType = dr[0].ToString();
+                    }
+                    return actionType;
+                }
+            }
+        }
+
+        public static List<string> GetStatus()
+        {
+            List<string> arrayStatus = new List<string>();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
+
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            {
+                string cmdString = "SELECT status_name FROM status";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        arrayStatus.Add(dr[0].ToString());
+                    }
+                    return arrayStatus;
+                }
             }
         }
     }
