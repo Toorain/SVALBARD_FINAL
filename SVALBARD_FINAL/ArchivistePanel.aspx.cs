@@ -17,14 +17,19 @@ namespace WebApplication1
             {
                 archivisteID.Value = User.Identity.GetUserId();
 
-                List<string> arrayStatus = Logs.GetStatus();
+                List<List<string>> arrayArray = Logs.GetStatus();
 
-                for (int i = 0; i < arrayStatus.Count; i++)
+                foreach (var item in arrayArray)
                 {
-                    ListItem listItem = new ListItem();
-                    listItem.Value = arrayStatus[i];
-                    listItem.Text = arrayStatus[i];
-                    StatusList.Items.Add(listItem);
+                    for (int i = 0; i < item.Count; i++)
+                    {
+                        ListItem listItem = new ListItem
+                        {
+                            Value = item[i],
+                            Text = item[i]
+                        };
+                        StatusList.Items.Add(listItem);
+                    }
                 }
             }
         }

@@ -87,16 +87,19 @@ namespace WebApplication1
             }
         }
 
-        public static List<string> GetStatus()
+        public static List<List<string>> GetStatus()
         {
-            List<string> arrayStatus = new List<string>();
+            List<string> arrayGlobal = new List<string>();
+            List<string> arrayAjout = new List<string>();
+            List<string> arrayRetrait = new List<string>();
+            List<string> arrayDestruction = new List<string>();
 
             string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
 
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                string cmdString = "SELECT status_name FROM status";
+                string cmdString = "SELECT status_name, group_code FROM status";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -108,9 +111,29 @@ namespace WebApplication1
 
                     while (dr.Read())
                     {
-                        arrayStatus.Add(dr[0].ToString());
+                        /**
+                         * For every group of status (global, ajouter, retrait, destruction) we fill a different array.
+                         */
+                        switch (Convert.ToInt32(dr["group_code"]))
+                        {
+                            case 1:
+                                arrayGlobal.Add(dr["status_name"].ToString());
+                                break;
+                            case 2:
+                                arrayAjout.Add(dr["status_name"].ToString());
+                                break;
+                            case 3:
+                                arrayRetrait.Add(dr["status_name"].ToString());
+                                break;
+                            case 4:
+                                arrayDestruction.Add(dr["status_name"].ToString());
+                                break;
+                            default:
+                                break;
+                        }
                     }
-                    return arrayStatus;
+                    List<List<string>> arrayArray = new List<List<string>> { arrayGlobal, arrayAjout, arrayRetrait, arrayDestruction };
+                    return arrayArray;
                 }
             }
         }

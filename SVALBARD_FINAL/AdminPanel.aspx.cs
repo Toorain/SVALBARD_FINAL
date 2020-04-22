@@ -14,7 +14,6 @@ namespace WebApplication1
 {
     public partial class AdminPanel : Page
     {
-        // TODO : CHANGE TO TRUE TO WORK WITHOUT LOGGING IN
         protected bool pageRender = false;
         protected object jsonData;
         protected string UserId;
@@ -45,7 +44,6 @@ namespace WebApplication1
 
                     while (dr.Read())
                     {
-                        // TODO : CHANGE TO TRUE TO WORK WITHOUT LOGGING IN
                         if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "1")
                         {
                             RenderTable();
