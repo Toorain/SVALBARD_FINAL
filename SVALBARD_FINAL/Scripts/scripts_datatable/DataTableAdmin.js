@@ -7,7 +7,12 @@
         let datatableVariable = $('#adminTable').DataTable({
             data: jsonData,
             columns: [
-                { data: 'UserName' },
+                {
+                    data: 'UserName', 'render': (data) => {
+                        var pos = data.indexOf("@");
+                        return arrayToWork = data.substring(0, pos).replace(".", " ").split(" ").join(" ");
+                    }
+                },
                 { data: 'ID' },
                 { data: 'Email' },
                 { data: 'PhoneNumber' }
