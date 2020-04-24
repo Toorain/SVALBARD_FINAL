@@ -12,6 +12,7 @@
                 $("#midget-spinner").css("display", "none");
                 $(".hiddenLoad").css("display", "block");
                 var datatableVariable = $('#tableArchive').DataTable({
+                    orderCellsTop: true,
                     data: data,
                     columns: [
                         { 'data': 'ID' },
@@ -50,15 +51,15 @@
                         $("#tableArchive_next").click();
                     }
                 });
-                $('#tableArchive tfoot th').each(function () {
-                    var placeHolderTitle = $('#tableArchive thead th').eq($(this).index()).text();
-                    $(this).html('<input type="text" class="form-control input input-sm" placeholder = "Search ' + placeHolderTitle + '" />');
+                $('#tableArchive thead tr:eq(1) th').each(function () {
+                    $(this).html('<input type="text" class="form-control input input-sm column_search" />');
                 });
-                datatableVariable.columns().every(function () {
-                    var column = this;
-                    $(this.footer()).find('input').on('keyup change', function () {
-                        column.search(this.value).draw();
-                    });
+                $('#tableArchive thead').on('keyup', ".column_search", function () {
+
+                    datatableVariable
+                        .column($(this).parent().index())
+                        .search(this.value)
+                        .draw();
                 });
                 $('.showHide').on('click', function () {
                     var tableColumn = datatableVariable.column($(this).attr('data-columnindex'));

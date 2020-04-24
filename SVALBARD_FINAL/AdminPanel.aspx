@@ -50,13 +50,20 @@
         <table id="adminTable" class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>UserName</th>
-                    <th>ID</th>
-                    <th>Email</th>
-                    <th>PhoneNumber</th>
+                    <th class="col-title">UserName</th>
+                    <th class="col-title">ID</th>
+                    <th class="col-title">Email</th>
+                    <th class="col-title">PhoneNumber</th>
+                </tr>
+                <tr>
+                    <th class="search-field"></th>
+                    <th class="search-field"></th>
+                    <th class="search-field"></th>
+                    <th class="search-field"></th>
                 </tr>
             </thead>
             <tfoot>
+                
             </tfoot>
         </table>
     <%} else {

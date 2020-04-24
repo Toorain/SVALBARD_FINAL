@@ -26,8 +26,8 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <div class="hiddenLoad">
-            <h1>Cliquer sur un élément pour en afficher les détails</h1>
+        <div class="hiddenLoad w-25 m-auto text-center">
+            <button class="btn btn-outline-secondary" onclick="enableTourArchive()">Découvrir l'outil d'archivage</button>
         </div>
         <!-- #region Modal -->
         <div class="modal fade" id="modalGetArchive" tabindex="-1" role="dialog" aria-labelledby="modalGetArchive" aria-hidden="true">
@@ -114,7 +114,7 @@
         <!-- #endregion Modal -->
     <table id="tableArchive" class="table table-striped table-hover hiddenLoad">
         <thead>
-            <tr>
+            <tr id="column-name">
                 <th>ID</th>
                 <th>Versement</th>
                 <th>Etablissement</th>
@@ -129,6 +129,19 @@
                 <!-- <th>CL</th>
                     <th>Chrono</th>
                     <th>Calc</th> -->
+            </tr>
+            <tr id="column-search">
+                <th class="search-field"></th>
+                <th class="search-field"></th>
+                <th class="search-field"></th>
+                <th class="search-field"></th>
+                <th class="search-field"></th>
+                <th class="search-field"></th>
+                <th class="search-field"></th>
+                <th class="search-field"></th>
+                <th class="search-field"></th>
+                <th class="search-field"></th>
+                <th class="search-field"></th>
             </tr>
         </thead>
         <tfoot>

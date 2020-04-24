@@ -5,6 +5,7 @@
         let jsonData = JSON.parse(document.getElementById("jsonData").innerHTML);
         
         let datatableVariable = $('#adminTable').DataTable({
+            orderCellsTop: true,
             data: jsonData,
             columns: [
                 {
@@ -26,15 +27,16 @@
                 $("#adminTable_next").click();
             }
         });
-        $('#adminTable tfoot th').each(function () {
-            var placeHolderTitle = $('#adminTable thead th').eq($(this).index()).text();
-            $(this).html('<input type="text" class="form-control input input-sm" placeholder = "Search ' + placeHolderTitle + '" />');
+        $('#adminTable thead tr:eq(1) th').each(function () {
+            var placeHolderTitle = $('#adminTable thead tr:eq(0)').eq($(this).index()).text();
+            $(this).html('<input type="text" class="form-control input input-sm column_search   " placeholder = "Search ' + placeHolderTitle + ' " />');
         });
-        datatableVariable.columns().every(function () {
-            var column = this;
-            $(this.footer()).find('input').on('keyup change', function () {
-                column.search(this.value).draw();
-            });
+        $('#adminTable thead').on('keyup', ".column_search", function () {
+
+            datatableVariable
+                .column($(this).parent().index())
+                .search(this.value)
+                .draw();
         });
         $('.showHide').on('click', function () {
             var tableColumn = datatableVariable.column($(this).attr('data-columnindex'));
