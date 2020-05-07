@@ -1,4 +1,4 @@
-﻿<%@ Page Title="AfficherArchives" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AfficherArchives.aspx.cs" Inherits="WebApplication1.AfficherArchives" %>
+﻿<%@ Page Title="AfficherArchives" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AfficherArchives.aspx.cs" Inherits="WebApplication1.AfficherArchives" EnableEventValidation="false" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">
     <div runat="server" id="mainContainer" class="container-fluid">
@@ -75,38 +75,23 @@
                                     </div>
                                     <!-- TODO : Ajouter des dropdown pour limiter le choix de l'etablissment / direction / service, afin de lisser les données de la DB --> 
                                     <div class="form-row">
-                                        <div class="col-md-4 mb-3">
-                                            <label for="validationEts">Etablissement</label>
-                                            <asp:TextBox runat="server" ID="validationEts" CssClass="form-control" ClientIDMode="Static" required="required"></asp:TextBox>
-                                            <!-- <input type="text" class="form-control" id="validationEts" placeholder="Etablissement" required> -->
-                                            <div class="valid-feedback">
-                                                Looks good!
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <label for="validationDir">Direction</label>
-                                            <asp:TextBox runat="server" ID="validationDir" CssClass="form-control" ClientIDMode="Static" required="required"></asp:TextBox>
-                                            <!-- <input type="text" class="form-control" id="validationDir" placeholder="Direction" required> -->
-                                            <div class="valid-feedback">
-                                                Looks good!
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <label for="validationService">Service</label>
-                                            <asp:TextBox runat="server" ID="validationService" CssClass="form-control" ClientIDMode="Static" required="required"></asp:TextBox>
-                                            <!-- <input type="text" class="form-control" id="validationService" placeholder="Service" required> -->
-                                            <div class="valid-feedback">
-                                                Looks good!
-                                            </div>
-                                        </div>
+                                        <asp:DropDownList id="EtsList" CssClass="col-md-4 form-control" runat="server" ClientIDMode="Static">
+                                        </asp:DropDownList>
+                                        <asp:hiddenfield runat="server" ID="EtsValue" ClientIDMode="Static"></asp:hiddenfield>
+                                        <asp:DropDownList id="DirList" CssClass="col-md-4 form-control" runat="server" ClientIDMode="Static">
+                                        </asp:DropDownList>
+                                        <asp:hiddenfield runat="server" ID="DirValue" ClientIDMode="Static"></asp:hiddenfield>
+                                        <asp:DropDownList id="ServiceList" CssClass="col-md-4 form-control" runat="server" ClientIDMode="Static">
+                                        </asp:DropDownList>
+                                        <asp:hiddenfield runat="server" ID="ServiceValue" ClientIDMode="Static"></asp:hiddenfield>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                     <div runat="server" id="modalFooter" class="modal-footer">
-                        <asp:Button runat="server" OnClick="LogRetirerArchive" Text="Detruire" CssClass="submitModal btn btn-outline-danger" ClientIDMode="Static"  />
-                        <asp:Button runat="server" OnClick="LogRetirerArchive" Text="Retirer" CssClass="submitModal btn btn-warning" ClientIDMode="Static"  />
+                        <asp:Button runat="server" ID="btn_detruire" OnClick="LogRetirerArchive" Text="Detruire" CssClass="submitModal btn btn-outline-danger" ClientIDMode="Static"  />
+                        <asp:Button runat="server" ID="btn_retirer" OnClick="LogRetirerArchive" Text="Retirer" CssClass="submitModal btn btn-warning" ClientIDMode="Static"  />
                     </div>
                 </div>
             </div>
@@ -126,9 +111,6 @@
                 <th>Communication</th>
                 <th>Cote</th>
                 <th>Localisation</th>
-                <!-- <th>CL</th>
-                    <th>Chrono</th>
-                    <th>Calc</th> -->
             </tr>
             <tr id="column-search">
                 <th class="search-field"></th>

@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApplication1.Models;
 
 namespace WebApplication1
 {
@@ -12,6 +15,24 @@ namespace WebApplication1
         protected string requestStatusText;
         protected void Page_Load(object sender, EventArgs e)
         {
+            List<DES> DESList = DES.GetDataZero("etablissement");
+
+            if (!IsPostBack)
+            {
+                EtsList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --" });
+                DirList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --", Selected = true });
+                ServiceList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --", Selected = true });
+                foreach (var item in DESList)
+                {
+                    ListItem listItem = new ListItem()
+                    {
+                        Value = item.Name,
+                        Text = item.Name,
+                    };
+                    EtsList.Items.Insert(item.ID, listItem);
+                }
+            }
+
             mainContainer.Visible = false;
 
             string DbAuthorization = DatabaseUser.GetCurrentUserAuthorization(User.Identity.GetUserId());
@@ -119,9 +140,9 @@ namespace WebApplication1
                         Date = DateTime.Now,
                         // Detects if user is logged-in, if False an alert is emmited and user is prompted to log-in, Insert does not complete.
                         IssuerID = User.Identity.IsAuthenticated ? User.Identity.GetUserId() : Convert.ToString(connError = true),
-                        IssuerEts = validationEts.Text,
-                        IssuerDir = validationDir.Text,
-                        IssuerService = validationService.Text,
+                        IssuerEts = EtsList.SelectedValue,
+                        IssuerDir = DirValue.Value,
+                        IssuerService = ServiceValue.Value,
                         ArchiveID = canRequestArchive ? archiveCoteID.Value : "ALREADY REQUESTED",
                         Localization = localization.Value,
                         Action = codeAction

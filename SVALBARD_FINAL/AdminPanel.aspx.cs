@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Principal;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -26,38 +27,17 @@ namespace WebApplication1
 
             var user = HttpContext.Current.User.Identity;
 
-            // CRITICAL : Change this connection string to the one where users are actually stored (Needs to be changed : Source)
-            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            bool isAdmin = DatabaseUser.IsUserAdmin(user);
 
-            // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            if (isAdmin)
             {
-                string cmdString = "SELECT * FROM AspNetUserRoles";
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = sqlConn;
-                    cmd.CommandText = cmdString;
-
-                    sqlConn.Open();
-
-                    var dr = cmd.ExecuteReader();
-
-                    while (dr.Read())
-                    {
-                        if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "1")
-                        {
-                            RenderTable();
-                            pageRender = true;
-                            return;
-                        }
-                        else
-                        {
-                            pageRender = false;
-                        }
-                    }
-                }
+                RenderTable();
+                pageRender = true;
+            } else
+            {
+                pageRender = false;
             }
-            
+
         }
 
         /// <summary>
@@ -103,47 +83,13 @@ namespace WebApplication1
             string UserId = userIdAdmin.Value;
             string RoleId = RoleList.SelectedItem.Value;
 
-            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            bool updateSuccess = DatabaseUser.ChangeUserStatus(UserId, RoleId);
 
-            string cmdString = 
-            "IF EXISTS(SELECT 'True' FROM AspNetUserRoles WHERE UserId = @val1)"
-            + " BEGIN"
-                + " UPDATE AspNetUserRoles"
-                + " SET UserId = @val1, RoleId = @val2"
-                + " WHERE UserId = @val1;"
-            + " END"
-            + " ELSE"
-            + " BEGIN"
-
-                + " SELECT*"
-                + " FROM AspNetUsers"
-                + " LEFT JOIN AspNetUserRoles"
-
-                + " ON AspNetUsers.Id = AspNetUserRoles.UserId"
-
-                + " WHERE Id = @val1 "
-
-                + " INSERT INTO dbo.AspNetUserRoles(UserId, RoleId)"
-
-                + " VALUES(@val1, @val2);"
-            + " END";
-
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            if (updateSuccess)
             {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = sqlConn;
-                    cmd.CommandText = cmdString;
-                    cmd.Parameters.AddWithValue("@val1", UserId);
-                    cmd.Parameters.AddWithValue("@val2", RoleId);
-
-                    sqlConn.Open();
-                    cmd.ExecuteNonQuery();
-                }
+                alertRequestSuccess.Visible = true;
+                alertSuccessText.InnerText = "L'utilisateur à été mis à jour.";
             }
-
-            alertRequestSuccess.Visible = true;
-            alertSuccessText.InnerText = "L'utilisateur à été mis à jour.";
         }
     }
 }

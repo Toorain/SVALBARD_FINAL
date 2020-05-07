@@ -18,9 +18,6 @@ namespace WebApplication1
         public string Communication { get; set; }
         public string Cote { get; set; }
         public string Localisation { get; set; }
-        /* public float CL { get; set; }
-        public float Chrono { get; set; }
-        public string Calc { get; set; }*/
 
         public static void ModifyArchive(string CurrentRow)
         {
@@ -55,9 +52,6 @@ namespace WebApplication1
                             Communication = dr["communication"].ToString(),
                             Cote = dr["cote"].ToString(),
                             Localisation = dr["localisation"].ToString()
-                            /* CL = string.IsNullOrEmpty(dr["CL"].ToString()) ? 0 : Convert.ToInt32(dr["CL"].ToString()),
-                            Chrono = string.IsNullOrEmpty(dr["chrono"].ToString()) ? 0 : Convert.ToInt32(dr["chrono"].ToString()),
-                            Calc = dr["calc"].ToString()*/
                         };
                         newArray.Add(dataSQL);
                     }

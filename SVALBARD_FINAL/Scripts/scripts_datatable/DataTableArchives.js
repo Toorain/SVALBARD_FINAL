@@ -8,6 +8,7 @@
             dataType: "json",
             async: true,
             url: "WebServices/DataFetchService.asmx/GetDataArchives",
+            mimeType: "text/plain",
             success: function (data) {
                 $("#midget-spinner").css("display", "none");
                 $(".hiddenLoad").css("display", "block");
@@ -37,10 +38,7 @@
                         { 'data': 'Elimination' },
                         { 'data': 'Communication' },
                         { 'data': 'Cote' },
-                        { 'data': 'Localisation' },
-                        /*{ 'data': 'CL' },
-                        { 'data': 'Chrono' },
-                        { 'data': 'Calc' },*/
+                        { 'data': 'Localisation' }
                     ]
                 });
                 $("body").keydown(function (e) {
@@ -72,7 +70,6 @@
                     // Open/Close modal on click depending on previous status
                     $("#modalGetArchive").modal("toggle");
                     var data = datatableVariable.row(this).data();
-                    console.log(data);
 
                     $("#archiveID").val(data.ID);
                     $("#archiveCoteID").val(data.Cote);

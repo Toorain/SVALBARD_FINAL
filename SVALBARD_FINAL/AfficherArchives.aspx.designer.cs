@@ -132,31 +132,58 @@ namespace WebApplication1
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl formRetrait;
 
         /// <summary>
-        /// Contrôle validationEts.
+        /// Contrôle EtsList.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox validationEts;
+        protected global::System.Web.UI.WebControls.DropDownList EtsList;
 
         /// <summary>
-        /// Contrôle validationDir.
+        /// Contrôle EtsValue.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox validationDir;
+        protected global::System.Web.UI.WebControls.HiddenField EtsValue;
 
         /// <summary>
-        /// Contrôle validationService.
+        /// Contrôle DirList.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox validationService;
+        protected global::System.Web.UI.WebControls.DropDownList DirList;
+
+        /// <summary>
+        /// Contrôle DirValue.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField DirValue;
+
+        /// <summary>
+        /// Contrôle ServiceList.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ServiceList;
+
+        /// <summary>
+        /// Contrôle ServiceValue.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField ServiceValue;
 
         /// <summary>
         /// Contrôle modalFooter.
@@ -166,5 +193,23 @@ namespace WebApplication1
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl modalFooter;
+
+        /// <summary>
+        /// Contrôle btn_detruire.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_detruire;
+
+        /// <summary>
+        /// Contrôle btn_retirer.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_retirer;
     }
 }

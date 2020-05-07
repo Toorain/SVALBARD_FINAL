@@ -28,8 +28,7 @@
             }
         });
         $('#adminTable thead tr:eq(1) th').each(function () {
-            var placeHolderTitle = $('#adminTable thead tr:eq(0)').eq($(this).index()).text();
-            $(this).html('<input type="text" class="form-control input input-sm column_search   " placeholder = "Search ' + placeHolderTitle + ' " />');
+            $(this).html('<input type="text" class="form-control input input-sm column_search" placeholder = "Search" />');
         });
         $('#adminTable thead').on('keyup', ".column_search", function () {
 

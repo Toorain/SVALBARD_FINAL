@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.Services;
+using WebApplication1.Models;
 
 namespace WebApplication1
 {
@@ -18,8 +19,7 @@ namespace WebApplication1
     public class DataFetchService : WebService
     {
 
-        [WebMethod]
-
+        [WebMethod]        
         public void GetDataArchives()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
@@ -52,9 +52,6 @@ namespace WebApplication1
                             Communication = dr["communication"].ToString(),
                             Cote = dr["cote"].ToString(),
                             Localisation = dr["localisation"].ToString()
-                            /* CL = string.IsNullOrEmpty(dr["CL"].ToString()) ? 0 : Convert.ToInt32(dr["CL"].ToString()),
-                            Chrono = string.IsNullOrEmpty(dr["chrono"].ToString()) ? 0 : Convert.ToInt32(dr["chrono"].ToString()),
-                            Calc = dr["calc"].ToString()*/
                         };
                         datas.Add(dataSQL);
                     }
@@ -62,5 +59,7 @@ namespace WebApplication1
                 } 
             }
         }
+
+        
     }
 }

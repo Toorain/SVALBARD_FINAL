@@ -9,6 +9,8 @@ namespace WebApplication1
 {
     public class Logs
     {
+        private static string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
+
         public int ID { get; set; }
         public DateTime Date { get; set; }
         public string IssuerID { get; set; }
@@ -33,7 +35,7 @@ namespace WebApplication1
         public static string AssignArchiviste()
         {
             string archivisteId = "";
-            // TODO : (CRITICAL) Change this connection string to the one where users are actually stored (Needs to be changed : Source)
+
             string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
             // Connect to the Database
@@ -136,6 +138,6 @@ namespace WebApplication1
                     return arrayArray;
                 }
             }
-        }
+        }        
     }
 }

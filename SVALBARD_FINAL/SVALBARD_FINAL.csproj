@@ -212,6 +212,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\scripts_perso\AfficherArchive.js" />
     <Content Include="Scripts\scripts_perso\startTourArchive.js" />
     <Content Include="Scripts\scripts_perso\startTourGlobal.js" />
     <Content Include="Scripts\scripts_datatable\DataTableArchiviste.js" />
@@ -308,6 +309,7 @@
     <Content Include="Scripts\shepherd\test\unit\utils\cleanup.spec.js" />
     <Content Include="Scripts\shepherd\test\unit\utils\general.spec.js" />
     <Content Include="WebServices\DataFetchService.asmx" />
+    <Content Include="WebServices\DESFetchService.asmx" />
     <Content Include="WebServices\RetreiveRole.asmx" />
     <Content Include="Scripts\scripts_perso\AdminPanel.js" />
     <Content Include="Scripts\scripts_datatable\DataTableAdmin.js" />
@@ -604,6 +606,7 @@
     </Compile>
     <Compile Include="Models\DatabaseUser.cs" />
     <Compile Include="Models\DataSQL.cs" />
+    <Compile Include="Models\DES.cs" />
     <Compile Include="WebServices\DataFetchService.asmx.cs">
       <DependentUpon>DataFetchService.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -636,6 +639,10 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="NavigationEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebServices\DESFetchService.asmx.cs">
+      <DependentUpon>DESFetchService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WebServices\RetreiveRole.asmx.cs">
       <DependentUpon>RetreiveRole.asmx</DependentUpon>
       <SubType>Component</SubType>
