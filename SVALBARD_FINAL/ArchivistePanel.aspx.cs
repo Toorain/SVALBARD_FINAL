@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using WebApplication1.Models;
 
 namespace WebApplication1
@@ -48,8 +49,18 @@ namespace WebApplication1
                 div.Controls.Add(label1);
                 div.Controls.Add(label2);
 
+                /*// Generate a dropdown menu IF Etablissement || Service
+                ComboBox dropdown1 = new ComboBox
+                {
+
+                };
+                ComboBox dropdwon2 = new ComboBox
+                {
+
+                };*/
+
                 // Generate an <asp:Button>
-                Button Button = new Button
+                System.Web.UI.WebControls.Button Button = new System.Web.UI.WebControls.Button
                 {
                     Text = "Ajouter " + Misc.UppercaseFirst(item),
                     CssClass = "btn btn-outline-success",
@@ -61,12 +72,6 @@ namespace WebApplication1
 
                 ModalAjouter.Controls.Add(div);
 
-                /*ModalAjouter.InnerHtml += "<div class='col-md-4 text-center " + leftSplitter + "'>"
-                                        + "<h5>" + Misc.UppercaseFirst(item) + "</h5>"
-                                        + "<label>Code de référence : <input type='text' class='form-control'/></label>"
-                                        + "<label>Nom :<input type='text' class='form-control' /></label>"
-                                        + "<span runat='server' class='btn btn-outline-success' onclick='AddSmth(" + Misc.UppercaseFirst(item) + ")'>Ajouter " + Misc.UppercaseFirst(item) + "</span>"
-                                        + "</div>";*/
                 indexOfItem++;
             }
 
@@ -87,15 +92,13 @@ namespace WebApplication1
                         };
                         StatusList.Items.Add(listItem);
                     }
-                }
-
-                
+                }                
             }
         }
 
         void AddSmth(Object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
+            System.Web.UI.WebControls.Button btn = (System.Web.UI.WebControls.Button)sender;
             DES.AddSmth(btn.ID);
         }
     }

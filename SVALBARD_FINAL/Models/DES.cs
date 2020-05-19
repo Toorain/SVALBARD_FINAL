@@ -134,8 +134,7 @@ namespace WebApplication1.Models
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
-                string cmdString = "USE DES"
-                                + " SELECT*"
+                string cmdString = " SELECT *"
                                 + " FROM INFORMATION_SCHEMA.TABLES"
                                 + " WHERE TABLE_NAME NOT LIKE 'sysdiagrams'";
                 using (SqlCommand cmd = new SqlCommand())
@@ -184,11 +183,28 @@ namespace WebApplication1.Models
 
         public static void AddSmth(string Elem)
         {
+            int ID = 0;
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
-                string cmdString = "INSERT INTO " + Elem + " VALUES ('4', 'ETS_TEST', '" + Elem + "')";
-                System.Windows.Forms.MessageBox.Show(cmdString);
+                string cmdString = "SELECT id FROM " + Elem;
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        ID = Convert.ToInt32(dr["id"]);
+                    }
+                }
+
+                cmdString = "INSERT INTO " + Elem + " VALUES ("+ (ID + 1) +", 'ETS_TEST', '" + Elem + "')";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
