@@ -51,7 +51,6 @@
                         $("#tableArchive_next").click();
                     }
                 });
-                console.log($("body").width());
                 if ($("body").width() > 1400) {
                     $('#tableArchive thead tr:eq(1) th').each(function () {
                         $(this).html('<input type="text" class="form-control input input-sm column_search" />');
