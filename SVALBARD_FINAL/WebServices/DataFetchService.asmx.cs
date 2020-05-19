@@ -27,7 +27,7 @@ namespace WebApplication1
             var datas = new List<DataSQL>();
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                string cmdString = "Select * from ArchivesV2";
+                string cmdString = "SELECT * FROM ArchivesV2";
                 using (SqlCommand cmd = new SqlCommand()) 
                 {
                     cmd.Connection = sqlConn;

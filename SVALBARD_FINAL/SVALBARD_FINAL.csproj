@@ -213,6 +213,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\scripts_perso\AfficherArchive.js" />
+    <Content Include="Scripts\scripts_perso\ArchivistePanel.js" />
     <Content Include="Scripts\scripts_perso\startTourArchive.js" />
     <Content Include="Scripts\scripts_perso\startTourGlobal.js" />
     <Content Include="Scripts\scripts_datatable\DataTableArchiviste.js" />
@@ -607,6 +608,7 @@
     <Compile Include="Models\DatabaseUser.cs" />
     <Compile Include="Models\DataSQL.cs" />
     <Compile Include="Models\DES.cs" />
+    <Compile Include="Models\Misc.cs" />
     <Compile Include="WebServices\DataFetchService.asmx.cs">
       <DependentUpon>DataFetchService.asmx</DependentUpon>
       <SubType>Component</SubType>

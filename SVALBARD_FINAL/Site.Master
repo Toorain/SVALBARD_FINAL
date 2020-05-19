@@ -93,6 +93,7 @@
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableAdmin.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/FetchData.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/AdminPanel.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/ArchivistePanel.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/AfficherArchive.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/shepherd/dist/js/shepherd.min.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/startTourGlobal.js"></script>

@@ -9,6 +9,7 @@ namespace WebApplication1.Models
 {
     public class DES
     {
+        private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["DES"].ConnectionString;
         private static string EtsOrDir;
         private static string RelatedTable;
         private static int relatedDataId;
@@ -31,10 +32,8 @@ namespace WebApplication1.Models
                 RelatedTable = "service";
             }
 
-            string connectionString = ConfigurationManager.ConnectionStrings["DES"].ConnectionString;
-
             // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
                 // TODO : Rework this to be more readable (Linq?)
                 string cmdString = "SELECT " + table + ".id, " + table + ".name"
@@ -77,11 +76,8 @@ namespace WebApplication1.Models
                 RelatedTable = "service";
             }
 
-            string connectionString = ConfigurationManager.ConnectionStrings["DES"].ConnectionString;
-
-
             // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
                 string cmdString = "SELECT id FROM " + table + " WHERE name = '" + relatedData + "'";
                 using (SqlCommand cmd = new SqlCommand())
@@ -101,13 +97,13 @@ namespace WebApplication1.Models
             }
 
             // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
                 // TODO : Rework this to be more readable (Linq?)
                 string cmdString = "SELECT " + RelatedTable + ".id, " + RelatedTable + ".name"
-                                    + " FROM " + table
-                                    + " LEFT JOIN " + RelatedTable + " ON " + table + ".id = " + RelatedTable + ".linked_" + EtsOrDir + ""
-                                    + " WHERE " + RelatedTable + ".linked_" + EtsOrDir + " = '" + relatedDataId + "'";
+                                + " FROM " + table
+                                + " LEFT JOIN " + RelatedTable + " ON " + table + ".id = " + RelatedTable + ".linked_" + EtsOrDir + ""
+                                + " WHERE " + RelatedTable + ".linked_" + EtsOrDir + " = '" + relatedDataId + "'";
 
                 using (SqlCommand cmd = new SqlCommand())
                 {
@@ -130,6 +126,79 @@ namespace WebApplication1.Models
                 }
             }
             return newArray;
+        }
+
+        public static List<string> getDatabaseElements()
+        {
+            List<string> databaseItems = new List<string>();
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+            {
+                string cmdString = "USE DES"
+                                + " SELECT*"
+                                + " FROM INFORMATION_SCHEMA.TABLES"
+                                + " WHERE TABLE_NAME NOT LIKE 'sysdiagrams'";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        databaseItems.Add(dr["TABLE_NAME"].ToString());
+                    }
+                }
+                return databaseItems;
+            }            
+        }
+
+        public static List<string> getTableElements(string table)
+        {
+            List<string> tableItems = new List<string>();
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+            {
+                string cmdString = " SELECT name"
+                                + " FROM " + table;
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        tableItems.Add(dr["name"].ToString());
+                    }
+                }
+                return tableItems;
+            }
+        }
+
+        public static void AddSmth(string Elem)
+        {
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+            {
+                string cmdString = "INSERT INTO " + Elem + " VALUES ('4', 'ETS_TEST', '" + Elem + "')";
+                System.Windows.Forms.MessageBox.Show(cmdString);
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

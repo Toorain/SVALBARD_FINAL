@@ -32,6 +32,27 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="modalAjout" tabindex="-1" role="dialog" aria-labelledby="modalAjout" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ajouter un élément<span class=""></span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <asp:HiddenField runat="server" ID="HiddenField1" ClientIDMode="Static"/>
+
+                    <div runat="server" class="row" ID="ModalAjouter" ClientIDMode="Static"></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Tout ajouter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="btn btn-success float-right" data-toggle="modal" data-target="#modalAjout">Ajouter ?quelqueChose?</span>
     <table id="tableArchiviste" class="table table-striped table-hover">
         <thead>
             <tr>

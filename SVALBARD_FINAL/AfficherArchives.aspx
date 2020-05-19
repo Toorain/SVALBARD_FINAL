@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="hiddenLoad w-25 m-auto text-center">
-            <button class="btn btn-outline-secondary" onclick="enableTourArchive()">Découvrir l'outil d'archivage</button>
+            <span class="btn btn-outline-secondary" onclick="enableTourArchive()">Découvrir l'outil d'archivage</span>
         </div>
         <!-- #region Modal -->
         <div class="modal fade" id="modalGetArchive" tabindex="-1" role="dialog" aria-labelledby="modalGetArchive" aria-hidden="true">
