@@ -58,6 +58,32 @@ namespace WebApplication1
                 }
             }
         }
+        public static int GetLastItemArchive()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            {
+                string cmdString = "SELECT TOP (1) [ID] FROM [archives].[dbo].[ArchivesV2] ORDER BY ID DESC";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    int lastItem = 0;
+
+                    while (dr.Read())
+                    {
+                        lastItem =  Convert.ToInt32(dr["ID"]);
+                    }
+                    return lastItem;
+                }
+            }
+        }
     }
 
     

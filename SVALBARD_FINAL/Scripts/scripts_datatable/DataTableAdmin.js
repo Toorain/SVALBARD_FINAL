@@ -5,6 +5,7 @@
         let jsonData = JSON.parse(document.getElementById("jsonData").innerHTML);
         
         let datatableVariable = $('#adminTable').DataTable({
+            responsive: true,
             orderCellsTop: true,
             data: jsonData,
             columns: [

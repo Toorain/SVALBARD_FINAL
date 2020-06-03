@@ -91,13 +91,13 @@
                     </div>
                     <div runat="server" id="modalFooter" class="modal-footer">
                         <asp:Button runat="server" ID="btn_detruire" OnClick="LogRetirerArchive" Text="Detruire" CssClass="submitModal btn btn-outline-danger" ClientIDMode="Static"  />
-                        <asp:Button runat="server" ID="btn_retirer" OnClick="LogRetirerArchive" Text="Retirer" CssClass="submitModal btn btn-warning" ClientIDMode="Static"  />
+                        <asp:Button runat="server" ID="btn_retirer" OnClick="LogRetirerArchive" Text="Consulter" CssClass="submitModal btn btn-warning" ClientIDMode="Static"  />
                     </div>
                 </div>
             </div>
         </div>
         <!-- #endregion Modal -->
-    <table id="tableArchive" class="table table-striped table-hover hiddenLoad">
+    <table id="tableArchive" class="table table-striped table-hover hiddenLoad responsive">
         <thead>
             <tr id="column-name">
                 <th>ID</th>

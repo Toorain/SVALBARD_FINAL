@@ -13,13 +13,14 @@
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",
             crossDomain: true,
             success: function (data) {
-                var datatableVariable = $('#tableArchiviste').DataTable({
+                let datatableVariable = $('#tableArchiviste').DataTable({
+                    responsive: true,
                     data: data,
                     columns: [
                         /*{ data: 'ID' },*/
                         {
                             data: 'Date', 'render': (date) => {
-                                var d = new Date(date),
+                                let d = new Date(date),
                                     month = '' + (d.getMonth() + 1),
                                     day = '' + d.getDate(),
                                     year = d.getFullYear();
@@ -63,17 +64,17 @@
                     }
                 });
                 $('#tableArchiviste tfoot th').each(function () {
-                    var placeHolderTitle = $('#tableArchiviste thead th').eq($(this).index()).text();
+                    let placeHolderTitle = $('#tableArchiviste thead th').eq($(this).index()).text();
                     $(this).html('<input type="text" class="form-control input input-sm" placeholder = "Search ' + placeHolderTitle + '" />');
                 });
                 datatableVariable.columns().every(function () {
-                    var column = this;
+                    let column = this;
                     $(this.footer()).find('input').on('keyup change', function () {
                         column.search(this.value).draw();
                     });
                 });
                 $('.showHide').on('click', function () {
-                    var tableColumn = datatableVariable.column($(this).attr('data-columnindex'));
+                    let tableColumn = datatableVariable.column($(this).attr('data-columnindex'));
                     tableColumn.visible(!tableColumn.visible());
                 });
                 // This is the 'Click to see more' part, when you click on <tr></tr> element you get more info about it and you can request targeted element.
@@ -82,7 +83,7 @@
                     $(".alert").alert('close');
                     // Open/Close modal on click depending on previous status
                     $("#modalArchiviste").modal("toggle");
-                    var data = datatableVariable.row(this).data();
+                    let data = datatableVariable.row(this).data();
                     console.log(data);
                     $("#ArchiveCote").val(data.ArchiveID);
                 });

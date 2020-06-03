@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <table id="adminTable" class="table table-striped table-hover">
+        <table id="adminTable" class="table table-striped table-hover responsive">
             <thead>
                 <tr>
                     <th class="col-title">UserName</th>

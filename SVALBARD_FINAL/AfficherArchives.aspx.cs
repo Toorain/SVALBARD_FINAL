@@ -39,7 +39,7 @@ namespace WebApplication1
             switch (DbAuthorization)
             {
                 case "NoUser":
-                    // TODO : Add a personnal response redirect if user is not connected
+                    // TODO : Add a personal response redirect if user is not connected
                     Response.Redirect("~/");
                     break;
                 // 1 = Admin
