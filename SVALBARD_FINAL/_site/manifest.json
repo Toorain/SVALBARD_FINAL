@@ -1,0 +1,702 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/wilmes/Documents/SVALBARD_FINAL/SVALBARD_FINAL",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "QOT+PF6ei0xv+oyr/Ef6Yg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/afficher_archives.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/afficher_archives.html",
+          "hash": "VS8BQkYInw9nkZeLp3Zcxw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "shpKNem79VkS9WgGRharoA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/tableaux_general.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/tableaux_general.html",
+          "hash": "9tsrK4jOQ1put0c5TGYpSg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "gB8AESyvNru97tzIZofEEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "+70ljYZwM2rjoLDLh+geVw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.AddPhoneNumber.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.AddPhoneNumber.html",
+          "hash": "GUWBsXtyWLunHBh+y7YPaw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.Confirm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.Confirm.html",
+          "hash": "UoHnox3NNMLm0ihlYA46Yw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.ForgotPassword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.ForgotPassword.html",
+          "hash": "fL2XTvCSTCYzjL9i+Z7lNA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.Lockout.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.Lockout.html",
+          "hash": "h6JBaNNfdQJfcKLg06hnZw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.Login.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.Login.html",
+          "hash": "wVd9cKWIQRVm1PXp9UFyBg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.Manage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.Manage.html",
+          "hash": "iuLCmYsGRREXbwRU0gSlRw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.ManageLogins.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.ManageLogins.html",
+          "hash": "i1JW7fHhkTPqec+W8GWZuw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.ManagePassword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.ManagePassword.html",
+          "hash": "kyGdwUFejFrfn/zv0tZrFA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.OpenAuthProviders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.OpenAuthProviders.html",
+          "hash": "7W0TRZjSqxLgrluiRJhIPA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.Register.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.Register.html",
+          "hash": "jbk2w5uFSrlBTjwV4SrO8w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.RegisterExternalLogin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.RegisterExternalLogin.html",
+          "hash": "46vzqOuqmlr+ahmt1RCaHA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.ResetPassword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.ResetPassword.html",
+          "hash": "lJClPkAMQkeHUI2j2FdUvQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.ResetPasswordConfirmation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.ResetPasswordConfirmation.html",
+          "hash": "ptrrm0KNIIGc48tCs6GC6A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.TwoFactorAuthenticationSignIn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.TwoFactorAuthenticationSignIn.html",
+          "hash": "7THFuYTto/nqqdw6tNMPOg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.VerifyPhoneNumber.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.VerifyPhoneNumber.html",
+          "hash": "VD0V0K7QxRugAhY+dwMISA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Account.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Account.html",
+          "hash": "ktjeT9d21JBmijcAMeGHEQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.AdminPanel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.AdminPanel.html",
+          "hash": "5ymSI+NkNS4bUSYkjogJxg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.AfficherArchives.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.AfficherArchives.html",
+          "hash": "3NTghxS9uBfgimZ4XJsi6Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.AjouterArchive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.AjouterArchive.html",
+          "hash": "n3oFrRXi4Xlpwg/7xiLDiA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.ApplicationSignInManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.ApplicationSignInManager.html",
+          "hash": "zu2kJXGMROpdCxfvpTcaWQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.ApplicationUserManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.ApplicationUserManager.html",
+          "hash": "z1sD4KhwSKqisfMQbYP3Gw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.ArchivistePanel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.ArchivistePanel.html",
+          "hash": "mY7P018bSCUIWLesL44MKA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.BundleConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.BundleConfig.html",
+          "hash": "vHtY403YaPvUPK23lmJp0Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.DataFetchService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.DataFetchService.html",
+          "hash": "jtSUIgle81VbKbHWLSHXJw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.DataSQL.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.DataSQL.html",
+          "hash": "JHhLYyAS/2XKaHFazSM5Xw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.DatabaseUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.DatabaseUser.html",
+          "hash": "dcKMDCf82eRndMm3+jHm4w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Demandes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Demandes.html",
+          "hash": "WZSucvir6IV7ys1Os5ahiw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.EmailService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.EmailService.html",
+          "hash": "rHGX1yjAPsa38RVFJ9hQdA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Global.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Global.html",
+          "hash": "aff55AD+0Ph481Zh5YeJJQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.IdentityHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.IdentityHelper.html",
+          "hash": "FJi6pFCyslgdHuBr8WDNRA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Logs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Logs.html",
+          "hash": "BWcMqSL4ICZUWCbDzj0GBQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Models.ApplicationDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Models.ApplicationDbContext.html",
+          "hash": "mh64qpY/tIz6ING4ESokLw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Models.ApplicationUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Models.ApplicationUser.html",
+          "hash": "ui7ERcxJUpQjtIo/3cjOig=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Models.DES.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Models.DES.html",
+          "hash": "2B62uFcXS5J4oFhMQuUCTQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Models.Misc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Models.Misc.html",
+          "hash": "w3w59kV3aL/gXKmWFlfW0Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Models.html",
+          "hash": "vAlad/8PeurNmWv7YhwOkg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.RetreiveRole.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.RetreiveRole.html",
+          "hash": "OOoq1IkBecCZE6Y8RYOvJg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.RouteConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.RouteConfig.html",
+          "hash": "Kp/JLBDLo0QljhttDf1F/g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.SiteMaster.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.SiteMaster.html",
+          "hash": "hip7gJ0ePcgCRqZHHXFtEg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.SmsService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.SmsService.html",
+          "hash": "RAbvw0JvdOefB5JKk1Eo5A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Startup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Startup.html",
+          "hash": "bYZuCzP6xF+soE7SKTIqpg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.UserRequestService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.UserRequestService.html",
+          "hash": "7tFwzSDVC0QTaQ2fVlnAYw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.WebServices.DESFetchService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.WebServices.DESFetchService.html",
+          "hash": "Phn0pS/phQIaGvv4Fx4gUA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.WebServices.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.WebServices.html",
+          "hash": "N7Eb4hrU7GMqcGl1b+sV0w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1._Default.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1._Default.html",
+          "hash": "20cUA3yiIZsSr3vj02LFFg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.html",
+          "hash": "eufqZPX+hqiENx5bKfdGPw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "iVIgrMCG3sfGpDOT7mrqfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "G2AoE5T/2VarbHvzLEo4TQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 5,
+          "skipped_file_count": 5
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 46,
+          "skipped_file_count": 46
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
