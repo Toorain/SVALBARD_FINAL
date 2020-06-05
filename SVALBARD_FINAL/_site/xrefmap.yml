@@ -1337,6 +1337,25 @@ references:
   commentId: T:WebApplication1.AjouterArchive
   fullName: WebApplication1.AjouterArchive
   nameWithType: AjouterArchive
+- uid: WebApplication1.AjouterArchive.AddArchive(System.Object,System.EventArgs)
+  name: AddArchive(Object, EventArgs)
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_AddArchive_System_Object_System_EventArgs_
+  commentId: M:WebApplication1.AjouterArchive.AddArchive(System.Object,System.EventArgs)
+  fullName: WebApplication1.AjouterArchive.AddArchive(System.Object, System.EventArgs)
+  nameWithType: AjouterArchive.AddArchive(Object, EventArgs)
+- uid: WebApplication1.AjouterArchive.AddArchive*
+  name: AddArchive
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_AddArchive_
+  commentId: Overload:WebApplication1.AjouterArchive.AddArchive
+  isSpec: "True"
+  fullName: WebApplication1.AjouterArchive.AddArchive
+  nameWithType: AjouterArchive.AddArchive
+- uid: WebApplication1.AjouterArchive.coteValidationServer
+  name: coteValidationServer
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_coteValidationServer
+  commentId: F:WebApplication1.AjouterArchive.coteValidationServer
+  fullName: WebApplication1.AjouterArchive.coteValidationServer
+  nameWithType: AjouterArchive.coteValidationServer
 - uid: WebApplication1.AjouterArchive.DirList
   name: DirList
   href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_DirList
@@ -1399,6 +1418,18 @@ references:
   commentId: F:WebApplication1.AjouterArchive.ServiceValue
   fullName: WebApplication1.AjouterArchive.ServiceValue
   nameWithType: AjouterArchive.ServiceValue
+- uid: WebApplication1.AjouterArchive.validationFirstName
+  name: validationFirstName
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_validationFirstName
+  commentId: F:WebApplication1.AjouterArchive.validationFirstName
+  fullName: WebApplication1.AjouterArchive.validationFirstName
+  nameWithType: AjouterArchive.validationFirstName
+- uid: WebApplication1.AjouterArchive.validationLastName
+  name: validationLastName
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_validationLastName
+  commentId: F:WebApplication1.AjouterArchive.validationLastName
+  fullName: WebApplication1.AjouterArchive.validationLastName
+  nameWithType: AjouterArchive.validationLastName
 - uid: WebApplication1.ApplicationSignInManager
   name: ApplicationSignInManager
   href: api/WebApplication1.ApplicationSignInManager.html
@@ -2078,6 +2109,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Logs.Action
   nameWithType: Logs.Action
+- uid: WebApplication1.Logs.AddArchive(System.DateTime,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)
+  name: AddArchive(DateTime, String, String, String, String, String, String, String, Int32, Int32)
+  href: api/WebApplication1.Logs.html#WebApplication1_Logs_AddArchive_System_DateTime_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Int32_System_Int32_
+  commentId: M:WebApplication1.Logs.AddArchive(System.DateTime,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)
+  fullName: WebApplication1.Logs.AddArchive(System.DateTime, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Int32, System.Int32)
+  nameWithType: Logs.AddArchive(DateTime, String, String, String, String, String, String, String, Int32, Int32)
+- uid: WebApplication1.Logs.AddArchive*
+  name: AddArchive
+  href: api/WebApplication1.Logs.html#WebApplication1_Logs_AddArchive_
+  commentId: Overload:WebApplication1.Logs.AddArchive
+  isSpec: "True"
+  fullName: WebApplication1.Logs.AddArchive
+  nameWithType: Logs.AddArchive
 - uid: WebApplication1.Logs.ArchiveID
   name: ArchiveID
   href: api/WebApplication1.Logs.html#WebApplication1_Logs_ArchiveID

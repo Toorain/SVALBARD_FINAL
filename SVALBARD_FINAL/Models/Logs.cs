@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace WebApplication1
 {
@@ -138,6 +139,82 @@ namespace WebApplication1
                     return arrayArray;
                 }
             }
-        }        
+        }
+        
+        public static void AddArchive(
+                                        DateTime date,
+                                        string firstName,
+                                        string lastName,
+                                        string ets,
+                                        string dir,
+                                        string service,
+                                        string receiverId,
+                                        string cote,
+                                        int action,
+                                        int status
+                                        )
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
+            string cmdString = "";
+            int count = 0;
+            
+            
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            {
+                cmdString = "SELECT TOP (1) ID FROM [logsArchives].[dbo].[logsArchive] ORDER BY ID DESC";
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        count = Convert.ToInt32(dr["ID"]) + 1;
+                    }
+                    dr.Close();
+                }
+
+                cmdString = "INSERT INTO [dbo].[logsArchive] "
+                            + "VALUES ("
+                            + "@val1,"
+                            + "@val2,"
+                            + "NULL,"
+                            + "@val3,"
+                            + "@val4,"
+                            + "@val5,"
+                            + "@val6,"
+                            + "@val7,"
+                            + "@val8,"
+                            + "@val9,"
+                            + "NULL,"
+                            + "@val10,"
+                            + "@val11"
+                            + ");";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", count);
+                    cmd.Parameters.AddWithValue("@val2", date);
+                    cmd.Parameters.AddWithValue("@val3", firstName);
+                    cmd.Parameters.AddWithValue("@val4", lastName);
+                    cmd.Parameters.AddWithValue("@val5", ets);
+                    cmd.Parameters.AddWithValue("@val6", dir);
+                    cmd.Parameters.AddWithValue("@val7", service);
+                    cmd.Parameters.AddWithValue("@val8", receiverId);
+                    cmd.Parameters.AddWithValue("@val9", cote);
+                    cmd.Parameters.AddWithValue("@val10", action);
+                    cmd.Parameters.AddWithValue("@val11", status);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

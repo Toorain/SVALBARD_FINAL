@@ -1,4 +1,4 @@
-﻿function checkCote(cote) {
+﻿function checkCote(cote) {    
     // AUTO COMPLETE with suggested "cote"
     if (cote.split('').length >= 3) {    
     let coteUpper = cote.toUpperCase();
@@ -55,11 +55,21 @@
                 $("#coteValidation").attr("disabled", "disabled");
             }
         },
+        complete : () => {
+            $("#coteValidationServer").val($("#coteValidation").val());
+            $("#EtsValue").val($("#EtsList").val());
+            $("#DirValue").val($("#DirList").val());
+            $("#ServiceValue").val($("#ServiceList").val());
+            console.log($("#EtsValue").val());
+        },
         failure: function (response) {
             alert(response);
         }
-    });
+    });        
     }
+    setTimeout(function () {        
+            
+    }, 100);    
 }
 
 function resetInput () {
@@ -67,3 +77,4 @@ function resetInput () {
     $('#coteValidation').val('');
     $("#coteValidation").removeAttr("disabled");
 }
+

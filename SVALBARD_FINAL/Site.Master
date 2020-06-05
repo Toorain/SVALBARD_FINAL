@@ -15,9 +15,8 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="Content/dataTables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"> -->
     <link rel="stylesheet" href="./Scripts/shepherd/dist/shepherd.css"/>
-    <link href="./Content/bootstrap4-fs-modal/dist/css/bootstrap-fs-modal.min.css" rel="stylesheet">
 </head>
 <body>
     <form runat="server">
@@ -86,7 +85,7 @@
         <p>&copy; 2020 - <%: DateTime.Now.Year %> | <%: appName %></p>
     </footer>
     <script type="text/javascript" charset="utf8" src="./Content/datatables.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script> -->
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableArchives.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableArchiviste.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableDemandes.js"></script>

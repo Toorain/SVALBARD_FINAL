@@ -13,6 +13,24 @@ namespace WebApplication1 {
     public partial class AjouterArchive {
         
         /// <summary>
+        /// validationFirstName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText validationFirstName;
+        
+        /// <summary>
+        /// validationLastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText validationLastName;
+        
+        /// <summary>
         /// EtsList control.
         /// </summary>
         /// <remarks>
@@ -65,6 +83,15 @@ namespace WebApplication1 {
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField ServiceValue;
+        
+        /// <summary>
+        /// coteValidationServer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField coteValidationServer;
         
         /// <summary>
         /// Master property.

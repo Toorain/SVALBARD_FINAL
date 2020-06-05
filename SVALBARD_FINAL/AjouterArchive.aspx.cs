@@ -34,5 +34,22 @@ namespace WebApplication1
                 }
             }
         }
+
+        protected void AddArchive(object sender, EventArgs eventArgs)
+        {
+            DateTime date = new DateTime();
+            date = DateTime.Now;
+            string firstName = validationFirstName.Value.ToUpper();
+            string lastName = validationLastName.Value.ToUpper();
+            string ets = EtsValue.Value.ToUpper();
+            string dir = DirValue.Value.ToUpper();
+            string service = ServiceValue.Value.ToUpper();
+            string receiverId = "test";
+            string cote = coteValidationServer.Value;
+            int action = 1;
+            int status = 1;
+            
+            Logs.AddArchive(date, firstName, lastName, ets, dir, service, receiverId, cote, action, status);
+        }
     }
 }

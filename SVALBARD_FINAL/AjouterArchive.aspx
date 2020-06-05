@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Ajouter archive" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AjouterArchive.aspx.cs" Inherits="WebApplication1.AjouterArchive" %>
+﻿<%@ Page Title="Ajouter archive" EnableEventValidation="false" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AjouterArchive.aspx.cs" Inherits="WebApplication1.AjouterArchive" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <form class="needs-validation border" novalidate>
       <div class="info text-center">
@@ -10,7 +10,7 @@
           <div class="mb-3">
             <label for="validationFirstName">Prénom</label>
             <!-- TODO: Add required --> 
-            <input type="text" class="form-control" id="validationFirstName" placeholder="Prénom" value="">
+            <input runat="server" type="text" class="form-control" id="validationFirstName" placeholder="Prénom" value="" required />
             <div class="valid-tooltip">
               Parfait!
             </div>
@@ -19,7 +19,7 @@
           <div class="mb-3">
             <label for="validationLastName">Nom</label>
             <!-- TODO: Add required --> 
-            <input type="text" class="form-control" id="validationLastName" placeholder="Nom" value="">
+            <input runat="server" type="text" class="form-control" id="validationLastName" placeholder="Nom" value="" required />
             <div class="valid-tooltip">
               Parfait!
             </div>
@@ -49,13 +49,14 @@
               <p>Exemple CFW0014</p>
               <p id="coteExists" class="bg-dim-danger p-2" hidden></p>
               <div class='form-inline p-0'>
-                <input type="text" class="form-control" min="7" max="7" id="coteValidation" onkeyup="checkCote(this.value)" />
+                <input type="text" class="form-control" min="7" max="7" id="coteValidation" value="" onkeyup="checkCote(this.value)" required/>
+                <asp:hiddenfield runat="server" ID="coteValidationServer" ClientIDMode="Static" />
                 <div id="resetInput" class="btn btn-secondary" onclick="resetInput()">Reset</div>
               </div>
             </div>
             <hr>
             <div class="col-md-8 m-auto">
-              <button class="btn btn-success align-self-auto" type="submit">Demander un ajout</button>
+              <asp:Button runat="server" CssClass="btn btn-success align-self-auto" OnClick="AddArchive" Text="Demander un ajout" />
             </div>
           </div>
           <!--
