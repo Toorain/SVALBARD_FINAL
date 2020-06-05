@@ -69,7 +69,7 @@
                     tableColumn.visible(!tableColumn.visible());
                 });
                 // This is the 'Click to see more' part, when you click on <tr></tr> element you get more info about it and you can request targeted element.
-                if (true) {
+                if ($("body").width() > 1400) {
                     $('#tableArchive tbody').on('click', 'tr', function () {
                         // Close all alerts with a click on Table Row
                         $(".alert").alert('close');

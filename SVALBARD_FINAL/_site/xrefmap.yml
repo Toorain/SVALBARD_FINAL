@@ -1784,6 +1784,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.DataSQL.Extremes
   nameWithType: DataSQL.Extremes
+- uid: WebApplication1.DataSQL.GetCote(System.String)
+  name: GetCote(String)
+  href: api/WebApplication1.DataSQL.html#WebApplication1_DataSQL_GetCote_System_String_
+  commentId: M:WebApplication1.DataSQL.GetCote(System.String)
+  fullName: WebApplication1.DataSQL.GetCote(System.String)
+  nameWithType: DataSQL.GetCote(String)
+- uid: WebApplication1.DataSQL.GetCote*
+  name: GetCote
+  href: api/WebApplication1.DataSQL.html#WebApplication1_DataSQL_GetCote_
+  commentId: Overload:WebApplication1.DataSQL.GetCote
+  isSpec: "True"
+  fullName: WebApplication1.DataSQL.GetCote
+  nameWithType: DataSQL.GetCote
 - uid: WebApplication1.DataSQL.GetLastItemArchive
   name: GetLastItemArchive()
   href: api/WebApplication1.DataSQL.html#WebApplication1_DataSQL_GetLastItemArchive
@@ -1849,6 +1862,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.DataSQL.Service
   nameWithType: DataSQL.Service
+- uid: WebApplication1.DataSQL.SuggestCote(System.String)
+  name: SuggestCote(String)
+  href: api/WebApplication1.DataSQL.html#WebApplication1_DataSQL_SuggestCote_System_String_
+  commentId: M:WebApplication1.DataSQL.SuggestCote(System.String)
+  fullName: WebApplication1.DataSQL.SuggestCote(System.String)
+  nameWithType: DataSQL.SuggestCote(String)
+- uid: WebApplication1.DataSQL.SuggestCote*
+  name: SuggestCote
+  href: api/WebApplication1.DataSQL.html#WebApplication1_DataSQL_SuggestCote_
+  commentId: Overload:WebApplication1.DataSQL.SuggestCote
+  isSpec: "True"
+  fullName: WebApplication1.DataSQL.SuggestCote
+  nameWithType: DataSQL.SuggestCote
 - uid: WebApplication1.DataSQL.Versement
   name: Versement
   href: api/WebApplication1.DataSQL.html#WebApplication1_DataSQL_Versement
@@ -2614,6 +2640,25 @@ references:
   commentId: N:WebApplication1.WebServices
   fullName: WebApplication1.WebServices
   nameWithType: WebApplication1.WebServices
+- uid: WebApplication1.WebServices.CheckCoteService
+  name: CheckCoteService
+  href: api/WebApplication1.WebServices.CheckCoteService.html
+  commentId: T:WebApplication1.WebServices.CheckCoteService
+  fullName: WebApplication1.WebServices.CheckCoteService
+  nameWithType: CheckCoteService
+- uid: WebApplication1.WebServices.CheckCoteService.ValidateCote(System.String)
+  name: ValidateCote(String)
+  href: api/WebApplication1.WebServices.CheckCoteService.html#WebApplication1_WebServices_CheckCoteService_ValidateCote_System_String_
+  commentId: M:WebApplication1.WebServices.CheckCoteService.ValidateCote(System.String)
+  fullName: WebApplication1.WebServices.CheckCoteService.ValidateCote(System.String)
+  nameWithType: CheckCoteService.ValidateCote(String)
+- uid: WebApplication1.WebServices.CheckCoteService.ValidateCote*
+  name: ValidateCote
+  href: api/WebApplication1.WebServices.CheckCoteService.html#WebApplication1_WebServices_CheckCoteService_ValidateCote_
+  commentId: Overload:WebApplication1.WebServices.CheckCoteService.ValidateCote
+  isSpec: "True"
+  fullName: WebApplication1.WebServices.CheckCoteService.ValidateCote
+  nameWithType: CheckCoteService.ValidateCote
 - uid: WebApplication1.WebServices.DESFetchService
   name: DESFetchService
   href: api/WebApplication1.WebServices.DESFetchService.html
@@ -2633,3 +2678,22 @@ references:
   isSpec: "True"
   fullName: WebApplication1.WebServices.DESFetchService.GetDES
   nameWithType: DESFetchService.GetDES
+- uid: WebApplication1.WebServices.SuggestCoteService
+  name: SuggestCoteService
+  href: api/WebApplication1.WebServices.SuggestCoteService.html
+  commentId: T:WebApplication1.WebServices.SuggestCoteService
+  fullName: WebApplication1.WebServices.SuggestCoteService
+  nameWithType: SuggestCoteService
+- uid: WebApplication1.WebServices.SuggestCoteService.SuggestCote(System.String)
+  name: SuggestCote(String)
+  href: api/WebApplication1.WebServices.SuggestCoteService.html#WebApplication1_WebServices_SuggestCoteService_SuggestCote_System_String_
+  commentId: M:WebApplication1.WebServices.SuggestCoteService.SuggestCote(System.String)
+  fullName: WebApplication1.WebServices.SuggestCoteService.SuggestCote(System.String)
+  nameWithType: SuggestCoteService.SuggestCote(String)
+- uid: WebApplication1.WebServices.SuggestCoteService.SuggestCote*
+  name: SuggestCote
+  href: api/WebApplication1.WebServices.SuggestCoteService.html#WebApplication1_WebServices_SuggestCoteService_SuggestCote_
+  commentId: Overload:WebApplication1.WebServices.SuggestCoteService.SuggestCote
+  isSpec: "True"
+  fullName: WebApplication1.WebServices.SuggestCoteService.SuggestCote
+  nameWithType: SuggestCoteService.SuggestCote

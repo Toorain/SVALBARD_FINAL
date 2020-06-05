@@ -84,6 +84,67 @@ namespace WebApplication1
                 }
             }
         }
+        
+        public static string GetCote(string cote)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            {
+                string cmdString = "SELECT TOP 1 [cote] FROM [archives].[dbo].[ArchivesV2] WHERE cote LIKE @val1 ORDER BY cote DESC;";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", cote + '%');
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+                    var drVal = "";
+
+                    while (dr.Read())
+                    {
+                        drVal = dr.HasRows ? dr["cote"].ToString() : "no_entry";
+                    }
+                    return drVal;
+                }
+            }
+        }
+        
+        public static string SuggestCote(string coteSpliced)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            {
+                string cmdString = "SELECT TOP (1) [cote] FROM [archives].[dbo].[ArchivesV2] WHERE cote LIKE @val1 + '%' ORDER BY cote DESC";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", coteSpliced);
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+                    var drVal = "";
+
+                    while (dr.Read())
+                    {
+                        if (dr.HasRows)
+                        {
+                            drVal = dr["cote"].ToString();
+                        }
+                        else
+                        {
+                            drVal = "no_entry";
+                        }
+                    }
+                    return drVal;
+                }
+            }
+        }
     }
 
     

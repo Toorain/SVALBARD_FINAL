@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.AjouterArchive.html",
-          "hash": "n3oFrRXi4Xlpwg/7xiLDiA=="
+          "hash": "i2zZ77S4EjQnIYqUXlvjjA=="
         }
       },
       "is_incremental": true,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.DataSQL.html",
-          "hash": "JHhLYyAS/2XKaHFazSM5Xw=="
+          "hash": "qdw2/SKHrm7voVWtjznAsA=="
         }
       },
       "is_incremental": true,
@@ -581,11 +581,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.WebServices.CheckCoteService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.WebServices.CheckCoteService.html",
+          "hash": "lmBaWDTq8Z+wJg8YD8ND2A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/WebApplication1.WebServices.DESFetchService.yml",
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.WebServices.DESFetchService.html",
-          "hash": "Phn0pS/phQIaGvv4Fx4gUA=="
+          "hash": "xi1hPmZp25XcHtTXaxdODg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.WebServices.SuggestCoteService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.WebServices.SuggestCoteService.html",
+          "hash": "zA2ofl2j7+EPqUG6mCk5Dw=="
         }
       },
       "is_incremental": true,
@@ -597,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.WebServices.html",
-          "hash": "N7Eb4hrU7GMqcGl1b+sV0w=="
+          "hash": "Js1sDNrctmc0Ie3k2IHkJQ=="
         }
       },
       "is_incremental": true,
@@ -633,7 +657,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "iVIgrMCG3sfGpDOT7mrqfA=="
+          "hash": "zIfY0BvbTf4cxC09dVgwCA=="
         }
       },
       "is_incremental": false,
@@ -670,8 +694,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 46,
-          "skipped_file_count": 46
+          "total_file_count": 48,
+          "skipped_file_count": 48
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

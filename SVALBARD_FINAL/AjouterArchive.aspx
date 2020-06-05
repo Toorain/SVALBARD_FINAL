@@ -6,37 +6,61 @@
       </div>
       <div class="form-row justify-content-around">
         <div class="col-md-2 mb-3">
+          <hr>
           <div class="mb-3">
-            <label for="validationTooltip01">Prénom</label>
-            <input type="text" class="form-control" id="validationTooltip01" placeholder="Prénom" value="" required>
+            <label for="validationFirstName">Prénom</label>
+            <!-- TODO: Add required --> 
+            <input type="text" class="form-control" id="validationFirstName" placeholder="Prénom" value="">
             <div class="valid-tooltip">
               Parfait!
             </div>
           </div>
+          <hr>
           <div class="mb-3">
-            <label for="validationTooltip02">Nom de famille</label>
-            <input type="text" class="form-control" id="validationTooltip02" placeholder="Nom de famille" value="" required>
+            <label for="validationLastName">Nom</label>
+            <!-- TODO: Add required --> 
+            <input type="text" class="form-control" id="validationLastName" placeholder="Nom" value="">
             <div class="valid-tooltip">
               Parfait!
             </div>
           </div>
+          <hr>
           <div class="mb-3">
-            <label> Etablissement/ Direction / Service</label>
+            <label for="EtsList">Administration</label>
             <div class="mb-3">
-                <asp:DropDownList id="EtsList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
-                <asp:hiddenfield runat="server" ID="EtsValue" ClientIDMode="Static" />
+              <asp:DropDownList id="EtsList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
+              <asp:hiddenfield runat="server" ID="EtsValue" ClientIDMode="Static" />
             </div>
+            <hr>
+            <label for="DirList">Direction</label>
             <div class="mb-3">
-                <asp:DropDownList id="DirList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
-                <asp:hiddenfield runat="server" ID="DirValue" ClientIDMode="Static" />                    
+              <asp:DropDownList id="DirList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
+              <asp:hiddenfield runat="server" ID="DirValue" ClientIDMode="Static" />
             </div>
+            <hr>
+            <label for="ServiceList">Service</label>
             <div class="mb-3">
-                <asp:DropDownList id="ServiceList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
-                <asp:hiddenfield runat="server" ID="ServiceValue" ClientIDMode="Static" />             
+              <asp:DropDownList id="ServiceList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
+              <asp:hiddenfield runat="server" ID="ServiceValue" ClientIDMode="Static" />
+            </div>
+            <hr>
+            <div class="mb-3">
+              <label for="coteValidation">Côte de l'archive (XXWXXXX)</label>
+              <p>Exemple CFW0014</p>
+              <p id="coteExists" class="bg-dim-danger p-2" hidden></p>
+              <div class='form-inline p-0'>
+                <input type="text" class="form-control" min="7" max="7" id="coteValidation" onkeyup="checkCote(this.value)" />
+                <div id="resetInput" class="btn btn-secondary" onclick="resetInput()">Reset</div>
+              </div>
+            </div>
+            <hr>
+            <div class="col-md-8 m-auto">
+              <button class="btn btn-success align-self-auto" type="submit">Demander un ajout</button>
             </div>
           </div>
+          <!--
           <div class="form-row">
-            <!-- TODO : Ajouter des dropdown pour limiter le choix de l'etablissment / direction / service, afin de lisser les données de la DB --> 
+            
             <div class="col-md-12">
               <div class="mb-3">
                 <label for="validationTooltip03">City</label>
@@ -51,12 +75,9 @@
                 <div class="invalid-tooltip">
                   Please provide a valid state.
                 </div>
-              </div>
-              <div class="col-md-6 m-auto">
-                <button class="btn btn-primary align-self-auto" type="submit">Submit form</button>
-              </div>
-            </div>
-          </div>
+              </div>              
+            </div> 
+          </div> -->
         </div>     
       </div>
     </form>

@@ -18,7 +18,6 @@ namespace WebApplication1.WebServices
     // [System.Web.Script.Services.ScriptService]
     public class DESFetchService : WebService
     {
-
         [WebMethod]
         public void GetDES(string Category, string RelatedData)
         {

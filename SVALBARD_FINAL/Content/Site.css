@@ -21,14 +21,14 @@ p {
     white-space: normal;
 }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
+/*!* Set widths on the form inputs since otherwise they're 100% wide *!
 input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="select"] {
     max-width: 280px;
-}
+}*/
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -81,4 +81,15 @@ tr:hover {
 
 .vertical-line {
     border-left: 2px solid black;
+}
+
+.bg-dim-danger {
+    background-color: #FEEAED;
+    color: #D33B5E;
+    border-radius: 3px;
+    text-align: center;
+}
+
+#coteValidation {
+    max-width: 500px !important;
 }
