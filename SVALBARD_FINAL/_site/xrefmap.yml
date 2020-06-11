@@ -1,6 +1,31 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: SqlServerTypes
+  name: SqlServerTypes
+  href: api/SqlServerTypes.html
+  commentId: N:SqlServerTypes
+  fullName: SqlServerTypes
+  nameWithType: SqlServerTypes
+- uid: SqlServerTypes.Utilities
+  name: Utilities
+  href: api/SqlServerTypes.Utilities.html
+  commentId: T:SqlServerTypes.Utilities
+  fullName: SqlServerTypes.Utilities
+  nameWithType: Utilities
+- uid: SqlServerTypes.Utilities.LoadNativeAssemblies(System.String)
+  name: LoadNativeAssemblies(String)
+  href: api/SqlServerTypes.Utilities.html#SqlServerTypes_Utilities_LoadNativeAssemblies_System_String_
+  commentId: M:SqlServerTypes.Utilities.LoadNativeAssemblies(System.String)
+  fullName: SqlServerTypes.Utilities.LoadNativeAssemblies(System.String)
+  nameWithType: Utilities.LoadNativeAssemblies(String)
+- uid: SqlServerTypes.Utilities.LoadNativeAssemblies*
+  name: LoadNativeAssemblies
+  href: api/SqlServerTypes.Utilities.html#SqlServerTypes_Utilities_LoadNativeAssemblies_
+  commentId: Overload:SqlServerTypes.Utilities.LoadNativeAssemblies
+  isSpec: "True"
+  fullName: SqlServerTypes.Utilities.LoadNativeAssemblies
+  nameWithType: Utilities.LoadNativeAssemblies
 - uid: WebApplication1
   name: WebApplication1
   href: api/WebApplication1.html
@@ -1350,6 +1375,24 @@ references:
   isSpec: "True"
   fullName: WebApplication1.AjouterArchive.AddArchive
   nameWithType: AjouterArchive.AddArchive
+- uid: WebApplication1.AjouterArchive.addArchiveButton
+  name: addArchiveButton
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_addArchiveButton
+  commentId: F:WebApplication1.AjouterArchive.addArchiveButton
+  fullName: WebApplication1.AjouterArchive.addArchiveButton
+  nameWithType: AjouterArchive.addArchiveButton
+- uid: WebApplication1.AjouterArchive.alertAdd
+  name: alertAdd
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_alertAdd
+  commentId: F:WebApplication1.AjouterArchive.alertAdd
+  fullName: WebApplication1.AjouterArchive.alertAdd
+  nameWithType: AjouterArchive.alertAdd
+- uid: WebApplication1.AjouterArchive.alertRequestAdd
+  name: alertRequestAdd
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_alertRequestAdd
+  commentId: F:WebApplication1.AjouterArchive.alertRequestAdd
+  fullName: WebApplication1.AjouterArchive.alertRequestAdd
+  nameWithType: AjouterArchive.alertRequestAdd
 - uid: WebApplication1.AjouterArchive.coteValidationServer
   name: coteValidationServer
   href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_coteValidationServer
@@ -1380,6 +1423,12 @@ references:
   commentId: F:WebApplication1.AjouterArchive.EtsValue
   fullName: WebApplication1.AjouterArchive.EtsValue
   nameWithType: AjouterArchive.EtsValue
+- uid: WebApplication1.AjouterArchive.JSONFormData
+  name: JSONFormData
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_JSONFormData
+  commentId: F:WebApplication1.AjouterArchive.JSONFormData
+  fullName: WebApplication1.AjouterArchive.JSONFormData
+  nameWithType: AjouterArchive.JSONFormData
 - uid: WebApplication1.AjouterArchive.Master
   name: Master
   href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_Master
@@ -1552,6 +1601,19 @@ references:
   commentId: F:WebApplication1.ArchivistePanel.HiddenField1
   fullName: WebApplication1.ArchivistePanel.HiddenField1
   nameWithType: ArchivistePanel.HiddenField1
+- uid: WebApplication1.ArchivistePanel.Master
+  name: Master
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_Master
+  commentId: P:WebApplication1.ArchivistePanel.Master
+  fullName: WebApplication1.ArchivistePanel.Master
+  nameWithType: ArchivistePanel.Master
+- uid: WebApplication1.ArchivistePanel.Master*
+  name: Master
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_Master_
+  commentId: Overload:WebApplication1.ArchivistePanel.Master
+  isSpec: "True"
+  fullName: WebApplication1.ArchivistePanel.Master
+  nameWithType: ArchivistePanel.Master
 - uid: WebApplication1.ArchivistePanel.ModalAjouter
   name: ModalAjouter
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_ModalAjouter
@@ -1634,6 +1696,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.DatabaseUser.Email
   nameWithType: DatabaseUser.Email
+- uid: WebApplication1.DatabaseUser.GetArchiviste
+  name: GetArchiviste()
+  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetArchiviste
+  commentId: M:WebApplication1.DatabaseUser.GetArchiviste
+  fullName: WebApplication1.DatabaseUser.GetArchiviste()
+  nameWithType: DatabaseUser.GetArchiviste()
+- uid: WebApplication1.DatabaseUser.GetArchiviste*
+  name: GetArchiviste
+  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetArchiviste_
+  commentId: Overload:WebApplication1.DatabaseUser.GetArchiviste
+  isSpec: "True"
+  fullName: WebApplication1.DatabaseUser.GetArchiviste
+  nameWithType: DatabaseUser.GetArchiviste
 - uid: WebApplication1.DatabaseUser.GetCurrentUserAuthorization(System.String)
   name: GetCurrentUserAuthorization(String)
   href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetCurrentUserAuthorization_System_String_
@@ -2109,12 +2184,12 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Logs.Action
   nameWithType: Logs.Action
-- uid: WebApplication1.Logs.AddArchive(System.DateTime,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)
-  name: AddArchive(DateTime, String, String, String, String, String, String, String, Int32, Int32)
-  href: api/WebApplication1.Logs.html#WebApplication1_Logs_AddArchive_System_DateTime_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Int32_System_Int32_
-  commentId: M:WebApplication1.Logs.AddArchive(System.DateTime,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)
-  fullName: WebApplication1.Logs.AddArchive(System.DateTime, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Int32, System.Int32)
-  nameWithType: Logs.AddArchive(DateTime, String, String, String, String, String, String, String, Int32, Int32)
+- uid: WebApplication1.Logs.AddArchive(System.DateTime,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)
+  name: AddArchive(DateTime, String, String, String, String, String, String, String, String, Int32, Int32)
+  href: api/WebApplication1.Logs.html#WebApplication1_Logs_AddArchive_System_DateTime_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Int32_System_Int32_
+  commentId: M:WebApplication1.Logs.AddArchive(System.DateTime,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)
+  fullName: WebApplication1.Logs.AddArchive(System.DateTime, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Int32, System.Int32)
+  nameWithType: Logs.AddArchive(DateTime, String, String, String, String, String, String, String, String, Int32, Int32)
 - uid: WebApplication1.Logs.AddArchive*
   name: AddArchive
   href: api/WebApplication1.Logs.html#WebApplication1_Logs_AddArchive_
@@ -2445,6 +2520,25 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.DES.Name
   nameWithType: DES.Name
+- uid: WebApplication1.Models.FormData
+  name: FormData
+  href: api/WebApplication1.Models.FormData.html
+  commentId: T:WebApplication1.Models.FormData
+  fullName: WebApplication1.Models.FormData
+  nameWithType: FormData
+- uid: WebApplication1.Models.FormData.DecypherData(System.String)
+  name: DecypherData(String)
+  href: api/WebApplication1.Models.FormData.html#WebApplication1_Models_FormData_DecypherData_System_String_
+  commentId: M:WebApplication1.Models.FormData.DecypherData(System.String)
+  fullName: WebApplication1.Models.FormData.DecypherData(System.String)
+  nameWithType: FormData.DecypherData(String)
+- uid: WebApplication1.Models.FormData.DecypherData*
+  name: DecypherData
+  href: api/WebApplication1.Models.FormData.html#WebApplication1_Models_FormData_DecypherData_
+  commentId: Overload:WebApplication1.Models.FormData.DecypherData
+  isSpec: "True"
+  fullName: WebApplication1.Models.FormData.DecypherData
+  nameWithType: FormData.DecypherData
 - uid: WebApplication1.Models.Misc
   name: Misc
   href: api/WebApplication1.Models.Misc.html
@@ -2659,6 +2753,69 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Startup.ConfigureAuth
   nameWithType: Startup.ConfigureAuth
+- uid: WebApplication1.TestReport
+  name: TestReport
+  href: api/WebApplication1.TestReport.html
+  commentId: T:WebApplication1.TestReport
+  fullName: WebApplication1.TestReport
+  nameWithType: TestReport
+- uid: WebApplication1.TestReport.generate
+  name: generate
+  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_generate
+  commentId: F:WebApplication1.TestReport.generate
+  fullName: WebApplication1.TestReport.generate
+  nameWithType: TestReport.generate
+- uid: WebApplication1.TestReport.GeneratePdf(System.Object,System.EventArgs)
+  name: GeneratePdf(Object, EventArgs)
+  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_GeneratePdf_System_Object_System_EventArgs_
+  commentId: M:WebApplication1.TestReport.GeneratePdf(System.Object,System.EventArgs)
+  fullName: WebApplication1.TestReport.GeneratePdf(System.Object, System.EventArgs)
+  nameWithType: TestReport.GeneratePdf(Object, EventArgs)
+- uid: WebApplication1.TestReport.GeneratePdf*
+  name: GeneratePdf
+  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_GeneratePdf_
+  commentId: Overload:WebApplication1.TestReport.GeneratePdf
+  isSpec: "True"
+  fullName: WebApplication1.TestReport.GeneratePdf
+  nameWithType: TestReport.GeneratePdf
+- uid: WebApplication1.TestReport.Master
+  name: Master
+  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_Master
+  commentId: P:WebApplication1.TestReport.Master
+  fullName: WebApplication1.TestReport.Master
+  nameWithType: TestReport.Master
+- uid: WebApplication1.TestReport.Master*
+  name: Master
+  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_Master_
+  commentId: Overload:WebApplication1.TestReport.Master
+  isSpec: "True"
+  fullName: WebApplication1.TestReport.Master
+  nameWithType: TestReport.Master
+- uid: WebApplication1.TestReport.Page_Load(System.Object,System.EventArgs)
+  name: Page_Load(Object, EventArgs)
+  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_Page_Load_System_Object_System_EventArgs_
+  commentId: M:WebApplication1.TestReport.Page_Load(System.Object,System.EventArgs)
+  fullName: WebApplication1.TestReport.Page_Load(System.Object, System.EventArgs)
+  nameWithType: TestReport.Page_Load(Object, EventArgs)
+- uid: WebApplication1.TestReport.Page_Load*
+  name: Page_Load
+  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_Page_Load_
+  commentId: Overload:WebApplication1.TestReport.Page_Load
+  isSpec: "True"
+  fullName: WebApplication1.TestReport.Page_Load
+  nameWithType: TestReport.Page_Load
+- uid: WebApplication1.TestReport.rptViewer
+  name: rptViewer
+  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_rptViewer
+  commentId: F:WebApplication1.TestReport.rptViewer
+  fullName: WebApplication1.TestReport.rptViewer
+  nameWithType: TestReport.rptViewer
+- uid: WebApplication1.TestReport.val
+  name: val
+  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_val
+  commentId: F:WebApplication1.TestReport.val
+  fullName: WebApplication1.TestReport.val
+  nameWithType: TestReport.val
 - uid: WebApplication1.UserRequestService
   name: UserRequestService
   href: api/WebApplication1.UserRequestService.html
@@ -2684,6 +2841,25 @@ references:
   commentId: N:WebApplication1.WebServices
   fullName: WebApplication1.WebServices
   nameWithType: WebApplication1.WebServices
+- uid: WebApplication1.WebServices.AddFormDataService
+  name: AddFormDataService
+  href: api/WebApplication1.WebServices.AddFormDataService.html
+  commentId: T:WebApplication1.WebServices.AddFormDataService
+  fullName: WebApplication1.WebServices.AddFormDataService
+  nameWithType: AddFormDataService
+- uid: WebApplication1.WebServices.AddFormDataService.PushData(System.String)
+  name: PushData(String)
+  href: api/WebApplication1.WebServices.AddFormDataService.html#WebApplication1_WebServices_AddFormDataService_PushData_System_String_
+  commentId: M:WebApplication1.WebServices.AddFormDataService.PushData(System.String)
+  fullName: WebApplication1.WebServices.AddFormDataService.PushData(System.String)
+  nameWithType: AddFormDataService.PushData(String)
+- uid: WebApplication1.WebServices.AddFormDataService.PushData*
+  name: PushData
+  href: api/WebApplication1.WebServices.AddFormDataService.html#WebApplication1_WebServices_AddFormDataService_PushData_
+  commentId: Overload:WebApplication1.WebServices.AddFormDataService.PushData
+  isSpec: "True"
+  fullName: WebApplication1.WebServices.AddFormDataService.PushData
+  nameWithType: AddFormDataService.PushData
 - uid: WebApplication1.WebServices.CheckCoteService
   name: CheckCoteService
   href: api/WebApplication1.WebServices.CheckCoteService.html

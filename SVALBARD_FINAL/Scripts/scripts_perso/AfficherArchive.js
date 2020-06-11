@@ -1,7 +1,7 @@
 ﻿// Change this value to anything you like to be displayed
-var choisir = "-- CHOOSE --";
-var dirListNotDefault = $("#DirList").val() != choisir;
-var serviceListNotDefault = $("#ServiceList").val() != choisir;
+let choisir = "-- CHOOSE --";
+let dirListNotDefault = $("#DirList").val() != choisir;
+let serviceListNotDefault = $("#ServiceList").val() != choisir;
 
 // Hard reset default value of #EtsList to choisir
 if ($("#EtsList").val() != choisir) {
@@ -94,6 +94,12 @@ $("#DirList").change(function () {
 });
 
 $("#ServiceList").change(function () {
+    if ($("ServiceValue").val() !== "-- CHOOSE --") {
+        $('#nextBtn').removeAttr("disabled");
+    } else {
+        $('#nextBtn').attr("disabled", "disabled");
+    }
+    
     if ($("#ServiceList").val() != choisir) {
         $("#btn_retirer").removeAttr("disabled");
         $("#btn_detruire").removeAttr("disabled");

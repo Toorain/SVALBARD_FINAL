@@ -56,6 +56,34 @@
       <HintPath>..\packages\DnsClient.1.2.0\lib\net471\DnsClient.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MongoDB.Bson, Version=2.10.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Bson.2.10.2\lib\net452\MongoDB.Bson.dll</HintPath>
     </Reference>
@@ -273,6 +301,7 @@
     <Content Include="Scripts\scripts_perso\AfficherArchive.js" />
     <Content Include="Scripts\scripts_perso\ArchivistePanel.js" />
     <Content Include="Scripts\scripts_perso\CheckCote.js" />
+    <Content Include="Scripts\scripts_perso\FormSlider.js" />
     <Content Include="Scripts\scripts_perso\startTourArchive.js" />
     <Content Include="Scripts\scripts_perso\startTourGlobal.js" />
     <Content Include="Scripts\scripts_datatable\DataTableArchiviste.js" />
@@ -409,7 +438,10 @@
     <Content Include="Scripts\shepherd\test\unit\utils\cleanup.spec.js" />
     <Content Include="Scripts\shepherd\test\unit\utils\general.spec.js" />
     <Content Include="Scripts\shepherd\yarn.lock" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="TestReport.aspx" />
     <Content Include="toc.yml" />
+    <Content Include="WebServices\AddFormDataService.asmx" />
     <Content Include="WebServices\CheckCoteService.asmx" />
     <Content Include="WebServices\DataFetchService.asmx" />
     <Content Include="WebServices\DESFetchService.asmx" />
@@ -690,7 +722,20 @@
     <Compile Include="Models\DatabaseUser.cs" />
     <Compile Include="Models\DataSQL.cs" />
     <Compile Include="Models\DES.cs" />
+    <Compile Include="Models\FormData.cs" />
     <Compile Include="Models\Misc.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TestReport.aspx.cs">
+      <DependentUpon>TestReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestReport.aspx.designer.cs">
+      <DependentUpon>TestReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\AddFormDataService.asmx.cs">
+      <DependentUpon>AddFormDataService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WebServices\CheckCoteService.asmx.cs">
       <DependentUpon>CheckCoteService.asmx</DependentUpon>
     </Compile>

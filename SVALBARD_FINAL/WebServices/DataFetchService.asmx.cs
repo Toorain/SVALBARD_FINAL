@@ -29,7 +29,7 @@ namespace WebApplication1
         {
             string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
 
-            var datas = new List<DataSQL>();
+            List<DataSQL> datas = new List<DataSQL>();
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
                 string cmdString = "SELECT * FROM ArchivesV2";

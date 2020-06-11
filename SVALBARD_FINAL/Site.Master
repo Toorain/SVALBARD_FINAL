@@ -4,7 +4,7 @@
 
 <html lang="fr">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - <%: appName %></title>
@@ -56,6 +56,7 @@
                         <li class="nav-item"><a class="nav-link" runat="server" id="demandesPanel" href="~/Demandes">Demandes</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="archivistePanel" href="~/ArchivistePanel">Archiviste Panel</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="adminPanel" href="~/AdminPanel">Admin Panel</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/TestReport">Reporting Test</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled" >
                         <AnonymousTemplate>
@@ -96,7 +97,11 @@
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/AfficherArchive.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/CheckCote.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/shepherd/dist/shepherd.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/FormSlider.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/startTourGlobal.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/startTourArchive.js"></script>
+    <noscript>
+      
+    </noscript>
 </body>
 </html>

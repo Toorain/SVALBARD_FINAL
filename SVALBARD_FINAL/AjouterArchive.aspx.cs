@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
-using MongoDB.Bson;
+using Microsoft.AspNet.Identity;
+using Newtonsoft.Json;
 using WebApplication1.Models;
 
 namespace WebApplication1
@@ -14,6 +15,7 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             int lastItem = DataSQL.GetLastItemArchive();
             
             List<DES> DESList = DES.GetDataZero("etablissement");
@@ -37,19 +39,34 @@ namespace WebApplication1
 
         protected void AddArchive(object sender, EventArgs eventArgs)
         {
-            DateTime date = new DateTime();
-            date = DateTime.Now;
-            string firstName = validationFirstName.Value.ToUpper();
-            string lastName = validationLastName.Value.ToUpper();
-            string ets = EtsValue.Value.ToUpper();
-            string dir = DirValue.Value.ToUpper();
-            string service = ServiceValue.Value.ToUpper();
-            string receiverId = "test";
-            string cote = coteValidationServer.Value;
-            int action = 1;
-            int status = 1;
+            // coteValidationServer.Value.Length >= 7 <= ADD THIS TO CHECK COTE LENGTH BEFORE SENDING
+            if (EtsValue.Value != "-- CHOOSE --"
+                && DirValue.Value != "-- CHOOSE --"
+                && ServiceValue.Value != "-- CHOOSE --" )
+            {
+                DateTime date = new DateTime();
+                date = DateTime.Now;
+                string issuerID = User.Identity.GetUserId();
+                string firstName = validationFirstName.Value.ToUpper();
+                string lastName = validationLastName.Value.ToUpper();
+                string ets = EtsValue.Value.ToUpper();
+                string dir = DirValue.Value.ToUpper();
+                string service = ServiceValue.Value.ToUpper();
+                string receiverId = DatabaseUser.GetArchiviste();
+                string cote = coteValidationServer.Value;
+                int action = 1;
+                int status = 1;
             
-            Logs.AddArchive(date, firstName, lastName, ets, dir, service, receiverId, cote, action, status);
+                Logs.AddArchive(date,issuerID, firstName, lastName, ets, dir, service, receiverId, cote, action, status);
+                alertRequestAdd.Visible = true;
+                alertAdd.InnerHtml =
+                    "Demande d'ajout effectuée avec succès. Rendez-vous dans l'onglet <a href='/Demandes'>Demandes</a> pour voir l'avancement.";
+            }
+            else
+            {
+                MessageBox.Show("Test");
+            }
+            
         }
     }
 }

@@ -11,7 +11,7 @@ namespace WebApplication1
 {
     public class DatabaseUser
     {
-        private static string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
         public string ID { get; set; }
         public string Email { get; set; }
@@ -22,7 +22,7 @@ namespace WebApplication1
         public static bool IsUserAdmin(IIdentity user)
         {
             // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
                 string cmdString = "SELECT * FROM AspNetUserRoles";
                 using (SqlCommand cmd = new SqlCommand())
@@ -50,7 +50,7 @@ namespace WebApplication1
             if (CurrentUser != null)
             {
                 // Connect to the Database
-                using (SqlConnection sqlConn = new SqlConnection(connectionString))
+                using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
                 {
                     string cmdString = "SELECT RoleId FROM AspNetUserRoles WHERE UserId = @val1";
                     using (SqlCommand cmd = new SqlCommand())
@@ -101,7 +101,7 @@ namespace WebApplication1
                 + " VALUES(@val1, @val2);"
             + " END";
 
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
@@ -115,6 +115,38 @@ namespace WebApplication1
                 }
             }
             return true;            
+        }
+        
+        /// <summary>
+        /// GetArchiviste permet de récupérer l'identifiant de l'archiviste dans la DB, si il y a plus d' UN archiviste, la valeur retournée sera la dernière dans la base de données.
+        /// </summary>
+        /// <returns></returns>
+        /// <remarks>Modifier ce morceau de code pour inclure plusieurs archivistes à l'avenir.</remarks>
+        public static string GetArchiviste()
+        {
+            string archivisteId = "";
+
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+            {
+                // RoleId : 4 is Archivist Role
+                string cmdString = "SELECT UserId FROM AspNetUserRoles WHERE RoleId = 4";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        archivisteId = dr[0].ToString();
+                    }
+                }
+                return archivisteId;
+            }
         }
     }
 

@@ -13,6 +13,24 @@ namespace WebApplication1 {
     public partial class AjouterArchive {
         
         /// <summary>
+        /// alertRequestAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel alertRequestAdd;
+        
+        /// <summary>
+        /// alertAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertAdd;
+        
+        /// <summary>
         /// validationFirstName control.
         /// </summary>
         /// <remarks>
@@ -92,6 +110,24 @@ namespace WebApplication1 {
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField coteValidationServer;
+        
+        /// <summary>
+        /// JSONFormData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField JSONFormData;
+        
+        /// <summary>
+        /// addArchiveButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button addArchiveButton;
         
         /// <summary>
         /// Master property.

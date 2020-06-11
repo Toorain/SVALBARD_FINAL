@@ -23,6 +23,7 @@ namespace WebApplication1
         public int Action { get; set; }
         public string Status { get; set; }
 
+        
         /// <summary>
         /// When a request on Archive is generated (retreive/destroy), AssignArchiviste() method is called. 
         /// Use this method to find an Archiviste in the database and assign it to a request.
@@ -114,9 +115,9 @@ namespace WebApplication1
 
                     while (dr.Read())
                     {
-                        /**
-                         * For every group of status (global, ajouter, retrait, destruction) we fill a different array.
-                         */
+                        
+                         // For every group of status (global, ajouter, retrait, destruction) we fill a different array.
+                         
                         switch (Convert.ToInt32(dr["group_code"]))
                         {
                             case 1:
@@ -143,6 +144,7 @@ namespace WebApplication1
         
         public static void AddArchive(
                                         DateTime date,
+                                        string issuerID,
                                         string firstName,
                                         string lastName,
                                         string ets,
@@ -184,7 +186,6 @@ namespace WebApplication1
                             + "VALUES ("
                             + "@val1,"
                             + "@val2,"
-                            + "NULL,"
                             + "@val3,"
                             + "@val4,"
                             + "@val5,"
@@ -192,9 +193,10 @@ namespace WebApplication1
                             + "@val7,"
                             + "@val8,"
                             + "@val9,"
-                            + "NULL,"
                             + "@val10,"
-                            + "@val11"
+                            + "NULL,"
+                            + "@val11,"
+                            + "@val12"
                             + ");";
                 using (SqlCommand cmd = new SqlCommand())
                 {
@@ -202,15 +204,16 @@ namespace WebApplication1
                     cmd.CommandText = cmdString;
                     cmd.Parameters.AddWithValue("@val1", count);
                     cmd.Parameters.AddWithValue("@val2", date);
-                    cmd.Parameters.AddWithValue("@val3", firstName);
-                    cmd.Parameters.AddWithValue("@val4", lastName);
-                    cmd.Parameters.AddWithValue("@val5", ets);
-                    cmd.Parameters.AddWithValue("@val6", dir);
-                    cmd.Parameters.AddWithValue("@val7", service);
-                    cmd.Parameters.AddWithValue("@val8", receiverId);
-                    cmd.Parameters.AddWithValue("@val9", cote);
-                    cmd.Parameters.AddWithValue("@val10", action);
-                    cmd.Parameters.AddWithValue("@val11", status);
+                    cmd.Parameters.AddWithValue("@val3", issuerID);
+                    cmd.Parameters.AddWithValue("@val4", firstName);
+                    cmd.Parameters.AddWithValue("@val5", lastName);
+                    cmd.Parameters.AddWithValue("@val6", ets);
+                    cmd.Parameters.AddWithValue("@val7", dir);
+                    cmd.Parameters.AddWithValue("@val8", service);
+                    cmd.Parameters.AddWithValue("@val9", receiverId);
+                    cmd.Parameters.AddWithValue("@val10", cote);
+                    cmd.Parameters.AddWithValue("@val11", action);
+                    cmd.Parameters.AddWithValue("@val12", status);
 
                     cmd.ExecuteNonQuery();
                 }

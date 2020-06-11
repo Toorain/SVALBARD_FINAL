@@ -77,6 +77,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/SqlServerTypes.Utilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SqlServerTypes.Utilities.html",
+          "hash": "DCh2hX5v5TmDHGXw+TgjJA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/SqlServerTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SqlServerTypes.html",
+          "hash": "QBs1nsYZRzYYDBGqREhtEA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/WebApplication1.Account.AddPhoneNumber.yml",
       "output": {
         ".html": {
@@ -297,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.AjouterArchive.html",
-          "hash": "vDy9H7IrqctJ9tmPXnoUvw=="
+          "hash": "HtgoTZnltNQ5guL9ZuBj8w=="
         }
       },
       "is_incremental": true,
@@ -333,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.ArchivistePanel.html",
-          "hash": "mY7P018bSCUIWLesL44MKA=="
+          "hash": "2kE0p/ObBGcRcTD7n7EBng=="
         }
       },
       "is_incremental": true,
@@ -381,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.DatabaseUser.html",
-          "hash": "dcKMDCf82eRndMm3+jHm4w=="
+          "hash": "W5l184LK86IcNNzbbnLYCw=="
         }
       },
       "is_incremental": true,
@@ -441,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.Logs.html",
-          "hash": "v24uzFLxtgPToLhHlqUrMQ=="
+          "hash": "BS62nbgDL43AEhPEKVaCwg=="
         }
       },
       "is_incremental": true,
@@ -485,6 +509,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Models.FormData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Models.FormData.html",
+          "hash": "jxBL126qLy+oFYb2CptxYw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/WebApplication1.Models.Misc.yml",
       "output": {
         ".html": {
@@ -501,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.Models.html",
-          "hash": "vAlad/8PeurNmWv7YhwOkg=="
+          "hash": "dCwwOvGSu07xZiyujDvLsg=="
         }
       },
       "is_incremental": true,
@@ -569,11 +605,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.TestReport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.TestReport.html",
+          "hash": "izd90PCn2MX6rzjkesJ2iA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/WebApplication1.UserRequestService.yml",
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.UserRequestService.html",
           "hash": "7tFwzSDVC0QTaQ2fVlnAYw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.WebServices.AddFormDataService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.WebServices.AddFormDataService.html",
+          "hash": "HYY6jMRTZMP+Mfp/72Tg4Q=="
         }
       },
       "is_incremental": true,
@@ -621,7 +681,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.WebServices.html",
-          "hash": "Js1sDNrctmc0Ie3k2IHkJQ=="
+          "hash": "IJjPYEKmxWO/oQ40w0gLtA=="
         }
       },
       "is_incremental": true,
@@ -645,7 +705,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.html",
-          "hash": "eufqZPX+hqiENx5bKfdGPw=="
+          "hash": "uCH4Ko9G0/CsrhBX4Q1EAA=="
         }
       },
       "is_incremental": true,
@@ -657,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "zIfY0BvbTf4cxC09dVgwCA=="
+          "hash": "f6uX2YbuFf0qvhcTJ1fLaA=="
         }
       },
       "is_incremental": false,
@@ -694,8 +754,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 48,
-          "skipped_file_count": 48
+          "total_file_count": 53,
+          "skipped_file_count": 53
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
