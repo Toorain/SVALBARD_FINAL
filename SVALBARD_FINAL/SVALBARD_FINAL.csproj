@@ -724,6 +724,7 @@
     <Compile Include="Models\DES.cs" />
     <Compile Include="Models\FormData.cs" />
     <Compile Include="Models\Misc.cs" />
+    <Compile Include="Models\PdfMethods.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TestReport.aspx.cs">
       <DependentUpon>TestReport.aspx</DependentUpon>

@@ -10,7 +10,7 @@ namespace WebApplication1
 {
     public class Logs
     {
-        private static string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
+        private static readonly string ConnectionStringArchives = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
 
         public int ID { get; set; }
         public DateTime Date { get; set; }
@@ -66,10 +66,9 @@ namespace WebApplication1
         public static string GetActionType(string currentArchiveRef)
         {
             string actionType = "";
-            string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
 
             // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
             {
                 string cmdString = "SELECT action FROM logsArchive WHERE archiveID = '@val1'";
                 using (SqlCommand cmd = new SqlCommand())
@@ -98,10 +97,8 @@ namespace WebApplication1
             List<string> arrayRetrait = new List<string>();
             List<string> arrayDestruction = new List<string>();
 
-            string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
-
             // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
             {
                 string cmdString = "SELECT status_name, group_code FROM status";
                 using (SqlCommand cmd = new SqlCommand())
@@ -112,7 +109,7 @@ namespace WebApplication1
                     sqlConn.Open();
 
                     var dr = cmd.ExecuteReader();
-
+                    
                     while (dr.Read())
                     {
                         
@@ -136,13 +133,16 @@ namespace WebApplication1
                                 break;
                         }
                     }
-                    List<List<string>> arrayArray = new List<List<string>> { arrayGlobal, arrayAjout, arrayRetrait, arrayDestruction };
+                    
+                    List<List<string>> arrayArray = new List<List<string>> {arrayGlobal, arrayAjout, arrayRetrait, arrayDestruction};
+
+
                     return arrayArray;
                 }
             }
         }
         
-        public static void AddArchive(
+        public static int AddArchive(
                                         DateTime date,
                                         string issuerID,
                                         string firstName,
@@ -156,13 +156,12 @@ namespace WebApplication1
                                         int status
                                         )
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
             string cmdString = "";
             int count = 0;
             
             
             // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
             {
                 cmdString = "SELECT TOP (1) ID FROM [logsArchives].[dbo].[logsArchive] ORDER BY ID DESC";
 
@@ -214,6 +213,58 @@ namespace WebApplication1
                     cmd.Parameters.AddWithValue("@val10", cote);
                     cmd.Parameters.AddWithValue("@val11", action);
                     cmd.Parameters.AddWithValue("@val12", status);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            return count;
+        }
+
+        protected static int StatusNameToStatusCode(string statusName)
+        {
+            int statusCode = 0;
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
+            {
+                
+                string cmdString = "SELECT [status_code]" +
+                                   " FROM [status]" +
+                                   " WHERE [status_name] = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", statusName);
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        statusCode = Convert.ToInt32(dr[0]);
+                    }
+                }
+                return statusCode;
+            }
+        }
+
+        public static void UpdateStatus(string identifier, string statusValue)
+        {
+            int statusCode = StatusNameToStatusCode(statusValue);
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
+            {
+                string cmdString = "UPDATE [dbo].[logsArchive]" +
+                                    " SET [status] = @val1" +
+                                    " WHERE [archiveID] = @val2";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", statusCode);
+                    cmd.Parameters.AddWithValue("@val2", identifier);
+                    
+                    sqlConn.Open();
 
                     cmd.ExecuteNonQuery();
                 }
