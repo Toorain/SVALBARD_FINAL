@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Demandes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Demandes.aspx.cs" Inherits="WebApplication1.Demandes" %>
+<%@ Register TagPrefix="rsweb" Namespace="Microsoft.Reporting.WebForms" Assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:HiddenField runat="server" ID="userID" ClientIDMode="Static" />
     <table id="tableDemandes" class="table table-striped table-hover responsive">
         <thead>
             <tr>
@@ -14,9 +14,28 @@
                 <th>ArchiveID</th>
                 <th>Action</th>
                 <th>Status</th>
+                <th>???</th>
             </tr>
         </thead>
         <tfoot>
         </tfoot>
     </table>
+    <div id="dropdownPdfDemandes" class="dropdownPdf" data-toggle="collapse" href="#collapseElm" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <h3 class="m-auto text-center">v -- Afficher le PDF -- v</h3>
+    </div>
+    <div runat="server" clientidmode="Static" class="collapse" ID="collapseElm">
+          <rsweb:ReportViewer ID="rptViewerDemandes" runat="server" Font-Names="Verdana" Font-Size="8pt" ProcessingMode="Remote" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="1000px" Width="850px" 
+              BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" 
+              LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" 
+              SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" 
+              ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
+              ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
+              
+              <ServerReport></ServerReport>
+          </rsweb:ReportViewer>
+    </div>
+    <asp:Button runat="server" ID="ButtonGeneratePdf" ClientIDMode="Static" OnClick="GeneratePdf" CssClass="d-none" />
+    <asp:HiddenField runat="server" ID="Identifier" ClientIDMode="Static" Value="" />
+    <asp:HiddenField runat="server" ID="Cote" ClientIDMode="Static" Value="" />
+    <asp:HiddenField runat="server" ID="userID" ClientIDMode="Static" />
 </asp:Content>

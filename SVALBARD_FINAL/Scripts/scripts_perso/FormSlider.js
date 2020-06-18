@@ -13,7 +13,7 @@ $(window).keydown(function (event) {
 if (window.location.pathname === "/AjouterArchive") {
 
     showTab(currentTab); // Display the current tab
-    
+
     $(window).on("load", function () {
         //$('#nextBtn').attr("disabled", "disabled");
         $("#addArchiveButton").attr("disabled", "disabled");
@@ -99,16 +99,23 @@ if (window.location.pathname === "/AjouterArchive") {
         x[n].className += " active";
     }
 
+    function checkL(elmVal) {
+        if (elmVal.value.length > elmVal.maxLength) {
+            elmVal.value = elmVal.value.slice(0, elmVal.maxLength);
+        }
+    }
+
     function generateInputTable() {
         if (clickCount === 1) {
             let nombreArticles = Number($("#validationNombreArticle").val());
+            let articleCote = Number()
 
             for (articleCount = 1; articleCount <= nombreArticles; articleCount++) {
                 inner = "<tr id='article_" + articleCount + "'>" +
                     "<td><input class='form-control' type='number' value='" + articleCount + "' disabled /></td>" +
                     "<td><textarea class='form-control' ></textarea></td>" +
-                    "<td><input class='form-control' type='number' /></td>" +
-                    "<td><input class='form-control' type='number' /></td>" +
+                    "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
+                    "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
                     "<td><textarea class='form-control' type='text' ></textarea></td>" +
                     ((articleCount === nombreArticles)
                         ? "<td class='text-center' id='removeButton'><div class='btn btn-danger' onclick='removeRow(articleCount)'>x</div></td>"
@@ -158,21 +165,17 @@ if (window.location.pathname === "/AjouterArchive") {
                 let properties = ['id', 'contenu', 'date_debut', 'date_fin', 'observations'];
                 data[ properties[j] ] = articleData[j].children[0].value;
             }
+            data['linked_cote'] = $("#coteValidation").val();
             let arrayToString = JSON.stringify(Object.assign({}, data));  // convert array to string
             let stringToJsonObject = JSON.parse(arrayToString);  // convert string to json object
             let article = "article_" + i;
-            jsonData[article] = stringToJsonObject;            
+            jsonData[article] = stringToJsonObject;
         }
-        console.log(jsonData);
         insertDataToDB(jsonData);
         $("#addArchiveButton").removeAttr("disabled");
 
     }
-    
-    function handleData(data) {
-        console.log(data);
-    }
-    
+
     function insertDataToDB(jsonData) {
         $.ajax({
             serverSide: true,
@@ -183,14 +186,14 @@ if (window.location.pathname === "/AjouterArchive") {
             data: {data : JSON.stringify(jsonData)},
             mimeType: "text/plain",
             done: (data) => {
-                handleData(data);
-                alert("SUCCESS");
+
             },
             fail: (xhr, error) => {
                 console.debug(xhr);
                 console.debug(error);
             },
         });
+        // $("#collapseElm").collapse('show');
     }
 }
 

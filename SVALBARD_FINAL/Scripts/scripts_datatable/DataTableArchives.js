@@ -18,9 +18,9 @@
                     orderCellsTop: true,
                     data: data,
                     columns: [
-                        { 'data': 'ID' },
+                        { data: 'Cote' },
                         {
-                            'data': 'Versement', 'render': (date) => {
+                            data: 'Versement', 'render': (date) => {
                                 let d = new Date(date),
                                     month = '' + (d.getMonth() + 1),
                                     day = '' + d.getDate(),
@@ -32,15 +32,14 @@
                                 return [year, month, day].join('/');
                             }
                         },
-                        { 'data': 'Etablissement' },
-                        { 'data': 'Direction' },
-                        { 'data': 'Service' },
-                        { 'data': 'Dossiers' },
-                        { 'data': 'Extremes' },
-                        { 'data': 'Elimination' },
-                        { 'data': 'Communication' },
-                        { 'data': 'Cote' },
-                        { 'data': 'Localisation' }
+                        { data: 'Etablissement' },
+                        { data: 'Direction' },
+                        { data: 'Service' },
+                        { data: 'Dossiers' },
+                        { data: 'Extremes' },
+                        { data: 'Elimination' },
+                        { data: 'Communication' },
+                        { data: 'Localisation' }
                     ]
                 });
                 $("body").keydown(function (e) {

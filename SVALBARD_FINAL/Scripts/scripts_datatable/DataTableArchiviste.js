@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
     // Doesn't call WebService if not on Datatable displaying page.
     if (window.location.pathname === "/ArchivistePanel") {
+        let content;
         $.ajax({
             serverSide: true,
             type: "POST",
@@ -11,6 +12,7 @@
             // Data I send to the POST method (userID)
             data: { userID: $("#archivisteID").val() },
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            mimeType: "text/plain",
             crossDomain: true,
             success: function (data) {
                 let datatableVariable = $('#tableArchiviste').DataTable({
@@ -32,29 +34,45 @@
                             }
                         },
                         { data: 'IssuerID' },
-                        { data: 'IssuerDir' },
                         { data: 'IssuerEts' },
+                        { data: 'IssuerDir' },
                         { data: 'IssuerService' },
                         { data: 'ArchiveID' },
                         { data: 'Localization' },
                         {
                             data: 'Action', 'render': (data) => {
+                                content = data;
                                 switch (data) {
                                     case (1):
                                         return "Ajout";
-                                        break;
                                     case (2):
-                                        return "Retrait";
-                                        break;
+                                        return "Consultation";
                                     case (3):
                                         return "Destruction";
-                                        break;
-                                };
+                                }
                             }
                         },
-                        { data: 'Status' }
+                        { data: 'Status' },
+                        {
+                            "defaultContent": 'icons', 'render': () => {
+                                switch (content) {
+                                    case (1):
+                                        return "<i class='fas fa-file-pdf'></i><i class='fas fa-search'></i>";
+                                    case (2):
+                                        return "<i class='fas fa-search'></i>";
+                                    case (3):
+                                        return "<i class='fas fa-search'></i>";
+                                }
+                            }
+                        }
                     ]
                 });
+                $('#tableArchiviste tbody').on( 'click', '.fa-file-pdf', function () {
+                    let data = datatableVariable.row( $(this).parents('tr') ).data();
+                    $("#Identifier").val(data.ID);
+                    $("#Cote").val(data.ArchiveID);
+                    $("#ButtonGeneratePdf").click();
+                } );
                 $("body").keydown(function (e) {
                     if (e.keyCode == 37) { // left
                         $("#tableDemandes_previous").click();
@@ -78,16 +96,15 @@
                     tableColumn.visible(!tableColumn.visible());
                 });
                 // This is the 'Click to see more' part, when you click on <tr></tr> element you get more info about it and you can request targeted element.
-                $('#tableArchiviste tbody').on('click', 'tr', function () {
+                $('#tableArchiviste tbody').on('click', '.fa-search', function () {
                     // Close all alerts with a click on Table Row
                     $(".alert").alert('close');
                     // Open/Close modal on click depending on previous status
                     $("#modalArchiviste").modal("toggle");
-                    let data = datatableVariable.row(this).data();
-                    console.log(data);
+                    let data = datatableVariable.row( $(this).parents('tr') ).data();
                     $("#ArchiveCote").val(data.ArchiveID);
                 });
             }
         });
-    };
+    }
 });

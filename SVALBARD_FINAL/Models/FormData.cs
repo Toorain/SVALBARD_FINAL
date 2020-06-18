@@ -21,8 +21,9 @@ namespace WebApplication1.Models
 		private int DateDebut { get; set; }
 		private int DateFin { get; set;  }
 		private string Observations { get; set;  }
+		private string LinkedCote { get; set; }
 
-		public static string DecypherData(string data)
+		public static void DecypherData(string data)
 		{
 			List<FormData> formDataList = new List<FormData>();
 			// Recover JSON data, from a string to a JSON.
@@ -39,21 +40,22 @@ namespace WebApplication1.Models
 					Contenu = jsonElm["contenu"].ToString(),
 					DateDebut = Convert.ToInt32(jsonElm["date_debut"]),
 					DateFin = Convert.ToInt32(jsonElm["date_fin"]),
-					Observations = jsonElm["observations"].ToString()
+					Observations = jsonElm["observations"].ToString(),
+					LinkedCote = jsonElm["linked_cote"].ToString()
 				};
 				formDataList.Add(newFormData);
 			}
-			return PushData(formDataList);
+			PushData(formDataList);
 		}
 
-		private static string PushData(List<FormData> data)
+		private static void PushData(List<FormData> data)
 		{
 			using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
 			{
 				string cmdString = "INSERT INTO [dbo].[tempData]"
-									+ " ([id] ,[contenu] ,[date_debut] ,[date_fin] ,[observations])"
+									+ " ([id] ,[contenu] ,[date_debut] ,[date_fin] ,[observations], [linked_cote])"
 									+ " VALUES"
-									+ " (@val1, @val2, @val3, @val4, @val5)";
+									+ " (@val1, @val2, @val3, @val4, @val5, @val6)";
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = sqlConn;
@@ -67,16 +69,30 @@ namespace WebApplication1.Models
 						cmd.Parameters.AddWithValue("@val3", Convert.ToInt32(formData.DateDebut));
 						cmd.Parameters.AddWithValue("@val4", Convert.ToInt32(formData.DateFin));
 						cmd.Parameters.AddWithValue("@val5", formData.Observations);
+						cmd.Parameters.AddWithValue("@val6", formData.LinkedCote);
 
 						cmd.ExecuteNonQuery();
 						
 						cmd.Parameters.Clear();
-						
 					}					
 				}
 			}
+		}
+		
+		public static void DropTempTable()
+		{
+			using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+			{
+				string cmdString = "DELETE FROM [dbo].[tempData]";
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = sqlConn;
+					cmd.CommandText = cmdString;
+					sqlConn.Open();
 
-			return "SUCCESS";
+					cmd.ExecuteNonQuery();
+				}
+			}
 		}
 	}
 }

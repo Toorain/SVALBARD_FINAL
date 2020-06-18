@@ -99,7 +99,7 @@ $("#ServiceList").change(function () {
     } else {
         $('#nextBtn').attr("disabled", "disabled");
     }
-    
+
     if ($("#ServiceList").val() != choisir) {
         $("#btn_retirer").removeAttr("disabled");
         $("#btn_detruire").removeAttr("disabled");

@@ -144,3 +144,23 @@ input.invalid {
     background-color: #4CAF50;
 }
 /* ------------------------------FORM SLIDER END------------------------------------------*/
+
+.dropdownPdf:hover {
+    cursor: pointer;
+}
+
+#ctl00_MainContent_rptViewer_ctl09 {
+    display: block !important;
+}
+
+#collapseElm, #collapseElmAdd {
+    width: 850px;
+    margin: auto;
+}
+
+/* ------------------------------FONT AWESOME START------------------------------------------*/
+.fas {
+    font-size: 1.8em;
+    margin-left: 0.2rem;
+}
+/* ------------------------------FONT AWESOME END------------------------------------------*/

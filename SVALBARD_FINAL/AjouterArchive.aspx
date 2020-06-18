@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Ajouter archive" EnableEventValidation="false" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AjouterArchive.aspx.cs" Inherits="WebApplication1.AjouterArchive" %>
+<%@ Register TagPrefix="rsweb" Namespace="Microsoft.Reporting.WebForms" Assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Panel ID="alertRequestAdd" runat="server" Visible="false">
       <div class="alert alert-success alert-dismissible fade show text-center " role="alert">
@@ -9,7 +10,20 @@
       </div>
     </asp:Panel>
     <form id="regForm" class="needs-validation border" novalidate>
-
+      <div id="dropdownPdf" class="dropdownPdf" data-toggle="collapse" href="#collapseElmAdd" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <h3 class="m-auto text-center">v -- Afficher le PDF -- v</h3>
+      </div>
+      <div runat="server" ClientIDMode="Static" class="collapse" ID="collapseElmAdd">
+              <rsweb:ReportViewer ID="rptViewer" runat="server" Font-Names="Verdana" Font-Size="8pt" ProcessingMode="Remote" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="1000px" Width="850px" 
+                  BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" 
+                  LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" 
+                  SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" 
+                  ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
+                  ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
+                  
+                  <ServerReport></ServerReport>
+              </rsweb:ReportViewer>
+        </div>
       <h3>Veuillez renseigner toutes les information pour effectuer une demande d'ajout à l'archive :</h3>
 
       <!-- One "tab" for each step in the form: -->
@@ -28,14 +42,14 @@
             </div>
             <hr>
             <div class="mb-3">
-              <label for="validationNombreArticle">Nombre d'articles à ajouter</label> 
-              <input type="number" class="form-control" id="validationNombreArticle" placeholder="Nombre d'articles" value="" required />
+              <label for="validationNombreArticle">Nombre de boîtes à ajouter</label> 
+              <input type="number" class="form-control" id="validationNombreArticle" placeholder="Nombre de boîtes" value="" required />
             </div>
           </div>
           <div class="col-md-1 mb-3"></div>
           <div class="col-md-3 mb-3">
             <hr/>
-            <label for="EtsList">Administration</label>
+            <label for="EtsList">Etablissement</label>
             <div class="mb-3">
               <asp:DropDownList id="EtsList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
               <asp:hiddenfield runat="server" ID="EtsValue" ClientIDMode="Static" />
@@ -52,7 +66,6 @@
               <asp:DropDownList id="ServiceList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
               <asp:hiddenfield runat="server" ID="ServiceValue" ClientIDMode="Static" />
             </div>
-            <!--
             <div class="mb-3">
               <label for="coteValidation">Côte de l'archive (XXWXXXX)</label>
               <p>Exemple 04W0014</p>
@@ -63,7 +76,6 @@
                 <div id="resetInput" class="btn btn-secondary" onclick="resetInput()">Reset</div>
               </div>
             </div>
-             -->
           </div>
         </div>
       </div>

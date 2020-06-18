@@ -6,7 +6,9 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using WebApplication1.Models;
+using Button = System.Web.UI.WebControls.Button;
 
 namespace WebApplication1
 {
@@ -123,7 +125,7 @@ namespace WebApplication1
                         case "ajouter":
                             codeAction = 1;
                             break;
-                        case "retirer":
+                        case "consulter":
                             codeAction = 2;
                             break;
                         case "detruire":

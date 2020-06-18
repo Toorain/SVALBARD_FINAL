@@ -2,7 +2,7 @@
     // Doesn't call WebService if not on Datatable displaying page.
     if (window.location.pathname === "/Demandes") {
         $.ajax({
-            serverSide: true, 
+            serverSide: true,
             type: "POST",
             dataType: "json",
             async: true,
@@ -10,16 +10,17 @@
             url: "WebServices/UserRequestService.asmx/GetDataIssuer",
             // Data I send to the POST method (userID)
             data: { userID: $("#userID").val() },
-            contentType: "application/x-www-form-urlencoded; charset=UTF-8", 
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            mimeType: "text/plain",
             crossDomain: true,
             success: function (data) {
-                var datatableVariable = $('#tableDemandes').DataTable({
+                let datatableVariable = $('#tableDemandes').DataTable({
                     data: data,
                     columns: [
                         /*{ data: 'ID' },*/
                         {
                             data: 'Date', 'render': (date) => {
-                                var d = new Date(date),
+                                let d = new Date(date),
                                     month = '' + (d.getMonth() + 1),
                                     day = '' + d.getDate(),
                                     year = d.getFullYear();
@@ -44,7 +45,7 @@
                                         return "Ajout";
                                         break;
                                     case (2):
-                                        return "Retrait";
+                                        return "Consultation";
                                         break;
                                     case (3):
                                         return "Destruction";
@@ -52,7 +53,8 @@
                                 };
                             }
                         },
-                        { data : 'Status'}
+                        { data : 'Status'},
+                        { "defaultContent": "<i class='fas fa-file-pdf'></i>" }
                     ]
                 });
                 $("body").keydown(function (e) {
@@ -77,21 +79,27 @@
                             break;
                     }
                 });*/
+                $('#tableDemandes tbody').on( 'click', '.fas', function () {
+                    let data = datatableVariable.row( $(this).parents('tr') ).data();
+                    $("#Identifier").val(data.ID);
+                    $("#Cote").val(data.ArchiveID);
+                    $("#ButtonGeneratePdf").click();
+                } );
                 $('#tableDemandes tfoot th').each(function () {
-                    var placeHolderTitle = $('#tableDemandes thead th').eq($(this).index()).text();
+                    let placeHolderTitle = $('#tableDemandes thead th').eq($(this).index()).text();
                     $(this).html('<input type="text" class="form-control input input-sm" placeholder = "Search ' + placeHolderTitle + '" />');
                 });
                 datatableVariable.columns().every(function () {
-                    var column = this;
+                    let column = this;
                     $(this.footer()).find('input').on('keyup change', function () {
                         column.search(this.value).draw();
                     });
                 });
                 $('.showHide').on('click', function () {
-                    var tableColumn = datatableVariable.column($(this).attr('data-columnindex'));
+                    let tableColumn = datatableVariable.column($(this).attr('data-columnindex'));
                     tableColumn.visible(!tableColumn.visible());
-                });  
-            
+                });
+
                 // This is the 'Click to see more' part, when you click on <tr></tr> element you get more info about it and you can request targeted element.
                 /*$('#tableDemandes tbody').on('click', 'tr', function () {
                     // Close all alerts with a click on Table Row
