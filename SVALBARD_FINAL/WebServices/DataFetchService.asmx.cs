@@ -49,9 +49,10 @@ namespace WebApplication1
                            && !dr["communication"].ToString().ToLower().Contains("éliminé")
                            && !dr["communication"].ToString().ToLower().Contains("eliminé"))
                         {
-                            DataSQL dataSQL = new DataSQL
+                            DataSQL dataSql = new DataSQL
                             {
-                                ID = Convert.ToInt32(dr["ID"].ToString()),
+                                // ID = Convert.ToInt32(dr["ID"].ToString()),
+                                Cote = dr["cote"].ToString(),
                                 Versement = string.IsNullOrEmpty(dr["versement"].ToString())
                                     ? new DateTime(1900, 1, 1)
                                     : Convert.ToDateTime(dr["versement"].ToString()),
@@ -62,10 +63,9 @@ namespace WebApplication1
                                 Extremes = dr["extremes"].ToString(),
                                 Elimination = dr["elimination"].ToString(),
                                 Communication = dr["communication"].ToString(),
-                                Cote = dr["cote"].ToString(),
                                 Localisation = dr["localisation"].ToString()
                             };
-                            datas.Add(dataSQL);
+                            datas.Add(dataSql);
                         }
                     }
                     Context.Response.Write(JsonConvert.SerializeObject(datas));

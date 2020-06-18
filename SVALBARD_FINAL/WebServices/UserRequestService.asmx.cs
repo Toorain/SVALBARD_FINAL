@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.Services;
+using System.Windows.Forms;
+using Microsoft.Ajax.Utilities;
 
 namespace WebApplication1
 {
@@ -40,16 +42,19 @@ namespace WebApplication1
         /// <returns>
         /// Returns a JSON when a POST call is made with an unique identifier
         /// </returns>
-        /// <param name="userID">An unique user identifier retreived from <see cref="Demandes.Page_Load(object, EventArgs)"/></param>
+        /// <param name="userId">An unique user identifier retreived from <see cref="Demandes.Page_Load(object, EventArgs)"/></param>
         [WebMethod]
-        public void GetDataIssuer(string userID)
+        public void GetDataIssuer(string userId)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
             var datas = new List<Logs>();
 
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                string cmdString = "SELECT [dbo].[logsArchive].*, [dbo].[status].status_name FROM [dbo].[logsArchive] LEFT JOIN [dbo].[status] ON [dbo].[logsArchive].status = dbo.status.status_id";
+                string cmdString = "SELECT [dbo].[logsArchive].*, [dbo].[status].status_name" + 
+                                    " FROM [dbo].[logsArchive]" +
+                                    " LEFT JOIN [dbo].[status]" +
+                                    " ON [dbo].[logsArchive].status = dbo.status.status_id";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -61,13 +66,15 @@ namespace WebApplication1
 
                     while (dr.Read())
                     {
-                        if (dr["issuerID"].ToString() == userID)
+                        if (dr["issuerID"].ToString() == userId)
                         {
                             Logs logs = new Logs
                             {
                                 ID = Convert.ToInt32(dr["ID"]),
                                 Date = Convert.ToDateTime(dr["date"].ToString()),
-                                IssuerID = dr["issuerID"].ToString(),
+                                IssuerID = !dr["issuerFirstName"].ToString().IsNullOrWhiteSpace() && !dr["issuerLastName"].ToString().IsNullOrWhiteSpace()
+                                    ? dr["issuerLastName"].ToString() + " " + dr["issuerFirstName"].ToString()
+                                    : dr["issuerID"].ToString(),
                                 IssuerEts = dr["issuerEts"].ToString(),
                                 IssuerDir = dr["issuerDir"].ToString(),
                                 IssuerService = dr["issuerService"].ToString(),
@@ -77,13 +84,15 @@ namespace WebApplication1
                                 Status = dr["status_name"].ToString()
                             };
                             datas.Add(logs);
-                        } else if (dr["receiverID"].ToString() == userID) 
+                        } else if (dr["receiverID"].ToString() == userId)
                         {
                             Logs logs = new Logs
                             {
                                 ID = Convert.ToInt32(dr["ID"]),
                                 Date = Convert.ToDateTime(dr["date"].ToString()),
-                                IssuerID = dr["issuerID"].ToString(),
+                                IssuerID = !dr["issuerFirstName"].ToString().IsNullOrWhiteSpace() && !dr["issuerLastName"].ToString().IsNullOrWhiteSpace()
+                                    ? dr["issuerLastName"].ToString() + " " + dr["issuerFirstName"].ToString()
+                                    : dr["issuerID"].ToString(),
                                 IssuerEts = dr["issuerEts"].ToString(),
                                 IssuerDir = dr["issuerDir"].ToString(),
                                 IssuerService = dr["issuerService"].ToString(),
