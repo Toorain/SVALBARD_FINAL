@@ -1393,6 +1393,12 @@ references:
   commentId: F:WebApplication1.AjouterArchive.alertRequestAdd
   fullName: WebApplication1.AjouterArchive.alertRequestAdd
   nameWithType: AjouterArchive.alertRequestAdd
+- uid: WebApplication1.AjouterArchive.collapseElmAdd
+  name: collapseElmAdd
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_collapseElmAdd
+  commentId: F:WebApplication1.AjouterArchive.collapseElmAdd
+  fullName: WebApplication1.AjouterArchive.collapseElmAdd
+  nameWithType: AjouterArchive.collapseElmAdd
 - uid: WebApplication1.AjouterArchive.coteValidationServer
   name: coteValidationServer
   href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_coteValidationServer
@@ -1455,6 +1461,12 @@ references:
   isSpec: "True"
   fullName: WebApplication1.AjouterArchive.Page_Load
   nameWithType: AjouterArchive.Page_Load
+- uid: WebApplication1.AjouterArchive.rptViewer
+  name: rptViewer
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_rptViewer
+  commentId: F:WebApplication1.AjouterArchive.rptViewer
+  fullName: WebApplication1.AjouterArchive.rptViewer
+  nameWithType: AjouterArchive.rptViewer
 - uid: WebApplication1.AjouterArchive.ServiceList
   name: ServiceList
   href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_ServiceList
@@ -1583,6 +1595,12 @@ references:
   commentId: F:WebApplication1.ArchivistePanel.alertSuccessText
   fullName: WebApplication1.ArchivistePanel.alertSuccessText
   nameWithType: ArchivistePanel.alertSuccessText
+- uid: WebApplication1.ArchivistePanel.ArchiveAction
+  name: ArchiveAction
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_ArchiveAction
+  commentId: F:WebApplication1.ArchivistePanel.ArchiveAction
+  fullName: WebApplication1.ArchivistePanel.ArchiveAction
+  nameWithType: ArchivistePanel.ArchiveAction
 - uid: WebApplication1.ArchivistePanel.ArchiveCote
   name: ArchiveCote
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_ArchiveCote
@@ -1595,12 +1613,49 @@ references:
   commentId: F:WebApplication1.ArchivistePanel.archivisteID
   fullName: WebApplication1.ArchivistePanel.archivisteID
   nameWithType: ArchivistePanel.archivisteID
+- uid: WebApplication1.ArchivistePanel.ButtonGeneratePdf
+  name: ButtonGeneratePdf
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_ButtonGeneratePdf
+  commentId: F:WebApplication1.ArchivistePanel.ButtonGeneratePdf
+  fullName: WebApplication1.ArchivistePanel.ButtonGeneratePdf
+  nameWithType: ArchivistePanel.ButtonGeneratePdf
+- uid: WebApplication1.ArchivistePanel.collapseElm
+  name: collapseElm
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_collapseElm
+  commentId: F:WebApplication1.ArchivistePanel.collapseElm
+  fullName: WebApplication1.ArchivistePanel.collapseElm
+  nameWithType: ArchivistePanel.collapseElm
+- uid: WebApplication1.ArchivistePanel.Cote
+  name: Cote
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_Cote
+  commentId: F:WebApplication1.ArchivistePanel.Cote
+  fullName: WebApplication1.ArchivistePanel.Cote
+  nameWithType: ArchivistePanel.Cote
+- uid: WebApplication1.ArchivistePanel.GeneratePdf(System.Object,System.EventArgs)
+  name: GeneratePdf(Object, EventArgs)
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_GeneratePdf_System_Object_System_EventArgs_
+  commentId: M:WebApplication1.ArchivistePanel.GeneratePdf(System.Object,System.EventArgs)
+  fullName: WebApplication1.ArchivistePanel.GeneratePdf(System.Object, System.EventArgs)
+  nameWithType: ArchivistePanel.GeneratePdf(Object, EventArgs)
+- uid: WebApplication1.ArchivistePanel.GeneratePdf*
+  name: GeneratePdf
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_GeneratePdf_
+  commentId: Overload:WebApplication1.ArchivistePanel.GeneratePdf
+  isSpec: "True"
+  fullName: WebApplication1.ArchivistePanel.GeneratePdf
+  nameWithType: ArchivistePanel.GeneratePdf
 - uid: WebApplication1.ArchivistePanel.HiddenField1
   name: HiddenField1
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_HiddenField1
   commentId: F:WebApplication1.ArchivistePanel.HiddenField1
   fullName: WebApplication1.ArchivistePanel.HiddenField1
   nameWithType: ArchivistePanel.HiddenField1
+- uid: WebApplication1.ArchivistePanel.Identifier
+  name: Identifier
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_Identifier
+  commentId: F:WebApplication1.ArchivistePanel.Identifier
+  fullName: WebApplication1.ArchivistePanel.Identifier
+  nameWithType: ArchivistePanel.Identifier
 - uid: WebApplication1.ArchivistePanel.Master
   name: Master
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_Master
@@ -1639,12 +1694,37 @@ references:
   isSpec: "True"
   fullName: WebApplication1.ArchivistePanel.Page_Load
   nameWithType: ArchivistePanel.Page_Load
+- uid: WebApplication1.ArchivistePanel.rptViewerArchiviste
+  name: rptViewerArchiviste
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_rptViewerArchiviste
+  commentId: F:WebApplication1.ArchivistePanel.rptViewerArchiviste
+  fullName: WebApplication1.ArchivistePanel.rptViewerArchiviste
+  nameWithType: ArchivistePanel.rptViewerArchiviste
 - uid: WebApplication1.ArchivistePanel.StatusList
   name: StatusList
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_StatusList
   commentId: F:WebApplication1.ArchivistePanel.StatusList
   fullName: WebApplication1.ArchivistePanel.StatusList
   nameWithType: ArchivistePanel.StatusList
+- uid: WebApplication1.ArchivistePanel.UpdateStatus(System.Object,System.EventArgs)
+  name: UpdateStatus(Object, EventArgs)
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_UpdateStatus_System_Object_System_EventArgs_
+  commentId: M:WebApplication1.ArchivistePanel.UpdateStatus(System.Object,System.EventArgs)
+  fullName: WebApplication1.ArchivistePanel.UpdateStatus(System.Object, System.EventArgs)
+  nameWithType: ArchivistePanel.UpdateStatus(Object, EventArgs)
+- uid: WebApplication1.ArchivistePanel.UpdateStatus*
+  name: UpdateStatus
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_UpdateStatus_
+  commentId: Overload:WebApplication1.ArchivistePanel.UpdateStatus
+  isSpec: "True"
+  fullName: WebApplication1.ArchivistePanel.UpdateStatus
+  nameWithType: ArchivistePanel.UpdateStatus
+- uid: WebApplication1.ArchivistePanel.userID
+  name: userID
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_userID
+  commentId: F:WebApplication1.ArchivistePanel.userID
+  fullName: WebApplication1.ArchivistePanel.userID
+  nameWithType: ArchivistePanel.userID
 - uid: WebApplication1.BundleConfig
   name: BundleConfig
   href: api/WebApplication1.BundleConfig.html
@@ -1916,19 +1996,6 @@ references:
   isSpec: "True"
   fullName: WebApplication1.DataSQL.GetLastItemArchive
   nameWithType: DataSQL.GetLastItemArchive
-- uid: WebApplication1.DataSQL.ID
-  name: ID
-  href: api/WebApplication1.DataSQL.html#WebApplication1_DataSQL_ID
-  commentId: P:WebApplication1.DataSQL.ID
-  fullName: WebApplication1.DataSQL.ID
-  nameWithType: DataSQL.ID
-- uid: WebApplication1.DataSQL.ID*
-  name: ID
-  href: api/WebApplication1.DataSQL.html#WebApplication1_DataSQL_ID_
-  commentId: Overload:WebApplication1.DataSQL.ID
-  isSpec: "True"
-  fullName: WebApplication1.DataSQL.ID
-  nameWithType: DataSQL.ID
 - uid: WebApplication1.DataSQL.Localisation
   name: Localisation
   href: api/WebApplication1.DataSQL.html#WebApplication1_DataSQL_Localisation
@@ -2000,6 +2067,43 @@ references:
   commentId: T:WebApplication1.Demandes
   fullName: WebApplication1.Demandes
   nameWithType: Demandes
+- uid: WebApplication1.Demandes.ButtonGeneratePdf
+  name: ButtonGeneratePdf
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_ButtonGeneratePdf
+  commentId: F:WebApplication1.Demandes.ButtonGeneratePdf
+  fullName: WebApplication1.Demandes.ButtonGeneratePdf
+  nameWithType: Demandes.ButtonGeneratePdf
+- uid: WebApplication1.Demandes.collapseElm
+  name: collapseElm
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_collapseElm
+  commentId: F:WebApplication1.Demandes.collapseElm
+  fullName: WebApplication1.Demandes.collapseElm
+  nameWithType: Demandes.collapseElm
+- uid: WebApplication1.Demandes.Cote
+  name: Cote
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_Cote
+  commentId: F:WebApplication1.Demandes.Cote
+  fullName: WebApplication1.Demandes.Cote
+  nameWithType: Demandes.Cote
+- uid: WebApplication1.Demandes.GeneratePdf(System.Object,System.EventArgs)
+  name: GeneratePdf(Object, EventArgs)
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_GeneratePdf_System_Object_System_EventArgs_
+  commentId: M:WebApplication1.Demandes.GeneratePdf(System.Object,System.EventArgs)
+  fullName: WebApplication1.Demandes.GeneratePdf(System.Object, System.EventArgs)
+  nameWithType: Demandes.GeneratePdf(Object, EventArgs)
+- uid: WebApplication1.Demandes.GeneratePdf*
+  name: GeneratePdf
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_GeneratePdf_
+  commentId: Overload:WebApplication1.Demandes.GeneratePdf
+  isSpec: "True"
+  fullName: WebApplication1.Demandes.GeneratePdf
+  nameWithType: Demandes.GeneratePdf
+- uid: WebApplication1.Demandes.Identifier
+  name: Identifier
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_Identifier
+  commentId: F:WebApplication1.Demandes.Identifier
+  fullName: WebApplication1.Demandes.Identifier
+  nameWithType: Demandes.Identifier
 - uid: WebApplication1.Demandes.Master
   name: Master
   href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_Master
@@ -2026,6 +2130,12 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Demandes.Page_Load
   nameWithType: Demandes.Page_Load
+- uid: WebApplication1.Demandes.rptViewerDemandes
+  name: rptViewerDemandes
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_rptViewerDemandes
+  commentId: F:WebApplication1.Demandes.rptViewerDemandes
+  fullName: WebApplication1.Demandes.rptViewerDemandes
+  nameWithType: Demandes.rptViewerDemandes
 - uid: WebApplication1.Demandes.userID
   name: userID
   href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_userID
@@ -2353,6 +2463,32 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Logs.Status
   nameWithType: Logs.Status
+- uid: WebApplication1.Logs.StatusNameToStatusCode(System.String)
+  name: StatusNameToStatusCode(String)
+  href: api/WebApplication1.Logs.html#WebApplication1_Logs_StatusNameToStatusCode_System_String_
+  commentId: M:WebApplication1.Logs.StatusNameToStatusCode(System.String)
+  fullName: WebApplication1.Logs.StatusNameToStatusCode(System.String)
+  nameWithType: Logs.StatusNameToStatusCode(String)
+- uid: WebApplication1.Logs.StatusNameToStatusCode*
+  name: StatusNameToStatusCode
+  href: api/WebApplication1.Logs.html#WebApplication1_Logs_StatusNameToStatusCode_
+  commentId: Overload:WebApplication1.Logs.StatusNameToStatusCode
+  isSpec: "True"
+  fullName: WebApplication1.Logs.StatusNameToStatusCode
+  nameWithType: Logs.StatusNameToStatusCode
+- uid: WebApplication1.Logs.UpdateStatus(System.String,System.String)
+  name: UpdateStatus(String, String)
+  href: api/WebApplication1.Logs.html#WebApplication1_Logs_UpdateStatus_System_String_System_String_
+  commentId: M:WebApplication1.Logs.UpdateStatus(System.String,System.String)
+  fullName: WebApplication1.Logs.UpdateStatus(System.String, System.String)
+  nameWithType: Logs.UpdateStatus(String, String)
+- uid: WebApplication1.Logs.UpdateStatus*
+  name: UpdateStatus
+  href: api/WebApplication1.Logs.html#WebApplication1_Logs_UpdateStatus_
+  commentId: Overload:WebApplication1.Logs.UpdateStatus
+  isSpec: "True"
+  fullName: WebApplication1.Logs.UpdateStatus
+  nameWithType: Logs.UpdateStatus
 - uid: WebApplication1.Models
   name: WebApplication1.Models
   href: api/WebApplication1.Models.html
@@ -2539,6 +2675,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.FormData.DecypherData
   nameWithType: FormData.DecypherData
+- uid: WebApplication1.Models.FormData.DropTempTable
+  name: DropTempTable()
+  href: api/WebApplication1.Models.FormData.html#WebApplication1_Models_FormData_DropTempTable
+  commentId: M:WebApplication1.Models.FormData.DropTempTable
+  fullName: WebApplication1.Models.FormData.DropTempTable()
+  nameWithType: FormData.DropTempTable()
+- uid: WebApplication1.Models.FormData.DropTempTable*
+  name: DropTempTable
+  href: api/WebApplication1.Models.FormData.html#WebApplication1_Models_FormData_DropTempTable_
+  commentId: Overload:WebApplication1.Models.FormData.DropTempTable
+  isSpec: "True"
+  fullName: WebApplication1.Models.FormData.DropTempTable
+  nameWithType: FormData.DropTempTable
 - uid: WebApplication1.Models.Misc
   name: Misc
   href: api/WebApplication1.Models.Misc.html
@@ -2558,6 +2707,25 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.Misc.UppercaseFirst
   nameWithType: Misc.UppercaseFirst
+- uid: WebApplication1.Models.PdfMethods
+  name: PdfMethods
+  href: api/WebApplication1.Models.PdfMethods.html
+  commentId: T:WebApplication1.Models.PdfMethods
+  fullName: WebApplication1.Models.PdfMethods
+  nameWithType: PdfMethods
+- uid: WebApplication1.Models.PdfMethods.GeneratePdf(System.String,System.String,Microsoft.Reporting.WebForms.ReportViewer)
+  name: GeneratePdf(String, String, ReportViewer)
+  href: api/WebApplication1.Models.PdfMethods.html#WebApplication1_Models_PdfMethods_GeneratePdf_System_String_System_String_Microsoft_Reporting_WebForms_ReportViewer_
+  commentId: M:WebApplication1.Models.PdfMethods.GeneratePdf(System.String,System.String,Microsoft.Reporting.WebForms.ReportViewer)
+  fullName: WebApplication1.Models.PdfMethods.GeneratePdf(System.String, System.String, Microsoft.Reporting.WebForms.ReportViewer)
+  nameWithType: PdfMethods.GeneratePdf(String, String, ReportViewer)
+- uid: WebApplication1.Models.PdfMethods.GeneratePdf*
+  name: GeneratePdf
+  href: api/WebApplication1.Models.PdfMethods.html#WebApplication1_Models_PdfMethods_GeneratePdf_
+  commentId: Overload:WebApplication1.Models.PdfMethods.GeneratePdf
+  isSpec: "True"
+  fullName: WebApplication1.Models.PdfMethods.GeneratePdf
+  nameWithType: PdfMethods.GeneratePdf
 - uid: WebApplication1.RetreiveRole
   name: RetreiveRole
   href: api/WebApplication1.RetreiveRole.html
