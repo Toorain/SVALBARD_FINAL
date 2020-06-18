@@ -53,10 +53,9 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="archivesPanel" href="~/AfficherArchives">Afficher les archives</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="ajouterPanel" href="~/AjouterArchive">Ajouter une archive</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" id="demandesPanel" href="~/Demandes">Demandes</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="demandesPanel" href="~/Demandes">Mes demandes</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="archivistePanel" href="~/ArchivistePanel">Archiviste Panel</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="adminPanel" href="~/AdminPanel">Admin Panel</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/TestReport">Reporting Test</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled" >
                         <AnonymousTemplate>
@@ -100,6 +99,7 @@
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/FormSlider.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/startTourGlobal.js"></script>
     <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/startTourArchive.js"></script>
+    <script src="https://kit.fontawesome.com/e2b0a647a5.js" crossorigin="anonymous"></script>
     <noscript>
       
     </noscript>

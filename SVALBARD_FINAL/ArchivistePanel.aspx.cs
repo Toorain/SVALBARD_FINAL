@@ -2,11 +2,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using Microsoft.Reporting.WebForms;
 using WebApplication1.Models;
 
 namespace WebApplication1
@@ -50,7 +52,7 @@ namespace WebApplication1
                 div.Controls.Add(label2);
 
                 /*// Generate a dropdown menu IF Etablissement || Service
-                ComboBox dropdown1 = new ComboBox
+          UpdateStatusox dropdown1 = new ComboBox
                 {
 
                 };
@@ -100,6 +102,21 @@ namespace WebApplication1
         {
             System.Web.UI.WebControls.Button btn = (System.Web.UI.WebControls.Button)sender;
             DES.AddSmth(btn.ID);
+        }
+        
+        protected void GeneratePdf(object sender, EventArgs eventArgs)
+        {
+            bool success = PdfMethods.GeneratePdf(Identifier.Value, Cote.Value, rptViewerArchiviste);
+
+            if (success)
+            {
+                collapseElm.Attributes["class"] = "collapse show";
+            }
+        }
+
+        protected void UpdateStatus(object sender, EventArgs e)
+        {
+            Logs.UpdateStatus(ArchiveCote.Value, StatusList.SelectedValue);
         }
     }
 }
