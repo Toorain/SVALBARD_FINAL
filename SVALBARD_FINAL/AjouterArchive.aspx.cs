@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Microsoft.AspNet.Identity;
+using Microsoft.Reporting.WebForms;
 using Newtonsoft.Json;
 using WebApplication1.Models;
 
@@ -57,10 +59,19 @@ namespace WebApplication1
                 int action = 1;
                 int status = 1;
             
-                Logs.AddArchive(date,issuerID, firstName, lastName, ets, dir, service, receiverId, cote, action, status);
+                int pdfIdentifier = Logs.AddArchive(date,issuerID, firstName, lastName, ets, dir, service, receiverId, cote, action, status);                
+                
+                bool success = PdfMethods.GeneratePdf(pdfIdentifier.ToString(), cote, rptViewer);
+                if (success)
+                {
+                    collapseElmAdd.Attributes["class"] = "collapse show";
+                }
+
                 alertRequestAdd.Visible = true;
                 alertAdd.InnerHtml =
                     "Demande d'ajout effectuée avec succès. Rendez-vous dans l'onglet <a href='/Demandes'>Demandes</a> pour voir l'avancement.";
+                
+                
             }
             else
             {

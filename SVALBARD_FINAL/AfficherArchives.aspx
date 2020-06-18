@@ -1,6 +1,15 @@
 ﻿<%@ Page Title="AfficherArchives" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AfficherArchives.aspx.cs" Inherits="WebApplication1.AfficherArchives" EnableEventValidation="false" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">
+    <%--<div class="btn btn-danger" onclick="function getCheckedBoxes() {
+                let checkedBoxes = $('input:checkbox:checked');
+                for (let i = 0; i < checkedBoxes.length; i++) {
+                    for (let j = 1; j < checkedBoxes[i].parentElement.parentElement.children.length; j++ ) {
+                        //console.log(checkedBoxes[i].parentElement.parentElement.children[j].innerHTML);
+                    }
+                }
+    }
+    getCheckedBoxes()">ClickMe</div>--%>
     <div runat="server" id="mainContainer" class="container-fluid">
         <!-- #region Alert -->
         <asp:Panel ID="alertAlreadyRequested" runat="server" Visible="false">
@@ -48,13 +57,13 @@
                                     Par :
                                     <br />
                                     <span>Etablissement :
-                                        <asp:Label ID="archiveEtablissement" runat="server" ClientIDMode="Static"></asp:Label></span>
+                                        <asp:Label ID="archiveEtablissement" runat="server" ClientIDMode="Static" /></span>
                                     <br />
                                     <span>Direction :
-                                        <asp:Label ID="archiveDirection" runat="server" ClientIDMode="Static"></asp:Label></span>
+                                        <asp:Label ID="archiveDirection" runat="server" ClientIDMode="Static" /></span>
                                     <br />
                                     <span>Service :
-                                        <asp:Label ID="archiveService" runat="server" ClientIDMode="Static"></asp:Label></span>
+                                        <asp:Label ID="archiveService" runat="server" ClientIDMode="Static" /></span>
                                 </p>
                                 <p>Élimination : <span id="archiveElimination"></span></p>
                                 <p>
@@ -77,13 +86,16 @@
                                     <div class="form-row">
                                         <asp:DropDownList id="EtsList" CssClass="col-md-4 form-control" runat="server" ClientIDMode="Static">
                                         </asp:DropDownList>
-                                        <asp:hiddenfield runat="server" ID="EtsValue" ClientIDMode="Static"></asp:hiddenfield>
+                                        <asp:hiddenfield runat="server" ID="EtsValue" ClientIDMode="Static" />
+                                        
                                         <asp:DropDownList id="DirList" CssClass="col-md-4 form-control" runat="server" ClientIDMode="Static">
                                         </asp:DropDownList>
-                                        <asp:hiddenfield runat="server" ID="DirValue" ClientIDMode="Static"></asp:hiddenfield>
+                                        <asp:hiddenfield runat="server" ID="DirValue" ClientIDMode="Static" />
+                                        
                                         <asp:DropDownList id="ServiceList" CssClass="col-md-4 form-control" runat="server" ClientIDMode="Static">
                                         </asp:DropDownList>
-                                        <asp:hiddenfield runat="server" ID="ServiceValue" ClientIDMode="Static"></asp:hiddenfield>
+                                        <asp:hiddenfield runat="server" ID="ServiceValue" ClientIDMode="Static" />
+                                        
                                     </div>
                                 </form>
                             </div>
@@ -100,7 +112,7 @@
     <table id="tableArchive" class="table table-striped table-hover hiddenLoad responsive">
         <thead>
             <tr id="column-name">
-                <th>ID</th>
+                <th>Cote</th>
                 <th>Versement</th>
                 <th>Etablissement</th>
                 <th>Direction</th>
@@ -109,11 +121,9 @@
                 <th>Extremes</th>
                 <th>Elimination</th>
                 <th>Communication</th>
-                <th>Cote</th>
                 <th>Localisation</th>
             </tr>
             <tr id="column-search">
-                <th class="search-field"></th>
                 <th class="search-field"></th>
                 <th class="search-field"></th>
                 <th class="search-field"></th>

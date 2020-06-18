@@ -31,6 +31,24 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertAdd;
         
         /// <summary>
+        /// collapseElmAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElmAdd;
+        
+        /// <summary>
+        /// rptViewer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewer;
+        
+        /// <summary>
         /// validationFirstName control.
         /// </summary>
         /// <remarks>
