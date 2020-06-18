@@ -56,6 +56,34 @@
       <HintPath>..\packages\DnsClient.1.2.0\lib\net471\DnsClient.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1404.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MongoDB.Bson, Version=2.10.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Bson.2.10.2\lib\net452\MongoDB.Bson.dll</HintPath>
     </Reference>
@@ -185,7 +213,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
@@ -203,19 +230,225 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="AdminPanel.aspx" />
     <Content Include="AjouterArchive.aspx" />
-    <Content Include="Contact.aspx" />
+    <Content Include="api\index.md" />
+    <Content Include="ArchivistePanel.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\datatables.css" />
+    <Content Include="Content\datatables.js" />
+    <Content Include="Content\datatables.min.css" />
+    <Content Include="Content\datatables.min.js" />
+    <Content Include="Content\DataTables-1.10.21\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.21\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.21\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables-1.10.21\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables-1.10.21\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables-1.10.21\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.21\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.21\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.21\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables-1.10.21\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables-1.10.21\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.21\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.21\images\sort_asc.png" />
+    <Content Include="Content\DataTables-1.10.21\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables-1.10.21\images\sort_both.png" />
+    <Content Include="Content\DataTables-1.10.21\images\sort_desc.png" />
+    <Content Include="Content\DataTables-1.10.21\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables-1.10.21\js\dataTables.bootstrap.js" />
+    <Content Include="Content\DataTables-1.10.21\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\DataTables-1.10.21\js\dataTables.bootstrap4.js" />
+    <Content Include="Content\DataTables-1.10.21\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Content\DataTables-1.10.21\js\dataTables.foundation.js" />
+    <Content Include="Content\DataTables-1.10.21\js\dataTables.foundation.min.js" />
+    <Content Include="Content\DataTables-1.10.21\js\dataTables.jqueryui.js" />
+    <Content Include="Content\DataTables-1.10.21\js\dataTables.jqueryui.min.js" />
+    <Content Include="Content\DataTables-1.10.21\js\dataTables.semanticui.js" />
+    <Content Include="Content\DataTables-1.10.21\js\dataTables.semanticui.min.js" />
+    <Content Include="Content\DataTables-1.10.21\js\jquery.dataTables.js" />
+    <Content Include="Content\DataTables-1.10.21\js\jquery.dataTables.min.js" />
+    <Content Include="Content\Responsive\css\responsive.bootstrap.css" />
+    <Content Include="Content\Responsive\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\Responsive\css\responsive.bootstrap4.css" />
+    <Content Include="Content\Responsive\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\Responsive\css\responsive.dataTables.css" />
+    <Content Include="Content\Responsive\css\responsive.dataTables.min.css" />
+    <Content Include="Content\Responsive\css\responsive.foundation.css" />
+    <Content Include="Content\Responsive\css\responsive.foundation.min.css" />
+    <Content Include="Content\Responsive\css\responsive.jqueryui.css" />
+    <Content Include="Content\Responsive\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\Responsive\css\responsive.semanticui.css" />
+    <Content Include="Content\Responsive\css\responsive.semanticui.min.css" />
+    <Content Include="Content\Responsive\js\dataTables.responsive.js" />
+    <Content Include="Content\Responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Content\Responsive\js\responsive.bootstrap.js" />
+    <Content Include="Content\Responsive\js\responsive.bootstrap.min.js" />
+    <Content Include="Content\Responsive\js\responsive.bootstrap4.js" />
+    <Content Include="Content\Responsive\js\responsive.bootstrap4.min.js" />
+    <Content Include="Content\Responsive\js\responsive.foundation.js" />
+    <Content Include="Content\Responsive\js\responsive.foundation.min.js" />
+    <Content Include="Content\Responsive\js\responsive.jqueryui.js" />
+    <Content Include="Content\Responsive\js\responsive.jqueryui.min.js" />
+    <Content Include="Content\Responsive\js\responsive.semanticui.js" />
+    <Content Include="Content\Responsive\js\responsive.semanticui.min.js" />
     <Content Include="Content\Site.css" />
-    <Content Include="DataFetchService.asmx" />
-    <Content Include="RetreiveRole.asmx" />
-    <Content Include="Scripts\AdminPanel.js" />
-    <Content Include="Scripts\DataTableAdmin.js" />
-    <Content Include="Scripts\DataTableDemandes.js" />
+    <Content Include="docfx.json" />
+    <Content Include="index.md" />
+    <Content Include="Scripts\scripts_perso\AfficherArchive.js" />
+    <Content Include="Scripts\scripts_perso\ArchivistePanel.js" />
+    <Content Include="Scripts\scripts_perso\CheckCote.js" />
+    <Content Include="Scripts\scripts_perso\FormSlider.js" />
+    <Content Include="Scripts\scripts_perso\startTourArchive.js" />
+    <Content Include="Scripts\scripts_perso\startTourGlobal.js" />
+    <Content Include="Scripts\scripts_datatable\DataTableArchiviste.js" />
+    <Content Include="Scripts\shepherd\.browserslistrc" />
+    <Content Include="Scripts\shepherd\.codeclimate.yml" />
+    <Content Include="Scripts\shepherd\.dependabot\config.yml" />
+    <Content Include="Scripts\shepherd\.eslintignore" />
+    <Content Include="Scripts\shepherd\.eslintrc.js" />
+    <Content Include="Scripts\shepherd\.github\stale.yml" />
+    <Content Include="Scripts\shepherd\.github\workflows\publish-github-pages.yml" />
+    <Content Include="Scripts\shepherd\.gitignore" />
+    <Content Include="Scripts\shepherd\.jsdoc.js" />
+    <Content Include="Scripts\shepherd\.nojekyll" />
+    <Content Include="Scripts\shepherd\.npmignore" />
+    <Content Include="Scripts\shepherd\.prettierrc.js" />
+    <Content Include="Scripts\shepherd\.travis.yml" />
+    <Content Include="Scripts\shepherd\babel.config.js" />
+    <Content Include="Scripts\shepherd\CHANGELOG.md" />
+    <Content Include="Scripts\shepherd\CONTRIBUTING.md" />
+    <Content Include="Scripts\shepherd\cypress.json" />
+    <Content Include="Scripts\shepherd\dist\shepherd.css" />
+    <Content Include="Scripts\shepherd\dist\shepherd.min.js" />
+    <Content Include="Scripts\shepherd\docs-src\tutorials\01-install.md" />
+    <Content Include="Scripts\shepherd\docs-src\tutorials\02-usage.md" />
+    <Content Include="Scripts\shepherd\docs-src\tutorials\03-styling.md" />
+    <Content Include="Scripts\shepherd\docs-src\tutorials\04-cookbook.md" />
+    <Content Include="Scripts\shepherd\docs-src\tutorials\config.json" />
+    <Content Include="Scripts\shepherd\HISTORY.md" />
+    <Content Include="Scripts\shepherd\index.html" />
+    <Content Include="Scripts\shepherd\jest.config.js" />
+    <Content Include="Scripts\shepherd\landing\assets\favicons\android-chrome-192x192.png" />
+    <Content Include="Scripts\shepherd\landing\assets\favicons\android-chrome-512x512.png" />
+    <Content Include="Scripts\shepherd\landing\assets\favicons\apple-touch-icon.png" />
+    <Content Include="Scripts\shepherd\landing\assets\favicons\favicon-16x16.png" />
+    <Content Include="Scripts\shepherd\landing\assets\favicons\favicon-32x32.png" />
+    <Content Include="Scripts\shepherd\landing\assets\favicons\favicon.ico" />
+    <Content Include="Scripts\shepherd\landing\assets\favicons\site.webmanifest" />
+    <Content Include="Scripts\shepherd\landing\assets\fonts\FoundersGrotesk-Regular.woff" />
+    <Content Include="Scripts\shepherd\landing\assets\fonts\FoundersGrotesk-Regular.woff2" />
+    <Content Include="Scripts\shepherd\landing\assets\fonts\GTPressura-Bold.woff" />
+    <Content Include="Scripts\shepherd\landing\assets\fonts\GTPressura-Bold.woff2" />
+    <Content Include="Scripts\shepherd\landing\assets\img\accessibility.svg" />
+    <Content Include="Scripts\shepherd\landing\assets\img\arrow.svg" />
+    <Content Include="Scripts\shepherd\landing\assets\img\customizable.svg" />
+    <Content Include="Scripts\shepherd\landing\assets\img\demo.png" />
+    <Content Include="Scripts\shepherd\landing\assets\img\demo.svg" />
+    <Content Include="Scripts\shepherd\landing\assets\img\framework.svg" />
+    <Content Include="Scripts\shepherd\landing\assets\img\github.svg" />
+    <Content Include="Scripts\shepherd\landing\assets\img\linkedin.svg" />
+    <Content Include="Scripts\shepherd\landing\assets\img\shepherd-head-wink.svg" />
+    <Content Include="Scripts\shepherd\landing\assets\img\shepherd-head.svg" />
+    <Content Include="Scripts\shepherd\landing\assets\img\shepherd-header.svg" />
+    <Content Include="Scripts\shepherd\landing\assets\img\ship-shape-logo.png" />
+    <Content Include="Scripts\shepherd\landing\assets\img\ship-shape-logo.svg" />
+    <Content Include="Scripts\shepherd\landing\assets\img\twitter.svg" />
+    <Content Include="Scripts\shepherd\landing\assets\users\ally.svg" />
+    <Content Include="Scripts\shepherd\landing\assets\users\bonsai.png" />
+    <Content Include="Scripts\shepherd\landing\assets\users\google.svg" />
+    <Content Include="Scripts\shepherd\landing\css\fonts.css" />
+    <Content Include="Scripts\shepherd\landing\css\prism.css" />
+    <Content Include="Scripts\shepherd\landing\css\styles.css" />
+    <Content Include="Scripts\shepherd\landing\css\welcome.css" />
+    <Content Include="Scripts\shepherd\landing\js\prism.js" />
+    <Content Include="Scripts\shepherd\landing\js\svg-inject.min.js" />
+    <Content Include="Scripts\shepherd\landing\js\welcome.js" />
+    <Content Include="Scripts\shepherd\LICENSE" />
+    <Content Include="Scripts\shepherd\package.json" />
+    <Content Include="Scripts\shepherd\patches\rollup-plugin-eslint+7.0.0.patch" />
+    <Content Include="Scripts\shepherd\README.md" />
+    <Content Include="Scripts\shepherd\rollup.config.js" />
+    <Content Include="Scripts\shepherd\src\js\components\shepherd-button.svelte" />
+    <Content Include="Scripts\shepherd\src\js\components\shepherd-cancel-icon.svelte" />
+    <Content Include="Scripts\shepherd\src\js\components\shepherd-content.svelte" />
+    <Content Include="Scripts\shepherd\src\js\components\shepherd-element.svelte" />
+    <Content Include="Scripts\shepherd\src\js\components\shepherd-footer.svelte" />
+    <Content Include="Scripts\shepherd\src\js\components\shepherd-header.svelte" />
+    <Content Include="Scripts\shepherd\src\js\components\shepherd-modal.svelte" />
+    <Content Include="Scripts\shepherd\src\js\components\shepherd-text.svelte" />
+    <Content Include="Scripts\shepherd\src\js\components\shepherd-title.svelte" />
+    <Content Include="Scripts\shepherd\src\js\evented.js" />
+    <Content Include="Scripts\shepherd\src\js\shepherd.js" />
+    <Content Include="Scripts\shepherd\src\js\step.js" />
+    <Content Include="Scripts\shepherd\src\js\tour.js" />
+    <Content Include="Scripts\shepherd\src\js\utils\auto-bind.js" />
+    <Content Include="Scripts\shepherd\src\js\utils\bind.js" />
+    <Content Include="Scripts\shepherd\src\js\utils\cleanup.js" />
+    <Content Include="Scripts\shepherd\src\js\utils\general.js" />
+    <Content Include="Scripts\shepherd\src\js\utils\overlay-path.js" />
+    <Content Include="Scripts\shepherd\src\js\utils\popper-options.js" />
+    <Content Include="Scripts\shepherd\src\js\utils\type-check.js" />
+    <Content Include="Scripts\shepherd\svelte.config.js" />
+    <Content Include="Scripts\shepherd\tailwind.config.js" />
+    <Content Include="Scripts\shepherd\test\.eslintrc.js" />
+    <Content Include="Scripts\shepherd\test\cypress\integration\a11y.spec.js" />
+    <Content Include="Scripts\shepherd\test\cypress\integration\destroying-elements.spec.js" />
+    <Content Include="Scripts\shepherd\test\cypress\integration\element-targeting.spec.js" />
+    <Content Include="Scripts\shepherd\test\cypress\integration\modal.spec.js" />
+    <Content Include="Scripts\shepherd\test\cypress\integration\test.acceptance.js" />
+    <Content Include="Scripts\shepherd\test\cypress\plugins\index.js" />
+    <Content Include="Scripts\shepherd\test\cypress\support\commands.js" />
+    <Content Include="Scripts\shepherd\test\cypress\support\index.js" />
+    <Content Include="Scripts\shepherd\test\cypress\utils\default-buttons.js" />
+    <Content Include="Scripts\shepherd\test\cypress\utils\default-steps.js" />
+    <Content Include="Scripts\shepherd\test\cypress\utils\setup-tour.js" />
+    <Content Include="Scripts\shepherd\test\dummy\assets\favicons\android-chrome-192x192.png" />
+    <Content Include="Scripts\shepherd\test\dummy\assets\favicons\android-chrome-512x512.png" />
+    <Content Include="Scripts\shepherd\test\dummy\assets\favicons\apple-touch-icon.png" />
+    <Content Include="Scripts\shepherd\test\dummy\assets\favicons\browserconfig.xml" />
+    <Content Include="Scripts\shepherd\test\dummy\assets\favicons\favicon-16x16.png" />
+    <Content Include="Scripts\shepherd\test\dummy\assets\favicons\favicon-32x32.png" />
+    <Content Include="Scripts\shepherd\test\dummy\assets\favicons\favicon.ico" />
+    <Content Include="Scripts\shepherd\test\dummy\assets\favicons\manifest.json" />
+    <Content Include="Scripts\shepherd\test\dummy\assets\favicons\mstile-150x150.png" />
+    <Content Include="Scripts\shepherd\test\dummy\assets\favicons\safari-pinned-tab.svg" />
+    <Content Include="Scripts\shepherd\test\dummy\css\welcome.css" />
+    <Content Include="Scripts\shepherd\test\dummy\index.html" />
+    <Content Include="Scripts\shepherd\test\dummy\js\prism.js" />
+    <Content Include="Scripts\shepherd\test\dummy\sheep.svg" />
+    <Content Include="Scripts\shepherd\test\examples\destroying-elements.html" />
+    <Content Include="Scripts\shepherd\test\unit\.eslintrc.js" />
+    <Content Include="Scripts\shepherd\test\unit\components\shepherd-button.spec.js" />
+    <Content Include="Scripts\shepherd\test\unit\components\shepherd-content.spec.js" />
+    <Content Include="Scripts\shepherd\test\unit\components\shepherd-element.spec.js" />
+    <Content Include="Scripts\shepherd\test\unit\components\shepherd-footer.spec.js" />
+    <Content Include="Scripts\shepherd\test\unit\components\shepherd-header.spec.js" />
+    <Content Include="Scripts\shepherd\test\unit\components\shepherd-modal.spec.js" />
+    <Content Include="Scripts\shepherd\test\unit\components\shepherd-text.spec.js" />
+    <Content Include="Scripts\shepherd\test\unit\components\shepherd-title.spec.js" />
+    <Content Include="Scripts\shepherd\test\unit\evented.spec.js" />
+    <Content Include="Scripts\shepherd\test\unit\setupTests.js" />
+    <Content Include="Scripts\shepherd\test\unit\step.spec.js" />
+    <Content Include="Scripts\shepherd\test\unit\tour.spec.js" />
+    <Content Include="Scripts\shepherd\test\unit\utils\bind.spec.js" />
+    <Content Include="Scripts\shepherd\test\unit\utils\cleanup.spec.js" />
+    <Content Include="Scripts\shepherd\test\unit\utils\general.spec.js" />
+    <Content Include="Scripts\shepherd\yarn.lock" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="TestReport.aspx" />
+    <Content Include="toc.yml" />
+    <Content Include="WebServices\AddFormDataService.asmx" />
+    <Content Include="WebServices\CheckCoteService.asmx" />
+    <Content Include="WebServices\DataFetchService.asmx" />
+    <Content Include="WebServices\DESFetchService.asmx" />
+    <Content Include="WebServices\RetreiveRole.asmx" />
+    <Content Include="Scripts\scripts_perso\AdminPanel.js" />
+    <Content Include="Scripts\scripts_datatable\DataTableAdmin.js" />
+    <Content Include="Scripts\scripts_datatable\DataTableDemandes.js" />
     <Content Include="Default.aspx" />
     <Content Include="Demandes.aspx" />
     <Content Include="favicon.ico" />
@@ -226,12 +459,12 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\DataTableArchives.js" />
+    <Content Include="Scripts\scripts_datatable\DataTableArchives.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\esm\popper.min.js" />
-    <Content Include="Scripts\FetchData.js" />
+    <Content Include="Scripts\scripts_perso\FetchData.js" />
     <Content Include="Scripts\index.js.flow" />
     <Content Include="Scripts\esm\popper.min.js.map" />
     <Content Include="Scripts\esm\popper.js.map" />
@@ -247,13 +480,8 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="index.md" />
-    <Content Include="docfx.json" />
     <Content Include="articles\toc.md" />
     <Content Include="articles\intro.md" />
-    <Content Include="api\index.md" />
-    <Content Include="api\.gitignore" />
-    <Content Include=".gitignore" />
     <Content Include="articles\afficher_archives.md" />
     <Content Include="articles\tableaux_general.md" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -355,11 +583,10 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="UserRequestService.asmx" />
-    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="WebServices\SuggestCoteService.asmx" />
+    <Content Include="WebServices\UserRequestService.asmx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
-    <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
@@ -482,26 +709,37 @@
       <DependentUpon>AjouterArchive.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="ArchivistePanel.aspx.cs">
+      <DependentUpon>ArchivistePanel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="ArchivistePanel.aspx.designer.cs">
+      <DependentUpon>ArchivistePanel.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseUser.cs" />
-    <Compile Include="DataSQL.cs" />
-    <Compile Include="DataFetchService.asmx.cs">
+    <Compile Include="Models\DatabaseUser.cs" />
+    <Compile Include="Models\DataSQL.cs" />
+    <Compile Include="Models\DES.cs" />
+    <Compile Include="Models\FormData.cs" />
+    <Compile Include="Models\Misc.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TestReport.aspx.cs">
+      <DependentUpon>TestReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestReport.aspx.designer.cs">
+      <DependentUpon>TestReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\AddFormDataService.asmx.cs">
+      <DependentUpon>AddFormDataService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\CheckCoteService.asmx.cs">
+      <DependentUpon>CheckCoteService.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\DataFetchService.asmx.cs">
       <DependentUpon>DataFetchService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
@@ -529,11 +767,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Logs.cs" />
+    <Compile Include="Models\Logs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="NavigationEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RetreiveRole.asmx.cs">
+    <Compile Include="WebServices\DESFetchService.asmx.cs">
+      <DependentUpon>DESFetchService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\RetreiveRole.asmx.cs">
       <DependentUpon>RetreiveRole.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
@@ -544,24 +786,13 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-    </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="UserRequestService.asmx.cs">
+    <Compile Include="WebServices\SuggestCoteService.asmx.cs">
+      <DependentUpon>SuggestCoteService.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\UserRequestService.asmx.cs">
       <DependentUpon>UserRequestService.asmx</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ViewSwitcher.ascx.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ViewSwitcher.ascx.designer.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -581,7 +812,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="toc.yml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -591,6 +821,10 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\shepherd\src\types\evented.d.ts" />
+    <TypeScriptCompile Include="Scripts\shepherd\src\types\shepherd.d.ts" />
+    <TypeScriptCompile Include="Scripts\shepherd\src\types\step.d.ts" />
+    <TypeScriptCompile Include="Scripts\shepherd\src\types\tour.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -638,10 +872,10 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets'))" />
-    <Error Condition="!Exists('..\packages\docfx.console.2.51.0\build\docfx.console.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\docfx.console.2.51.0\build\docfx.console.targets'))" />
+    <Error Condition="!Exists('..\packages\docfx.console.2.54.0\build\docfx.console.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\docfx.console.2.54.0\build\docfx.console.targets'))" />
   </Target>
   <Import Project="..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />
-  <Import Project="..\packages\docfx.console.2.51.0\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.51.0\build\docfx.console.targets')" />
+  <Import Project="..\packages\docfx.console.2.54.0\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.54.0\build\docfx.console.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

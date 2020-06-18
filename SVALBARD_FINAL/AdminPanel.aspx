@@ -31,9 +31,10 @@
                                 <asp:DropDownList id="RoleList" runat="server">
                                     <asp:ListItem Value="3"> Consultation </asp:ListItem>
                                     <asp:ListItem Value="2"> Gestion </asp:ListItem>
+                                    <asp:ListItem Value="4"> Archiviste </asp:ListItem>
                                     <asp:ListItem Value="1"> Administration </asp:ListItem>
                                 </asp:DropDownList>
-                                <asp:Button runat="server" ID="changeUserStatus" OnClick="ChangeUserStatus" Text="Changer de status" CssClass="submitModal btn btn-primary mt-4" ClientIDMode="Static"  />
+                                <asp:Button runat="server" ID="changeUserStatus" OnClick="ChangeUserStatus" Text="Changer de status" CssClass="submitModal btn mt-4" ClientIDMode="Static"  />
                                 <p class="confirmAdmin" hidden>Attention, vous allez donner les droits d'administration à cette personne.<br /> Êtes-vous certain(e) de vouloir continuer ?</p>
                                 <button id="confirmAdminButton" class="btn btn-success confirmAdmin" hidden>Confirmer</button>
                             </div>
@@ -46,20 +47,27 @@
                 </div>
             </div>
         </div>
-        <table id="adminTable" class="table table-striped table-hover">
+        <table id="adminTable" class="table table-striped table-hover responsive">
             <thead>
                 <tr>
-                    <th>UserName</th>
-                    <th>ID</th>
-                    <th>Email</th>
-                    <th>PhoneNumber</th>
+                    <th class="col-title">UserName</th>
+                    <th class="col-title">ID</th>
+                    <th class="col-title">Email</th>
+                    <th class="col-title">PhoneNumber</th>
+                </tr>
+                <tr>
+                    <th class="search-field"></th>
+                    <th class="search-field"></th>
+                    <th class="search-field"></th>
+                    <th class="search-field"></th>
                 </tr>
             </thead>
             <tfoot>
+                
             </tfoot>
         </table>
     <%} else {
-            Response.Redirect("/Default.aspx");
+            Response.Redirect("~/");
         } %>
 </asp:Content>
 

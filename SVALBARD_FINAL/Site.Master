@@ -4,7 +4,7 @@
 
 <html lang="fr">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - <%: appName %></title>
@@ -14,7 +14,9 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="Content/dataTables.min.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"> -->
+    <link rel="stylesheet" href="./Scripts/shepherd/dist/shepherd.css"/>
 </head>
 <body>
     <form runat="server">
@@ -24,7 +26,7 @@
                 <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="bootstrap" />                
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
                 <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
@@ -49,18 +51,17 @@
                 <div class="navbar-collapse collapsed collapse" id="navbar-collapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">À propos de</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="archivesPanel" href="~/AfficherArchives">Afficher les archives</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="ajouterPanel" href="~/AjouterArchive">Ajouter une archive</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="demandesPanel" href="~/Demandes">Demandes</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="archivistePanel" href="~/ArchivistePanel">Archiviste Panel</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="adminPanel" href="~/AdminPanel">Admin Panel</a></li>
-                        <!-- <li class="nav-item"><a class="nav-link" runat="server" href="~/AdminPanel">Admin Panel</a></li> -->     
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/TestReport">Reporting Test</a></li>
                     </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <asp:LoginView runat="server" ViewStateMode="Disabled" >
                         <AnonymousTemplate>
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item"><a class="nav-link" runat="server" href="~/Account/Register">Inscrire</a></li>
+                            <ul class="navbar-nav ml-auto" id="connexion-block">
+                                <li class="nav-item" id="inscrire-block"><a class="nav-link" runat="server" href="~/Account/Register" >Inscrire</a></li>
                                 <li class="nav-item"><a class="nav-link" runat="server" href="~/Account/Login">Se connecter</a></li>
                             </ul>
                         </AnonymousTemplate>
@@ -84,11 +85,23 @@
     <footer>
         <p>&copy; 2020 - <%: DateTime.Now.Year %> | <%: appName %></p>
     </footer>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/DataTableArchives.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/FetchData.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/DataTableDemandes.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/DataTableAdmin.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/AdminPanel.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Content/datatables.min.js"></script>
+    <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script> -->
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableArchives.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableArchiviste.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableDemandes.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableAdmin.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/FetchData.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/AdminPanel.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/ArchivistePanel.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/AfficherArchive.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/CheckCote.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/shepherd/dist/shepherd.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/FormSlider.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/startTourGlobal.js"></script>
+    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/startTourArchive.js"></script>
+    <noscript>
+      
+    </noscript>
 </body>
 </html>
