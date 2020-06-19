@@ -298,7 +298,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="docfx.json" />
     <Content Include="index.md" />
-    <Content Include="Scripts\scripts_perso\AfficherArchive.js" />
+    <Content Include="Scripts\scripts_perso\ETS_Script.js" />
     <Content Include="Scripts\scripts_perso\ArchivistePanel.js" />
     <Content Include="Scripts\scripts_perso\CheckCote.js" />
     <Content Include="Scripts\scripts_perso\FormSlider.js" />
@@ -719,6 +719,7 @@
     <Compile Include="ArchivistePanel.aspx.designer.cs">
       <DependentUpon>ArchivistePanel.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AspNetUsersExtended.cs" />
     <Compile Include="Models\DatabaseUser.cs" />
     <Compile Include="Models\DataSQL.cs" />
     <Compile Include="Models\DES.cs" />

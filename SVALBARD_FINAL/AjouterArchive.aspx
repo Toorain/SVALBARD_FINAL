@@ -30,41 +30,9 @@
       <div class="tab">
         <div class="form-row justify-content-center">
           <div class="col-md-3 mb-3">
-            <hr>
-            <div class="mb-3">
-              <label for="validationFirstName">Prénom</label>
-              <input runat="server" type="text" class="form-control" id="validationFirstName" placeholder="Prénom" value="" required />
-            </div>
-            <hr>
-            <div class="mb-3">
-              <label for="validationLastName">Nom</label>
-              <input runat="server" type="text" class="form-control" id="validationLastName" placeholder="Nom" value="" required />
-            </div>
-            <hr>
             <div class="mb-3">
               <label for="validationNombreArticle">Nombre de boîtes à ajouter</label> 
               <input type="number" class="form-control" id="validationNombreArticle" placeholder="Nombre de boîtes" value="" required />
-            </div>
-          </div>
-          <div class="col-md-1 mb-3"></div>
-          <div class="col-md-3 mb-3">
-            <hr/>
-            <label for="EtsList">Etablissement</label>
-            <div class="mb-3">
-              <asp:DropDownList id="EtsList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
-              <asp:hiddenfield runat="server" ID="EtsValue" ClientIDMode="Static" />
-            </div>
-            <hr>
-            <label for="DirList">Direction</label>
-            <div class="mb-3">
-              <asp:DropDownList id="DirList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
-              <asp:hiddenfield runat="server" ID="DirValue" ClientIDMode="Static" />
-            </div>
-            <hr>
-            <label for="ServiceList">Service</label>
-            <div class="mb-3">
-              <asp:DropDownList id="ServiceList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
-              <asp:hiddenfield runat="server" ID="ServiceValue" ClientIDMode="Static" />
             </div>
             <div class="mb-3">
               <label for="coteValidation">Côte de l'archive (XXWXXXX)</label>
@@ -77,6 +45,7 @@
               </div>
             </div>
           </div>
+          <div class="col-md-1 mb-3"></div>
         </div>
       </div>
       <div class="tab">

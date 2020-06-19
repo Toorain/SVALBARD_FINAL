@@ -14,9 +14,9 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="Content/dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Content/dataTables.min.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"> -->
-    <link rel="stylesheet" href="./Scripts/shepherd/dist/shepherd.css"/>
+    <!--<link rel="stylesheet" href="/Scripts/shepherd/dist/shepherd.css"/> -->
 </head>
 <body>
     <form runat="server">
@@ -66,7 +66,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Bonjour, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
@@ -84,21 +84,21 @@
     <footer>
         <p>&copy; 2020 - <%: DateTime.Now.Year %> | <%: appName %></p>
     </footer>
-    <script type="text/javascript" charset="utf8" src="./Content/datatables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Content/datatables.min.js"></script>
     <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script> -->
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableArchives.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableArchiviste.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableDemandes.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableAdmin.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/FetchData.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/AdminPanel.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/ArchivistePanel.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/AfficherArchive.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/CheckCote.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/shepherd/dist/shepherd.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/FormSlider.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/startTourGlobal.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/startTourArchive.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_datatable/DataTableArchives.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_datatable/DataTableArchiviste.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_datatable/DataTableDemandes.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_datatable/DataTableAdmin.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/FetchData.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/AdminPanel.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/ArchivistePanel.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/ETS_Script.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/CheckCote.js"></script>
+    <!-- <script type="text/javascript" charset="utf8" src="/Scripts/shepherd/dist/shepherd.min.js"></script> -->
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/FormSlider.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/startTourGlobal.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/startTourArchive.js"></script>
     <script src="https://kit.fontawesome.com/e2b0a647a5.js" crossorigin="anonymous"></script>
     <noscript>
       

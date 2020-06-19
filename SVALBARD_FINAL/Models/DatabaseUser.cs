@@ -18,7 +18,56 @@ namespace WebApplication1
         public string PhoneNumber { get; set; }
         public string UserName { get; set; }
 
-        
+        public static string GetUserFirstName()
+        {
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+            {
+                string cmdString = "SELECT first_name FROM AspNetUsersExtended WHERE Id = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", id);
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        return dr['first_name'].ToString();
+                    }
+                    return false;
+                }
+            }
+        }
+
+        public static string GetUserLastName()
+        {
+            string lastName;
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+            {
+                string cmdString = "SELECT last_name FROM AspNetUserRoles";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "1")
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+            }
+        }
         public static bool IsUserAdmin(IIdentity user)
         {
             // Connect to the Database

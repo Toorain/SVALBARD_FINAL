@@ -60,7 +60,6 @@
                 $("#EtsValue").val($("#EtsList").val());
                 $("#DirValue").val($("#DirList").val());
                 $("#ServiceValue").val($("#ServiceList").val());
-                console.log($("#EtsValue").val());
             },
             failure: function (response) {
                 alert(response);
@@ -76,5 +75,14 @@ function resetInput () {
     $("#coteExists").attr("hidden", "hidden");
     $('#coteValidation').val('');
     $("#coteValidation").removeAttr("disabled");
+}
+
+function addLeadingZeroes(givenNumber) {
+    let len = givenNumber.toString().length;
+    let returnedNumber = givenNumber.toString();
+    for (let i = len; i < 4; i++) {
+        returnedNumber = "0" + returnedNumber;    
+    }
+    return returnedNumber;
 }
 

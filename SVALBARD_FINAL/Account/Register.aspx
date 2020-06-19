@@ -1,4 +1,4 @@
-﻿<%@ Page Title="S'inscrire" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="WebApplication1.Account.Register" %>
+﻿<%@ Page Title="S'inscrire" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="WebApplication1.Account.Register" EnableEventValidation="false" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %>.</h2>
@@ -10,6 +10,47 @@
         <h4>Créer un nouveau compte</h4>
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
+        <div class="form-group form-row">
+            <div class="col-md-4">
+                <label for="EtsList">Etablissement</label>
+                <div class="mb-3">
+                  <asp:DropDownList id="EtsList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
+                  <asp:hiddenfield runat="server" ID="EtsValue" ClientIDMode="Static" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="DirList">Direction</label>
+                <div class="mb-3">
+                  <asp:DropDownList id="DirList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
+                  <asp:hiddenfield runat="server" ID="DirValue" ClientIDMode="Static" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="ServiceList">Service</label>
+                <div class="mb-3">
+                  <asp:DropDownList id="ServiceList" CssClass="col-md-12 form-control" runat="server" ClientIDMode="Static" />
+                  <asp:hiddenfield runat="server" ID="ServiceValue" ClientIDMode="Static" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div class="col-md-6">
+                <asp:Label runat="server" AssociatedControlID="First_Name" CssClass="col-md-2 control-label">Prénom</asp:Label>
+                <div class="col-md-10">
+                    <asp:TextBox runat="server" ID="First_Name" CssClass="form-control" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="First_Name"
+                        CssClass="text-danger" ErrorMessage="Le champ Prénom est obligatoire." />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <asp:Label runat="server" AssociatedControlID="Last_Name" CssClass="col-md-2 control-label">Nom de famille</asp:Label>
+                <div class="col-md-10">
+                    <asp:TextBox runat="server" ID="Last_Name" CssClass="form-control" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="Last_Name"
+                        CssClass="text-danger" ErrorMessage="Le champ Nom de famille est obligatoire." />
+                </div>
+            </div>
+        </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Messagerie</asp:Label>
             <div class="col-md-10">

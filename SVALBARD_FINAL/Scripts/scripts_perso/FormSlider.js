@@ -1,6 +1,8 @@
 ﻿let currentTab = 0; // Current tab is set to be the first tab (0)
-let clickCount = 0;
 let articleCount;
+let coteSlug;
+let coteNumbers;
+let actualCoteNumber;
 let inner;
 
 $(window).keydown(function (event) {
@@ -40,18 +42,17 @@ if (window.location.pathname === "/AjouterArchive") {
     }
 
     function nextPrev(n) {
-        if ($("#ServiceValue").val() !== '') {
-            clickCount += 1;
-        }
         // This function will figure out which tab to display
         let x = document.getElementsByClassName("tab");
         // Exit the function if any field in the current tab is invalid:
-        if (n === 1 && !validateForm()) {
-            clickCount = 0;
+        if (n === 1 && !validateForm()) {   
             return false;
         }
         if (n === 1) {
             generateInputTable();
+        } else if (n === -1) {
+            $("#articleFill").empty();
+            $('#articleFillTfoot').empty();
         }
         // Hide the current tab:
         x[currentTab].style.display = "none";
@@ -75,7 +76,7 @@ if (window.location.pathname === "/AjouterArchive") {
         // A loop that checks every input field in the current tab:
         for (i = 0; i < y.length; i++) {
             // If a field is empty...
-            if (y[i].value == "") {
+            if (y[i].value === "") {
                 // add an "invalid" class to the field:
                 y[i].className += " invalid";
                 // and set the current valid status to false:
@@ -106,25 +107,26 @@ if (window.location.pathname === "/AjouterArchive") {
     }
 
     function generateInputTable() {
-        if (clickCount === 1) {
-            let nombreArticles = Number($("#validationNombreArticle").val());
-            let articleCote = Number()
+        let nombreArticles = Number($("#validationNombreArticle").val());
+        let cote = $("#coteValidationServer").val();
+        coteSlug = cote.substring(0, 3);
+        coteNumbers = Number(cote.substring(3)) - 1;
 
-            for (articleCount = 1; articleCount <= nombreArticles; articleCount++) {
-                inner = "<tr id='article_" + articleCount + "'>" +
-                    "<td><input class='form-control' type='number' value='" + articleCount + "' disabled /></td>" +
-                    "<td><textarea class='form-control' ></textarea></td>" +
-                    "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
-                    "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
-                    "<td><textarea class='form-control' type='text' ></textarea></td>" +
-                    ((articleCount === nombreArticles)
-                        ? "<td class='text-center' id='removeButton'><div class='btn btn-danger' onclick='removeRow(articleCount)'>x</div></td>"
-                        : "<td class='text-center '>") +
-                    "</tr>";
-                $('#articleFill').append(inner);
-            }
-            $('#articleFillTfoot').append("<div id='addArticle' class='btn btn-success rounded-circle' onclick='addArticle()'>+</div>");
+        for (articleCount = 1; articleCount <= nombreArticles; articleCount++) {
+            actualCoteNumber = coteNumbers + articleCount;
+            inner = "<tr id='article_" + articleCount + "'>" +
+                "<td><input class='form-control' type='text' value='" + coteSlug + (addLeadingZeroes(actualCoteNumber)) + "' disabled /></td>" +
+                "<td><textarea class='form-control' ></textarea></td>" +
+                "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
+                "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
+                "<td><textarea class='form-control' type='text' ></textarea></td>" +
+                ((articleCount === nombreArticles)
+                    ? "<td class='text-center' id='removeButton'><div class='btn btn-danger' onclick='removeRow(articleCount)'>x</div></td>"
+                    : "<td class='text-center '>") +
+                "</tr>";
+            $('#articleFill').append(inner);
         }
+        $('#articleFillTfoot').append("<div id='addArticle' class='btn btn-success rounded-circle' onclick='addArticle()'>+</div>");
     }
 
     function addArticle() {
@@ -133,7 +135,7 @@ if (window.location.pathname === "/AjouterArchive") {
         document.getElementById('removeButton').removeAttribute("id");
         $("#articleFill").append(
             "<tr id='article_" + articleCount + "'>" +
-            "<td><input class='form-control' type='number' value='" + articleCount + "' disabled /></td>" +
+            "<td><input class='form-control' type='text' value='" + coteSlug + (addLeadingZeroes(actualCoteNumber += 1)) + "' disabled /></td>" +
             "<td><textarea class='form-control' rows='2'></textarea></td>" +
             "<td><input class='form-control' type='number' /></td>" +
             "<td><input class='form-control' type='number' /></td>" +
@@ -152,6 +154,7 @@ if (window.location.pathname === "/AjouterArchive") {
         // Target previous element and add cross to delete;
         previousElement.lastChild.id = "removeButton";
         previousElement.lastChild.innerHTML += "<div class='btn btn-danger' onclick='removeRow(articleCount)'>x</div>";
+        actualCoteNumber--;
         articleCount--;
     }
 
@@ -182,7 +185,7 @@ if (window.location.pathname === "/AjouterArchive") {
             type: "POST",
             dataType: "text",
             async: true,
-            url: "WebServices/AddFormDataService.asmx/PushData",
+            url: "/WebServices/AddFormDataService.asmx/PushData",
             data: {data : JSON.stringify(jsonData)},
             mimeType: "text/plain",
             done: (data) => {
