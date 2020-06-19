@@ -724,6 +724,18 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Account.Register.CreateUser_Click
   nameWithType: Register.CreateUser_Click
+- uid: WebApplication1.Account.Register.DirList
+  name: DirList
+  href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_DirList
+  commentId: F:WebApplication1.Account.Register.DirList
+  fullName: WebApplication1.Account.Register.DirList
+  nameWithType: Register.DirList
+- uid: WebApplication1.Account.Register.DirValue
+  name: DirValue
+  href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_DirValue
+  commentId: F:WebApplication1.Account.Register.DirValue
+  fullName: WebApplication1.Account.Register.DirValue
+  nameWithType: Register.DirValue
 - uid: WebApplication1.Account.Register.Email
   name: Email
   href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_Email
@@ -736,12 +748,74 @@ references:
   commentId: F:WebApplication1.Account.Register.ErrorMessage
   fullName: WebApplication1.Account.Register.ErrorMessage
   nameWithType: Register.ErrorMessage
+- uid: WebApplication1.Account.Register.EtsList
+  name: EtsList
+  href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_EtsList
+  commentId: F:WebApplication1.Account.Register.EtsList
+  fullName: WebApplication1.Account.Register.EtsList
+  nameWithType: Register.EtsList
+- uid: WebApplication1.Account.Register.EtsValue
+  name: EtsValue
+  href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_EtsValue
+  commentId: F:WebApplication1.Account.Register.EtsValue
+  fullName: WebApplication1.Account.Register.EtsValue
+  nameWithType: Register.EtsValue
+- uid: WebApplication1.Account.Register.First_Name
+  name: First_Name
+  href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_First_Name
+  commentId: F:WebApplication1.Account.Register.First_Name
+  fullName: WebApplication1.Account.Register.First_Name
+  nameWithType: Register.First_Name
+- uid: WebApplication1.Account.Register.Last_Name
+  name: Last_Name
+  href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_Last_Name
+  commentId: F:WebApplication1.Account.Register.Last_Name
+  fullName: WebApplication1.Account.Register.Last_Name
+  nameWithType: Register.Last_Name
+- uid: WebApplication1.Account.Register.Master
+  name: Master
+  href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_Master
+  commentId: P:WebApplication1.Account.Register.Master
+  fullName: WebApplication1.Account.Register.Master
+  nameWithType: Register.Master
+- uid: WebApplication1.Account.Register.Master*
+  name: Master
+  href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_Master_
+  commentId: Overload:WebApplication1.Account.Register.Master
+  isSpec: "True"
+  fullName: WebApplication1.Account.Register.Master
+  nameWithType: Register.Master
+- uid: WebApplication1.Account.Register.Page_Load(System.Object,System.EventArgs)
+  name: Page_Load(Object, EventArgs)
+  href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_Page_Load_System_Object_System_EventArgs_
+  commentId: M:WebApplication1.Account.Register.Page_Load(System.Object,System.EventArgs)
+  fullName: WebApplication1.Account.Register.Page_Load(System.Object, System.EventArgs)
+  nameWithType: Register.Page_Load(Object, EventArgs)
+- uid: WebApplication1.Account.Register.Page_Load*
+  name: Page_Load
+  href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_Page_Load_
+  commentId: Overload:WebApplication1.Account.Register.Page_Load
+  isSpec: "True"
+  fullName: WebApplication1.Account.Register.Page_Load
+  nameWithType: Register.Page_Load
 - uid: WebApplication1.Account.Register.Password
   name: Password
   href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_Password
   commentId: F:WebApplication1.Account.Register.Password
   fullName: WebApplication1.Account.Register.Password
   nameWithType: Register.Password
+- uid: WebApplication1.Account.Register.ServiceList
+  name: ServiceList
+  href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_ServiceList
+  commentId: F:WebApplication1.Account.Register.ServiceList
+  fullName: WebApplication1.Account.Register.ServiceList
+  nameWithType: Register.ServiceList
+- uid: WebApplication1.Account.Register.ServiceValue
+  name: ServiceValue
+  href: api/WebApplication1.Account.Register.html#WebApplication1_Account_Register_ServiceValue
+  commentId: F:WebApplication1.Account.Register.ServiceValue
+  fullName: WebApplication1.Account.Register.ServiceValue
+  nameWithType: Register.ServiceValue
 - uid: WebApplication1.Account.RegisterExternalLogin
   name: RegisterExternalLogin
   href: api/WebApplication1.Account.RegisterExternalLogin.html
@@ -1405,30 +1479,6 @@ references:
   commentId: F:WebApplication1.AjouterArchive.coteValidationServer
   fullName: WebApplication1.AjouterArchive.coteValidationServer
   nameWithType: AjouterArchive.coteValidationServer
-- uid: WebApplication1.AjouterArchive.DirList
-  name: DirList
-  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_DirList
-  commentId: F:WebApplication1.AjouterArchive.DirList
-  fullName: WebApplication1.AjouterArchive.DirList
-  nameWithType: AjouterArchive.DirList
-- uid: WebApplication1.AjouterArchive.DirValue
-  name: DirValue
-  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_DirValue
-  commentId: F:WebApplication1.AjouterArchive.DirValue
-  fullName: WebApplication1.AjouterArchive.DirValue
-  nameWithType: AjouterArchive.DirValue
-- uid: WebApplication1.AjouterArchive.EtsList
-  name: EtsList
-  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_EtsList
-  commentId: F:WebApplication1.AjouterArchive.EtsList
-  fullName: WebApplication1.AjouterArchive.EtsList
-  nameWithType: AjouterArchive.EtsList
-- uid: WebApplication1.AjouterArchive.EtsValue
-  name: EtsValue
-  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_EtsValue
-  commentId: F:WebApplication1.AjouterArchive.EtsValue
-  fullName: WebApplication1.AjouterArchive.EtsValue
-  nameWithType: AjouterArchive.EtsValue
 - uid: WebApplication1.AjouterArchive.JSONFormData
   name: JSONFormData
   href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_JSONFormData
@@ -1467,30 +1517,6 @@ references:
   commentId: F:WebApplication1.AjouterArchive.rptViewer
   fullName: WebApplication1.AjouterArchive.rptViewer
   nameWithType: AjouterArchive.rptViewer
-- uid: WebApplication1.AjouterArchive.ServiceList
-  name: ServiceList
-  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_ServiceList
-  commentId: F:WebApplication1.AjouterArchive.ServiceList
-  fullName: WebApplication1.AjouterArchive.ServiceList
-  nameWithType: AjouterArchive.ServiceList
-- uid: WebApplication1.AjouterArchive.ServiceValue
-  name: ServiceValue
-  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_ServiceValue
-  commentId: F:WebApplication1.AjouterArchive.ServiceValue
-  fullName: WebApplication1.AjouterArchive.ServiceValue
-  nameWithType: AjouterArchive.ServiceValue
-- uid: WebApplication1.AjouterArchive.validationFirstName
-  name: validationFirstName
-  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_validationFirstName
-  commentId: F:WebApplication1.AjouterArchive.validationFirstName
-  fullName: WebApplication1.AjouterArchive.validationFirstName
-  nameWithType: AjouterArchive.validationFirstName
-- uid: WebApplication1.AjouterArchive.validationLastName
-  name: validationLastName
-  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_validationLastName
-  commentId: F:WebApplication1.AjouterArchive.validationLastName
-  fullName: WebApplication1.AjouterArchive.validationLastName
-  nameWithType: AjouterArchive.validationLastName
 - uid: WebApplication1.ApplicationSignInManager
   name: ApplicationSignInManager
   href: api/WebApplication1.ApplicationSignInManager.html
@@ -2559,6 +2585,103 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.ApplicationUser.GenerateUserIdentityAsync
   nameWithType: ApplicationUser.GenerateUserIdentityAsync
+- uid: WebApplication1.Models.AspNetUsersExtended
+  name: AspNetUsersExtended
+  href: api/WebApplication1.Models.AspNetUsersExtended.html
+  commentId: T:WebApplication1.Models.AspNetUsersExtended
+  fullName: WebApplication1.Models.AspNetUsersExtended
+  nameWithType: AspNetUsersExtended
+- uid: WebApplication1.Models.AspNetUsersExtended.Dir
+  name: Dir
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_Dir
+  commentId: P:WebApplication1.Models.AspNetUsersExtended.Dir
+  fullName: WebApplication1.Models.AspNetUsersExtended.Dir
+  nameWithType: AspNetUsersExtended.Dir
+- uid: WebApplication1.Models.AspNetUsersExtended.Dir*
+  name: Dir
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_Dir_
+  commentId: Overload:WebApplication1.Models.AspNetUsersExtended.Dir
+  isSpec: "True"
+  fullName: WebApplication1.Models.AspNetUsersExtended.Dir
+  nameWithType: AspNetUsersExtended.Dir
+- uid: WebApplication1.Models.AspNetUsersExtended.Ets
+  name: Ets
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_Ets
+  commentId: P:WebApplication1.Models.AspNetUsersExtended.Ets
+  fullName: WebApplication1.Models.AspNetUsersExtended.Ets
+  nameWithType: AspNetUsersExtended.Ets
+- uid: WebApplication1.Models.AspNetUsersExtended.Ets*
+  name: Ets
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_Ets_
+  commentId: Overload:WebApplication1.Models.AspNetUsersExtended.Ets
+  isSpec: "True"
+  fullName: WebApplication1.Models.AspNetUsersExtended.Ets
+  nameWithType: AspNetUsersExtended.Ets
+- uid: WebApplication1.Models.AspNetUsersExtended.FirstName
+  name: FirstName
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_FirstName
+  commentId: P:WebApplication1.Models.AspNetUsersExtended.FirstName
+  fullName: WebApplication1.Models.AspNetUsersExtended.FirstName
+  nameWithType: AspNetUsersExtended.FirstName
+- uid: WebApplication1.Models.AspNetUsersExtended.FirstName*
+  name: FirstName
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_FirstName_
+  commentId: Overload:WebApplication1.Models.AspNetUsersExtended.FirstName
+  isSpec: "True"
+  fullName: WebApplication1.Models.AspNetUsersExtended.FirstName
+  nameWithType: AspNetUsersExtended.FirstName
+- uid: WebApplication1.Models.AspNetUsersExtended.Id
+  name: Id
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_Id
+  commentId: P:WebApplication1.Models.AspNetUsersExtended.Id
+  fullName: WebApplication1.Models.AspNetUsersExtended.Id
+  nameWithType: AspNetUsersExtended.Id
+- uid: WebApplication1.Models.AspNetUsersExtended.Id*
+  name: Id
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_Id_
+  commentId: Overload:WebApplication1.Models.AspNetUsersExtended.Id
+  isSpec: "True"
+  fullName: WebApplication1.Models.AspNetUsersExtended.Id
+  nameWithType: AspNetUsersExtended.Id
+- uid: WebApplication1.Models.AspNetUsersExtended.LastName
+  name: LastName
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_LastName
+  commentId: P:WebApplication1.Models.AspNetUsersExtended.LastName
+  fullName: WebApplication1.Models.AspNetUsersExtended.LastName
+  nameWithType: AspNetUsersExtended.LastName
+- uid: WebApplication1.Models.AspNetUsersExtended.LastName*
+  name: LastName
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_LastName_
+  commentId: Overload:WebApplication1.Models.AspNetUsersExtended.LastName
+  isSpec: "True"
+  fullName: WebApplication1.Models.AspNetUsersExtended.LastName
+  nameWithType: AspNetUsersExtended.LastName
+- uid: WebApplication1.Models.AspNetUsersExtended.PushAdditionalUserData(System.String,System.String,System.String,System.String,System.String,System.String)
+  name: PushAdditionalUserData(String, String, String, String, String, String)
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_PushAdditionalUserData_System_String_System_String_System_String_System_String_System_String_System_String_
+  commentId: M:WebApplication1.Models.AspNetUsersExtended.PushAdditionalUserData(System.String,System.String,System.String,System.String,System.String,System.String)
+  fullName: WebApplication1.Models.AspNetUsersExtended.PushAdditionalUserData(System.String, System.String, System.String, System.String, System.String, System.String)
+  nameWithType: AspNetUsersExtended.PushAdditionalUserData(String, String, String, String, String, String)
+- uid: WebApplication1.Models.AspNetUsersExtended.PushAdditionalUserData*
+  name: PushAdditionalUserData
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_PushAdditionalUserData_
+  commentId: Overload:WebApplication1.Models.AspNetUsersExtended.PushAdditionalUserData
+  isSpec: "True"
+  fullName: WebApplication1.Models.AspNetUsersExtended.PushAdditionalUserData
+  nameWithType: AspNetUsersExtended.PushAdditionalUserData
+- uid: WebApplication1.Models.AspNetUsersExtended.Service
+  name: Service
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_Service
+  commentId: P:WebApplication1.Models.AspNetUsersExtended.Service
+  fullName: WebApplication1.Models.AspNetUsersExtended.Service
+  nameWithType: AspNetUsersExtended.Service
+- uid: WebApplication1.Models.AspNetUsersExtended.Service*
+  name: Service
+  href: api/WebApplication1.Models.AspNetUsersExtended.html#WebApplication1_Models_AspNetUsersExtended_Service_
+  commentId: Overload:WebApplication1.Models.AspNetUsersExtended.Service
+  isSpec: "True"
+  fullName: WebApplication1.Models.AspNetUsersExtended.Service
+  nameWithType: AspNetUsersExtended.Service
 - uid: WebApplication1.Models.DES
   name: DES
   href: api/WebApplication1.Models.DES.html
