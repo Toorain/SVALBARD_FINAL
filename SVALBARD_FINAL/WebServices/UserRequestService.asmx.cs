@@ -1,13 +1,12 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.Services;
-using System.Windows.Forms;
 using Microsoft.Ajax.Utilities;
+using Newtonsoft.Json;
 
-namespace WebApplication1
+namespace WebApplication1.WebServices
 {
     /// <summary>
     /// Description résumée de UserRequestService
@@ -104,9 +103,43 @@ namespace WebApplication1
                             datas.Add(logs);
                         };
                     }
-                    Context.Response.Write(JsonConvert.SerializeObject(datas));
                 }
             }
+            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            {
+                string cmdString = "SELECT [dbo].[logsArchivePAL].*, [dbo].[status].status_name" + 
+                                    " FROM [dbo].[logsArchivePAL]" +
+                                    " LEFT JOIN [dbo].[status]" +
+                                    " ON [dbo].[logsArchivePAL].status = dbo.status.status_id";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Logs logs = new Logs
+                        {
+                            ID = 0,
+                            Date = Convert.ToDateTime(dr["date"].ToString()),
+                            IssuerID = "",
+                            IssuerEts = dr["ets"].ToString(),
+                            IssuerDir = dr["dir"].ToString(),
+                            IssuerService = dr["service"].ToString(),
+                            ArchiveID = dr["id"].ToString(),
+                            Localization = "",
+                            Action = Convert.ToInt32(dr["action"]),
+                            Status = dr["status_name"].ToString()
+                        };
+                        datas.Add(logs);
+                    }
+                }
+            }
+            Context.Response.Write(JsonConvert.SerializeObject(datas));
         }
     }
 }

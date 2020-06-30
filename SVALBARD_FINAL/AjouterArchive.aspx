@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Panel ID="alertRequestAdd" runat="server">
       <div id="alertRequestAddContainer" class="alert alert-dismissible fade show text-center d-none" role="alert">
-          <h5 id="alertAdd" runat="server"></h5>
+          <h5 id="alertAdd" runat="server">TEST</h5>
       </div>
     </asp:Panel>
     <form id="regForm" class="needs-validation border" novalidate>

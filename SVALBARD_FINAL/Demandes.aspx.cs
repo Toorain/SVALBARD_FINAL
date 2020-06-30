@@ -24,7 +24,6 @@ namespace WebApplication1
 			{
 				collapseElm.Attributes["class"] = "collapse show";
 			}
-
 		}
 	}
 }

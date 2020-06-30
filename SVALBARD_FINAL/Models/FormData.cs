@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -14,16 +15,35 @@ namespace WebApplication1.Models
 	[SuppressMessage("ReSharper", "CollectionNeverQueried.Local")]
 	public class FormData
 	{
-		private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["TempFormDataHolder"].ConnectionString;
+		private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
 
-		private int Id { get; set; }
+		private string Id { get; set; }
 		private string Contenu { get; set; }
 		private int DateDebut { get; set; }
 		private int DateFin { get; set;  }
 		private string Observations { get; set;  }
-		private string LinkedCote { get; set; }
+		private int Elimination { get; set; }
+		private int Communication { get; set; }
+		private string RequestGroup { get; set; }
 
-		public static void DecypherData(string data)
+		private static bool CheckDataBaseEntry(string entry)
+		{
+			using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+			{
+				string cmdString = $"SELECT ID FROM [dbo].[logsArchivePAL] WHERE ID = '{entry}'";
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = sqlConn;
+					cmd.CommandText = cmdString;
+					sqlConn.Open();
+
+					var dr = cmd.ExecuteReader();
+
+					return !dr.Read();
+				}
+			}
+		}
+		public static bool DecypherData(string data)
 		{
 			List<FormData> formDataList = new List<FormData>();
 			// Recover JSON data, from a string to a JSON.
@@ -36,61 +56,67 @@ namespace WebApplication1.Models
 			{
 				JToken jsonElm = jsonAsJsonFormat["article_" + i];
 				FormData newFormData = new FormData {
-					Id = Convert.ToInt32(jsonElm["id"]),
+					Id = jsonElm["id"].ToString(),
 					Contenu = jsonElm["contenu"].ToString(),
 					DateDebut = Convert.ToInt32(jsonElm["date_debut"]),
 					DateFin = Convert.ToInt32(jsonElm["date_fin"]),
 					Observations = jsonElm["observations"].ToString(),
-					LinkedCote = jsonElm["linked_cote"].ToString()
+					Elimination = Convert.ToInt32(jsonElm["elimination"]),
+					Communication = Convert.ToInt32(jsonElm["communication"]),
+					RequestGroup = jsonElm["request_group"].ToString()
 				};
 				formDataList.Add(newFormData);
 			}
-			PushData(formDataList);
+			return PushData(formDataList);
 		}
 
-		private static void PushData(List<FormData> data)
+		private static bool PushData(List<FormData> data)
 		{
 			using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
 			{
-				string cmdString = "INSERT INTO [dbo].[tempData]"
-									+ " ([id] ,[contenu] ,[date_debut] ,[date_fin] ,[observations], [linked_cote])"
+				string cmdString = "INSERT INTO [dbo].[logsArchivePAL]"
+									+ " ([id] , [date], [ets], [dir], [service], [contenu] ,[date_min] ,[date_max] ,[observations], [prevision_elim], [autorisation_comm], [request_group], [action], [status])"
 									+ " VALUES"
-									+ " (@val1, @val2, @val3, @val4, @val5, @val6)";
+									+ " (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14 )";
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = sqlConn;
 					cmd.CommandText = cmdString;
+					
 					sqlConn.Open();
 
+					bool validData = false;
 					foreach (FormData formData in data) 
 					{
-						cmd.Parameters.AddWithValue("@val1", formData.Id);
-						cmd.Parameters.AddWithValue("@val2", formData.Contenu);
-						cmd.Parameters.AddWithValue("@val3", Convert.ToInt32(formData.DateDebut));
-						cmd.Parameters.AddWithValue("@val4", Convert.ToInt32(formData.DateFin));
-						cmd.Parameters.AddWithValue("@val5", formData.Observations);
-						cmd.Parameters.AddWithValue("@val6", formData.LinkedCote);
+						if (CheckDataBaseEntry(formData.Id))
+						{
+							cmd.Parameters.AddWithValue("@val1", formData.Id);
+							cmd.Parameters.AddWithValue("@val2", DateTime.Now);
+							cmd.Parameters.AddWithValue("@val3", DatabaseUser.GetUserEts());
+							cmd.Parameters.AddWithValue("@val4", DatabaseUser.GetUserDir());
+							cmd.Parameters.AddWithValue("@val5", DatabaseUser.GetUserService());
+							cmd.Parameters.AddWithValue("@val6", formData.Contenu);
+							cmd.Parameters.AddWithValue("@val7", formData.DateDebut);
+							cmd.Parameters.AddWithValue("@val8", formData.DateFin);
+							cmd.Parameters.AddWithValue("@val9", formData.Observations);
+							cmd.Parameters.AddWithValue("@val10", formData.Elimination);
+							cmd.Parameters.AddWithValue("@val11", formData.Communication);
+							cmd.Parameters.AddWithValue("@val12", formData.RequestGroup);
+							cmd.Parameters.AddWithValue("@val13", 1);
+							cmd.Parameters.AddWithValue("@val14", 1);
 
-						cmd.ExecuteNonQuery();
+							cmd.ExecuteNonQuery();
 						
-						cmd.Parameters.Clear();
-					}					
-				}
-			}
-		}
-		
-		public static void DropTempTable()
-		{
-			using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
-			{
-				string cmdString = "DELETE FROM [dbo].[tempData]";
-				using (SqlCommand cmd = new SqlCommand())
-				{
-					cmd.Connection = sqlConn;
-					cmd.CommandText = cmdString;
-					sqlConn.Open();
+							cmd.Parameters.Clear();
 
-					cmd.ExecuteNonQuery();
+							validData = true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+					return validData;
 				}
 			}
 		}

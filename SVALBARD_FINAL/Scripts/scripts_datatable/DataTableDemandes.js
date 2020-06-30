@@ -76,6 +76,7 @@
                             break;
                     }
                 });*/
+                // Triggers create and open PDF for each row.
                 $('#tableDemandes tbody').on( 'click', '.fas', function () {
                     let data = datatableVariable.row( $(this).parents('tr') ).data();
                     $("#Identifier").val(data.ID);

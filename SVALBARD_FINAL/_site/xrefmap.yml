@@ -1436,19 +1436,6 @@ references:
   commentId: T:WebApplication1.AjouterArchive
   fullName: WebApplication1.AjouterArchive
   nameWithType: AjouterArchive
-- uid: WebApplication1.AjouterArchive.AddArchive(System.Object,System.EventArgs)
-  name: AddArchive(Object, EventArgs)
-  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_AddArchive_System_Object_System_EventArgs_
-  commentId: M:WebApplication1.AjouterArchive.AddArchive(System.Object,System.EventArgs)
-  fullName: WebApplication1.AjouterArchive.AddArchive(System.Object, System.EventArgs)
-  nameWithType: AjouterArchive.AddArchive(Object, EventArgs)
-- uid: WebApplication1.AjouterArchive.AddArchive*
-  name: AddArchive
-  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_AddArchive_
-  commentId: Overload:WebApplication1.AjouterArchive.AddArchive
-  isSpec: "True"
-  fullName: WebApplication1.AjouterArchive.AddArchive
-  nameWithType: AjouterArchive.AddArchive
 - uid: WebApplication1.AjouterArchive.addArchiveButton
   name: addArchiveButton
   href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_addArchiveButton
@@ -2850,19 +2837,6 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.FormData.DecypherData
   nameWithType: FormData.DecypherData
-- uid: WebApplication1.Models.FormData.DropTempTable
-  name: DropTempTable()
-  href: api/WebApplication1.Models.FormData.html#WebApplication1_Models_FormData_DropTempTable
-  commentId: M:WebApplication1.Models.FormData.DropTempTable
-  fullName: WebApplication1.Models.FormData.DropTempTable()
-  nameWithType: FormData.DropTempTable()
-- uid: WebApplication1.Models.FormData.DropTempTable*
-  name: DropTempTable
-  href: api/WebApplication1.Models.FormData.html#WebApplication1_Models_FormData_DropTempTable_
-  commentId: Overload:WebApplication1.Models.FormData.DropTempTable
-  isSpec: "True"
-  fullName: WebApplication1.Models.FormData.DropTempTable
-  nameWithType: FormData.DropTempTable
 - uid: WebApplication1.Models.Misc
   name: Misc
   href: api/WebApplication1.Models.Misc.html

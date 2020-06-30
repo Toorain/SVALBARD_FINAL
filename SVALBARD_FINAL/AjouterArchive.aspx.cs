@@ -22,6 +22,7 @@ namespace WebApplication1
             List<DES> DESList = DES.GetDataZero("etablissement");
         }
 
+        /*
         protected void AddArchive(object sender, EventArgs eventArgs)
         {
             // coteValidationServer.Value.Length >= 7 <= ADD THIS TO CHECK COTE LENGTH BEFORE SENDING
@@ -51,5 +52,6 @@ namespace WebApplication1
                 "Demande d'ajout effectuée avec succès. Rendez-vous dans l'onglet <a href='/Demandes'>Demandes</a> pour voir l'avancement.";
             
         }
+        */
     }
 }
