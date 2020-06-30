@@ -91,7 +91,17 @@ namespace WebApplication1
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                string cmdString = "SELECT TOP 1 [cote] FROM [archives].[dbo].[ArchivesV2] WHERE cote LIKE @val1 ORDER BY cote DESC;";
+                // Check across 2 DB and 3 tables that suggested cote is last cote + 1 even if a cote is in the waiting list. Prevents insertion of random numbers of Cote in Database.
+                string cmdString = 
+                    "SELECT  TOP (1) cote_ID" +
+                    " FROM    ( " +
+                        " SELECT cote as cote_ID FROM [archives].[dbo].[ArchivesV2] WHERE cote LIKE @val1" +
+                        " UNION " + 
+                        " SELECT ID as cote_ID FROM [logsArchives].[dbo].[logsArchivePAL] WHERE ID LIKE @val1" +
+                        " UNION " + 
+                        " SELECT archiveID as cote_ID FROM [logsArchives].[dbo].[logsArchive] WHERE ID LIKE @val1" +
+                        " ) AS cote_ID" +
+                        " ORDER BY cote_ID DESC";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -105,25 +115,25 @@ namespace WebApplication1
 
                     while (dr.Read())
                     {
-                        drVal = dr.HasRows ? dr["cote"].ToString() : "no_entry";
+                        drVal = dr.HasRows ? dr["cote_ID"].ToString() : "no_entry";
                     }
                     return drVal;
                 }
             }
         }
         
-        public static string SuggestCote(string coteSpliced)
+        /*public static string SuggestCote(string coteSpliced)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                string cmdString = "SELECT TOP (1) [cote] FROM [archives].[dbo].[ArchivesV2] WHERE cote LIKE @val1 + '%' ORDER BY cote DESC";
+                string cmdString = "SELECT TOP (1) [cote] FROM [archives].[dbo].[ArchivesV2] WHERE cote LIKE @val1 ORDER BY cote DESC";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
-                    cmd.Parameters.AddWithValue("@val1", coteSpliced);
+                    cmd.Parameters.AddWithValue("@val1", coteSpliced  + '%');
 
                     sqlConn.Open();
 
@@ -144,7 +154,7 @@ namespace WebApplication1
                     return drVal;
                 }
             }
-        }
+        }*/
     }
 
     

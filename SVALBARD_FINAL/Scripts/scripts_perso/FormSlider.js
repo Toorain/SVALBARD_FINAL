@@ -1,4 +1,5 @@
 ﻿let currentTab = 0; // Current tab is set to be the first tab (0)
+let allowNext = false;
 let articleCount;
 let coteSlug;
 let coteNumbers;
@@ -45,14 +46,19 @@ if (window.location.pathname === "/AjouterArchive") {
         // This function will figure out which tab to display
         let x = document.getElementsByClassName("tab");
         // Exit the function if any field in the current tab is invalid:
-        if (n === 1 && !validateForm()) {   
-            return false;
-        }
-        if (n === 1) {
+        /*        if (n === 1 && !validateForm()) {   
+                    return false;
+                }*/
+        allowNext = $("#coteValidation").val().length === 7;
+        if (n === 1 && allowNext) {
             generateInputTable();
         } else if (n === -1) {
+            resetInput();
+            $("#alertRequestAddContainer").addClass("d-none");
             $("#articleFill").empty();
             $('#articleFillTfoot').empty();
+        } else {
+            return;
         }
         // Hide the current tab:
         x[currentTab].style.display = "none";
@@ -110,19 +116,27 @@ if (window.location.pathname === "/AjouterArchive") {
         let nombreArticles = Number($("#validationNombreArticle").val());
         let cote = $("#coteValidationServer").val();
         coteSlug = cote.substring(0, 3);
-        coteNumbers = Number(cote.substring(3)) - 1;
+        coteNumbers = Number(cote.substring(3));
 
         for (articleCount = 1; articleCount <= nombreArticles; articleCount++) {
             actualCoteNumber = coteNumbers + articleCount;
             inner = "<tr id='article_" + articleCount + "'>" +
                 "<td><input class='form-control' type='text' value='" + coteSlug + (addLeadingZeroes(actualCoteNumber)) + "' disabled /></td>" +
-                "<td><textarea class='form-control' ></textarea></td>" +
+                "<td><textarea class='form-control'></textarea></td>" +
                 "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
                 "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
                 "<td><textarea class='form-control' type='text' ></textarea></td>" +
+                "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
+                "<td>" +
+                "<select class='form-control' name='communication_allowed'>" +
+                "<option value='0'>Non</option>" +
+                "<option value='1'>Oui</option>" +
+                "</select>" +
+                "</td>" +
                 ((articleCount === nombreArticles)
                     ? "<td class='text-center' id='removeButton'><div class='btn btn-danger' onclick='removeRow(articleCount)'>x</div></td>"
                     : "<td class='text-center '>") +
+
                 "</tr>";
             $('#articleFill').append(inner);
         }
@@ -140,6 +154,13 @@ if (window.location.pathname === "/AjouterArchive") {
             "<td><input class='form-control' type='number' /></td>" +
             "<td><input class='form-control' type='number' /></td>" +
             "<td><textarea class='form-control' ></textarea></td>" +
+            "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
+            "<td>" +
+            "<select class='form-control' name='communication_allowed'>" +
+            "<option value='0'>Non</option>" +
+            "<option value='1'>Oui</option>" +
+            "</select>" +
+            "</td>" +
             "<td class='text-center' id='removeButton'><div class='btn btn-danger' onclick='removeRow(articleCount)'>x</div></td>" +
             "</tr>");
         articleCount++;
@@ -165,21 +186,25 @@ if (window.location.pathname === "/AjouterArchive") {
             let data = {};
             let articleData = document.getElementById("article_" + i).children;
             for (let j = 0; j < articleData.length - 1; j++) {
-                let properties = ['id', 'contenu', 'date_debut', 'date_fin', 'observations'];
+                let properties = ['id', 'contenu', 'date_debut', 'date_fin', 'observations', 'elimination', 'communication'];
                 data[ properties[j] ] = articleData[j].children[0].value;
             }
-            data['linked_cote'] = $("#coteValidation").val();
+            if(i === 1) {
+                data['request_group'] = articleData[0].children[0].value;
+            } else {
+                data['request_group'] = articleData[0].children[0].value.substring(0, 3) + (addLeadingZeroes(Number(articleData[0].children[0].value.substring(3)) - i + 1)).toString();
+            }
             let arrayToString = JSON.stringify(Object.assign({}, data));  // convert array to string
             let stringToJsonObject = JSON.parse(arrayToString);  // convert string to json object
             let article = "article_" + i;
             jsonData[article] = stringToJsonObject;
         }
         insertDataToDB(jsonData);
-        $("#addArchiveButton").removeAttr("disabled");
-
     }
 
     function insertDataToDB(jsonData) {
+        let alertContainer = $("#alertRequestAddContainer");
+        let alertAdd = $("#MainContent_alertAdd");
         $.ajax({
             serverSide: true,
             type: "POST",
@@ -188,12 +213,25 @@ if (window.location.pathname === "/AjouterArchive") {
             url: "/WebServices/AddFormDataService.asmx/PushData",
             data: {data : JSON.stringify(jsonData)},
             mimeType: "text/plain",
-            done: (data) => {
-
+            success: (data) => {
+                if ((/true/i).test(data)) {
+                    $("#addArchiveButton").removeAttr("disabled");
+                    alertContainer.removeClass("alert-danger");
+                    alertContainer.addClass("alert-success");
+                    alertAdd.html("Vos données sont valides, rendez-vous dans l'onglet <a href='/Demandes'>demandes</a> pour suivre votre requête.");
+                    alertContainer.removeClass("d-none");
+                } else {
+                    alertContainer.removeClass("alert-success");
+                    alertContainer.addClass("alert-danger");
+                    alertAdd.text("Cette côte existe déjà dans l'archive, merci de revenir en arrière et de relancer l'opération.");
+                    alertContainer.removeClass("d-none");
+                }
             },
-            fail: (xhr, error) => {
-                console.debug(xhr);
-                console.debug(error);
+            error: () => {
+                alertContainer.removeClass("alert-success");
+                alertContainer.addClass("alert-danger");
+                alertAdd.text("Une erreur est survenue, merci de remplir TOUS les champs.");
+                alertContainer.removeClass("d-none");
             },
         });
         // $("#collapseElm").collapse('show');

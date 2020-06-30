@@ -1828,6 +1828,71 @@ references:
   isSpec: "True"
   fullName: WebApplication1.DatabaseUser.GetCurrentUserAuthorization
   nameWithType: DatabaseUser.GetCurrentUserAuthorization
+- uid: WebApplication1.DatabaseUser.GetUserDir
+  name: GetUserDir()
+  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserDir
+  commentId: M:WebApplication1.DatabaseUser.GetUserDir
+  fullName: WebApplication1.DatabaseUser.GetUserDir()
+  nameWithType: DatabaseUser.GetUserDir()
+- uid: WebApplication1.DatabaseUser.GetUserDir*
+  name: GetUserDir
+  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserDir_
+  commentId: Overload:WebApplication1.DatabaseUser.GetUserDir
+  isSpec: "True"
+  fullName: WebApplication1.DatabaseUser.GetUserDir
+  nameWithType: DatabaseUser.GetUserDir
+- uid: WebApplication1.DatabaseUser.GetUserEts
+  name: GetUserEts()
+  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserEts
+  commentId: M:WebApplication1.DatabaseUser.GetUserEts
+  fullName: WebApplication1.DatabaseUser.GetUserEts()
+  nameWithType: DatabaseUser.GetUserEts()
+- uid: WebApplication1.DatabaseUser.GetUserEts*
+  name: GetUserEts
+  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserEts_
+  commentId: Overload:WebApplication1.DatabaseUser.GetUserEts
+  isSpec: "True"
+  fullName: WebApplication1.DatabaseUser.GetUserEts
+  nameWithType: DatabaseUser.GetUserEts
+- uid: WebApplication1.DatabaseUser.GetUserFirstName
+  name: GetUserFirstName()
+  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserFirstName
+  commentId: M:WebApplication1.DatabaseUser.GetUserFirstName
+  fullName: WebApplication1.DatabaseUser.GetUserFirstName()
+  nameWithType: DatabaseUser.GetUserFirstName()
+- uid: WebApplication1.DatabaseUser.GetUserFirstName*
+  name: GetUserFirstName
+  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserFirstName_
+  commentId: Overload:WebApplication1.DatabaseUser.GetUserFirstName
+  isSpec: "True"
+  fullName: WebApplication1.DatabaseUser.GetUserFirstName
+  nameWithType: DatabaseUser.GetUserFirstName
+- uid: WebApplication1.DatabaseUser.GetUserLastName
+  name: GetUserLastName()
+  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserLastName
+  commentId: M:WebApplication1.DatabaseUser.GetUserLastName
+  fullName: WebApplication1.DatabaseUser.GetUserLastName()
+  nameWithType: DatabaseUser.GetUserLastName()
+- uid: WebApplication1.DatabaseUser.GetUserLastName*
+  name: GetUserLastName
+  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserLastName_
+  commentId: Overload:WebApplication1.DatabaseUser.GetUserLastName
+  isSpec: "True"
+  fullName: WebApplication1.DatabaseUser.GetUserLastName
+  nameWithType: DatabaseUser.GetUserLastName
+- uid: WebApplication1.DatabaseUser.GetUserService
+  name: GetUserService()
+  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserService
+  commentId: M:WebApplication1.DatabaseUser.GetUserService
+  fullName: WebApplication1.DatabaseUser.GetUserService()
+  nameWithType: DatabaseUser.GetUserService()
+- uid: WebApplication1.DatabaseUser.GetUserService*
+  name: GetUserService
+  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserService_
+  commentId: Overload:WebApplication1.DatabaseUser.GetUserService
+  isSpec: "True"
+  fullName: WebApplication1.DatabaseUser.GetUserService
+  nameWithType: DatabaseUser.GetUserService
 - uid: WebApplication1.DatabaseUser.ID
   name: ID
   href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_ID
@@ -2061,19 +2126,6 @@ references:
   isSpec: "True"
   fullName: WebApplication1.DataSQL.Service
   nameWithType: DataSQL.Service
-- uid: WebApplication1.DataSQL.SuggestCote(System.String)
-  name: SuggestCote(String)
-  href: api/WebApplication1.DataSQL.html#WebApplication1_DataSQL_SuggestCote_System_String_
-  commentId: M:WebApplication1.DataSQL.SuggestCote(System.String)
-  fullName: WebApplication1.DataSQL.SuggestCote(System.String)
-  nameWithType: DataSQL.SuggestCote(String)
-- uid: WebApplication1.DataSQL.SuggestCote*
-  name: SuggestCote
-  href: api/WebApplication1.DataSQL.html#WebApplication1_DataSQL_SuggestCote_
-  commentId: Overload:WebApplication1.DataSQL.SuggestCote
-  isSpec: "True"
-  fullName: WebApplication1.DataSQL.SuggestCote
-  nameWithType: DataSQL.SuggestCote
 - uid: WebApplication1.DataSQL.Versement
   name: Versement
   href: api/WebApplication1.DataSQL.html#WebApplication1_DataSQL_Versement
@@ -3195,16 +3247,3 @@ references:
   commentId: T:WebApplication1.WebServices.SuggestCoteService
   fullName: WebApplication1.WebServices.SuggestCoteService
   nameWithType: SuggestCoteService
-- uid: WebApplication1.WebServices.SuggestCoteService.SuggestCote(System.String)
-  name: SuggestCote(String)
-  href: api/WebApplication1.WebServices.SuggestCoteService.html#WebApplication1_WebServices_SuggestCoteService_SuggestCote_System_String_
-  commentId: M:WebApplication1.WebServices.SuggestCoteService.SuggestCote(System.String)
-  fullName: WebApplication1.WebServices.SuggestCoteService.SuggestCote(System.String)
-  nameWithType: SuggestCoteService.SuggestCote(String)
-- uid: WebApplication1.WebServices.SuggestCoteService.SuggestCote*
-  name: SuggestCote
-  href: api/WebApplication1.WebServices.SuggestCoteService.html#WebApplication1_WebServices_SuggestCoteService_SuggestCote_
-  commentId: Overload:WebApplication1.WebServices.SuggestCoteService.SuggestCote
-  isSpec: "True"
-  fullName: WebApplication1.WebServices.SuggestCoteService.SuggestCote
-  nameWithType: SuggestCoteService.SuggestCote

@@ -16,11 +16,11 @@ namespace WebApplication1.WebServices
 	// [System.Web.Script.Services.ScriptService]
 	public class SuggestCoteService : System.Web.Services.WebService
 	{
-
+		/*
 		[WebMethod]
 		public string SuggestCote(string coteSpliced)
 		{
 			return DataSQL.SuggestCote(coteSpliced);
-		}
+		} */
 	}
 }
