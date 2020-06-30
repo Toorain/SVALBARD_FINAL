@@ -302,6 +302,7 @@
     <Content Include="Scripts\scripts_perso\ArchivistePanel.js" />
     <Content Include="Scripts\scripts_perso\CheckCote.js" />
     <Content Include="Scripts\scripts_perso\FormSlider.js" />
+    <Content Include="Scripts\scripts_perso\PopulateAjouterArchive.js" />
     <Content Include="Scripts\scripts_perso\startTourArchive.js" />
     <Content Include="Scripts\scripts_perso\startTourGlobal.js" />
     <Content Include="Scripts\scripts_datatable\DataTableArchiviste.js" />

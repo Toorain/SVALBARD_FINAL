@@ -1,12 +1,9 @@
-﻿using Microsoft.Ajax.Utilities;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
-namespace WebApplication1
+namespace WebApplication1.Models
 {
     public class Logs
     {

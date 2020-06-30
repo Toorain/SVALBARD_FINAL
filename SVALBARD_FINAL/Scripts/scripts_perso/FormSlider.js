@@ -184,6 +184,7 @@ if (window.location.pathname === "/AjouterArchive") {
         let articlesLength = document.getElementById("articleFill").childElementCount;
         for (let i = 1; i <= articlesLength; i++) {
             let data = {};
+            // For each row in the generated Form, add values to the Dataset
             let articleData = document.getElementById("article_" + i).children;
             for (let j = 0; j < articleData.length - 1; j++) {
                 let properties = ['id', 'contenu', 'date_debut', 'date_fin', 'observations', 'elimination', 'communication'];

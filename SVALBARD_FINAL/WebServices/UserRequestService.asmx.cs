@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Web.Services;
 using Microsoft.Ajax.Utilities;
 using Newtonsoft.Json;
+using WebApplication1.Models;
 
 namespace WebApplication1.WebServices
 {
