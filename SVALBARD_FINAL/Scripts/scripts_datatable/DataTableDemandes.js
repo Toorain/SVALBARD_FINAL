@@ -43,14 +43,11 @@
                                 switch (data) {
                                     case (1):
                                         return "Ajout";
-                                        break;
                                     case (2):
                                         return "Consultation";
-                                        break;
                                     case (3):
                                         return "Destruction";
-                                        break;
-                                };
+                                }
                             }
                         },
                         { data : 'Status'},
@@ -58,10 +55,10 @@
                     ]
                 });
                 $("body").keydown(function (e) {
-                    if (e.keyCode == 37) { // left
+                    if (e.keyCode === 37) { // left
                         $("#tableDemandes_previous").click();
                     }
-                    else if (e.keyCode == 39) { // right
+                    else if (e.keyCode === 39) { // right
                         $("#tableDemandes_next").click();
                     }
                 });

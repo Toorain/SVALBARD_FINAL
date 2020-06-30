@@ -17,7 +17,6 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
             int lastItem = DataSQL.GetLastItemArchive();
             
             List<DES> DESList = DES.GetDataZero("etablissement");
@@ -26,21 +25,20 @@ namespace WebApplication1
         protected void AddArchive(object sender, EventArgs eventArgs)
         {
             // coteValidationServer.Value.Length >= 7 <= ADD THIS TO CHECK COTE LENGTH BEFORE SENDING
-            
             DateTime date = new DateTime();
             date = DateTime.Now;
-            string issuerID = User.Identity.GetUserId();
-            string firstName = validationFirstName.Value.ToUpper();
-            string lastName = validationLastName.Value.ToUpper();
-            string ets = EtsValue.Value.ToUpper();
-            string dir = DirValue.Value.ToUpper();
-            string service = ServiceValue.Value.ToUpper();
+            string issuerId = User.Identity.GetUserId();
+            string firstName = DatabaseUser.GetUserFirstName().ToUpper();
+            string lastName = DatabaseUser.GetUserLastName();
+            string ets = DatabaseUser.GetUserEts();
+            string dir = DatabaseUser.GetUserDir();
+            string service = DatabaseUser.GetUserService();
             string receiverId = DatabaseUser.GetArchiviste();
             string cote = coteValidationServer.Value;
             int action = 1;
             int status = 1;
         
-            int pdfIdentifier = Logs.AddArchive(date,issuerID, firstName, lastName, ets, dir, service, receiverId, cote, action, status);                
+            int pdfIdentifier = Logs.AddArchive(date,issuerId, firstName, lastName, ets, dir, service, receiverId, cote, action, status);                
             
             bool success = PdfMethods.GeneratePdf(pdfIdentifier.ToString(), cote, rptViewer);
             if (success)
@@ -52,8 +50,6 @@ namespace WebApplication1
             alertAdd.InnerHtml =
                 "Demande d'ajout effectuée avec succès. Rendez-vous dans l'onglet <a href='/Demandes'>Demandes</a> pour voir l'avancement.";
             
-                
-            }
         }
     }
 }

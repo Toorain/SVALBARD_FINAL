@@ -5,21 +5,28 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Principal;
 using System.Web;
+using System.Windows.Forms;
 using Microsoft.AspNet.Identity;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 
 namespace WebApplication1
 {
     public class DatabaseUser
     {
         private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-
+        private static string _id;
         public string ID { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string UserName { get; set; }
 
+        private static string GetUserIdentity()
+        {
+            return HttpContext.Current.User.Identity.Name;
+        }
         public static string GetUserFirstName()
         {
+            _id = GetUserIdentity();
             using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
                 string cmdString = "SELECT first_name FROM AspNetUsersExtended WHERE Id = @val1";
@@ -27,7 +34,7 @@ namespace WebApplication1
                 {
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
-                    cmd.Parameters.AddWithValue("@val1", id);
+                    cmd.Parameters.AddWithValue("@val1", _id);
 
                     sqlConn.Open();
 
@@ -35,23 +42,24 @@ namespace WebApplication1
 
                     while (dr.Read())
                     {
-                        return dr['first_name'].ToString();
+                        return dr["first_name"].ToString();
                     }
-                    return false;
+                    return "";
                 }
             }
         }
-
+        
         public static string GetUserLastName()
         {
-            string lastName;
+            _id = GetUserIdentity();
             using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
-                string cmdString = "SELECT last_name FROM AspNetUserRoles";
+                string cmdString = "SELECT last_name FROM AspNetUsersExtended WHERE Id = @val1";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", _id);
 
                     sqlConn.Open();
 
@@ -59,15 +67,88 @@ namespace WebApplication1
 
                     while (dr.Read())
                     {
-                        if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "1")
-                        {
-                            return true;
-                        }
+                        return dr["last_name"].ToString();
                     }
-                    return false;
+                    return "";
                 }
             }
         }
+        
+        public static string GetUserEts()
+        {
+            _id = GetUserIdentity();
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+            {
+                string cmdString = "SELECT ets FROM AspNetUsersExtended WHERE Id = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", _id);
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        return dr["ets"].ToString();
+                    }
+                    return "";
+                }
+            }
+        }
+        
+        public static string GetUserDir()
+        {
+            _id = GetUserIdentity();
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+            {
+                string cmdString = "SELECT dir FROM AspNetUsersExtended WHERE Id = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", _id);
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        return dr["dir"].ToString();
+                    }
+                    return "";
+                }
+            }
+        }
+        
+        public static string GetUserService()
+        {
+            _id = GetUserIdentity();
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+            {
+                string cmdString = "SELECT service FROM AspNetUsersExtended WHERE Id = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", _id);
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        return dr["service"].ToString();
+                    }
+                    return "";
+                }
+            }
+        }
+
         public static bool IsUserAdmin(IIdentity user)
         {
             // Connect to the Database
