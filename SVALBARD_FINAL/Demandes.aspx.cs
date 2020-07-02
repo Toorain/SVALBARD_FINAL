@@ -19,10 +19,19 @@ namespace WebApplication1
 		}
 		protected void GeneratePdf(object sender, EventArgs eventArgs)
 		{
-			bool success = PdfMethods.GeneratePdf(Identifier.Value, Cote.Value, rptViewerDemandes);
+			bool success = PdfMethods.GeneratePdfPalSolo(Identifier.Value, rptViewerDemandesPdf);
 			if (success)
 			{
-				collapseElm.Attributes["class"] = "collapse show";
+				collapseElmPdf.Attributes["class"] = "collapse show";
+			}
+		}
+		
+		protected void GenerateEtiquette(object sender, EventArgs eventArgs)
+		{
+			bool success = EtiquetteMethods.GenerateEtiquetteSolo(Identifier.Value, rptViewerDemandesEtiquette);
+			if (success)
+			{
+				collapseElmEtiquette.Attributes["class"] = "collapse show";
 			}
 		}
 	}

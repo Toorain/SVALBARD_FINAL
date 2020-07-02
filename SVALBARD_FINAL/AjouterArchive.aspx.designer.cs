@@ -31,6 +31,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertAdd;
         
         /// <summary>
+        /// collapseRow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseRow;
+        
+        /// <summary>
         /// collapseElmAdd control.
         /// </summary>
         /// <remarks>
@@ -40,13 +49,31 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElmAdd;
         
         /// <summary>
-        /// rptViewer control.
+        /// rptViewerPAL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewer;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerPAL;
+        
+        /// <summary>
+        /// collapseElmEtqPal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElmEtqPal;
+        
+        /// <summary>
+        /// rptViewerEtiquettePAL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerEtiquettePAL;
         
         /// <summary>
         /// coteValidationServer control.
@@ -58,6 +85,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.HiddenField coteValidationServer;
         
         /// <summary>
+        /// coteGeneratePdf control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField coteGeneratePdf;
+        
+        /// <summary>
         /// JSONFormData control.
         /// </summary>
         /// <remarks>
@@ -67,13 +103,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.HiddenField JSONFormData;
         
         /// <summary>
-        /// addArchiveButton control.
+        /// GeneratePdfPal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addArchiveButton;
+        protected global::System.Web.UI.WebControls.Button GeneratePdfPal;
         
         /// <summary>
         /// Master property.

@@ -20,21 +20,43 @@
         <tfoot>
         </tfoot>
     </table>
-    <div id="dropdownPdfDemandes" class="dropdownPdf" data-toggle="collapse" href="#collapseElm" role="button" aria-expanded="false" aria-controls="collapseExample">
-        <h3 class="m-auto text-center">v -- Afficher le PDF -- v</h3>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div id="dropdownBordereauDemandes" class="dropdownPdf" data-toggle="collapse" href="#collapseElmPdf" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <h3 class="m-auto text-center">v -- Afficher le bordereau -- v</h3>
+            </div>
+            <div runat="server" clientidmode="Static" class="collapse" ID="collapseElmPdf">
+                <rsweb:ReportViewer ID="rptViewerDemandesPdf" runat="server" Font-Names="Verdana" Font-Size="8pt" ProcessingMode="Remote" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="1000px" Width="850px" 
+                  BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" 
+                  LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" 
+                  SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" 
+                  ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
+                  ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
+                  
+                  <ServerReport></ServerReport>
+                </rsweb:ReportViewer>
+            </div>
+            <asp:Button runat="server" ID="ButtonGeneratePdf" ClientIDMode="Static" OnClick="GeneratePdf" CssClass="d-none" />
+        </div>
+        <div class="col-md-6">
+            <div id="dropdownEtiquetteDemandes" class="dropdownPdf" data-toggle="collapse" href="#collapseElmEtiquette" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <h3 class="m-auto text-center">v -- Afficher l'étiquette -- v</h3>
+            </div>
+            <div runat="server" clientidmode="Static" class="collapse" ID="collapseElmEtiquette">
+                <rsweb:ReportViewer ID="rptViewerDemandesEtiquette" runat="server" Font-Names="Verdana" Font-Size="8pt" ProcessingMode="Remote" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="1000px" Width="850px" 
+                  BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" 
+                  LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" 
+                  SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" 
+                  ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
+                  ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
+                  
+                  <ServerReport></ServerReport>
+                </rsweb:ReportViewer>
+            </div>
+            <asp:Button runat="server" ID="ButtonGenerateEtiquette" ClientIDMode="Static" OnClick="GenerateEtiquette" CssClass="d-none" />
+        </div>
     </div>
-    <div runat="server" clientidmode="Static" class="collapse" ID="collapseElm">
-          <rsweb:ReportViewer ID="rptViewerDemandes" runat="server" Font-Names="Verdana" Font-Size="8pt" ProcessingMode="Remote" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="1000px" Width="850px" 
-              BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" 
-              LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" 
-              SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" 
-              ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
-              ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
-              
-              <ServerReport></ServerReport>
-          </rsweb:ReportViewer>
-    </div>
-    <asp:Button runat="server" ID="ButtonGeneratePdf" ClientIDMode="Static" OnClick="GeneratePdf" CssClass="d-none" />
     <asp:HiddenField runat="server" ID="Identifier" ClientIDMode="Static" Value="" />
     <asp:HiddenField runat="server" ID="Cote" ClientIDMode="Static" Value="" />
     <asp:HiddenField runat="server" ID="userID" ClientIDMode="Static" />

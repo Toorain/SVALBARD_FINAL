@@ -13,22 +13,22 @@ namespace WebApplication1 {
     public partial class Demandes {
         
         /// <summary>
-        /// collapseElm control.
+        /// collapseElmPdf control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElm;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElmPdf;
         
         /// <summary>
-        /// rptViewerDemandes control.
+        /// rptViewerDemandesPdf control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerDemandes;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerDemandesPdf;
         
         /// <summary>
         /// ButtonGeneratePdf control.
@@ -38,6 +38,33 @@ namespace WebApplication1 {
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonGeneratePdf;
+        
+        /// <summary>
+        /// collapseElmEtiquette control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElmEtiquette;
+        
+        /// <summary>
+        /// rptViewerDemandesEtiquette control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerDemandesEtiquette;
+        
+        /// <summary>
+        /// ButtonGenerateEtiquette control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonGenerateEtiquette;
         
         /// <summary>
         /// Identifier control.

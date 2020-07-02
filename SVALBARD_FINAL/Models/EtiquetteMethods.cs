@@ -5,9 +5,9 @@ using Microsoft.Reporting.WebForms;
 
 namespace WebApplication1.Models
 {
-	public abstract class PdfMethods
+	public static class EtiquetteMethods
 	{
-		public static bool GeneratePdf(string identifier, string cote, ReportViewer target)
+		public static bool GenerateEtiquettePal(string identifier, ReportViewer target)
 		{
 			try
 			{
@@ -18,35 +18,7 @@ namespace WebApplication1.Models
 				target.ProcessingMode = ProcessingMode.Remote;
 				// urlReportServer = http://glucide/reportserver
 				target.ServerReport.ReportServerUrl = new Uri(urlReportServer);
-				target.ServerReport.ReportPath = "/PDFGenerator/Versement";
-				target.ShowToolBar = true;
-                
-				List<ReportParameter> paramList = new List<ReportParameter>();
-				paramList.Add(new ReportParameter("ID", identifier, false));
-				paramList.Add(new ReportParameter("archive_id", cote, false));
-				target.ServerReport.SetParameters(paramList);
-				target.ServerReport.Refresh();
-
-				return true;
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-		}
-		
-		public static bool GeneratePdfPal(string identifier, ReportViewer target)
-		{
-			try
-			{
-				target.ServerReport.Refresh();
-				// string value = val.Text;
-				string urlReportServer = ConfigurationManager.AppSettings["ReportServer"];
-				target.Visible = true;
-				target.ProcessingMode = ProcessingMode.Remote;
-				// urlReportServer = http://glucide/reportserver
-				target.ServerReport.ReportServerUrl = new Uri(urlReportServer);
-				target.ServerReport.ReportPath = "/PDFGenerator/VersementPAL";
+				target.ServerReport.ReportPath = "/PDFGenerator/Etiquette";
 				target.ShowToolBar = true;
                 
 				List<ReportParameter> paramList = new List<ReportParameter>();
@@ -62,7 +34,7 @@ namespace WebApplication1.Models
 			}
 		}
 		
-		public static bool GeneratePdfPalSolo(string identifier, ReportViewer target)
+		public static bool GenerateEtiquetteSolo(string identifier, ReportViewer target)
 		{
 			try
 			{
@@ -73,7 +45,7 @@ namespace WebApplication1.Models
 				target.ProcessingMode = ProcessingMode.Remote;
 				// urlReportServer = http://glucide/reportserver
 				target.ServerReport.ReportServerUrl = new Uri(urlReportServer);
-				target.ServerReport.ReportPath = "/PDFGenerator/VersementPALSolo";
+				target.ServerReport.ReportPath = "/PDFGenerator/EtiquetteSolo";
 				target.ShowToolBar = true;
                 
 				List<ReportParameter> paramList = new List<ReportParameter>();

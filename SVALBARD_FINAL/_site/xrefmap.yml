@@ -1436,12 +1436,6 @@ references:
   commentId: T:WebApplication1.AjouterArchive
   fullName: WebApplication1.AjouterArchive
   nameWithType: AjouterArchive
-- uid: WebApplication1.AjouterArchive.addArchiveButton
-  name: addArchiveButton
-  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_addArchiveButton
-  commentId: F:WebApplication1.AjouterArchive.addArchiveButton
-  fullName: WebApplication1.AjouterArchive.addArchiveButton
-  nameWithType: AjouterArchive.addArchiveButton
 - uid: WebApplication1.AjouterArchive.alertAdd
   name: alertAdd
   href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_alertAdd
@@ -1460,12 +1454,49 @@ references:
   commentId: F:WebApplication1.AjouterArchive.collapseElmAdd
   fullName: WebApplication1.AjouterArchive.collapseElmAdd
   nameWithType: AjouterArchive.collapseElmAdd
+- uid: WebApplication1.AjouterArchive.collapseElmEtqPal
+  name: collapseElmEtqPal
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_collapseElmEtqPal
+  commentId: F:WebApplication1.AjouterArchive.collapseElmEtqPal
+  fullName: WebApplication1.AjouterArchive.collapseElmEtqPal
+  nameWithType: AjouterArchive.collapseElmEtqPal
+- uid: WebApplication1.AjouterArchive.collapseRow
+  name: collapseRow
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_collapseRow
+  commentId: F:WebApplication1.AjouterArchive.collapseRow
+  fullName: WebApplication1.AjouterArchive.collapseRow
+  nameWithType: AjouterArchive.collapseRow
+- uid: WebApplication1.AjouterArchive.coteGeneratePdf
+  name: coteGeneratePdf
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_coteGeneratePdf
+  commentId: F:WebApplication1.AjouterArchive.coteGeneratePdf
+  fullName: WebApplication1.AjouterArchive.coteGeneratePdf
+  nameWithType: AjouterArchive.coteGeneratePdf
 - uid: WebApplication1.AjouterArchive.coteValidationServer
   name: coteValidationServer
   href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_coteValidationServer
   commentId: F:WebApplication1.AjouterArchive.coteValidationServer
   fullName: WebApplication1.AjouterArchive.coteValidationServer
   nameWithType: AjouterArchive.coteValidationServer
+- uid: WebApplication1.AjouterArchive.GeneratePdfPal
+  name: GeneratePdfPal
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_GeneratePdfPal
+  commentId: F:WebApplication1.AjouterArchive.GeneratePdfPal
+  fullName: WebApplication1.AjouterArchive.GeneratePdfPal
+  nameWithType: AjouterArchive.GeneratePdfPal
+- uid: WebApplication1.AjouterArchive.GeneratePdfPal_Click(System.Object,System.EventArgs)
+  name: GeneratePdfPal_Click(Object, EventArgs)
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_GeneratePdfPal_Click_System_Object_System_EventArgs_
+  commentId: M:WebApplication1.AjouterArchive.GeneratePdfPal_Click(System.Object,System.EventArgs)
+  fullName: WebApplication1.AjouterArchive.GeneratePdfPal_Click(System.Object, System.EventArgs)
+  nameWithType: AjouterArchive.GeneratePdfPal_Click(Object, EventArgs)
+- uid: WebApplication1.AjouterArchive.GeneratePdfPal_Click*
+  name: GeneratePdfPal_Click
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_GeneratePdfPal_Click_
+  commentId: Overload:WebApplication1.AjouterArchive.GeneratePdfPal_Click
+  isSpec: "True"
+  fullName: WebApplication1.AjouterArchive.GeneratePdfPal_Click
+  nameWithType: AjouterArchive.GeneratePdfPal_Click
 - uid: WebApplication1.AjouterArchive.JSONFormData
   name: JSONFormData
   href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_JSONFormData
@@ -1498,12 +1529,18 @@ references:
   isSpec: "True"
   fullName: WebApplication1.AjouterArchive.Page_Load
   nameWithType: AjouterArchive.Page_Load
-- uid: WebApplication1.AjouterArchive.rptViewer
-  name: rptViewer
-  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_rptViewer
-  commentId: F:WebApplication1.AjouterArchive.rptViewer
-  fullName: WebApplication1.AjouterArchive.rptViewer
-  nameWithType: AjouterArchive.rptViewer
+- uid: WebApplication1.AjouterArchive.rptViewerEtiquettePAL
+  name: rptViewerEtiquettePAL
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_rptViewerEtiquettePAL
+  commentId: F:WebApplication1.AjouterArchive.rptViewerEtiquettePAL
+  fullName: WebApplication1.AjouterArchive.rptViewerEtiquettePAL
+  nameWithType: AjouterArchive.rptViewerEtiquettePAL
+- uid: WebApplication1.AjouterArchive.rptViewerPAL
+  name: rptViewerPAL
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_rptViewerPAL
+  commentId: F:WebApplication1.AjouterArchive.rptViewerPAL
+  fullName: WebApplication1.AjouterArchive.rptViewerPAL
+  nameWithType: AjouterArchive.rptViewerPAL
 - uid: WebApplication1.ApplicationSignInManager
   name: ApplicationSignInManager
   href: api/WebApplication1.ApplicationSignInManager.html
@@ -2132,24 +2169,49 @@ references:
   commentId: T:WebApplication1.Demandes
   fullName: WebApplication1.Demandes
   nameWithType: Demandes
+- uid: WebApplication1.Demandes.ButtonGenerateEtiquette
+  name: ButtonGenerateEtiquette
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_ButtonGenerateEtiquette
+  commentId: F:WebApplication1.Demandes.ButtonGenerateEtiquette
+  fullName: WebApplication1.Demandes.ButtonGenerateEtiquette
+  nameWithType: Demandes.ButtonGenerateEtiquette
 - uid: WebApplication1.Demandes.ButtonGeneratePdf
   name: ButtonGeneratePdf
   href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_ButtonGeneratePdf
   commentId: F:WebApplication1.Demandes.ButtonGeneratePdf
   fullName: WebApplication1.Demandes.ButtonGeneratePdf
   nameWithType: Demandes.ButtonGeneratePdf
-- uid: WebApplication1.Demandes.collapseElm
-  name: collapseElm
-  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_collapseElm
-  commentId: F:WebApplication1.Demandes.collapseElm
-  fullName: WebApplication1.Demandes.collapseElm
-  nameWithType: Demandes.collapseElm
+- uid: WebApplication1.Demandes.collapseElmEtiquette
+  name: collapseElmEtiquette
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_collapseElmEtiquette
+  commentId: F:WebApplication1.Demandes.collapseElmEtiquette
+  fullName: WebApplication1.Demandes.collapseElmEtiquette
+  nameWithType: Demandes.collapseElmEtiquette
+- uid: WebApplication1.Demandes.collapseElmPdf
+  name: collapseElmPdf
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_collapseElmPdf
+  commentId: F:WebApplication1.Demandes.collapseElmPdf
+  fullName: WebApplication1.Demandes.collapseElmPdf
+  nameWithType: Demandes.collapseElmPdf
 - uid: WebApplication1.Demandes.Cote
   name: Cote
   href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_Cote
   commentId: F:WebApplication1.Demandes.Cote
   fullName: WebApplication1.Demandes.Cote
   nameWithType: Demandes.Cote
+- uid: WebApplication1.Demandes.GenerateEtiquette(System.Object,System.EventArgs)
+  name: GenerateEtiquette(Object, EventArgs)
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_GenerateEtiquette_System_Object_System_EventArgs_
+  commentId: M:WebApplication1.Demandes.GenerateEtiquette(System.Object,System.EventArgs)
+  fullName: WebApplication1.Demandes.GenerateEtiquette(System.Object, System.EventArgs)
+  nameWithType: Demandes.GenerateEtiquette(Object, EventArgs)
+- uid: WebApplication1.Demandes.GenerateEtiquette*
+  name: GenerateEtiquette
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_GenerateEtiquette_
+  commentId: Overload:WebApplication1.Demandes.GenerateEtiquette
+  isSpec: "True"
+  fullName: WebApplication1.Demandes.GenerateEtiquette
+  nameWithType: Demandes.GenerateEtiquette
 - uid: WebApplication1.Demandes.GeneratePdf(System.Object,System.EventArgs)
   name: GeneratePdf(Object, EventArgs)
   href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_GeneratePdf_System_Object_System_EventArgs_
@@ -2195,12 +2257,18 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Demandes.Page_Load
   nameWithType: Demandes.Page_Load
-- uid: WebApplication1.Demandes.rptViewerDemandes
-  name: rptViewerDemandes
-  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_rptViewerDemandes
-  commentId: F:WebApplication1.Demandes.rptViewerDemandes
-  fullName: WebApplication1.Demandes.rptViewerDemandes
-  nameWithType: Demandes.rptViewerDemandes
+- uid: WebApplication1.Demandes.rptViewerDemandesEtiquette
+  name: rptViewerDemandesEtiquette
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_rptViewerDemandesEtiquette
+  commentId: F:WebApplication1.Demandes.rptViewerDemandesEtiquette
+  fullName: WebApplication1.Demandes.rptViewerDemandesEtiquette
+  nameWithType: Demandes.rptViewerDemandesEtiquette
+- uid: WebApplication1.Demandes.rptViewerDemandesPdf
+  name: rptViewerDemandesPdf
+  href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_rptViewerDemandesPdf
+  commentId: F:WebApplication1.Demandes.rptViewerDemandesPdf
+  fullName: WebApplication1.Demandes.rptViewerDemandesPdf
+  nameWithType: Demandes.rptViewerDemandesPdf
 - uid: WebApplication1.Demandes.userID
   name: userID
   href: api/WebApplication1.Demandes.html#WebApplication1_Demandes_userID
@@ -2604,6 +2672,38 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.DES.Name
   nameWithType: DES.Name
+- uid: WebApplication1.Models.EtiquetteMethods
+  name: EtiquetteMethods
+  href: api/WebApplication1.Models.EtiquetteMethods.html
+  commentId: T:WebApplication1.Models.EtiquetteMethods
+  fullName: WebApplication1.Models.EtiquetteMethods
+  nameWithType: EtiquetteMethods
+- uid: WebApplication1.Models.EtiquetteMethods.GenerateEtiquettePal(System.String,Microsoft.Reporting.WebForms.ReportViewer)
+  name: GenerateEtiquettePal(String, ReportViewer)
+  href: api/WebApplication1.Models.EtiquetteMethods.html#WebApplication1_Models_EtiquetteMethods_GenerateEtiquettePal_System_String_Microsoft_Reporting_WebForms_ReportViewer_
+  commentId: M:WebApplication1.Models.EtiquetteMethods.GenerateEtiquettePal(System.String,Microsoft.Reporting.WebForms.ReportViewer)
+  fullName: WebApplication1.Models.EtiquetteMethods.GenerateEtiquettePal(System.String, Microsoft.Reporting.WebForms.ReportViewer)
+  nameWithType: EtiquetteMethods.GenerateEtiquettePal(String, ReportViewer)
+- uid: WebApplication1.Models.EtiquetteMethods.GenerateEtiquettePal*
+  name: GenerateEtiquettePal
+  href: api/WebApplication1.Models.EtiquetteMethods.html#WebApplication1_Models_EtiquetteMethods_GenerateEtiquettePal_
+  commentId: Overload:WebApplication1.Models.EtiquetteMethods.GenerateEtiquettePal
+  isSpec: "True"
+  fullName: WebApplication1.Models.EtiquetteMethods.GenerateEtiquettePal
+  nameWithType: EtiquetteMethods.GenerateEtiquettePal
+- uid: WebApplication1.Models.EtiquetteMethods.GenerateEtiquetteSolo(System.String,Microsoft.Reporting.WebForms.ReportViewer)
+  name: GenerateEtiquetteSolo(String, ReportViewer)
+  href: api/WebApplication1.Models.EtiquetteMethods.html#WebApplication1_Models_EtiquetteMethods_GenerateEtiquetteSolo_System_String_Microsoft_Reporting_WebForms_ReportViewer_
+  commentId: M:WebApplication1.Models.EtiquetteMethods.GenerateEtiquetteSolo(System.String,Microsoft.Reporting.WebForms.ReportViewer)
+  fullName: WebApplication1.Models.EtiquetteMethods.GenerateEtiquetteSolo(System.String, Microsoft.Reporting.WebForms.ReportViewer)
+  nameWithType: EtiquetteMethods.GenerateEtiquetteSolo(String, ReportViewer)
+- uid: WebApplication1.Models.EtiquetteMethods.GenerateEtiquetteSolo*
+  name: GenerateEtiquetteSolo
+  href: api/WebApplication1.Models.EtiquetteMethods.html#WebApplication1_Models_EtiquetteMethods_GenerateEtiquetteSolo_
+  commentId: Overload:WebApplication1.Models.EtiquetteMethods.GenerateEtiquetteSolo
+  isSpec: "True"
+  fullName: WebApplication1.Models.EtiquetteMethods.GenerateEtiquetteSolo
+  nameWithType: EtiquetteMethods.GenerateEtiquetteSolo
 - uid: WebApplication1.Models.FormData
   name: FormData
   href: api/WebApplication1.Models.FormData.html
@@ -2875,6 +2975,32 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.PdfMethods.GeneratePdf
   nameWithType: PdfMethods.GeneratePdf
+- uid: WebApplication1.Models.PdfMethods.GeneratePdfPal(System.String,Microsoft.Reporting.WebForms.ReportViewer)
+  name: GeneratePdfPal(String, ReportViewer)
+  href: api/WebApplication1.Models.PdfMethods.html#WebApplication1_Models_PdfMethods_GeneratePdfPal_System_String_Microsoft_Reporting_WebForms_ReportViewer_
+  commentId: M:WebApplication1.Models.PdfMethods.GeneratePdfPal(System.String,Microsoft.Reporting.WebForms.ReportViewer)
+  fullName: WebApplication1.Models.PdfMethods.GeneratePdfPal(System.String, Microsoft.Reporting.WebForms.ReportViewer)
+  nameWithType: PdfMethods.GeneratePdfPal(String, ReportViewer)
+- uid: WebApplication1.Models.PdfMethods.GeneratePdfPal*
+  name: GeneratePdfPal
+  href: api/WebApplication1.Models.PdfMethods.html#WebApplication1_Models_PdfMethods_GeneratePdfPal_
+  commentId: Overload:WebApplication1.Models.PdfMethods.GeneratePdfPal
+  isSpec: "True"
+  fullName: WebApplication1.Models.PdfMethods.GeneratePdfPal
+  nameWithType: PdfMethods.GeneratePdfPal
+- uid: WebApplication1.Models.PdfMethods.GeneratePdfPalSolo(System.String,Microsoft.Reporting.WebForms.ReportViewer)
+  name: GeneratePdfPalSolo(String, ReportViewer)
+  href: api/WebApplication1.Models.PdfMethods.html#WebApplication1_Models_PdfMethods_GeneratePdfPalSolo_System_String_Microsoft_Reporting_WebForms_ReportViewer_
+  commentId: M:WebApplication1.Models.PdfMethods.GeneratePdfPalSolo(System.String,Microsoft.Reporting.WebForms.ReportViewer)
+  fullName: WebApplication1.Models.PdfMethods.GeneratePdfPalSolo(System.String, Microsoft.Reporting.WebForms.ReportViewer)
+  nameWithType: PdfMethods.GeneratePdfPalSolo(String, ReportViewer)
+- uid: WebApplication1.Models.PdfMethods.GeneratePdfPalSolo*
+  name: GeneratePdfPalSolo
+  href: api/WebApplication1.Models.PdfMethods.html#WebApplication1_Models_PdfMethods_GeneratePdfPalSolo_
+  commentId: Overload:WebApplication1.Models.PdfMethods.GeneratePdfPalSolo
+  isSpec: "True"
+  fullName: WebApplication1.Models.PdfMethods.GeneratePdfPalSolo
+  nameWithType: PdfMethods.GeneratePdfPalSolo
 - uid: WebApplication1.RetreiveRole
   name: RetreiveRole
   href: api/WebApplication1.RetreiveRole.html

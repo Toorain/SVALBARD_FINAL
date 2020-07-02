@@ -214,7 +214,7 @@ if (window.location.pathname === "/AjouterArchive") {
             url: "/WebServices/AddFormDataService.asmx/PushData",
             data: {data : JSON.stringify(jsonData)},
             mimeType: "text/plain",
-            success: (data) => {                
+            success: (data) => {
                 if ((/true/i).test(data)) {
                     $("#addArchiveButton").removeAttr("disabled");
                     alertContainer.removeClass("alert-danger");

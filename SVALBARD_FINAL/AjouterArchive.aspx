@@ -7,20 +7,38 @@
       </div>
     </asp:Panel>
     <form id="regForm" class="needs-validation border" novalidate>
-      <div id="dropdownPdf" class="dropdownPdf" data-toggle="collapse" href="#collapseElmAdd" role="button" aria-expanded="false" aria-controls="collapseExample">
-        <h3 class="m-auto text-center">v -- Afficher le PDF -- v</h3>
+      <div id="dropdownPdf" class="dropdownPdf" data-toggle="collapse" href="#collapseRow" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <h3 class="m-auto text-center" id="pdfShow">v -- Afficher le bordereau / étiquette -- v</h3>
       </div>
-      <div runat="server" ClientIDMode="Static" class="collapse" ID="collapseElmAdd">
-              <rsweb:ReportViewer ID="rptViewer" runat="server" Font-Names="Verdana" Font-Size="8pt" ProcessingMode="Remote" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="1000px" Width="850px" 
-                  BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" 
-                  LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" 
-                  SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" 
-                  ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
-                  ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
-                  
-                  <ServerReport></ServerReport>
-              </rsweb:ReportViewer>
-        </div>
+      <div runat="server" class="row collapse" ID="collapseRow" ClientIDMode="Static">
+                <div class="col-md-6">
+                  <div runat="server" ClientIDMode="Static" ID="collapseElmAdd">
+                    <rsweb:ReportViewer ID="rptViewerPAL" runat="server" Font-Names="Verdana" Font-Size="8pt" ProcessingMode="Remote" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="1000px" Width="850px" 
+                        BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" 
+                        LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" 
+                        SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" 
+                        ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
+                        ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
+                        
+                        <ServerReport></ServerReport>
+                    </rsweb:ReportViewer>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div runat="server" ClientIDMode="Static" ID="collapseElmEtqPal">
+                    <rsweb:ReportViewer ID="rptViewerEtiquettePAL" runat="server" Font-Names="Verdana" Font-Size="8pt" ProcessingMode="Remote" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="1000px" Width="850px" 
+                        BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" 
+                        LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" 
+                        SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" 
+                        ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
+                        ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
+                        
+                        <ServerReport></ServerReport>
+                    </rsweb:ReportViewer>
+                  </div>
+                </div>
+              </div>
+
       <p class="h3 text-center m-4">Veuillez renseigner toutes les information pour effectuer une demande d'ajout à l'archive :</p>
       <!-- TODO : REMOVE AFTER TESTS ARE COMPLETE ON FORM -->
       <div class="btn btn-warning text-center" onclick="populateForm()">POPULATE FORM</div>
@@ -49,6 +67,7 @@
                        maxlength="7" 
                        required/>
                 <asp:hiddenfield runat="server" ID="coteValidationServer" ClientIDMode="Static" />
+                <asp:hiddenfield runat="server" ID="coteGeneratePdf" ClientIDMode="Static" />
                 <div id="resetInput" class="btn btn-secondary" onclick="resetInput()">Reset</div>
               </div>
             </div>
@@ -75,10 +94,10 @@
         </table>
         <div class="row mt-4">
           <div class="col-md-2 align-self-center text-center m-auto">
-            <div class="btn btn-success mb-3" onclick="validateData()">Valider le formulaire</div>
+            <div id="validateForm" class="btn btn-success mb-3" onclick="validateData()">Valider le formulaire</div>
             <asp:HiddenField runat="server" ID="JSONFormData" ClientIDMode="Static" />
             <!-- OnClick="AddArchive" -->
-            <!-- <asp:Button runat="server" ID="addArchiveButton" ClientIDMode="Static" CssClass="btn btn-primary" Text="Demander un ajout" Enabled="False" /> -->
+            <asp:Button runat="server" ID="GeneratePdfPal" OnClick="GeneratePdfPal_Click" ClientIDMode="Static" CssClass="btn btn-outline-success d-none" Text="Générer le bordereau" />
           </div>
         </div>
       </div>
