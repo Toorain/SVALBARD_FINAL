@@ -1,14 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Windows.Forms;
-using Microsoft.AspNet.Identity;
-using Microsoft.Reporting.WebForms;
-using Newtonsoft.Json;
 using WebApplication1.Models;
 
 namespace WebApplication1

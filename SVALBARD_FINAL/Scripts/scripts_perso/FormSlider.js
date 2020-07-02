@@ -121,7 +121,7 @@ if (window.location.pathname === "/AjouterArchive") {
         for (articleCount = 1; articleCount <= nombreArticles; articleCount++) {
             actualCoteNumber = coteNumbers + articleCount;
             inner = "<tr id='article_" + articleCount + "'>" +
-                "<td><input class='form-control' type='text' value='" + coteSlug + (addLeadingZeroes(actualCoteNumber)) + "' disabled /></td>" +
+                "<td><input id='cote_" + articleCount + "' class='form-control' type='text' value='" + coteSlug + (addLeadingZeroes(actualCoteNumber)) + "' disabled /></td>" +
                 "<td><textarea class='form-control'></textarea></td>" +
                 "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
                 "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
@@ -151,8 +151,8 @@ if (window.location.pathname === "/AjouterArchive") {
             "<tr id='article_" + articleCount + "'>" +
             "<td><input class='form-control' type='text' value='" + coteSlug + (addLeadingZeroes(actualCoteNumber += 1)) + "' disabled /></td>" +
             "<td><textarea class='form-control' rows='2'></textarea></td>" +
-            "<td><input class='form-control' type='number' /></td>" +
-            "<td><input class='form-control' type='number' /></td>" +
+            "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
+            "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
             "<td><textarea class='form-control' ></textarea></td>" +
             "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
             "<td>" +
@@ -190,11 +190,8 @@ if (window.location.pathname === "/AjouterArchive") {
                 let properties = ['id', 'contenu', 'date_debut', 'date_fin', 'observations', 'elimination', 'communication'];
                 data[ properties[j] ] = articleData[j].children[0].value;
             }
-            if(i === 1) {
-                data['request_group'] = articleData[0].children[0].value;
-            } else {
-                data['request_group'] = articleData[0].children[0].value.substring(0, 3) + (addLeadingZeroes(Number(articleData[0].children[0].value.substring(3)) - i + 1)).toString();
-            }
+            data['request_group'] = $("#cote_1").val();
+
             let arrayToString = JSON.stringify(Object.assign({}, data));  // convert array to string
             let stringToJsonObject = JSON.parse(arrayToString);  // convert string to json object
             let article = "article_" + i;
@@ -221,6 +218,9 @@ if (window.location.pathname === "/AjouterArchive") {
                     alertContainer.addClass("alert-success");
                     alertAdd.html("Vos données sont valides, rendez-vous dans l'onglet <a href='/Demandes'>demandes</a> pour suivre votre requête.");
                     alertContainer.removeClass("d-none");
+                    $("#coteGeneratePdf").val($("#cote_1").val());
+                    $("#validateForm").addClass("d-none");
+                    $("#GeneratePdfPal").removeClass("d-none");
                 } else {
                     alertContainer.removeClass("alert-success");
                     alertContainer.addClass("alert-danger");
