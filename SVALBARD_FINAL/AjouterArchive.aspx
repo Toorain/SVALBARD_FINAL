@@ -8,7 +8,7 @@
     </asp:Panel>
     <form id="regForm" class="needs-validation border" novalidate>
       <div id="dropdownPdf" class="dropdownPdf" data-toggle="collapse" href="#collapseRow" role="button" aria-expanded="false" aria-controls="collapseExample">
-        <h3 class="m-auto text-center" id="pdfShow">v -- Afficher le bordereau / étiquette -- v</h3>
+        <div class="m-auto text-center btn btn-outline-secondary" id="pdfShow">Afficher le bordereau / étiquette</div>
       </div>
       <div runat="server" class="row collapse" ID="collapseRow" ClientIDMode="Static">
                 <div class="col-md-6">

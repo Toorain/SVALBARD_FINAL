@@ -51,7 +51,8 @@
                             }
                         },
                         { data : 'Status'},
-                        { "defaultContent": "<i class='fas fa-file-pdf'></i>" }
+                        { "defaultContent": "<i class='mr-3 fas fa-file-pdf'></i>" +
+                                            "<i class='fas fa-tag'></i>"}
                     ]
                 });
                 $("body").keydown(function (e) {
@@ -77,11 +78,15 @@
                     }
                 });*/
                 // Triggers create and open PDF for each row.
-                $('#tableDemandes tbody').on( 'click', '.fas', function () {
+                $('#tableDemandes tbody').on( 'click', '.fa-file-pdf', function () {
                     let data = datatableVariable.row( $(this).parents('tr') ).data();
-                    $("#Identifier").val(data.ID);
-                    $("#Cote").val(data.ArchiveID);
+                    $("#Identifier").val(data.ArchiveID);
                     $("#ButtonGeneratePdf").click();
+                } );
+                $('#tableDemandes tbody').on( 'click', '.fa-tag', function () {
+                    let data = datatableVariable.row( $(this).parents('tr') ).data();
+                    $("#Identifier").val(data.ArchiveID);
+                    $("#ButtonGenerateEtiquette").click();
                 } );
                 $('#tableDemandes tfoot th').each(function () {
                     let placeHolderTitle = $('#tableDemandes thead th').eq($(this).index()).text();

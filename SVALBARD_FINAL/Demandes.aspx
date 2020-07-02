@@ -23,8 +23,8 @@
     
     <div class="row">
         <div class="col-md-6">
-            <div id="dropdownBordereauDemandes" class="dropdownPdf" data-toggle="collapse" href="#collapseElmPdf" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <h3 class="m-auto text-center">v -- Afficher le bordereau -- v</h3>
+            <div id="dropdownBordereauDemandes" class="dropdownPdf d-flex align-items-center" data-toggle="collapse" href="#collapseElmPdf" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <div class="btn btn-outline-secondary m-auto text-center">Afficher le bordereau</div>
             </div>
             <div runat="server" clientidmode="Static" class="collapse" ID="collapseElmPdf">
                 <rsweb:ReportViewer ID="rptViewerDemandesPdf" runat="server" Font-Names="Verdana" Font-Size="8pt" ProcessingMode="Remote" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="1000px" Width="850px" 
@@ -40,8 +40,8 @@
             <asp:Button runat="server" ID="ButtonGeneratePdf" ClientIDMode="Static" OnClick="GeneratePdf" CssClass="d-none" />
         </div>
         <div class="col-md-6">
-            <div id="dropdownEtiquetteDemandes" class="dropdownPdf" data-toggle="collapse" href="#collapseElmEtiquette" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <h3 class="m-auto text-center">v -- Afficher l'étiquette -- v</h3>
+            <div id="dropdownEtiquetteDemandes" class="dropdownPdf d-flex align-items-center" data-toggle="collapse" href="#collapseElmEtiquette" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <div class="btn btn-outline-secondary m-auto text-center">Afficher l'étiquette</div>
             </div>
             <div runat="server" clientidmode="Static" class="collapse" ID="collapseElmEtiquette">
                 <rsweb:ReportViewer ID="rptViewerDemandesEtiquette" runat="server" Font-Names="Verdana" Font-Size="8pt" ProcessingMode="Remote" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="1000px" Width="850px" 
