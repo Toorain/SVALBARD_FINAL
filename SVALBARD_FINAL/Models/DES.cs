@@ -10,9 +10,9 @@ namespace WebApplication1.Models
     public class DES
     {
         private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["DES"].ConnectionString;
-        private static string EtsOrDir;
-        private static string RelatedTable;
-        private static int relatedDataId;
+        private static string _etsOrDir;
+        private static string _relatedTable;
+        private static int _relatedDataId;
 
         public int ID { get; set; }
         public string Name { get; set; }
@@ -23,13 +23,13 @@ namespace WebApplication1.Models
 
             if (table == "etablissement")
             {
-                EtsOrDir = "ets";
-                RelatedTable = "direction";
+                _etsOrDir = "ets";
+                _relatedTable = "direction";
             }
             else if (table == "direction")
             {
-                EtsOrDir = "dir";
-                RelatedTable = "service";
+                _etsOrDir = "dir";
+                _relatedTable = "service";
             }
 
             // Connect to the Database
@@ -67,13 +67,13 @@ namespace WebApplication1.Models
 
             if (table == "etablissement")
             {
-                EtsOrDir = "ets";
-                RelatedTable = "direction";
+                _etsOrDir = "ets";
+                _relatedTable = "direction";
             }
             else if (table == "direction")
             {
-                EtsOrDir = "dir";
-                RelatedTable = "service";
+                _etsOrDir = "dir";
+                _relatedTable = "service";
             }
 
             // Connect to the Database
@@ -91,7 +91,7 @@ namespace WebApplication1.Models
 
                     while (dr.Read())
                     {
-                        relatedDataId = Convert.ToInt32(dr[0]);
+                        _relatedDataId = Convert.ToInt32(dr[0]);
                     }
                 }
             }
@@ -100,10 +100,10 @@ namespace WebApplication1.Models
             using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
                 // TODO : Rework this to be more readable (Linq?)
-                string cmdString = "SELECT " + RelatedTable + ".id, " + RelatedTable + ".name"
+                string cmdString = "SELECT " + _relatedTable + ".id, " + _relatedTable + ".name"
                                 + " FROM " + table
-                                + " LEFT JOIN " + RelatedTable + " ON " + table + ".id = " + RelatedTable + ".linked_" + EtsOrDir + ""
-                                + " WHERE " + RelatedTable + ".linked_" + EtsOrDir + " = '" + relatedDataId + "'";
+                                + " LEFT JOIN " + _relatedTable + " ON " + table + ".id = " + _relatedTable + ".linked_" + _etsOrDir + ""
+                                + " WHERE " + _relatedTable + ".linked_" + _etsOrDir + " = '" + _relatedDataId + "'";
 
                 using (SqlCommand cmd = new SqlCommand())
                 {
@@ -116,19 +116,19 @@ namespace WebApplication1.Models
 
                     while (dr.Read())
                     {
-                        DES DES = new DES()
+                        DES des = new DES()
                         {
                             ID = Convert.ToInt32(dr["id"]),
                             Name = dr["name"].ToString()
                         };
-                        newArray.Add(DES);
+                        newArray.Add(des);
                     }
                 }
             }
             return newArray;
         }
 
-        public static List<string> getDatabaseElements()
+        public static List<string> GetDatabaseElements()
         {
             List<string> databaseItems = new List<string>();
             // Connect to the Database
@@ -155,7 +155,7 @@ namespace WebApplication1.Models
             }            
         }
 
-        public static List<string> getTableElements(string table)
+        public static List<string> GetTableElements(string table)
         {
             List<string> tableItems = new List<string>();
             // Connect to the Database

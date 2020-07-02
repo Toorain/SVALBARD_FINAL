@@ -83,6 +83,11 @@
                     $("#Identifier").val(data.ArchiveID);
                     $("#ButtonGeneratePdf").click();
                 } );
+                /*$('#tableDemandes tbody').on( 'click', '#pdfAll', function () {
+                    let data = datatableVariable.row( $(this).parents('tr') ).data();
+                    $("#Identifier").val(data.ArchiveID);
+                    $("#ButtonGeneratePdf").click();
+                } );*/
                 $('#tableDemandes tbody').on( 'click', '.fa-tag', function () {
                     let data = datatableVariable.row( $(this).parents('tr') ).data();
                     $("#Identifier").val(data.ArchiveID);

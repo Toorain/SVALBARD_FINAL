@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using WebApplication1.Models;
 
 namespace WebApplication1.WebServices
 {
@@ -24,7 +25,7 @@ namespace WebApplication1.WebServices
 		[WebMethod]
 		public string ValidateCote(string cote)
 		{
-			return DataSQL.GetCote(cote);
+			return DataSql.GetCote(cote);
 		}
 	}
 }

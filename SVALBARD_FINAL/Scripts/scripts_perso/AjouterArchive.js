@@ -191,6 +191,7 @@ if (window.location.pathname === "/AjouterArchive") {
                 data[ properties[j] ] = articleData[j].children[0].value;
             }
             data['request_group'] = $("#cote_1").val();
+            data['user'] = isolateFirstLastName($("#LoggedUser").val());
 
             let arrayToString = JSON.stringify(Object.assign({}, data));  // convert array to string
             let stringToJsonObject = JSON.parse(arrayToString);  // convert string to json object

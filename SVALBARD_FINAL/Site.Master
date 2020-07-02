@@ -97,7 +97,8 @@
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/CheckCote.js"></script>
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/PopulateAjouterArchive.js"></script>    
 <!-- <script type="text/javascript" charset="utf8" src="/Scripts/shepherd/dist/shepherd.min.js"></script> -->
-    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/FormSlider.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/AjouterArchive.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/Misc.js"></script>
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/startTourGlobal.js"></script>
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/startTourArchive.js"></script>
     <script src="https://kit.fontawesome.com/e2b0a647a5.js" crossorigin="anonymous"></script>

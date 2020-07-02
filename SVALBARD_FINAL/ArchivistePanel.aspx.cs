@@ -17,14 +17,14 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<string> DatabaseElements = DES.getDatabaseElements();
+            List<string> databaseElements = DES.GetDatabaseElements();
 
             int indexOfItem = 0;
             string leftSplitter = "";
 
-            foreach (var item in DatabaseElements)
+            foreach (var item in databaseElements)
             {
-                List<string> TableItems = DES.getTableElements(item);
+                List<string> TableItems = DES.GetTableElements(item);
 
                 if (indexOfItem != 0) { leftSplitter = "vertical-line"; };
 

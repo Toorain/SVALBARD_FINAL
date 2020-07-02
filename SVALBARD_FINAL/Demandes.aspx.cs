@@ -19,7 +19,11 @@ namespace WebApplication1
 		}
 		protected void GeneratePdf(object sender, EventArgs eventArgs)
 		{
-			bool success = PdfMethods.GeneratePdfPalSolo(Identifier.Value, rptViewerDemandesPdf);
+			string requestGroup = DataSql.GetRequestGroup(Identifier.Value);
+			
+			bool success = PdfMethods.GeneratePdfPal(requestGroup, rptViewerDemandesPdf);
+
+			//bool success = PdfMethods.GeneratePdfPalSolo(Identifier.Value, rptViewerDemandesPdf);
 			if (success)
 			{
 				collapseElmPdf.Attributes["class"] = "collapse show";

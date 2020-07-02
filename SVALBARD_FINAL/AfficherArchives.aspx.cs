@@ -205,7 +205,7 @@ namespace WebApplication1
 
         protected void ModifyArchive_Click(object sender, EventArgs e)
         {
-            DataSQL.ModifyArchive(archiveID.Value);
+            DataSql.ModifyArchive(archiveID.Value);
         }
     }
 }

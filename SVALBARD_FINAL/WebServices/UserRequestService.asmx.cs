@@ -73,7 +73,7 @@ namespace WebApplication1.WebServices
                                 ID = Convert.ToInt32(dr["ID"]),
                                 Date = Convert.ToDateTime(dr["date"].ToString()),
                                 IssuerID = !dr["issuerFirstName"].ToString().IsNullOrWhiteSpace() && !dr["issuerLastName"].ToString().IsNullOrWhiteSpace()
-                                    ? dr["issuerLastName"].ToString() + " " + dr["issuerFirstName"].ToString()
+                                    ? dr["issuerLastName"] + " " + dr["issuerFirstName"].ToString()
                                     : dr["issuerID"].ToString(),
                                 IssuerEts = dr["issuerEts"].ToString(),
                                 IssuerDir = dr["issuerDir"].ToString(),
@@ -91,7 +91,7 @@ namespace WebApplication1.WebServices
                                 ID = Convert.ToInt32(dr["ID"]),
                                 Date = Convert.ToDateTime(dr["date"].ToString()),
                                 IssuerID = !dr["issuerFirstName"].ToString().IsNullOrWhiteSpace() && !dr["issuerLastName"].ToString().IsNullOrWhiteSpace()
-                                    ? dr["issuerLastName"].ToString() + " " + dr["issuerFirstName"].ToString()
+                                    ? dr["issuerLastName"] + " " + dr["issuerFirstName"]
                                     : dr["issuerID"].ToString(),
                                 IssuerEts = dr["issuerEts"].ToString(),
                                 IssuerDir = dr["issuerDir"].ToString(),
@@ -127,7 +127,7 @@ namespace WebApplication1.WebServices
                         {
                             ID = 0,
                             Date = Convert.ToDateTime(dr["date"].ToString()),
-                            IssuerID = "",
+                            IssuerID = dr["user"].ToString(),
                             IssuerEts = dr["ets"].ToString(),
                             IssuerDir = dr["dir"].ToString(),
                             IssuerService = dr["service"].ToString(),

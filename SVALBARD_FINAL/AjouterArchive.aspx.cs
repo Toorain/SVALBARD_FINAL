@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.UI;
+using Microsoft.AspNet.Identity;
 using WebApplication1.Models;
 
 namespace WebApplication1
@@ -9,7 +10,9 @@ namespace WebApplication1
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			int lastItem = DataSQL.GetLastItemArchive();
+			LoggedUser.Value = User.Identity.GetUserName();
+			
+			int lastItem = DataSql.GetLastItemArchive();
             
 			List<DES> DESList = DES.GetDataZero("etablissement");
 		}

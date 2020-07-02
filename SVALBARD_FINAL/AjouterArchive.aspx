@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="Ajouter archive" EnableEventValidation="false" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AjouterArchive.aspx.cs" Inherits="WebApplication1.AjouterArchive" %>
 <%@ Register TagPrefix="rsweb" Namespace="Microsoft.Reporting.WebForms" Assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Panel ID="alertRequestAdd" runat="server">
+  <asp:HiddenField ID="LoggedUser" ClientIDMode="Static" runat="server" Value=""/>
+  <asp:Panel ID="alertRequestAdd" runat="server">
       <div id="alertRequestAddContainer" class="alert alert-dismissible fade show text-center d-none" role="alert">
           <h5 id="alertAdd" runat="server">TEST</h5>
       </div>

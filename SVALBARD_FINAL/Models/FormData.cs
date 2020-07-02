@@ -18,6 +18,7 @@ namespace WebApplication1.Models
 		private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
 
 		private string Id { get; set; }
+		private string User { get; set; }
 		private string Contenu { get; set; }
 		private int DateDebut { get; set; }
 		private int DateFin { get; set;  }
@@ -57,6 +58,7 @@ namespace WebApplication1.Models
 				JToken jsonElm = jsonAsJsonFormat["article_" + i];
 				FormData newFormData = new FormData {
 					Id = jsonElm["id"].ToString(),
+					User = jsonElm["user"].ToString(),
 					Contenu = jsonElm["contenu"].ToString(),
 					DateDebut = Convert.ToInt32(jsonElm["date_debut"]),
 					DateFin = Convert.ToInt32(jsonElm["date_fin"]),
@@ -75,9 +77,9 @@ namespace WebApplication1.Models
 			using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
 			{
 				string cmdString = "INSERT INTO [dbo].[logsArchivePAL]"
-									+ " ([id] , [date], [ets], [dir], [service], [contenu] ,[date_min] ,[date_max] ,[observations], [prevision_elim], [autorisation_comm], [request_group], [action], [status])"
+									+ " ([id] , [date], [user], [ets], [dir], [service], [contenu] ,[date_min] ,[date_max] ,[observations], [prevision_elim], [autorisation_comm], [request_group], [action], [status])"
 									+ " VALUES"
-									+ " (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14 )";
+									+ " (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14, @val15 )";
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = sqlConn;
@@ -92,18 +94,19 @@ namespace WebApplication1.Models
 						{
 							cmd.Parameters.AddWithValue("@val1", formData.Id);
 							cmd.Parameters.AddWithValue("@val2", DateTime.Now);
-							cmd.Parameters.AddWithValue("@val3", DatabaseUser.GetUserEts());
-							cmd.Parameters.AddWithValue("@val4", DatabaseUser.GetUserDir());
-							cmd.Parameters.AddWithValue("@val5", DatabaseUser.GetUserService());
-							cmd.Parameters.AddWithValue("@val6", formData.Contenu);
-							cmd.Parameters.AddWithValue("@val7", formData.DateDebut);
-							cmd.Parameters.AddWithValue("@val8", formData.DateFin);
-							cmd.Parameters.AddWithValue("@val9", formData.Observations);
-							cmd.Parameters.AddWithValue("@val10", formData.Elimination);
-							cmd.Parameters.AddWithValue("@val11", formData.Communication);
-							cmd.Parameters.AddWithValue("@val12", formData.RequestGroup);
-							cmd.Parameters.AddWithValue("@val13", 1);
+							cmd.Parameters.AddWithValue("@val3", formData.User);
+							cmd.Parameters.AddWithValue("@val4", DatabaseUser.GetUserEts());
+							cmd.Parameters.AddWithValue("@val5", DatabaseUser.GetUserDir());
+							cmd.Parameters.AddWithValue("@val6", DatabaseUser.GetUserService());
+							cmd.Parameters.AddWithValue("@val7", formData.Contenu);
+							cmd.Parameters.AddWithValue("@val8", formData.DateDebut);
+							cmd.Parameters.AddWithValue("@val9", formData.DateFin);
+							cmd.Parameters.AddWithValue("@val10", formData.Observations);
+							cmd.Parameters.AddWithValue("@val11", formData.Elimination);
+							cmd.Parameters.AddWithValue("@val12", formData.Communication);
+							cmd.Parameters.AddWithValue("@val13", formData.RequestGroup);
 							cmd.Parameters.AddWithValue("@val14", 1);
+							cmd.Parameters.AddWithValue("@val15", 1);
 
 							cmd.ExecuteNonQuery();
 						

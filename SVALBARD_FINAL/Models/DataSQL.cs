@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace WebApplication1
+namespace WebApplication1.Models
 {
-    public class DataSQL
+    public class DataSql
     {
+        static string _connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
         // public int ID { get; set; }
         public string Cote { get; set; }
         public DateTime Versement { get; set; }
@@ -21,10 +22,9 @@ namespace WebApplication1
 
         public static void ModifyArchive(string currentRow)
         {
-            var newArray = new List<DataSQL>();
-            string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
+            var newArray = new List<DataSql>();
             // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            using (SqlConnection sqlConn = new SqlConnection(_connectionString))
             {
                 string cmdString = "SELECT * FROM [dbo].[ArchivesV2] WHERE ID = @val1";
                 using (SqlCommand cmd = new SqlCommand())
@@ -39,7 +39,7 @@ namespace WebApplication1
                     
                     while (dr.Read())
                     {
-                        DataSQL dataSql = new DataSQL
+                        DataSql dataSql = new DataSql
                         {
                             // ID = Convert.ToInt32(dr["ID"].ToString()),
                             Cote = dr["cote"].ToString(),
@@ -60,9 +60,8 @@ namespace WebApplication1
         }
         public static int GetLastItemArchive()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
             // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            using (SqlConnection sqlConn = new SqlConnection(_connectionString))
             {
                 string cmdString = "SELECT TOP (1) [ID] FROM [archives].[dbo].[ArchivesV2] ORDER BY ID DESC";
                 using (SqlCommand cmd = new SqlCommand())
@@ -84,24 +83,24 @@ namespace WebApplication1
                 }
             }
         }
-        
+
         public static string GetCote(string cote)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
+
             // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            using (SqlConnection sqlConn = new SqlConnection(_connectionString))
             {
                 // Check across 2 DB and 3 tables that suggested cote is last cote + 1 even if a cote is in the waiting list. Prevents insertion of random numbers of Cote in Database.
-                string cmdString = 
+                string cmdString =
                     "SELECT  TOP (1) cote_ID" +
                     " FROM    ( " +
-                        " SELECT cote as cote_ID FROM [archives].[dbo].[ArchivesV2] WHERE cote LIKE @val1" +
-                        " UNION " + 
-                        " SELECT ID as cote_ID FROM [logsArchives].[dbo].[logsArchivePAL] WHERE ID LIKE @val1" +
-                        " UNION " + 
-                        " SELECT archiveID as cote_ID FROM [logsArchives].[dbo].[logsArchive] WHERE ID LIKE @val1" +
-                        " ) AS cote_ID" +
-                        " ORDER BY cote_ID DESC";
+                    " SELECT cote as cote_ID FROM [archives].[dbo].[ArchivesV2] WHERE cote LIKE @val1" +
+                    " UNION " +
+                    " SELECT ID as cote_ID FROM [logsArchives].[dbo].[logsArchivePAL] WHERE ID LIKE @val1" +
+                    " UNION " +
+                    " SELECT archiveID as cote_ID FROM [logsArchives].[dbo].[logsArchive] WHERE ID LIKE @val1" +
+                    " ) AS cote_ID" +
+                    " ORDER BY cote_ID DESC";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -117,23 +116,25 @@ namespace WebApplication1
                     {
                         drVal = dr.HasRows ? dr["cote_ID"].ToString() : "no_entry";
                     }
+
                     return drVal;
                 }
             }
         }
         
-        /*public static string SuggestCote(string coteSpliced)
+        public static string GetRequestGroup(string id)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
             // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            using (SqlConnection sqlConn = new SqlConnection(_connectionString))
             {
-                string cmdString = "SELECT TOP (1) [cote] FROM [archives].[dbo].[ArchivesV2] WHERE cote LIKE @val1 ORDER BY cote DESC";
+                string cmdString = "SELECT request_group" +
+                                   " FROM logsArchives.dbo.logsArchivePAL" +
+                                   " WHERE ID = @val1";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
-                    cmd.Parameters.AddWithValue("@val1", coteSpliced  + '%');
+                    cmd.Parameters.AddWithValue("@val1", id);
 
                     sqlConn.Open();
 
@@ -142,20 +143,11 @@ namespace WebApplication1
 
                     while (dr.Read())
                     {
-                        if (dr.HasRows)
-                        {
-                            drVal = dr["cote"].ToString();
-                        }
-                        else
-                        {
-                            drVal = "no_entry";
-                        }
+                        drVal = dr.HasRows ? dr["request_group"].ToString() : "no_entry";
                     }
                     return drVal;
                 }
             }
-        }*/
+        }
     }
-
-    
 }

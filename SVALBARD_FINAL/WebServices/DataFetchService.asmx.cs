@@ -29,7 +29,7 @@ namespace WebApplication1
         {
             string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
 
-            List<DataSQL> datas = new List<DataSQL>();
+            List<DataSql> datas = new List<DataSql>();
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
                 string cmdString = "SELECT * FROM ArchivesV2";
@@ -49,7 +49,7 @@ namespace WebApplication1
                            && !dr["communication"].ToString().ToLower().Contains("éliminé")
                            && !dr["communication"].ToString().ToLower().Contains("eliminé"))
                         {
-                            DataSQL dataSql = new DataSQL
+                            DataSql dataSql = new DataSql
                             {
                                 // ID = Convert.ToInt32(dr["ID"].ToString()),
                                 Cote = dr["cote"].ToString(),

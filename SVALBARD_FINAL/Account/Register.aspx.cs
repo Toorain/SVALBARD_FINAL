@@ -16,7 +16,7 @@ namespace WebApplication1.Account
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            int lastItem = DataSQL.GetLastItemArchive();
+            int lastItem = DataSql.GetLastItemArchive();
             
             List<DES> DESList = DES.GetDataZero("etablissement");
 

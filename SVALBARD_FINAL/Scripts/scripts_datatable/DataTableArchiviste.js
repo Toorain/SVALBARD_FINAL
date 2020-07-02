@@ -16,6 +16,7 @@
             crossDomain: true,
             success: function (data) {
                 let datatableVariable = $('#tableArchiviste').DataTable({
+                    pageLength: 100,
                     responsive: true,
                     data: data,
                     columns: [
@@ -66,13 +67,7 @@
                             }
                         }
                     ]
-                });
-                $('#tableArchiviste tbody').on( 'click', '.fa-file-pdf', function () {
-                    let data = datatableVariable.row( $(this).parents('tr') ).data();
-                    $("#Identifier").val(data.ID);
-                    $("#Cote").val(data.ArchiveID);
-                    $("#ButtonGeneratePdf").click();
-                } );
+                });                
                 $("body").keydown(function (e) {
                     if (e.keyCode == 37) { // left
                         $("#tableDemandes_previous").click();
@@ -95,6 +90,12 @@
                     let tableColumn = datatableVariable.column($(this).attr('data-columnindex'));
                     tableColumn.visible(!tableColumn.visible());
                 });
+                $('#tableArchiviste tbody').on( 'click', '.fa-file-pdf', function () {
+                    let data = datatableVariable.row( $(this).parents('tr') ).data();
+                    $("#Identifier").val(data.ID);
+                    $("#Cote").val(data.ArchiveID);
+                    $("#ButtonGeneratePdf").click();
+                } );
                 // This is the 'Click to see more' part, when you click on <tr></tr> element you get more info about it and you can request targeted element.
                 $('#tableArchiviste tbody').on('click', '.fa-search', function () {
                     // Close all alerts with a click on Table Row
