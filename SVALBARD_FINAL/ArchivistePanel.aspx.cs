@@ -24,7 +24,7 @@ namespace WebApplication1
 
             foreach (var item in databaseElements)
             {
-                List<string> TableItems = DES.GetTableElements(item);
+                List<string> tableItems = DES.GetTableElements(item);
 
                 if (indexOfItem != 0) { leftSplitter = "vertical-line"; };
 
@@ -50,27 +50,17 @@ namespace WebApplication1
                 };
                 div.Controls.Add(label1);
                 div.Controls.Add(label2);
-
-                /*// Generate a dropdown menu IF Etablissement || Service
-          UpdateStatusox dropdown1 = new ComboBox
-                {
-
-                };
-                ComboBox dropdwon2 = new ComboBox
-                {
-
-                };*/
-
+                
                 // Generate an <asp:Button>
-                System.Web.UI.WebControls.Button Button = new System.Web.UI.WebControls.Button
+                System.Web.UI.WebControls.Button button = new System.Web.UI.WebControls.Button
                 {
                     Text = "Ajouter " + Misc.UppercaseFirst(item),
                     CssClass = "btn btn-outline-success",
-                    ID = item
+                    ID = item,
+                    ClientIDMode = ClientIDMode.Static
                 };
-                Button.ClientIDMode = ClientIDMode.Static;
-                Button.Click += new EventHandler(this.AddSmth);
-                div.Controls.Add(Button);
+                button.Click += new EventHandler(this.AddSmth);
+                div.Controls.Add(button);
 
                 ModalAjouter.Controls.Add(div);
 
@@ -106,7 +96,16 @@ namespace WebApplication1
         
         protected void GeneratePdf(object sender, EventArgs eventArgs)
         {
-            bool success = PdfMethods.GeneratePdf(Identifier.Value, Cote.Value, rptViewerArchiviste);
+            bool success;
+            
+            if (Origin.Value == "NOT_PAL")
+            {
+                success = PdfMethods.GeneratePdf(Identifier.Value, Cote.Value, rptViewerArchiviste);
+            }
+            else
+            {
+                success = PdfMethods.GeneratePdfPal(DataSql.GetRequestGroup(Cote.Value), rptViewerArchiviste);
+            }
 
             if (success)
             {

@@ -1,14 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.Services;
-using System.Windows.Forms;
 
-namespace WebApplication1
+namespace WebApplication1.WebServices
 {
 	/// <summary>
 	/// Description résumée de RetreiveRole

@@ -121,7 +121,12 @@ namespace WebApplication1.Models
                 }
             }
         }
-        
+        /// <summary>
+        /// Get the group identifier from a single identifier.
+        /// Ex. 11W0222 was created at the same time as 11W0223 & 11W0224, if I put 11W0223 in GetRequestGroup it will return 11W0222 (which is the group identifier for this bundle of three).
+        /// </summary>
+        /// <param name="id">A single "côte"</param>
+        /// <returns>Returns the group identifier for one element.</returns>
         public static string GetRequestGroup(string id)
         {
             // Connect to the Database

@@ -69,6 +69,7 @@
                 <th>Action</th>
                 <th>Status</th>
                 <th>???</th>
+                <th class="d-none">Origin</th>
             </tr>
         </thead>
         <tfoot>
@@ -89,6 +90,7 @@
        </rsweb:ReportViewer>
     </div>
     <asp:Button runat="server" ID="ButtonGeneratePdf" ClientIDMode="Static" OnClick="GeneratePdf" CssClass="d-none" />
+    <asp:HiddenField runat="server" ID="Origin" ClientIDMode="Static" Value="" />
     <asp:HiddenField runat="server" ID="Identifier" ClientIDMode="Static" Value="" />
     <asp:HiddenField runat="server" ID="Cote" ClientIDMode="Static" Value="" />
     <asp:HiddenField runat="server" ID="userID" ClientIDMode="Static" />

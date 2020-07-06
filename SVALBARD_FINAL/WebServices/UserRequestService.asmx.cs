@@ -81,7 +81,8 @@ namespace WebApplication1.WebServices
                                 ArchiveID = dr["ArchiveID"].ToString(),
                                 Localization = dr["localization"].ToString(),
                                 Action = Convert.ToInt32(dr["action"]),
-                                Status = dr["status_name"].ToString()
+                                Status = dr["status_name"].ToString(),
+                                Origin = "NOT_PAL"
                             };
                             datas.Add(logs);
                         } else if (dr["receiverID"].ToString() == userId)
@@ -99,7 +100,8 @@ namespace WebApplication1.WebServices
                                 ArchiveID = dr["ArchiveID"].ToString(),
                                 Localization = dr["localization"].ToString(),
                                 Action = Convert.ToInt32(dr["action"]),
-                                Status = dr["status_name"].ToString()
+                                Status = dr["status_name"].ToString(),
+                                Origin = "NOT_PAL"
                             };
                             datas.Add(logs);
                         };
@@ -134,7 +136,8 @@ namespace WebApplication1.WebServices
                             ArchiveID = dr["id"].ToString(),
                             Localization = "",
                             Action = Convert.ToInt32(dr["action"]),
-                            Status = dr["status_name"].ToString()
+                            Status = dr["status_name"].ToString(),
+                            Origin = "PAL"
                         };
                         datas.Add(logs);
                     }

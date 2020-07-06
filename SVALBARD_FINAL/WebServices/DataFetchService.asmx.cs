@@ -22,7 +22,6 @@ namespace WebApplication1
         /// <summary>
         /// GetDataArchives method recovers all datas and returns them as json
         /// </summary>
-        /// <param name="elimEnabled">Used to enable 'éliminé' elements in the returned json.</param>
         /// <remarks>This method is used in DataTableArchives.js</remarks>
         [WebMethod]        
         public void GetDataArchives()

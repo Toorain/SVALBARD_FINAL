@@ -371,8 +371,8 @@
     <Content Include="Scripts\shepherd\landing\js\welcome.js" />
     <Content Include="Scripts\shepherd\LICENSE" />
     <Content Include="Scripts\shepherd\package.json" />
-    <Content Include="Scripts\shepherd\patches\rollup-plugin-eslint+7.0.0.patch" />
     <Content Include="Scripts\shepherd\README.md" />
+    <Content Include="Scripts\shepherd\RELEASE.md" />
     <Content Include="Scripts\shepherd\rollup.config.js" />
     <Content Include="Scripts\shepherd\src\js\components\shepherd-button.svelte" />
     <Content Include="Scripts\shepherd\src\js\components\shepherd-cancel-icon.svelte" />

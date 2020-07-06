@@ -1,1 +1,1 @@
-﻿<%@ WebService Language="C#" CodeBehind="RetreiveRole.asmx.cs" Class="WebApplication1.RetreiveRole" %>
+﻿<%@ WebService Language="C#" CodeBehind="RetreiveRole.asmx.cs" Class="WebApplication1.WebServices.RetreiveRole" %>

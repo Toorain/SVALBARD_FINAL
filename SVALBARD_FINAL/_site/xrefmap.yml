@@ -1737,6 +1737,12 @@ references:
   commentId: F:WebApplication1.ArchivistePanel.ModifyStatus
   fullName: WebApplication1.ArchivistePanel.ModifyStatus
   nameWithType: ArchivistePanel.ModifyStatus
+- uid: WebApplication1.ArchivistePanel.Origin
+  name: Origin
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_Origin
+  commentId: F:WebApplication1.ArchivistePanel.Origin
+  fullName: WebApplication1.ArchivistePanel.Origin
+  nameWithType: ArchivistePanel.Origin
 - uid: WebApplication1.ArchivistePanel.Page_Load(System.Object,System.EventArgs)
   name: Page_Load(Object, EventArgs)
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_Page_Load_System_Object_System_EventArgs_
@@ -2917,6 +2923,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.Logs.Localization
   nameWithType: Logs.Localization
+- uid: WebApplication1.Models.Logs.Origin
+  name: Origin
+  href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_Origin
+  commentId: P:WebApplication1.Models.Logs.Origin
+  fullName: WebApplication1.Models.Logs.Origin
+  nameWithType: Logs.Origin
+- uid: WebApplication1.Models.Logs.Origin*
+  name: Origin
+  href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_Origin_
+  commentId: Overload:WebApplication1.Models.Logs.Origin
+  isSpec: "True"
+  fullName: WebApplication1.Models.Logs.Origin
+  nameWithType: Logs.Origin
 - uid: WebApplication1.Models.Logs.Status
   name: Status
   href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_Status
@@ -2930,19 +2949,6 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.Logs.Status
   nameWithType: Logs.Status
-- uid: WebApplication1.Models.Logs.StatusNameToStatusCode(System.String)
-  name: StatusNameToStatusCode(String)
-  href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_StatusNameToStatusCode_System_String_
-  commentId: M:WebApplication1.Models.Logs.StatusNameToStatusCode(System.String)
-  fullName: WebApplication1.Models.Logs.StatusNameToStatusCode(System.String)
-  nameWithType: Logs.StatusNameToStatusCode(String)
-- uid: WebApplication1.Models.Logs.StatusNameToStatusCode*
-  name: StatusNameToStatusCode
-  href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_StatusNameToStatusCode_
-  commentId: Overload:WebApplication1.Models.Logs.StatusNameToStatusCode
-  isSpec: "True"
-  fullName: WebApplication1.Models.Logs.StatusNameToStatusCode
-  nameWithType: Logs.StatusNameToStatusCode
 - uid: WebApplication1.Models.Logs.UpdateStatus(System.String,System.String)
   name: UpdateStatus(String, String)
   href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_UpdateStatus_System_String_System_String_
@@ -3020,31 +3026,6 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.PdfMethods.GeneratePdfPalSolo
   nameWithType: PdfMethods.GeneratePdfPalSolo
-- uid: WebApplication1.RetreiveRole
-  name: RetreiveRole
-  href: api/WebApplication1.RetreiveRole.html
-  commentId: T:WebApplication1.RetreiveRole
-  fullName: WebApplication1.RetreiveRole
-  nameWithType: RetreiveRole
-- uid: WebApplication1.RetreiveRole.ClickedModal(System.String)
-  name: ClickedModal(String)
-  href: api/WebApplication1.RetreiveRole.html#WebApplication1_RetreiveRole_ClickedModal_System_String_
-  commentId: M:WebApplication1.RetreiveRole.ClickedModal(System.String)
-  fullName: WebApplication1.RetreiveRole.ClickedModal(System.String)
-  nameWithType: RetreiveRole.ClickedModal(String)
-- uid: WebApplication1.RetreiveRole.ClickedModal*
-  name: ClickedModal
-  href: api/WebApplication1.RetreiveRole.html#WebApplication1_RetreiveRole_ClickedModal_
-  commentId: Overload:WebApplication1.RetreiveRole.ClickedModal
-  isSpec: "True"
-  fullName: WebApplication1.RetreiveRole.ClickedModal
-  nameWithType: RetreiveRole.ClickedModal
-- uid: WebApplication1.RetreiveRole.RoleId
-  name: RoleId
-  href: api/WebApplication1.RetreiveRole.html#WebApplication1_RetreiveRole_RoleId
-  commentId: F:WebApplication1.RetreiveRole.RoleId
-  fullName: WebApplication1.RetreiveRole.RoleId
-  nameWithType: RetreiveRole.RoleId
 - uid: WebApplication1.RouteConfig
   name: RouteConfig
   href: api/WebApplication1.RouteConfig.html
@@ -3328,19 +3309,44 @@ references:
   commentId: T:WebApplication1.WebServices.DESFetchService
   fullName: WebApplication1.WebServices.DESFetchService
   nameWithType: DESFetchService
-- uid: WebApplication1.WebServices.DESFetchService.GetDES(System.String,System.String)
-  name: GetDES(String, String)
-  href: api/WebApplication1.WebServices.DESFetchService.html#WebApplication1_WebServices_DESFetchService_GetDES_System_String_System_String_
-  commentId: M:WebApplication1.WebServices.DESFetchService.GetDES(System.String,System.String)
-  fullName: WebApplication1.WebServices.DESFetchService.GetDES(System.String, System.String)
-  nameWithType: DESFetchService.GetDES(String, String)
-- uid: WebApplication1.WebServices.DESFetchService.GetDES*
-  name: GetDES
-  href: api/WebApplication1.WebServices.DESFetchService.html#WebApplication1_WebServices_DESFetchService_GetDES_
-  commentId: Overload:WebApplication1.WebServices.DESFetchService.GetDES
+- uid: WebApplication1.WebServices.DESFetchService.GetDes(System.String,System.String)
+  name: GetDes(String, String)
+  href: api/WebApplication1.WebServices.DESFetchService.html#WebApplication1_WebServices_DESFetchService_GetDes_System_String_System_String_
+  commentId: M:WebApplication1.WebServices.DESFetchService.GetDes(System.String,System.String)
+  fullName: WebApplication1.WebServices.DESFetchService.GetDes(System.String, System.String)
+  nameWithType: DESFetchService.GetDes(String, String)
+- uid: WebApplication1.WebServices.DESFetchService.GetDes*
+  name: GetDes
+  href: api/WebApplication1.WebServices.DESFetchService.html#WebApplication1_WebServices_DESFetchService_GetDes_
+  commentId: Overload:WebApplication1.WebServices.DESFetchService.GetDes
   isSpec: "True"
-  fullName: WebApplication1.WebServices.DESFetchService.GetDES
-  nameWithType: DESFetchService.GetDES
+  fullName: WebApplication1.WebServices.DESFetchService.GetDes
+  nameWithType: DESFetchService.GetDes
+- uid: WebApplication1.WebServices.RetreiveRole
+  name: RetreiveRole
+  href: api/WebApplication1.WebServices.RetreiveRole.html
+  commentId: T:WebApplication1.WebServices.RetreiveRole
+  fullName: WebApplication1.WebServices.RetreiveRole
+  nameWithType: RetreiveRole
+- uid: WebApplication1.WebServices.RetreiveRole.ClickedModal(System.String)
+  name: ClickedModal(String)
+  href: api/WebApplication1.WebServices.RetreiveRole.html#WebApplication1_WebServices_RetreiveRole_ClickedModal_System_String_
+  commentId: M:WebApplication1.WebServices.RetreiveRole.ClickedModal(System.String)
+  fullName: WebApplication1.WebServices.RetreiveRole.ClickedModal(System.String)
+  nameWithType: RetreiveRole.ClickedModal(String)
+- uid: WebApplication1.WebServices.RetreiveRole.ClickedModal*
+  name: ClickedModal
+  href: api/WebApplication1.WebServices.RetreiveRole.html#WebApplication1_WebServices_RetreiveRole_ClickedModal_
+  commentId: Overload:WebApplication1.WebServices.RetreiveRole.ClickedModal
+  isSpec: "True"
+  fullName: WebApplication1.WebServices.RetreiveRole.ClickedModal
+  nameWithType: RetreiveRole.ClickedModal
+- uid: WebApplication1.WebServices.RetreiveRole.RoleId
+  name: RoleId
+  href: api/WebApplication1.WebServices.RetreiveRole.html#WebApplication1_WebServices_RetreiveRole_RoleId
+  commentId: F:WebApplication1.WebServices.RetreiveRole.RoleId
+  fullName: WebApplication1.WebServices.RetreiveRole.RoleId
+  nameWithType: RetreiveRole.RoleId
 - uid: WebApplication1.WebServices.SuggestCoteService
   name: SuggestCoteService
   href: api/WebApplication1.WebServices.SuggestCoteService.html

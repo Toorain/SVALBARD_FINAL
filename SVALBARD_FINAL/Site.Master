@@ -16,7 +16,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="/Content/dataTables.min.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"> -->
-    <!--<link rel="stylesheet" href="/Scripts/shepherd/dist/shepherd.css"/> -->
+    <link rel="stylesheet" href="/Scripts/shepherd/dist/shepherd.css"/>
 </head>
 <body>
     <form runat="server">
@@ -96,7 +96,7 @@
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/ETS_Script.js"></script>
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/CheckCote.js"></script>
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/PopulateAjouterArchive.js"></script>    
-<!-- <script type="text/javascript" charset="utf8" src="/Scripts/shepherd/dist/shepherd.min.js"></script> -->
+    <script type="text/javascript" charset="utf8" src="/Scripts/shepherd/dist/shepherd.min.js"></script>
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/AjouterArchive.js"></script>
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/Misc.js"></script>
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/startTourGlobal.js"></script>

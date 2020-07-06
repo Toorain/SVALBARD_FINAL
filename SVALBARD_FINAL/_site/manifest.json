@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.ArchivistePanel.html",
-          "hash": "/rN7372dn/ciof6ZcKsewg=="
+          "hash": "harxs2zGrXDS9942ksshQA=="
         }
       },
       "is_incremental": true,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.DataFetchService.html",
-          "hash": "Bs1z+YKE+SWgwGPOiBEFCg=="
+          "hash": "dnd3BGJmqnS/DVocRYJ2lg=="
         }
       },
       "is_incremental": true,
@@ -501,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.Models.DataSql.html",
-          "hash": "Vz3rzKPUsMjL82Yco6HdOw=="
+          "hash": "nLD/qxw3XhIze5tWKIXjwA=="
         }
       },
       "is_incremental": true,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.Models.Logs.html",
-          "hash": "fmUdPF/e1d/RKcgokpZFeA=="
+          "hash": "0n9raxoESy9cVjNDAml8sA=="
         }
       },
       "is_incremental": true,
@@ -574,18 +574,6 @@
         ".html": {
           "relative_path": "api/WebApplication1.Models.html",
           "hash": "nfVzbQYoPVxI3Fiip3+8yA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/WebApplication1.RetreiveRole.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/WebApplication1.RetreiveRole.html",
-          "hash": "LorKoBFNUbJ0/ZJvFvo64g=="
         }
       },
       "is_incremental": true,
@@ -681,7 +669,19 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.WebServices.DESFetchService.html",
-          "hash": "uk9kWPoxpL3TNkgubeTcWg=="
+          "hash": "SV3P9qYxvMZ72Nu2knS4FA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.WebServices.RetreiveRole.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.WebServices.RetreiveRole.html",
+          "hash": "Q2wOKowmR4s9B7vF6z86Eg=="
         }
       },
       "is_incremental": true,
@@ -717,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.WebServices.html",
-          "hash": "rOKeFvWel2qWPp/z9bJXew=="
+          "hash": "G8DZxYP+NZgA1FAfMvc59w=="
         }
       },
       "is_incremental": true,
@@ -741,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.html",
-          "hash": "2WiEwCe2i5Ooe40T+y8zsA=="
+          "hash": "gmRC90ypqTM847ehhJwwnw=="
         }
       },
       "is_incremental": true,
@@ -753,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "BNkOAjlSRDpjTVp0+rcmZg=="
+          "hash": "dMHlf0eJOFjS4Ot3Lzn4VQ=="
         }
       },
       "is_incremental": false,

@@ -19,10 +19,10 @@ namespace WebApplication1.WebServices
 	public class DESFetchService : WebService
 	{
 		[WebMethod]
-		public void GetDES(string Category, string RelatedData)
+		public void GetDes(string category, string relatedData)
 		{
-			List<DES> ES = DES.GetData(Category, RelatedData);
-			Context.Response.Write(JsonConvert.SerializeObject(ES));
+			List<DES> es = DES.GetData(category, relatedData);
+			Context.Response.Write(JsonConvert.SerializeObject(es));
 		}
 	}
 }

@@ -19,6 +19,7 @@ namespace WebApplication1.Models
         public string Localization { get; set; }
         public int Action { get; set; }
         public string Status { get; set; }
+        public string Origin { get; set; }
 
         
         /// <summary>
@@ -217,7 +218,7 @@ namespace WebApplication1.Models
             return count;
         }
 
-        protected static int StatusNameToStatusCode(string statusName)
+        private static int StatusNameToStatusCode(string statusName)
         {
             int statusCode = 0;
             using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))

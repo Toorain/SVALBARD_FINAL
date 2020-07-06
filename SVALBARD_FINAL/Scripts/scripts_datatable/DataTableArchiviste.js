@@ -65,14 +65,18 @@
                                         return "<i class='fas fa-search'></i>";
                                 }
                             }
+                        },
+                        {
+                            data : 'Origin',
+                            visible : false
                         }
                     ]
                 });                
                 $("body").keydown(function (e) {
-                    if (e.keyCode == 37) { // left
+                    if (e.keyCode === 37) { // left
                         $("#tableDemandes_previous").click();
                     }
-                    else if (e.keyCode == 39) { // right
+                    else if (e.keyCode === 39) { // right
                         $("#tableDemandes_next").click();
                     }
                 });
@@ -90,8 +94,12 @@
                     let tableColumn = datatableVariable.column($(this).attr('data-columnindex'));
                     tableColumn.visible(!tableColumn.visible());
                 });
+                
+                // On Pdf icon click, we set up HiddenField value according to the row value of each element. 
+                
                 $('#tableArchiviste tbody').on( 'click', '.fa-file-pdf', function () {
                     let data = datatableVariable.row( $(this).parents('tr') ).data();
+                    $("#Origin").val(data.Origin);
                     $("#Identifier").val(data.ID);
                     $("#Cote").val(data.ArchiveID);
                     $("#ButtonGeneratePdf").click();
