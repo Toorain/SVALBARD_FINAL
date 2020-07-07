@@ -14,17 +14,17 @@ namespace WebApplication1
 {
     public partial class AfficherArchives : Page
     {
-        protected string requestStatusText;
+        private string _requestStatusText;
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<DES> DESList = DES.GetDataZero("etablissement");
+            List<DES> desList = DES.GetDataZero("etablissement");
 
             if (!IsPostBack)
             {
                 EtsList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --" });
                 DirList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --", Selected = true });
                 ServiceList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --", Selected = true });
-                foreach (var item in DESList)
+                foreach (var item in desList)
                 {
                     ListItem listItem = new ListItem()
                     {
@@ -37,8 +37,8 @@ namespace WebApplication1
 
             mainContainer.Visible = false;
 
-            string DbAuthorization = DatabaseUser.GetCurrentUserAuthorization(User.Identity.GetUserId());
-            switch (DbAuthorization)
+            string dbAuthorization = DatabaseUser.GetCurrentUserAuthorization(User.Identity.GetUserId());
+            switch (dbAuthorization)
             {
                 case "NoUser":
                     // TODO : Add a personal response redirect if user is not connected
@@ -59,15 +59,20 @@ namespace WebApplication1
                     formRetrait.Visible = false;
                     consutlationMode.Attributes.Add("class", "col-md-8 offset-md-2 text-center");
                     break;
+                // 4 = Archiviste
                 case "4":
+                    mainContainer.Visible = true;
+                    break;
+                // 5 = Juridique
+                case "5":
                     mainContainer.Visible = true;
                     break;
                 default:
                     mainContainer.Visible = false;
-                    requestStatusText = "Vous n'avez pas les droits requis pour consulter cet élément, contactez votre DSI pour plus d'informations";
+                    _requestStatusText = "Vous n'avez pas les droits requis pour consulter cet élément, contactez votre DSI pour plus d'informations";
                     alertRequestSuccess.Visible = false;
                     alertAlreadyRequested.Visible = true;
-                    alertRequestedText.InnerText = requestStatusText;
+                    alertRequestedText.InnerText = _requestStatusText;
                     break;
             }
         }
@@ -158,7 +163,7 @@ namespace WebApplication1
                 string cmdString = "INSERT INTO [dbo].[logsArchive] (ID,date,issuerID,issuerEts,issuerDir,issuerService,receiverID,archiveID,localization,action,status) VALUES (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11)";
                 using (SqlConnection sqlConn = new SqlConnection(connectionString))
                 {
-                    string archivisteID = Logs.AssignArchiviste();
+                    string archivisteId = Logs.AssignArchiviste();
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.Connection = sqlConn;
@@ -169,7 +174,7 @@ namespace WebApplication1
                         cmd.Parameters.AddWithValue("@val4", log.IssuerEts);
                         cmd.Parameters.AddWithValue("@val5", log.IssuerDir);
                         cmd.Parameters.AddWithValue("@val6", log.IssuerService);
-                        cmd.Parameters.AddWithValue("@val7", archivisteID);
+                        cmd.Parameters.AddWithValue("@val7", archivisteId);
                         cmd.Parameters.AddWithValue("@val8", log.ArchiveID);
                         cmd.Parameters.AddWithValue("@val9", log.Localization);
                         cmd.Parameters.AddWithValue("@val10", log.Action);
@@ -178,28 +183,28 @@ namespace WebApplication1
                         sqlConn.Open();
                         cmd.ExecuteNonQuery();
 
-                        requestStatusText = "La demande de retrait de l'archive s'est déroulée avec succès, l'archiviste vous tiendra au courant des prochaines étapes.";
+                        _requestStatusText = "La demande de retrait de l'archive s'est déroulée avec succès, l'archiviste vous tiendra au courant des prochaines étapes.";
                         alertRequestSuccess.Visible = true;
                         alertAlreadyRequested.Visible = false;
-                        alertSuccessText.InnerText = requestStatusText;
+                        alertSuccessText.InnerText = _requestStatusText;
                         
                     }                    
                 }
             } 
             else if(connError)
             {
-                requestStatusText = "Merci de vous connecter";
+                _requestStatusText = "Merci de vous connecter";
                 alertRequestSuccess.Visible = false;
                 alertAlreadyRequested.Visible = true;
-                alertRequestedText.InnerText = requestStatusText;
+                alertRequestedText.InnerText = _requestStatusText;
             } 
             else
             {
                 // Throw an error if a request for an Archive already exists
-                requestStatusText = "Le dossier que vous avez demandé n'existe plus dans l'archive ou une personne a déjà demandé son retrait de l'archive.";
+                _requestStatusText = "Le dossier que vous avez demandé n'existe plus dans l'archive ou une personne a déjà demandé son retrait de l'archive.";
                 alertRequestSuccess.Visible = false;
                 alertAlreadyRequested.Visible = true;
-                alertRequestedText.InnerText = requestStatusText;
+                alertRequestedText.InnerText = _requestStatusText;
             }            
         }
 

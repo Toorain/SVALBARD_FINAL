@@ -10,13 +10,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Microsoft.AspNet.Identity;
+using WebApplication1.Models;
 
 namespace WebApplication1
 {
     
     public partial class SiteMaster : MasterPage
     {
-        public const string appName = "SVALBARD";
+        protected const string AppName = "SVALBARD";
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
@@ -77,6 +78,7 @@ namespace WebApplication1
             ajouterPanel.Visible = false;
             demandesPanel.Visible = false;
             adminPanel.Visible = false;
+            juridiquePanel.Visible = false;
 
             var user = HttpContext.Current.User.Identity;
 
@@ -106,6 +108,12 @@ namespace WebApplication1
                     case "4":
                         archivistePanel.Visible = true;
                         archivesPanel.Visible = true;
+                        break;
+                    case "5":
+                        archivesPanel.Visible = true;
+                        ajouterPanel.Visible = true;
+                        demandesPanel.Visible = true;
+                        juridiquePanel.Visible = true;
                         break;
                     default:
                         archivistePanel.Visible = false;

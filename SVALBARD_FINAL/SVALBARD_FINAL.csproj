@@ -298,7 +298,10 @@
     <Content Include="Content\Site.css" />
     <Content Include="docfx.json" />
     <Content Include="index.md" />
-    <Content Include="Scripts\scripts_perso\ETS_Script.js" />
+    <Content Include="JuridiquePanel.aspx" />
+    <Content Include="LICENSE.txt" />
+    <Content Include="Scripts\scripts_datatable\DataTableJuridique.js" />
+    <Content Include="Scripts\scripts_perso\DES_Script.js" />
     <Content Include="Scripts\scripts_perso\ArchivistePanel.js" />
     <Content Include="Scripts\scripts_perso\CheckCote.js" />
     <Content Include="Scripts\scripts_perso\AjouterArchive.js" />
@@ -441,7 +444,6 @@
     <Content Include="Scripts\shepherd\test\unit\utils\general.spec.js" />
     <Content Include="Scripts\shepherd\yarn.lock" />
     <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="TestReport.aspx" />
     <Content Include="toc.yml" />
     <Content Include="WebServices\AddFormDataService.asmx" />
     <Content Include="WebServices\CheckCoteService.asmx" />
@@ -721,6 +723,8 @@
     <Compile Include="ArchivistePanel.aspx.designer.cs">
       <DependentUpon>ArchivistePanel.aspx</DependentUpon>
     </Compile>
+    <Compile Include="JuridiquePanel.aspx.cs" />
+    <Compile Include="JuridiquePanel.aspx.designer.cs" />
     <Compile Include="Models\AspNetUsersExtended.cs" />
     <Compile Include="Models\DatabaseUser.cs" />
     <Compile Include="Models\DataSQL.cs" />
@@ -730,13 +734,6 @@
     <Compile Include="Models\Misc.cs" />
     <Compile Include="Models\PdfMethods.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="TestReport.aspx.cs">
-      <DependentUpon>TestReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TestReport.aspx.designer.cs">
-      <DependentUpon>TestReport.aspx</DependentUpon>
-    </Compile>
     <Compile Include="WebServices\AddFormDataService.asmx.cs">
       <DependentUpon>AddFormDataService.asmx</DependentUpon>
       <SubType>Component</SubType>

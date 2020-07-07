@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Security.Principal;
 using System.Web;
-using System.Windows.Forms;
 using Microsoft.AspNet.Identity;
-using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 
-namespace WebApplication1
+namespace WebApplication1.Models
 {
     public class DatabaseUser
     {
@@ -175,9 +170,9 @@ namespace WebApplication1
                 }
             }
         }
-        public static string GetCurrentUserAuthorization(string CurrentUser)
+        public static string GetCurrentUserAuthorization(string currentUser)
         {
-            if (CurrentUser != null)
+            if (currentUser != null)
             {
                 // Connect to the Database
                 using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
@@ -187,17 +182,17 @@ namespace WebApplication1
                     {
                         cmd.Connection = sqlConn;
                         cmd.CommandText = cmdString;
-                        cmd.Parameters.AddWithValue("@val1", CurrentUser);
+                        cmd.Parameters.AddWithValue("@val1", currentUser);
 
                         sqlConn.Open();
 
                         var dr = cmd.ExecuteReader();
-                        string CurrentUserRoleId = "";
+                        string currentUserRoleId = "";
                         while (dr.Read())
                         {
-                           CurrentUserRoleId = dr["RoleId"].ToString();
+                           currentUserRoleId = dr["RoleId"].ToString();
                         }
-                        return CurrentUserRoleId;
+                        return currentUserRoleId;
                     }
                 }
             } else
@@ -206,7 +201,7 @@ namespace WebApplication1
             }
         }
 
-        public static bool ChangeUserStatus(string UserId, string RoleId)
+        public static bool ChangeUserStatus(string userId, string roleId)
         {
             string cmdString =
             "IF EXISTS(SELECT 'True' FROM AspNetUserRoles WHERE UserId = @val1)"
@@ -237,8 +232,8 @@ namespace WebApplication1
                 {
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
-                    cmd.Parameters.AddWithValue("@val1", UserId);
-                    cmd.Parameters.AddWithValue("@val2", RoleId);
+                    cmd.Parameters.AddWithValue("@val1", userId);
+                    cmd.Parameters.AddWithValue("@val2", roleId);
 
                     sqlConn.Open();
                     cmd.ExecuteNonQuery();

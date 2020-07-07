@@ -20,6 +20,7 @@ namespace WebApplication1.Models
         public int Action { get; set; }
         public string Status { get; set; }
         public string Origin { get; set; }
+        public string RequestGroup { get; set; }
 
         
         /// <summary>
@@ -217,7 +218,7 @@ namespace WebApplication1.Models
             }
             return count;
         }
-
+        
         private static int StatusNameToStatusCode(string statusName)
         {
             int statusCode = 0;
@@ -260,6 +261,28 @@ namespace WebApplication1.Models
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
                     cmd.Parameters.AddWithValue("@val1", statusCode);
+                    cmd.Parameters.AddWithValue("@val2", identifier);
+                    
+                    sqlConn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        
+        public static void UpdateEmplacement(string identifier, string emplacementValue)
+        {
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
+            {
+                string cmdString = "UPDATE [logsArchives].[dbo].[logsArchivePAL]" +
+                                   " SET [localization] = @val1" +
+                                   " WHERE [ID] = @val2";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", emplacementValue);
                     cmd.Parameters.AddWithValue("@val2", identifier);
                     
                     sqlConn.Open();

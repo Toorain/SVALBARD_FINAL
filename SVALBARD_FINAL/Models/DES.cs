@@ -50,12 +50,12 @@ namespace WebApplication1.Models
 
                     while (dr.Read())
                     {
-                        DES DES = new DES()
+                        DES des = new DES()
                         {
                             ID = Convert.ToInt32(dr["id"]),
                             Name = dr["name"].ToString()
                         };
-                        newArray.Add(DES);
+                        newArray.Add(des);
                     }
                 }
             }
@@ -183,7 +183,7 @@ namespace WebApplication1.Models
 
         public static void AddSmth(string Elem)
         {
-            int ID = 0;
+            int id = 0;
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
@@ -200,11 +200,11 @@ namespace WebApplication1.Models
 
                     while (dr.Read())
                     {
-                        ID = Convert.ToInt32(dr["id"]);
+                        id = Convert.ToInt32(dr["id"]);
                     }
                 }
 
-                cmdString = "INSERT INTO " + Elem + " VALUES ("+ (ID + 1) +", 'ETS_TEST', '" + Elem + "')";
+                cmdString = "INSERT INTO " + Elem + " VALUES ("+ (id + 1) +", 'ETS_TEST', '" + Elem + "')";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;

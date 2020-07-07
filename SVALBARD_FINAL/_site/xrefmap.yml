@@ -1153,12 +1153,12 @@ references:
   isSpec: "True"
   fullName: WebApplication1.AdminPanel.ChangeUserStatus
   nameWithType: AdminPanel.ChangeUserStatus
-- uid: WebApplication1.AdminPanel.jsonData
-  name: jsonData
-  href: api/WebApplication1.AdminPanel.html#WebApplication1_AdminPanel_jsonData
-  commentId: F:WebApplication1.AdminPanel.jsonData
-  fullName: WebApplication1.AdminPanel.jsonData
-  nameWithType: AdminPanel.jsonData
+- uid: WebApplication1.AdminPanel.JsonData
+  name: JsonData
+  href: api/WebApplication1.AdminPanel.html#WebApplication1_AdminPanel_JsonData
+  commentId: F:WebApplication1.AdminPanel.JsonData
+  fullName: WebApplication1.AdminPanel.JsonData
+  nameWithType: AdminPanel.JsonData
 - uid: WebApplication1.AdminPanel.Master
   name: Master
   href: api/WebApplication1.AdminPanel.html#WebApplication1_AdminPanel_Master
@@ -1185,25 +1185,12 @@ references:
   isSpec: "True"
   fullName: WebApplication1.AdminPanel.Page_Load
   nameWithType: AdminPanel.Page_Load
-- uid: WebApplication1.AdminPanel.pageRender
-  name: pageRender
-  href: api/WebApplication1.AdminPanel.html#WebApplication1_AdminPanel_pageRender
-  commentId: F:WebApplication1.AdminPanel.pageRender
-  fullName: WebApplication1.AdminPanel.pageRender
-  nameWithType: AdminPanel.pageRender
-- uid: WebApplication1.AdminPanel.RenderTable
-  name: RenderTable()
-  href: api/WebApplication1.AdminPanel.html#WebApplication1_AdminPanel_RenderTable
-  commentId: M:WebApplication1.AdminPanel.RenderTable
-  fullName: WebApplication1.AdminPanel.RenderTable()
-  nameWithType: AdminPanel.RenderTable()
-- uid: WebApplication1.AdminPanel.RenderTable*
-  name: RenderTable
-  href: api/WebApplication1.AdminPanel.html#WebApplication1_AdminPanel_RenderTable_
-  commentId: Overload:WebApplication1.AdminPanel.RenderTable
-  isSpec: "True"
-  fullName: WebApplication1.AdminPanel.RenderTable
-  nameWithType: AdminPanel.RenderTable
+- uid: WebApplication1.AdminPanel.PageRender
+  name: PageRender
+  href: api/WebApplication1.AdminPanel.html#WebApplication1_AdminPanel_PageRender
+  commentId: F:WebApplication1.AdminPanel.PageRender
+  fullName: WebApplication1.AdminPanel.PageRender
+  nameWithType: AdminPanel.PageRender
 - uid: WebApplication1.AdminPanel.RoleList
   name: RoleList
   href: api/WebApplication1.AdminPanel.html#WebApplication1_AdminPanel_RoleList
@@ -1412,12 +1399,6 @@ references:
   isSpec: "True"
   fullName: WebApplication1.AfficherArchives.Page_Load
   nameWithType: AfficherArchives.Page_Load
-- uid: WebApplication1.AfficherArchives.requestStatusText
-  name: requestStatusText
-  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_requestStatusText
-  commentId: F:WebApplication1.AfficherArchives.requestStatusText
-  fullName: WebApplication1.AfficherArchives.requestStatusText
-  nameWithType: AfficherArchives.requestStatusText
 - uid: WebApplication1.AfficherArchives.ServiceList
   name: ServiceList
   href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_ServiceList
@@ -1687,6 +1668,12 @@ references:
   commentId: F:WebApplication1.ArchivistePanel.Cote
   fullName: WebApplication1.ArchivistePanel.Cote
   nameWithType: ArchivistePanel.Cote
+- uid: WebApplication1.ArchivistePanel.Emplacement
+  name: Emplacement
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_Emplacement
+  commentId: F:WebApplication1.ArchivistePanel.Emplacement
+  fullName: WebApplication1.ArchivistePanel.Emplacement
+  nameWithType: ArchivistePanel.Emplacement
 - uid: WebApplication1.ArchivistePanel.GeneratePdf(System.Object,System.EventArgs)
   name: GeneratePdf(Object, EventArgs)
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_GeneratePdf_System_Object_System_EventArgs_
@@ -1731,6 +1718,12 @@ references:
   commentId: F:WebApplication1.ArchivistePanel.ModalAjouter
   fullName: WebApplication1.ArchivistePanel.ModalAjouter
   nameWithType: ArchivistePanel.ModalAjouter
+- uid: WebApplication1.ArchivistePanel.ModifyEmplacement
+  name: ModifyEmplacement
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_ModifyEmplacement
+  commentId: F:WebApplication1.ArchivistePanel.ModifyEmplacement
+  fullName: WebApplication1.ArchivistePanel.ModifyEmplacement
+  nameWithType: ArchivistePanel.ModifyEmplacement
 - uid: WebApplication1.ArchivistePanel.ModifyStatus
   name: ModifyStatus
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_ModifyStatus
@@ -1768,6 +1761,19 @@ references:
   commentId: F:WebApplication1.ArchivistePanel.StatusList
   fullName: WebApplication1.ArchivistePanel.StatusList
   nameWithType: ArchivistePanel.StatusList
+- uid: WebApplication1.ArchivistePanel.UpdateEmplacement(System.Object,System.EventArgs)
+  name: UpdateEmplacement(Object, EventArgs)
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_UpdateEmplacement_System_Object_System_EventArgs_
+  commentId: M:WebApplication1.ArchivistePanel.UpdateEmplacement(System.Object,System.EventArgs)
+  fullName: WebApplication1.ArchivistePanel.UpdateEmplacement(System.Object, System.EventArgs)
+  nameWithType: ArchivistePanel.UpdateEmplacement(Object, EventArgs)
+- uid: WebApplication1.ArchivistePanel.UpdateEmplacement*
+  name: UpdateEmplacement
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_UpdateEmplacement_
+  commentId: Overload:WebApplication1.ArchivistePanel.UpdateEmplacement
+  isSpec: "True"
+  fullName: WebApplication1.ArchivistePanel.UpdateEmplacement
+  nameWithType: ArchivistePanel.UpdateEmplacement
 - uid: WebApplication1.ArchivistePanel.UpdateStatus(System.Object,System.EventArgs)
   name: UpdateStatus(Object, EventArgs)
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_UpdateStatus_System_Object_System_EventArgs_
@@ -1806,181 +1812,6 @@ references:
   isSpec: "True"
   fullName: WebApplication1.BundleConfig.RegisterBundles
   nameWithType: BundleConfig.RegisterBundles
-- uid: WebApplication1.DatabaseUser
-  name: DatabaseUser
-  href: api/WebApplication1.DatabaseUser.html
-  commentId: T:WebApplication1.DatabaseUser
-  fullName: WebApplication1.DatabaseUser
-  nameWithType: DatabaseUser
-- uid: WebApplication1.DatabaseUser.ChangeUserStatus(System.String,System.String)
-  name: ChangeUserStatus(String, String)
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_ChangeUserStatus_System_String_System_String_
-  commentId: M:WebApplication1.DatabaseUser.ChangeUserStatus(System.String,System.String)
-  fullName: WebApplication1.DatabaseUser.ChangeUserStatus(System.String, System.String)
-  nameWithType: DatabaseUser.ChangeUserStatus(String, String)
-- uid: WebApplication1.DatabaseUser.ChangeUserStatus*
-  name: ChangeUserStatus
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_ChangeUserStatus_
-  commentId: Overload:WebApplication1.DatabaseUser.ChangeUserStatus
-  isSpec: "True"
-  fullName: WebApplication1.DatabaseUser.ChangeUserStatus
-  nameWithType: DatabaseUser.ChangeUserStatus
-- uid: WebApplication1.DatabaseUser.Email
-  name: Email
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_Email
-  commentId: P:WebApplication1.DatabaseUser.Email
-  fullName: WebApplication1.DatabaseUser.Email
-  nameWithType: DatabaseUser.Email
-- uid: WebApplication1.DatabaseUser.Email*
-  name: Email
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_Email_
-  commentId: Overload:WebApplication1.DatabaseUser.Email
-  isSpec: "True"
-  fullName: WebApplication1.DatabaseUser.Email
-  nameWithType: DatabaseUser.Email
-- uid: WebApplication1.DatabaseUser.GetArchiviste
-  name: GetArchiviste()
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetArchiviste
-  commentId: M:WebApplication1.DatabaseUser.GetArchiviste
-  fullName: WebApplication1.DatabaseUser.GetArchiviste()
-  nameWithType: DatabaseUser.GetArchiviste()
-- uid: WebApplication1.DatabaseUser.GetArchiviste*
-  name: GetArchiviste
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetArchiviste_
-  commentId: Overload:WebApplication1.DatabaseUser.GetArchiviste
-  isSpec: "True"
-  fullName: WebApplication1.DatabaseUser.GetArchiviste
-  nameWithType: DatabaseUser.GetArchiviste
-- uid: WebApplication1.DatabaseUser.GetCurrentUserAuthorization(System.String)
-  name: GetCurrentUserAuthorization(String)
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetCurrentUserAuthorization_System_String_
-  commentId: M:WebApplication1.DatabaseUser.GetCurrentUserAuthorization(System.String)
-  fullName: WebApplication1.DatabaseUser.GetCurrentUserAuthorization(System.String)
-  nameWithType: DatabaseUser.GetCurrentUserAuthorization(String)
-- uid: WebApplication1.DatabaseUser.GetCurrentUserAuthorization*
-  name: GetCurrentUserAuthorization
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetCurrentUserAuthorization_
-  commentId: Overload:WebApplication1.DatabaseUser.GetCurrentUserAuthorization
-  isSpec: "True"
-  fullName: WebApplication1.DatabaseUser.GetCurrentUserAuthorization
-  nameWithType: DatabaseUser.GetCurrentUserAuthorization
-- uid: WebApplication1.DatabaseUser.GetUserDir
-  name: GetUserDir()
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserDir
-  commentId: M:WebApplication1.DatabaseUser.GetUserDir
-  fullName: WebApplication1.DatabaseUser.GetUserDir()
-  nameWithType: DatabaseUser.GetUserDir()
-- uid: WebApplication1.DatabaseUser.GetUserDir*
-  name: GetUserDir
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserDir_
-  commentId: Overload:WebApplication1.DatabaseUser.GetUserDir
-  isSpec: "True"
-  fullName: WebApplication1.DatabaseUser.GetUserDir
-  nameWithType: DatabaseUser.GetUserDir
-- uid: WebApplication1.DatabaseUser.GetUserEts
-  name: GetUserEts()
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserEts
-  commentId: M:WebApplication1.DatabaseUser.GetUserEts
-  fullName: WebApplication1.DatabaseUser.GetUserEts()
-  nameWithType: DatabaseUser.GetUserEts()
-- uid: WebApplication1.DatabaseUser.GetUserEts*
-  name: GetUserEts
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserEts_
-  commentId: Overload:WebApplication1.DatabaseUser.GetUserEts
-  isSpec: "True"
-  fullName: WebApplication1.DatabaseUser.GetUserEts
-  nameWithType: DatabaseUser.GetUserEts
-- uid: WebApplication1.DatabaseUser.GetUserFirstName
-  name: GetUserFirstName()
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserFirstName
-  commentId: M:WebApplication1.DatabaseUser.GetUserFirstName
-  fullName: WebApplication1.DatabaseUser.GetUserFirstName()
-  nameWithType: DatabaseUser.GetUserFirstName()
-- uid: WebApplication1.DatabaseUser.GetUserFirstName*
-  name: GetUserFirstName
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserFirstName_
-  commentId: Overload:WebApplication1.DatabaseUser.GetUserFirstName
-  isSpec: "True"
-  fullName: WebApplication1.DatabaseUser.GetUserFirstName
-  nameWithType: DatabaseUser.GetUserFirstName
-- uid: WebApplication1.DatabaseUser.GetUserLastName
-  name: GetUserLastName()
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserLastName
-  commentId: M:WebApplication1.DatabaseUser.GetUserLastName
-  fullName: WebApplication1.DatabaseUser.GetUserLastName()
-  nameWithType: DatabaseUser.GetUserLastName()
-- uid: WebApplication1.DatabaseUser.GetUserLastName*
-  name: GetUserLastName
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserLastName_
-  commentId: Overload:WebApplication1.DatabaseUser.GetUserLastName
-  isSpec: "True"
-  fullName: WebApplication1.DatabaseUser.GetUserLastName
-  nameWithType: DatabaseUser.GetUserLastName
-- uid: WebApplication1.DatabaseUser.GetUserService
-  name: GetUserService()
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserService
-  commentId: M:WebApplication1.DatabaseUser.GetUserService
-  fullName: WebApplication1.DatabaseUser.GetUserService()
-  nameWithType: DatabaseUser.GetUserService()
-- uid: WebApplication1.DatabaseUser.GetUserService*
-  name: GetUserService
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_GetUserService_
-  commentId: Overload:WebApplication1.DatabaseUser.GetUserService
-  isSpec: "True"
-  fullName: WebApplication1.DatabaseUser.GetUserService
-  nameWithType: DatabaseUser.GetUserService
-- uid: WebApplication1.DatabaseUser.ID
-  name: ID
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_ID
-  commentId: P:WebApplication1.DatabaseUser.ID
-  fullName: WebApplication1.DatabaseUser.ID
-  nameWithType: DatabaseUser.ID
-- uid: WebApplication1.DatabaseUser.ID*
-  name: ID
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_ID_
-  commentId: Overload:WebApplication1.DatabaseUser.ID
-  isSpec: "True"
-  fullName: WebApplication1.DatabaseUser.ID
-  nameWithType: DatabaseUser.ID
-- uid: WebApplication1.DatabaseUser.IsUserAdmin(System.Security.Principal.IIdentity)
-  name: IsUserAdmin(IIdentity)
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_IsUserAdmin_System_Security_Principal_IIdentity_
-  commentId: M:WebApplication1.DatabaseUser.IsUserAdmin(System.Security.Principal.IIdentity)
-  fullName: WebApplication1.DatabaseUser.IsUserAdmin(System.Security.Principal.IIdentity)
-  nameWithType: DatabaseUser.IsUserAdmin(IIdentity)
-- uid: WebApplication1.DatabaseUser.IsUserAdmin*
-  name: IsUserAdmin
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_IsUserAdmin_
-  commentId: Overload:WebApplication1.DatabaseUser.IsUserAdmin
-  isSpec: "True"
-  fullName: WebApplication1.DatabaseUser.IsUserAdmin
-  nameWithType: DatabaseUser.IsUserAdmin
-- uid: WebApplication1.DatabaseUser.PhoneNumber
-  name: PhoneNumber
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_PhoneNumber
-  commentId: P:WebApplication1.DatabaseUser.PhoneNumber
-  fullName: WebApplication1.DatabaseUser.PhoneNumber
-  nameWithType: DatabaseUser.PhoneNumber
-- uid: WebApplication1.DatabaseUser.PhoneNumber*
-  name: PhoneNumber
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_PhoneNumber_
-  commentId: Overload:WebApplication1.DatabaseUser.PhoneNumber
-  isSpec: "True"
-  fullName: WebApplication1.DatabaseUser.PhoneNumber
-  nameWithType: DatabaseUser.PhoneNumber
-- uid: WebApplication1.DatabaseUser.UserName
-  name: UserName
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_UserName
-  commentId: P:WebApplication1.DatabaseUser.UserName
-  fullName: WebApplication1.DatabaseUser.UserName
-  nameWithType: DatabaseUser.UserName
-- uid: WebApplication1.DatabaseUser.UserName*
-  name: UserName
-  href: api/WebApplication1.DatabaseUser.html#WebApplication1_DatabaseUser_UserName_
-  commentId: Overload:WebApplication1.DatabaseUser.UserName
-  isSpec: "True"
-  fullName: WebApplication1.DatabaseUser.UserName
-  nameWithType: DatabaseUser.UserName
 - uid: WebApplication1.DataFetchService
   name: DataFetchService
   href: api/WebApplication1.DataFetchService.html
@@ -2245,6 +2076,38 @@ references:
   commentId: F:WebApplication1.IdentityHelper.XsrfKey
   fullName: WebApplication1.IdentityHelper.XsrfKey
   nameWithType: IdentityHelper.XsrfKey
+- uid: WebApplication1.JuridiquePanel
+  name: JuridiquePanel
+  href: api/WebApplication1.JuridiquePanel.html
+  commentId: T:WebApplication1.JuridiquePanel
+  fullName: WebApplication1.JuridiquePanel
+  nameWithType: JuridiquePanel
+- uid: WebApplication1.JuridiquePanel.Master
+  name: Master
+  href: api/WebApplication1.JuridiquePanel.html#WebApplication1_JuridiquePanel_Master
+  commentId: P:WebApplication1.JuridiquePanel.Master
+  fullName: WebApplication1.JuridiquePanel.Master
+  nameWithType: JuridiquePanel.Master
+- uid: WebApplication1.JuridiquePanel.Master*
+  name: Master
+  href: api/WebApplication1.JuridiquePanel.html#WebApplication1_JuridiquePanel_Master_
+  commentId: Overload:WebApplication1.JuridiquePanel.Master
+  isSpec: "True"
+  fullName: WebApplication1.JuridiquePanel.Master
+  nameWithType: JuridiquePanel.Master
+- uid: WebApplication1.JuridiquePanel.Page_Load(System.Object,System.EventArgs)
+  name: Page_Load(Object, EventArgs)
+  href: api/WebApplication1.JuridiquePanel.html#WebApplication1_JuridiquePanel_Page_Load_System_Object_System_EventArgs_
+  commentId: M:WebApplication1.JuridiquePanel.Page_Load(System.Object,System.EventArgs)
+  fullName: WebApplication1.JuridiquePanel.Page_Load(System.Object, System.EventArgs)
+  nameWithType: JuridiquePanel.Page_Load(Object, EventArgs)
+- uid: WebApplication1.JuridiquePanel.Page_Load*
+  name: Page_Load
+  href: api/WebApplication1.JuridiquePanel.html#WebApplication1_JuridiquePanel_Page_Load_
+  commentId: Overload:WebApplication1.JuridiquePanel.Page_Load
+  isSpec: "True"
+  fullName: WebApplication1.JuridiquePanel.Page_Load
+  nameWithType: JuridiquePanel.Page_Load
 - uid: WebApplication1.Models
   name: WebApplication1.Models
   href: api/WebApplication1.Models.html
@@ -2412,6 +2275,181 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.AspNetUsersExtended.Service
   nameWithType: AspNetUsersExtended.Service
+- uid: WebApplication1.Models.DatabaseUser
+  name: DatabaseUser
+  href: api/WebApplication1.Models.DatabaseUser.html
+  commentId: T:WebApplication1.Models.DatabaseUser
+  fullName: WebApplication1.Models.DatabaseUser
+  nameWithType: DatabaseUser
+- uid: WebApplication1.Models.DatabaseUser.ChangeUserStatus(System.String,System.String)
+  name: ChangeUserStatus(String, String)
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_ChangeUserStatus_System_String_System_String_
+  commentId: M:WebApplication1.Models.DatabaseUser.ChangeUserStatus(System.String,System.String)
+  fullName: WebApplication1.Models.DatabaseUser.ChangeUserStatus(System.String, System.String)
+  nameWithType: DatabaseUser.ChangeUserStatus(String, String)
+- uid: WebApplication1.Models.DatabaseUser.ChangeUserStatus*
+  name: ChangeUserStatus
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_ChangeUserStatus_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.ChangeUserStatus
+  isSpec: "True"
+  fullName: WebApplication1.Models.DatabaseUser.ChangeUserStatus
+  nameWithType: DatabaseUser.ChangeUserStatus
+- uid: WebApplication1.Models.DatabaseUser.Email
+  name: Email
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_Email
+  commentId: P:WebApplication1.Models.DatabaseUser.Email
+  fullName: WebApplication1.Models.DatabaseUser.Email
+  nameWithType: DatabaseUser.Email
+- uid: WebApplication1.Models.DatabaseUser.Email*
+  name: Email
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_Email_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.Email
+  isSpec: "True"
+  fullName: WebApplication1.Models.DatabaseUser.Email
+  nameWithType: DatabaseUser.Email
+- uid: WebApplication1.Models.DatabaseUser.GetArchiviste
+  name: GetArchiviste()
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetArchiviste
+  commentId: M:WebApplication1.Models.DatabaseUser.GetArchiviste
+  fullName: WebApplication1.Models.DatabaseUser.GetArchiviste()
+  nameWithType: DatabaseUser.GetArchiviste()
+- uid: WebApplication1.Models.DatabaseUser.GetArchiviste*
+  name: GetArchiviste
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetArchiviste_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.GetArchiviste
+  isSpec: "True"
+  fullName: WebApplication1.Models.DatabaseUser.GetArchiviste
+  nameWithType: DatabaseUser.GetArchiviste
+- uid: WebApplication1.Models.DatabaseUser.GetCurrentUserAuthorization(System.String)
+  name: GetCurrentUserAuthorization(String)
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetCurrentUserAuthorization_System_String_
+  commentId: M:WebApplication1.Models.DatabaseUser.GetCurrentUserAuthorization(System.String)
+  fullName: WebApplication1.Models.DatabaseUser.GetCurrentUserAuthorization(System.String)
+  nameWithType: DatabaseUser.GetCurrentUserAuthorization(String)
+- uid: WebApplication1.Models.DatabaseUser.GetCurrentUserAuthorization*
+  name: GetCurrentUserAuthorization
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetCurrentUserAuthorization_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.GetCurrentUserAuthorization
+  isSpec: "True"
+  fullName: WebApplication1.Models.DatabaseUser.GetCurrentUserAuthorization
+  nameWithType: DatabaseUser.GetCurrentUserAuthorization
+- uid: WebApplication1.Models.DatabaseUser.GetUserDir
+  name: GetUserDir()
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetUserDir
+  commentId: M:WebApplication1.Models.DatabaseUser.GetUserDir
+  fullName: WebApplication1.Models.DatabaseUser.GetUserDir()
+  nameWithType: DatabaseUser.GetUserDir()
+- uid: WebApplication1.Models.DatabaseUser.GetUserDir*
+  name: GetUserDir
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetUserDir_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.GetUserDir
+  isSpec: "True"
+  fullName: WebApplication1.Models.DatabaseUser.GetUserDir
+  nameWithType: DatabaseUser.GetUserDir
+- uid: WebApplication1.Models.DatabaseUser.GetUserEts
+  name: GetUserEts()
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetUserEts
+  commentId: M:WebApplication1.Models.DatabaseUser.GetUserEts
+  fullName: WebApplication1.Models.DatabaseUser.GetUserEts()
+  nameWithType: DatabaseUser.GetUserEts()
+- uid: WebApplication1.Models.DatabaseUser.GetUserEts*
+  name: GetUserEts
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetUserEts_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.GetUserEts
+  isSpec: "True"
+  fullName: WebApplication1.Models.DatabaseUser.GetUserEts
+  nameWithType: DatabaseUser.GetUserEts
+- uid: WebApplication1.Models.DatabaseUser.GetUserFirstName
+  name: GetUserFirstName()
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetUserFirstName
+  commentId: M:WebApplication1.Models.DatabaseUser.GetUserFirstName
+  fullName: WebApplication1.Models.DatabaseUser.GetUserFirstName()
+  nameWithType: DatabaseUser.GetUserFirstName()
+- uid: WebApplication1.Models.DatabaseUser.GetUserFirstName*
+  name: GetUserFirstName
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetUserFirstName_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.GetUserFirstName
+  isSpec: "True"
+  fullName: WebApplication1.Models.DatabaseUser.GetUserFirstName
+  nameWithType: DatabaseUser.GetUserFirstName
+- uid: WebApplication1.Models.DatabaseUser.GetUserLastName
+  name: GetUserLastName()
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetUserLastName
+  commentId: M:WebApplication1.Models.DatabaseUser.GetUserLastName
+  fullName: WebApplication1.Models.DatabaseUser.GetUserLastName()
+  nameWithType: DatabaseUser.GetUserLastName()
+- uid: WebApplication1.Models.DatabaseUser.GetUserLastName*
+  name: GetUserLastName
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetUserLastName_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.GetUserLastName
+  isSpec: "True"
+  fullName: WebApplication1.Models.DatabaseUser.GetUserLastName
+  nameWithType: DatabaseUser.GetUserLastName
+- uid: WebApplication1.Models.DatabaseUser.GetUserService
+  name: GetUserService()
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetUserService
+  commentId: M:WebApplication1.Models.DatabaseUser.GetUserService
+  fullName: WebApplication1.Models.DatabaseUser.GetUserService()
+  nameWithType: DatabaseUser.GetUserService()
+- uid: WebApplication1.Models.DatabaseUser.GetUserService*
+  name: GetUserService
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_GetUserService_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.GetUserService
+  isSpec: "True"
+  fullName: WebApplication1.Models.DatabaseUser.GetUserService
+  nameWithType: DatabaseUser.GetUserService
+- uid: WebApplication1.Models.DatabaseUser.ID
+  name: ID
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_ID
+  commentId: P:WebApplication1.Models.DatabaseUser.ID
+  fullName: WebApplication1.Models.DatabaseUser.ID
+  nameWithType: DatabaseUser.ID
+- uid: WebApplication1.Models.DatabaseUser.ID*
+  name: ID
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_ID_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.ID
+  isSpec: "True"
+  fullName: WebApplication1.Models.DatabaseUser.ID
+  nameWithType: DatabaseUser.ID
+- uid: WebApplication1.Models.DatabaseUser.IsUserAdmin(System.Security.Principal.IIdentity)
+  name: IsUserAdmin(IIdentity)
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_IsUserAdmin_System_Security_Principal_IIdentity_
+  commentId: M:WebApplication1.Models.DatabaseUser.IsUserAdmin(System.Security.Principal.IIdentity)
+  fullName: WebApplication1.Models.DatabaseUser.IsUserAdmin(System.Security.Principal.IIdentity)
+  nameWithType: DatabaseUser.IsUserAdmin(IIdentity)
+- uid: WebApplication1.Models.DatabaseUser.IsUserAdmin*
+  name: IsUserAdmin
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_IsUserAdmin_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.IsUserAdmin
+  isSpec: "True"
+  fullName: WebApplication1.Models.DatabaseUser.IsUserAdmin
+  nameWithType: DatabaseUser.IsUserAdmin
+- uid: WebApplication1.Models.DatabaseUser.PhoneNumber
+  name: PhoneNumber
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_PhoneNumber
+  commentId: P:WebApplication1.Models.DatabaseUser.PhoneNumber
+  fullName: WebApplication1.Models.DatabaseUser.PhoneNumber
+  nameWithType: DatabaseUser.PhoneNumber
+- uid: WebApplication1.Models.DatabaseUser.PhoneNumber*
+  name: PhoneNumber
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_PhoneNumber_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.PhoneNumber
+  isSpec: "True"
+  fullName: WebApplication1.Models.DatabaseUser.PhoneNumber
+  nameWithType: DatabaseUser.PhoneNumber
+- uid: WebApplication1.Models.DatabaseUser.UserName
+  name: UserName
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_UserName
+  commentId: P:WebApplication1.Models.DatabaseUser.UserName
+  fullName: WebApplication1.Models.DatabaseUser.UserName
+  nameWithType: DatabaseUser.UserName
+- uid: WebApplication1.Models.DatabaseUser.UserName*
+  name: UserName
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_UserName_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.UserName
+  isSpec: "True"
+  fullName: WebApplication1.Models.DatabaseUser.UserName
+  nameWithType: DatabaseUser.UserName
 - uid: WebApplication1.Models.DataSql
   name: DataSql
   href: api/WebApplication1.Models.DataSql.html
@@ -2936,6 +2974,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.Logs.Origin
   nameWithType: Logs.Origin
+- uid: WebApplication1.Models.Logs.RequestGroup
+  name: RequestGroup
+  href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_RequestGroup
+  commentId: P:WebApplication1.Models.Logs.RequestGroup
+  fullName: WebApplication1.Models.Logs.RequestGroup
+  nameWithType: Logs.RequestGroup
+- uid: WebApplication1.Models.Logs.RequestGroup*
+  name: RequestGroup
+  href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_RequestGroup_
+  commentId: Overload:WebApplication1.Models.Logs.RequestGroup
+  isSpec: "True"
+  fullName: WebApplication1.Models.Logs.RequestGroup
+  nameWithType: Logs.RequestGroup
 - uid: WebApplication1.Models.Logs.Status
   name: Status
   href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_Status
@@ -2949,6 +3000,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.Logs.Status
   nameWithType: Logs.Status
+- uid: WebApplication1.Models.Logs.UpdateEmplacement(System.String,System.String)
+  name: UpdateEmplacement(String, String)
+  href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_UpdateEmplacement_System_String_System_String_
+  commentId: M:WebApplication1.Models.Logs.UpdateEmplacement(System.String,System.String)
+  fullName: WebApplication1.Models.Logs.UpdateEmplacement(System.String, System.String)
+  nameWithType: Logs.UpdateEmplacement(String, String)
+- uid: WebApplication1.Models.Logs.UpdateEmplacement*
+  name: UpdateEmplacement
+  href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_UpdateEmplacement_
+  commentId: Overload:WebApplication1.Models.Logs.UpdateEmplacement
+  isSpec: "True"
+  fullName: WebApplication1.Models.Logs.UpdateEmplacement
+  nameWithType: Logs.UpdateEmplacement
 - uid: WebApplication1.Models.Logs.UpdateStatus(System.String,System.String)
   name: UpdateStatus(String, String)
   href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_UpdateStatus_System_String_System_String_
@@ -3063,12 +3127,12 @@ references:
   commentId: F:WebApplication1.SiteMaster.ajouterPanel
   fullName: WebApplication1.SiteMaster.ajouterPanel
   nameWithType: SiteMaster.ajouterPanel
-- uid: WebApplication1.SiteMaster.appName
-  name: appName
-  href: api/WebApplication1.SiteMaster.html#WebApplication1_SiteMaster_appName
-  commentId: F:WebApplication1.SiteMaster.appName
-  fullName: WebApplication1.SiteMaster.appName
-  nameWithType: SiteMaster.appName
+- uid: WebApplication1.SiteMaster.AppName
+  name: AppName
+  href: api/WebApplication1.SiteMaster.html#WebApplication1_SiteMaster_AppName
+  commentId: F:WebApplication1.SiteMaster.AppName
+  fullName: WebApplication1.SiteMaster.AppName
+  nameWithType: SiteMaster.AppName
 - uid: WebApplication1.SiteMaster.archivesPanel
   name: archivesPanel
   href: api/WebApplication1.SiteMaster.html#WebApplication1_SiteMaster_archivesPanel
@@ -3087,6 +3151,12 @@ references:
   commentId: F:WebApplication1.SiteMaster.demandesPanel
   fullName: WebApplication1.SiteMaster.demandesPanel
   nameWithType: SiteMaster.demandesPanel
+- uid: WebApplication1.SiteMaster.juridiquePanel
+  name: juridiquePanel
+  href: api/WebApplication1.SiteMaster.html#WebApplication1_SiteMaster_juridiquePanel
+  commentId: F:WebApplication1.SiteMaster.juridiquePanel
+  fullName: WebApplication1.SiteMaster.juridiquePanel
+  nameWithType: SiteMaster.juridiquePanel
 - uid: WebApplication1.SiteMaster.MainContent
   name: MainContent
   href: api/WebApplication1.SiteMaster.html#WebApplication1_SiteMaster_MainContent
@@ -3196,69 +3266,6 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Startup.ConfigureAuth
   nameWithType: Startup.ConfigureAuth
-- uid: WebApplication1.TestReport
-  name: TestReport
-  href: api/WebApplication1.TestReport.html
-  commentId: T:WebApplication1.TestReport
-  fullName: WebApplication1.TestReport
-  nameWithType: TestReport
-- uid: WebApplication1.TestReport.generate
-  name: generate
-  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_generate
-  commentId: F:WebApplication1.TestReport.generate
-  fullName: WebApplication1.TestReport.generate
-  nameWithType: TestReport.generate
-- uid: WebApplication1.TestReport.GeneratePdf(System.Object,System.EventArgs)
-  name: GeneratePdf(Object, EventArgs)
-  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_GeneratePdf_System_Object_System_EventArgs_
-  commentId: M:WebApplication1.TestReport.GeneratePdf(System.Object,System.EventArgs)
-  fullName: WebApplication1.TestReport.GeneratePdf(System.Object, System.EventArgs)
-  nameWithType: TestReport.GeneratePdf(Object, EventArgs)
-- uid: WebApplication1.TestReport.GeneratePdf*
-  name: GeneratePdf
-  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_GeneratePdf_
-  commentId: Overload:WebApplication1.TestReport.GeneratePdf
-  isSpec: "True"
-  fullName: WebApplication1.TestReport.GeneratePdf
-  nameWithType: TestReport.GeneratePdf
-- uid: WebApplication1.TestReport.Master
-  name: Master
-  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_Master
-  commentId: P:WebApplication1.TestReport.Master
-  fullName: WebApplication1.TestReport.Master
-  nameWithType: TestReport.Master
-- uid: WebApplication1.TestReport.Master*
-  name: Master
-  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_Master_
-  commentId: Overload:WebApplication1.TestReport.Master
-  isSpec: "True"
-  fullName: WebApplication1.TestReport.Master
-  nameWithType: TestReport.Master
-- uid: WebApplication1.TestReport.Page_Load(System.Object,System.EventArgs)
-  name: Page_Load(Object, EventArgs)
-  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_Page_Load_System_Object_System_EventArgs_
-  commentId: M:WebApplication1.TestReport.Page_Load(System.Object,System.EventArgs)
-  fullName: WebApplication1.TestReport.Page_Load(System.Object, System.EventArgs)
-  nameWithType: TestReport.Page_Load(Object, EventArgs)
-- uid: WebApplication1.TestReport.Page_Load*
-  name: Page_Load
-  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_Page_Load_
-  commentId: Overload:WebApplication1.TestReport.Page_Load
-  isSpec: "True"
-  fullName: WebApplication1.TestReport.Page_Load
-  nameWithType: TestReport.Page_Load
-- uid: WebApplication1.TestReport.rptViewer
-  name: rptViewer
-  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_rptViewer
-  commentId: F:WebApplication1.TestReport.rptViewer
-  fullName: WebApplication1.TestReport.rptViewer
-  nameWithType: TestReport.rptViewer
-- uid: WebApplication1.TestReport.val
-  name: val
-  href: api/WebApplication1.TestReport.html#WebApplication1_TestReport_val
-  commentId: F:WebApplication1.TestReport.val
-  fullName: WebApplication1.TestReport.val
-  nameWithType: TestReport.val
 - uid: WebApplication1.WebServices
   name: WebApplication1.WebServices
   href: api/WebApplication1.WebServices.html

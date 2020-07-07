@@ -39,6 +39,7 @@
                         { data: 'IssuerDir' },
                         { data: 'IssuerService' },
                         { data: 'ArchiveID' },
+                        { data: 'RequestGroup' },
                         { data: 'Localization' },
                         {
                             data: 'Action', 'render': (data) => {
@@ -58,7 +59,7 @@
                             "defaultContent": 'icons', 'render': () => {
                                 switch (content) {
                                     case (1):
-                                        return "<i class='fas fa-file-pdf'></i><i class='fas fa-search'></i>";
+                                        return "<i class='fas fa-file-pdf mr-2'></i><i class='fas fa-search'></i>";
                                     case (2):
                                         return "<i class='fas fa-search'></i>";
                                     case (3):

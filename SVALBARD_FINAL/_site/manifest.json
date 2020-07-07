@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.AdminPanel.html",
-          "hash": "EiMAxLmyGDCHMYND/XbHtA=="
+          "hash": "xChpZ+/2pqJ8mxOf3jX/lg=="
         }
       },
       "is_incremental": true,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.AfficherArchives.html",
-          "hash": "UnW1zyAmUEb4L29r8cirWw=="
+          "hash": "bmOFj/eud+020ZbaDo0wWw=="
         }
       },
       "is_incremental": true,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.ArchivistePanel.html",
-          "hash": "harxs2zGrXDS9942ksshQA=="
+          "hash": "9eqKXIl/ULzYgFlALEq0Ww=="
         }
       },
       "is_incremental": true,
@@ -382,18 +382,6 @@
         ".html": {
           "relative_path": "api/WebApplication1.DataFetchService.html",
           "hash": "dnd3BGJmqnS/DVocRYJ2lg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/WebApplication1.DatabaseUser.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/WebApplication1.DatabaseUser.html",
-          "hash": "BlEOi6kx51sDB8/3fRLGHA=="
         }
       },
       "is_incremental": true,
@@ -442,6 +430,18 @@
         ".html": {
           "relative_path": "api/WebApplication1.IdentityHelper.html",
           "hash": "2TWueHs50v7LGA4d6yZKFA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.JuridiquePanel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.JuridiquePanel.html",
+          "hash": "MCvOQDz3VIkRGcCuukBbZg=="
         }
       },
       "is_incremental": true,
@@ -509,6 +509,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.Models.DatabaseUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.Models.DatabaseUser.html",
+          "hash": "AcCn/tr1YJp62IUT5/EYvw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/WebApplication1.Models.EtiquetteMethods.yml",
       "output": {
         ".html": {
@@ -537,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.Models.Logs.html",
-          "hash": "0n9raxoESy9cVjNDAml8sA=="
+          "hash": "R9kVF+h/O/Eiecj5ynG6MQ=="
         }
       },
       "is_incremental": true,
@@ -573,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.Models.html",
-          "hash": "nfVzbQYoPVxI3Fiip3+8yA=="
+          "hash": "zES8gYTXOPHwlKlOCsKcug=="
         }
       },
       "is_incremental": true,
@@ -597,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.SiteMaster.html",
-          "hash": "/kfR+1u1zUgrBkXPHAXf0g=="
+          "hash": "5hsqTcrEMpuyksRm9HdPuw=="
         }
       },
       "is_incremental": true,
@@ -622,18 +634,6 @@
         ".html": {
           "relative_path": "api/WebApplication1.Startup.html",
           "hash": "Kx5RX2oojqbGe1MWSuxoMQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/WebApplication1.TestReport.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/WebApplication1.TestReport.html",
-          "hash": "TR6LymnTZPPw+K+Dw8q19A=="
         }
       },
       "is_incremental": true,
@@ -741,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.html",
-          "hash": "gmRC90ypqTM847ehhJwwnw=="
+          "hash": "txwXX5wWk4iyDbmMfAxT0Q=="
         }
       },
       "is_incremental": true,
@@ -753,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "dMHlf0eJOFjS4Ot3Lzn4VQ=="
+          "hash": "2f7G7TWtO9sQbJdwaZ5xRQ=="
         }
       },
       "is_incremental": false,

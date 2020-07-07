@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="Admin Panel" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminPanel.aspx.cs" Inherits="WebApplication1.AdminPanel" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Label runat="server" ID="jsonData" ClientIDMode="Static" CssClass="d-none"><%: jsonData %></asp:Label>
-    <% if (pageRender) {%>
+    <asp:Label runat="server" ID="JsonData" ClientIDMode="Static" CssClass="d-none"><%: JsonData %></asp:Label>
+    <% if (PageRender) {%>
     <!-- #region Alert -->
         <asp:Panel ID="alertRequestSuccess" runat="server" Visible="false">
             <div class="alert alert-success alert-dismissible fade show text-center " role="alert">
@@ -27,8 +27,9 @@
                             <div class="col-lg-5">
                                 <asp:HiddenField ID="userIdAdmin" runat="server" ClientIDMode="Static" />
                                 <p>Changer le status de l'utilisateur :</p>
-                                <p>Ancien status : <asp:Label runat="server" ID="UserRoleId" ClientIDMode="Static"></asp:Label></p>
+                                <p>Ancien status : <asp:Label runat="server" ID="UserRoleId" ClientIDMode="Static" /></p>
                                 <asp:DropDownList id="RoleList" runat="server">
+                                    <asp:ListItem Value="5"> Juridique </asp:ListItem>
                                     <asp:ListItem Value="3"> Consultation </asp:ListItem>
                                     <asp:ListItem Value="2"> Gestion </asp:ListItem>
                                     <asp:ListItem Value="4"> Archiviste </asp:ListItem>

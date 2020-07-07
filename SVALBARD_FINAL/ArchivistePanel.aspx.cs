@@ -117,5 +117,10 @@ namespace WebApplication1
         {
             Logs.UpdateStatus(ArchiveCote.Value, StatusList.SelectedValue);
         }
+
+        protected void UpdateEmplacement(object sender, EventArgs e)
+        {
+            Logs.UpdateEmplacement(ArchiveCote.Value, Emplacement.Value);
+        }
     }
 }

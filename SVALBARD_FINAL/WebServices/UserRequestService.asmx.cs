@@ -82,7 +82,8 @@ namespace WebApplication1.WebServices
                                 Localization = dr["localization"].ToString(),
                                 Action = Convert.ToInt32(dr["action"]),
                                 Status = dr["status_name"].ToString(),
-                                Origin = "NOT_PAL"
+                                Origin = "NOT_PAL",
+                                RequestGroup = null
                             };
                             datas.Add(logs);
                         } else if (dr["receiverID"].ToString() == userId)
@@ -101,7 +102,8 @@ namespace WebApplication1.WebServices
                                 Localization = dr["localization"].ToString(),
                                 Action = Convert.ToInt32(dr["action"]),
                                 Status = dr["status_name"].ToString(),
-                                Origin = "NOT_PAL"
+                                Origin = "NOT_PAL",
+                                RequestGroup = null
                             };
                             datas.Add(logs);
                         };
@@ -110,10 +112,10 @@ namespace WebApplication1.WebServices
             }
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                string cmdString = "SELECT [dbo].[logsArchivePAL].*, [dbo].[status].status_name" + 
+                string cmdString = "SELECT [dbo].[logsArchivePAL].*, [dbo].[status].[status_name]" + 
                                     " FROM [dbo].[logsArchivePAL]" +
                                     " LEFT JOIN [dbo].[status]" +
-                                    " ON [dbo].[logsArchivePAL].status = dbo.status.status_id";
+                                    " ON [dbo].[logsArchivePAL].[status] = [dbo].[status].[status_id]";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -137,7 +139,8 @@ namespace WebApplication1.WebServices
                             Localization = "",
                             Action = Convert.ToInt32(dr["action"]),
                             Status = dr["status_name"].ToString(),
-                            Origin = "PAL"
+                            Origin = "PAL",
+                            RequestGroup = dr["request_group"].ToString()
                         };
                         datas.Add(logs);
                     }

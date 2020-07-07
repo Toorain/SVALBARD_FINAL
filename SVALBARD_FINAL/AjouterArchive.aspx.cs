@@ -14,7 +14,7 @@ namespace WebApplication1
 			
 			int lastItem = DataSql.GetLastItemArchive();
             
-			List<DES> DESList = DES.GetDataZero("etablissement");
+			List<DES> desList = DES.GetDataZero("etablissement");
 		}
 
 

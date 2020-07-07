@@ -25,8 +25,16 @@
                     <asp:HiddenField runat="server" ID="ArchiveCote" ClientIDMode="Static"/>
                     <asp:HiddenField runat="server" ID="ArchiveAction" ClientIDMode="Static"/>
                     <div class="row">
-                        <asp:DropDownList ID="StatusList" runat="server" CssClass="form-control m-3 w-25" />
-                        <asp:Button runat="server" ID="ModifyStatus" Text="Modifier le status" CssClass="btn btn-success" OnClick="UpdateStatus" />
+                        <div class="col-md-6">
+                            <h5>Modifier le status</h5>
+                            <asp:DropDownList ID="StatusList" runat="server" CssClass="form-control mb-1" />
+                            <asp:Button runat="server" ID="ModifyStatus" Text="Modifier le status" CssClass="btn btn-success" OnClick="UpdateStatus" />
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Modifier l'emplacement</h5>
+                            <input type="text" class="form-control mb-1" runat="server" ID="Emplacement" ClientIDMode="Static" />
+                            <asp:Button runat="server" ID="ModifyEmplacement" Text="Modifier l'emplacement" CssClass="btn btn-success" OnClick="UpdateEmplacement" />
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -65,6 +73,7 @@
                 <th>Direction du demandeur</th>
                 <th>Service du demandeur</th>
                 <th>Cote</th>
+                <th>Groupe d'archives</th>
                 <th>Emplacement</th>
                 <th>Action</th>
                 <th>Status</th>

@@ -41,7 +41,7 @@ etsList.change(function () {
         type: "POST",
         dataType: "json",
         async: true,
-        url: "/WebServices/DESFetchService.asmx/GetDES",
+        url: "/WebServices/DESFetchService.asmx/GetDes",
         mimeType: "text/plain",
         data: {
             Category: "etablissement",
@@ -75,7 +75,7 @@ dirList.change(function () {
         type: "POST",
         dataType: "json",
         async: true,
-        url: "/WebServices/DESFetchService.asmx/GetDES",
+        url: "/WebServices/DESFetchService.asmx/GetDes",
         mimeType: "text/plain",
         data: {
             Category: "direction",

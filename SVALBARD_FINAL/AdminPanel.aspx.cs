@@ -10,20 +10,21 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using WebApplication1.Models;
 
 namespace WebApplication1
 {
     public partial class AdminPanel : Page
     {
-        protected bool pageRender = false;
-        protected object jsonData;
+        protected bool PageRender = false;
+        protected object JsonData;
         protected string UserId;
         protected string UserActualCategory;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             // Change bg-secondary to any color you prefer.
-            RoleList.Items[3].Attributes.Add("class", "bg-secondary");
+            RoleList.Items[4].Attributes.Add("class", "bg-secondary");
 
             var user = HttpContext.Current.User.Identity;
 
@@ -32,10 +33,10 @@ namespace WebApplication1
             if (isAdmin)
             {
                 RenderTable();
-                pageRender = true;
+                PageRender = true;
             } else
             {
-                pageRender = false;
+                PageRender = false;
             }
 
         }
@@ -44,7 +45,7 @@ namespace WebApplication1
         ///     RenderTable displays the list of users registered on the Application
         /// </summary>
         /// 
-        protected void RenderTable()
+        private void RenderTable()
         {
             // CRITICAL : Change this connection string to the one where users are actually stored (Needs to be changed : Source)
             string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
@@ -65,25 +66,25 @@ namespace WebApplication1
 
                     while (dr.Read())
                     {
-                        DatabaseUser userSQL = new DatabaseUser
+                        DatabaseUser userSql = new DatabaseUser
                         {
                             ID = dr["Id"].ToString(),
                             Email = dr["Email"].ToString(),
                             PhoneNumber = dr["PhoneNumber"].ToString(),
                             UserName = dr["UserName"].ToString()
                         };
-                        datas.Add(userSQL);
+                        datas.Add(userSql);
                     }
-                    jsonData = JsonConvert.SerializeObject(datas);
+                    JsonData = JsonConvert.SerializeObject(datas);
                 }
             }
         }
         protected void ChangeUserStatus(object sender, EventArgs e)
         {
-            string UserId = userIdAdmin.Value;
-            string RoleId = RoleList.SelectedItem.Value;
+            string userId = userIdAdmin.Value;
+            string roleId = RoleList.SelectedItem.Value;
 
-            bool updateSuccess = DatabaseUser.ChangeUserStatus(UserId, RoleId);
+            bool updateSuccess = DatabaseUser.ChangeUserStatus(userId, roleId);
 
             if (updateSuccess)
             {
