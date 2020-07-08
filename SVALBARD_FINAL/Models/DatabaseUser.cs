@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Security.Principal;
 using System.Web;
+using System.Windows.Forms;
 using Microsoft.AspNet.Identity;
 
 namespace WebApplication1.Models
@@ -10,7 +11,7 @@ namespace WebApplication1.Models
     {
         private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         private static string _id;
-        public string ID { get; set; }
+        public string Id { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string UserName { get; set; }

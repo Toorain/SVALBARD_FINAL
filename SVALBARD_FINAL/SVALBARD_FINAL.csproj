@@ -449,6 +449,7 @@
     <Content Include="WebServices\CheckCoteService.asmx" />
     <Content Include="WebServices\DataFetchService.asmx" />
     <Content Include="WebServices\DESFetchService.asmx" />
+    <Content Include="WebServices\GetArchivisteRequestService.asmx" />
     <Content Include="WebServices\RetreiveRole.asmx" />
     <Content Include="Scripts\scripts_perso\AdminPanel.js" />
     <Content Include="Scripts\scripts_datatable\DataTableAdmin.js" />
@@ -776,6 +777,9 @@
     <Compile Include="WebServices\DESFetchService.asmx.cs">
       <DependentUpon>DESFetchService.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\GetArchivisteRequestService.asmx.cs">
+      <DependentUpon>GetArchivisteRequestService.asmx</DependentUpon>
     </Compile>
     <Compile Include="WebServices\RetreiveRole.asmx.cs">
       <DependentUpon>RetreiveRole.asmx</DependentUpon>

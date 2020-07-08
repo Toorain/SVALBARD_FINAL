@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
 using System.Web.Services;
 using System.Windows.Forms;
 using Microsoft.Ajax.Utilities;
@@ -11,20 +13,20 @@ using WebApplication1.Models;
 namespace WebApplication1.WebServices
 {
     /// <summary>
-    /// Description résumée de UserRequestService
+    /// Description résumée de GetArchivisteRequestService
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // Pour autoriser l'appel de ce service Web depuis un script à l'aide d'ASP.NET AJAX, supprimez les marques de commentaire de la ligne suivante. 
     // [System.Web.Script.Services.ScriptService]
-    public class UserRequestService : WebService
+    public class GetArchivisteRequestService : System.Web.Services.WebService
     {
         /// <summary>
         /// A WebService to retreive every users in DB
         /// </summary>
         /// <remarks>
-        /// Parameter userID is given by an Ajax call in DataTablesDemandes.js :
+        /// Parameter userID is given by an Ajax call in DataTablesArchiviste.js :
         /// <example>
         /// <code>
         /// $.ajax({
@@ -33,7 +35,7 @@ namespace WebApplication1.WebServices
         ///         dataType: "json",
         ///         async: true,
         ///         url: "UserRequestService.asmx/GetDataIssuer",
-        ///         data: { userID: $("#userID").val() },
+        ///         data: { userID: $("#archivisteID").val() },
         ///         contentType: "application/x-www-form-urlencoded; charset=UTF-8", 
         ///         crossDomain: true,
         /// </code>
@@ -44,18 +46,20 @@ namespace WebApplication1.WebServices
         /// Returns a JSON when a POST call is made with an unique identifier
         /// </returns>
         /// <param name="userId">An unique user identifier retreived from <see cref="Demandes.Page_Load(object, EventArgs)"/></param>
+        /// 
         [WebMethod]
-        public void GetDataIssuer(string userId)
+        public void GetDataArchiviste(string userId)
         {
+
             string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
             var datas = new List<Logs>();
 
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                string cmdString = "SELECT [dbo].[logsArchive].*, [dbo].[status].status_name" + 
-                                    " FROM [dbo].[logsArchive]" +
-                                    " LEFT JOIN [dbo].[status]" +
-                                    " ON [dbo].[logsArchive].status = dbo.status.status_id";
+                string cmdString = "SELECT [dbo].[logsArchive].*, [dbo].[status].status_name"
+                                 + " FROM [dbo].[logsArchive]"
+                                 + " LEFT JOIN [dbo].[status]"
+                                 + " ON [dbo].[logsArchive].status = dbo.status.status_id";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -67,29 +71,6 @@ namespace WebApplication1.WebServices
 
                     while (dr.Read())
                     {
-                        // Checks if logged user is the same as recovered user in Database logs (issuerID) else, see below.
-                        if (dr["issuerID"].ToString() == userId)
-                        {
-                            Logs logs = new Logs
-                            {
-                                ID = Convert.ToInt32(dr["ID"]),
-                                Date = Convert.ToDateTime(dr["date"].ToString()),
-                                IssuerID = !dr["issuerFirstName"].ToString().IsNullOrWhiteSpace() && !dr["issuerLastName"].ToString().IsNullOrWhiteSpace()
-                                    ? dr["issuerLastName"] + " " + dr["issuerFirstName"]
-                                    : dr["issuerID"].ToString(),
-                                IssuerEts = dr["issuerEts"].ToString(),
-                                IssuerDir = dr["issuerDir"].ToString(),
-                                IssuerService = dr["issuerService"].ToString(),
-                                ArchiveID = dr["ArchiveID"].ToString(),
-                                Localization = dr["localization"].ToString(),
-                                Action = Convert.ToInt32(dr["action"]),
-                                Status = dr["status_name"].ToString(),
-                                Origin = "NOT_PAL",
-                                RequestGroup = null
-                            };
-                            datas.Add(logs);
-                            // Else checks if logged user is the same as archiviste user (ReceiverID).
-                        } else if (dr["receiverID"].ToString() == userId)
                         {
                             Logs logs = new Logs
                             {
@@ -115,10 +96,10 @@ namespace WebApplication1.WebServices
             }
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                string cmdString = "SELECT [dbo].[logsArchivePAL].*, [dbo].[status].[status_name]" + 
-                                    " FROM [dbo].[logsArchivePAL]" +
-                                    " LEFT JOIN [dbo].[status]" +
-                                    " ON [dbo].[logsArchivePAL].[status] = [dbo].[status].[status_id]";
+                string cmdString = "SELECT [dbo].[logsArchivePAL].*, [dbo].[status].[status_name]"
+                                 + " FROM [dbo].[logsArchivePAL]"
+                                 + " LEFT JOIN [dbo].[status]"
+                                 + " ON [dbo].[logsArchivePAL].[status] = [dbo].[status].[status_id]";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -130,29 +111,27 @@ namespace WebApplication1.WebServices
                     
                     while (dr.Read())
                     {
-                        if (dr["userID"].ToString() == userId)
+                        Logs logs = new Logs
                         {
-                            Logs logs = new Logs
-                            {
-                                ID = 0,
-                                Date = Convert.ToDateTime(dr["date"].ToString()),
-                                IssuerID = dr["user"].ToString(),
-                                IssuerEts = dr["ets"].ToString(),
-                                IssuerDir = dr["dir"].ToString(),
-                                IssuerService = dr["service"].ToString(),
-                                ArchiveID = dr["id"].ToString(),
-                                Localization = "",
-                                Action = Convert.ToInt32(dr["action"]),
-                                Status = dr["status_name"].ToString(),
-                                Origin = "PAL",
-                                RequestGroup = dr["request_group"].ToString()
-                            };
-                            datas.Add(logs); 
-                        }
+                            ID = 0,
+                            Date = Convert.ToDateTime(dr["date"].ToString()),
+                            IssuerID = dr["user"].ToString(),
+                            IssuerEts = dr["ets"].ToString(),
+                            IssuerDir = dr["dir"].ToString(),
+                            IssuerService = dr["service"].ToString(),
+                            ArchiveID = dr["id"].ToString(),
+                            Localization = "",
+                            Action = Convert.ToInt32(dr["action"]),
+                            Status = dr["status_name"].ToString(),
+                            Origin = "PAL",
+                            RequestGroup = dr["request_group"].ToString()
+                        };
+                        datas.Add(logs);
                     }
                 }
             }
             Context.Response.Write(JsonConvert.SerializeObject(datas));
         }
     }
+
 }

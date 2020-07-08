@@ -1490,6 +1490,12 @@ references:
   commentId: F:WebApplication1.AjouterArchive.LoggedUser
   fullName: WebApplication1.AjouterArchive.LoggedUser
   nameWithType: AjouterArchive.LoggedUser
+- uid: WebApplication1.AjouterArchive.LoggedUserId
+  name: LoggedUserId
+  href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_LoggedUserId
+  commentId: F:WebApplication1.AjouterArchive.LoggedUserId
+  fullName: WebApplication1.AjouterArchive.LoggedUserId
+  nameWithType: AjouterArchive.LoggedUserId
 - uid: WebApplication1.AjouterArchive.Master
   name: Master
   href: api/WebApplication1.AjouterArchive.html#WebApplication1_AjouterArchive_Master
@@ -1632,6 +1638,12 @@ references:
   commentId: F:WebApplication1.ArchivistePanel.alertSuccessText
   fullName: WebApplication1.ArchivistePanel.alertSuccessText
   nameWithType: ArchivistePanel.alertSuccessText
+- uid: WebApplication1.ArchivistePanel.alertType
+  name: alertType
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_alertType
+  commentId: F:WebApplication1.ArchivistePanel.alertType
+  fullName: WebApplication1.ArchivistePanel.alertType
+  nameWithType: ArchivistePanel.alertType
 - uid: WebApplication1.ArchivistePanel.ArchiveAction
   name: ArchiveAction
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_ArchiveAction
@@ -2398,19 +2410,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.DatabaseUser.GetUserService
   nameWithType: DatabaseUser.GetUserService
-- uid: WebApplication1.Models.DatabaseUser.ID
-  name: ID
-  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_ID
-  commentId: P:WebApplication1.Models.DatabaseUser.ID
-  fullName: WebApplication1.Models.DatabaseUser.ID
-  nameWithType: DatabaseUser.ID
-- uid: WebApplication1.Models.DatabaseUser.ID*
-  name: ID
-  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_ID_
-  commentId: Overload:WebApplication1.Models.DatabaseUser.ID
+- uid: WebApplication1.Models.DatabaseUser.Id
+  name: Id
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_Id
+  commentId: P:WebApplication1.Models.DatabaseUser.Id
+  fullName: WebApplication1.Models.DatabaseUser.Id
+  nameWithType: DatabaseUser.Id
+- uid: WebApplication1.Models.DatabaseUser.Id*
+  name: Id
+  href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_Id_
+  commentId: Overload:WebApplication1.Models.DatabaseUser.Id
   isSpec: "True"
-  fullName: WebApplication1.Models.DatabaseUser.ID
-  nameWithType: DatabaseUser.ID
+  fullName: WebApplication1.Models.DatabaseUser.Id
+  nameWithType: DatabaseUser.Id
 - uid: WebApplication1.Models.DatabaseUser.IsUserAdmin(System.Security.Principal.IIdentity)
   name: IsUserAdmin(IIdentity)
   href: api/WebApplication1.Models.DatabaseUser.html#WebApplication1_Models_DatabaseUser_IsUserAdmin_System_Security_Principal_IIdentity_
@@ -3329,6 +3341,25 @@ references:
   isSpec: "True"
   fullName: WebApplication1.WebServices.DESFetchService.GetDes
   nameWithType: DESFetchService.GetDes
+- uid: WebApplication1.WebServices.GetArchivisteRequestService
+  name: GetArchivisteRequestService
+  href: api/WebApplication1.WebServices.GetArchivisteRequestService.html
+  commentId: T:WebApplication1.WebServices.GetArchivisteRequestService
+  fullName: WebApplication1.WebServices.GetArchivisteRequestService
+  nameWithType: GetArchivisteRequestService
+- uid: WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste(System.String)
+  name: GetDataArchiviste(String)
+  href: api/WebApplication1.WebServices.GetArchivisteRequestService.html#WebApplication1_WebServices_GetArchivisteRequestService_GetDataArchiviste_System_String_
+  commentId: M:WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste(System.String)
+  fullName: WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste(System.String)
+  nameWithType: GetArchivisteRequestService.GetDataArchiviste(String)
+- uid: WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste*
+  name: GetDataArchiviste
+  href: api/WebApplication1.WebServices.GetArchivisteRequestService.html#WebApplication1_WebServices_GetArchivisteRequestService_GetDataArchiviste_
+  commentId: Overload:WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste
+  isSpec: "True"
+  fullName: WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste
+  nameWithType: GetArchivisteRequestService.GetDataArchiviste
 - uid: WebApplication1.WebServices.RetreiveRole
   name: RetreiveRole
   href: api/WebApplication1.WebServices.RetreiveRole.html

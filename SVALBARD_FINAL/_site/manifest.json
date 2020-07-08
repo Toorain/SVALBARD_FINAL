@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.AjouterArchive.html",
-          "hash": "7/ss46infP0qTYGDFgMmbg=="
+          "hash": "inXLBqkiC752gJ/s+5ZqNw=="
         }
       },
       "is_incremental": true,
@@ -357,10 +357,10 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.ArchivistePanel.html",
-          "hash": "9eqKXIl/ULzYgFlALEq0Ww=="
+          "hash": "Nk1ufPmE2nBXmLR9cze3Pg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.Demandes.html",
-          "hash": "s5f9+hMPcOYZ+/tRtTeS+w=="
+          "hash": "XhmJqFdxDVhK6+B0Bn/Awg=="
         }
       },
       "is_incremental": true,
@@ -477,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.Models.AspNetUsersExtended.html",
-          "hash": "kt/CF2h8Xj1BNnACmSSUaQ=="
+          "hash": "6WHnvJHx+cguL9bxWghAew=="
         }
       },
       "is_incremental": true,
@@ -513,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.Models.DatabaseUser.html",
-          "hash": "AcCn/tr1YJp62IUT5/EYvw=="
+          "hash": "eWInvphqk2Z1x42uHvsR4w=="
         }
       },
       "is_incremental": true,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.Models.FormData.html",
-          "hash": "osiG+D99qaAC9DbBVz8nLQ=="
+          "hash": "/n8fZt1vPrzXM0D+x7vKhg=="
         }
       },
       "is_incremental": true,
@@ -549,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.Models.Logs.html",
-          "hash": "R9kVF+h/O/Eiecj5ynG6MQ=="
+          "hash": "8ghKrEOn57Ci+AwWeUGryg=="
         }
       },
       "is_incremental": true,
@@ -677,6 +677,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.WebServices.GetArchivisteRequestService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.WebServices.GetArchivisteRequestService.html",
+          "hash": "GeEBq6javCzI4eGZKb++bg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/WebApplication1.WebServices.RetreiveRole.yml",
       "output": {
         ".html": {
@@ -705,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.WebServices.UserRequestService.html",
-          "hash": "TkrHv5+82sq712Pbv67h7A=="
+          "hash": "rZ0dJwxF84Fim7nwYBpNGQ=="
         }
       },
       "is_incremental": true,
@@ -717,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.WebServices.html",
-          "hash": "G8DZxYP+NZgA1FAfMvc59w=="
+          "hash": "DOwXTany+21wpYP4Lj3RNg=="
         }
       },
       "is_incremental": true,
@@ -744,7 +756,7 @@
           "hash": "txwXX5wWk4iyDbmMfAxT0Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -753,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "2f7G7TWtO9sQbJdwaZ5xRQ=="
+          "hash": "9WFSp9Avxn/x3GB3DKLimg=="
         }
       },
       "is_incremental": false,
@@ -790,7 +802,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 56,
+          "total_file_count": 57,
           "skipped_file_count": 56
         },
         "TocDocumentProcessor": {

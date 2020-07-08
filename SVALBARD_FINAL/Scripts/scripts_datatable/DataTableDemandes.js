@@ -8,7 +8,7 @@
             async: true,
             // URL of the webservice I use to retreive data of the issuer
             url: "WebServices/UserRequestService.asmx/GetDataIssuer",
-            // Data I send to the POST method (userID)
+            // #userID has the value of User.Identity.GetUserId() method, gets the token of current user logged in.
             data: { userID: $("#userID").val() },
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",
             mimeType: "text/plain",

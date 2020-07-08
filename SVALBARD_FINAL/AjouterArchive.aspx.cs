@@ -11,6 +11,7 @@ namespace WebApplication1
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			LoggedUser.Value = User.Identity.GetUserName();
+			LoggedUserId.Value = User.Identity.GetUserId();
 			
 			int lastItem = DataSql.GetLastItemArchive();
             

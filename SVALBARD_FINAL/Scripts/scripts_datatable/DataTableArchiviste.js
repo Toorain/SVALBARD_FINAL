@@ -8,7 +8,7 @@
             dataType: "json",
             async: true,
             // URL of the webservice I use to retreive data of the issuer
-            url: "WebServices/UserRequestService.asmx/GetDataIssuer",
+            url: "WebServices/GetArchivisteRequestService.asmx/GetDataArchiviste",
             // Data I send to the POST method (userID)
             data: { userID: $("#archivisteID").val() },
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",

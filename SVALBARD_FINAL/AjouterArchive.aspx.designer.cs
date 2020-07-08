@@ -22,6 +22,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.HiddenField LoggedUser;
         
         /// <summary>
+        /// LoggedUserId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField LoggedUserId;
+        
+        /// <summary>
         /// alertRequestAdd control.
         /// </summary>
         /// <remarks>

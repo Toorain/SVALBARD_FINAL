@@ -225,9 +225,9 @@ namespace WebApplication1.Models
             using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
             {
                 
-                string cmdString = "SELECT [status_code]" +
-                                   " FROM [status]" +
-                                   " WHERE [status_name] = @val1";
+                string cmdString = "SELECT [status_code]" 
+                                 + " FROM [status]"
+                                 + " WHERE [status_name] = @val1";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -247,15 +247,15 @@ namespace WebApplication1.Models
             }
         }
 
-        public static void UpdateStatus(string identifier, string statusValue)
+        public static bool UpdateStatus(string identifier, string statusValue)
         {
             int statusCode = StatusNameToStatusCode(statusValue);
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
             {
-                string cmdString = "UPDATE [dbo].[logsArchive]" +
-                                    " SET [status] = @val1" +
-                                    " WHERE [archiveID] = @val2";
+                string cmdString = "UPDATE [dbo].[logsArchivePAL]"
+                                 + " SET [status] = @val1"
+                                 + " WHERE [ID] = @val2";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -264,8 +264,10 @@ namespace WebApplication1.Models
                     cmd.Parameters.AddWithValue("@val2", identifier);
                     
                     sqlConn.Open();
+                    
+                    int returned = cmd.ExecuteNonQuery();
 
-                    cmd.ExecuteNonQuery();
+                    return returned != 0;
                 }
             }
         }

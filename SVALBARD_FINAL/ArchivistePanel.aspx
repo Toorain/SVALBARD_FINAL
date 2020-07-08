@@ -4,7 +4,7 @@
     <asp:HiddenField runat="server" ID="archivisteID" ClientIDMode="Static" />
     <!-- #region Alert -->
     <asp:Panel ID="alertRequestSuccess" runat="server" Visible="false">
-        <div class="alert alert-success alert-dismissible fade show text-center " role="alert">
+        <div runat="server" ID="alertType" clientidmode="Static" class="alert alert-dismissible fade show text-center " role="alert">
             <h5 id="alertSuccessText" runat="server"></h5>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>

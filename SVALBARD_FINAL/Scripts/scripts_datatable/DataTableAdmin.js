@@ -17,7 +17,7 @@ $(document).ready(function () {
                         return arrayToWork = data.substring(0, pos).replace(".", " ").split(" ").join(" ");
                     }
                 },
-                { data: 'ID' },
+                { data: 'Id' },
                 { data: 'Email' },
                 { data: 'PhoneNumber' }
             ]

@@ -178,7 +178,10 @@ if (window.location.pathname === "/AjouterArchive") {
         actualCoteNumber--;
         articleCount--;
     }
-
+    /* #########################################################################################
+       ################################# VALIDATE DATA && PUSH ################################# 
+       ######################################################################################### */
+    
     function validateData() {
         let jsonData = {};
         let articlesLength = document.getElementById("articleFill").childElementCount;
@@ -192,6 +195,7 @@ if (window.location.pathname === "/AjouterArchive") {
             }
             data['request_group'] = $("#cote_1").val();
             data['user'] = isolateFirstLastName($("#LoggedUser").val());
+            data['user_id'] = $("#LoggedUserId").val();
 
             let arrayToString = JSON.stringify(Object.assign({}, data));  // convert array to string
             let stringToJsonObject = JSON.parse(arrayToString);  // convert string to json object

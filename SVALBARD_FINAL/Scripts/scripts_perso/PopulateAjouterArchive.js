@@ -9,10 +9,9 @@
     setTimeout(function () {
         if ($("#coteValidationServer").val().length === 7) {
             $("#nextBtn").click();
-            console.log("TEST");
             $('#articleFill tr').each(function () {
                 for (let i = 1; i < this.children.length - 1; i++) {
-                    console.log(this.children[i].children[0].value = 1337);
+                    this.children[i].children[0].value = 1337;
                 }
                 this.children[6].children[0].value = 0;
             });

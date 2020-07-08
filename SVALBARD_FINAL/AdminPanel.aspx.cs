@@ -68,7 +68,7 @@ namespace WebApplication1
                     {
                         DatabaseUser userSql = new DatabaseUser
                         {
-                            ID = dr["Id"].ToString(),
+                            Id = dr["Id"].ToString(),
                             Email = dr["Email"].ToString(),
                             PhoneNumber = dr["PhoneNumber"].ToString(),
                             UserName = dr["UserName"].ToString()

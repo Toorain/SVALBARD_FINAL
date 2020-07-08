@@ -12,6 +12,15 @@ namespace WebApplication1.Models
 		public string Dir { get; set; }
 		public string Service { get; set; }
 
+		/// <summary>
+		/// Adds every elements in AspUserExtended taken from Inscription panel
+		/// </summary>
+		/// <param name="id">Identifier</param>
+		/// <param name="firstName">First name </param>
+		/// <param name="lastName">Last name</param>
+		/// <param name="ets">Etablissement</param>
+		/// <param name="dir">Direction</param>
+		/// <param name="service">Service</param>
 		public static void PushAdditionalUserData(string id, string firstName, string lastName, string ets, string dir, string service)
 		{
 			string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;

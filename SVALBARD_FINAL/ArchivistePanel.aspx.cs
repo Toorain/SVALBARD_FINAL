@@ -18,12 +18,13 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             List<string> databaseElements = DES.GetDatabaseElements();
-
+            
             int indexOfItem = 0;
             string leftSplitter = "";
 
             foreach (var item in databaseElements)
             {
+                
                 List<string> tableItems = DES.GetTableElements(item);
 
                 if (indexOfItem != 0) { leftSplitter = "vertical-line"; };
@@ -115,7 +116,18 @@ namespace WebApplication1
 
         protected void UpdateStatus(object sender, EventArgs e)
         {
-            Logs.UpdateStatus(ArchiveCote.Value, StatusList.SelectedValue);
+            bool statusUpdated = Logs.UpdateStatus(ArchiveCote.Value, StatusList.SelectedValue);
+            alertRequestSuccess.Visible = true;
+            if (statusUpdated)
+            {
+                alertSuccessText.InnerText = "Le status à été modifié avec succès";
+                alertType.Attributes["class"] += " alert-success";
+            }
+            else
+            {
+                alertSuccessText.InnerText = "Une erreur est survenue !";
+                alertType.Attributes["class"] += " alert-danger";
+            }
         }
 
         protected void UpdateEmplacement(object sender, EventArgs e)
