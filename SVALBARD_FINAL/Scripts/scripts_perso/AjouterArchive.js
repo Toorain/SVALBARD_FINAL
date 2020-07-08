@@ -1,10 +1,6 @@
 ﻿let currentTab = 0; // Current tab is set to be the first tab (0)
 let allowNext = false;
-let articleCount;
-let coteSlug;
-let coteNumbers;
-let actualCoteNumber;
-let inner;
+let articleCount, coteSlug, coteNumbers, actualCoteNumber, inner;
 
 $(window).keydown(function (event) {
     if (event.keyCode === 13) {

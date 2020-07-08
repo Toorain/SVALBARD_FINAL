@@ -1699,12 +1699,6 @@ references:
   isSpec: "True"
   fullName: WebApplication1.ArchivistePanel.GeneratePdf
   nameWithType: ArchivistePanel.GeneratePdf
-- uid: WebApplication1.ArchivistePanel.HiddenField1
-  name: HiddenField1
-  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_HiddenField1
-  commentId: F:WebApplication1.ArchivistePanel.HiddenField1
-  fullName: WebApplication1.ArchivistePanel.HiddenField1
-  nameWithType: ArchivistePanel.HiddenField1
 - uid: WebApplication1.ArchivistePanel.Identifier
   name: Identifier
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_Identifier
@@ -1767,12 +1761,6 @@ references:
   commentId: F:WebApplication1.ArchivistePanel.rptViewerArchiviste
   fullName: WebApplication1.ArchivistePanel.rptViewerArchiviste
   nameWithType: ArchivistePanel.rptViewerArchiviste
-- uid: WebApplication1.ArchivistePanel.StatusList
-  name: StatusList
-  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_StatusList
-  commentId: F:WebApplication1.ArchivistePanel.StatusList
-  fullName: WebApplication1.ArchivistePanel.StatusList
-  nameWithType: ArchivistePanel.StatusList
 - uid: WebApplication1.ArchivistePanel.UpdateEmplacement(System.Object,System.EventArgs)
   name: UpdateEmplacement(Object, EventArgs)
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_UpdateEmplacement_System_Object_System_EventArgs_
@@ -3360,6 +3348,25 @@ references:
   isSpec: "True"
   fullName: WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste
   nameWithType: GetArchivisteRequestService.GetDataArchiviste
+- uid: WebApplication1.WebServices.GetStatusListService
+  name: GetStatusListService
+  href: api/WebApplication1.WebServices.GetStatusListService.html
+  commentId: T:WebApplication1.WebServices.GetStatusListService
+  fullName: WebApplication1.WebServices.GetStatusListService
+  nameWithType: GetStatusListService
+- uid: WebApplication1.WebServices.GetStatusListService.GetStatusList(System.Int32)
+  name: GetStatusList(Int32)
+  href: api/WebApplication1.WebServices.GetStatusListService.html#WebApplication1_WebServices_GetStatusListService_GetStatusList_System_Int32_
+  commentId: M:WebApplication1.WebServices.GetStatusListService.GetStatusList(System.Int32)
+  fullName: WebApplication1.WebServices.GetStatusListService.GetStatusList(System.Int32)
+  nameWithType: GetStatusListService.GetStatusList(Int32)
+- uid: WebApplication1.WebServices.GetStatusListService.GetStatusList*
+  name: GetStatusList
+  href: api/WebApplication1.WebServices.GetStatusListService.html#WebApplication1_WebServices_GetStatusListService_GetStatusList_
+  commentId: Overload:WebApplication1.WebServices.GetStatusListService.GetStatusList
+  isSpec: "True"
+  fullName: WebApplication1.WebServices.GetStatusListService.GetStatusList
+  nameWithType: GetStatusListService.GetStatusList
 - uid: WebApplication1.WebServices.RetreiveRole
   name: RetreiveRole
   href: api/WebApplication1.WebServices.RetreiveRole.html

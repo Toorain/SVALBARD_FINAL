@@ -12,7 +12,7 @@ function checkCote(cote) {
             serverSide: true,
             dataType: "xml",
             success: (data) => {
-                let returnedData = data.activeElement.innerHTML;
+                let returnedData = $(data).find("string").text();
                 let suggestedCote;
                 if(returnedData !== "") {
                     let returnedSpliced = coteUpper.split('').splice(0, 3).join('');

@@ -47,7 +47,7 @@
       <!-- One "tab" for each step in the form: -->
       <div class="tab">
         <div class="form-row justify-content-center">
-          <div class="col-md-3 mb-3 p-3 border border-dark rounded">
+          <div class="col-md-6 mb-3 p-3 border border-dark rounded">
             <div class="mb-3">
               <label for="validationNombreArticle">Nombre de boîtes à ajouter</label> 
               <input type="number" class="form-control" id="validationNombreArticle" placeholder="Nombre de boîtes" value="" required />

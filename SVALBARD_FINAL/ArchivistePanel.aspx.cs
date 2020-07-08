@@ -71,21 +71,23 @@ namespace WebApplication1
             if (!IsPostBack)
             {
                 archivisteID.Value = User.Identity.GetUserId();
-
+                
+                /*
                 List<List<string>> arrayArray = Logs.GetStatus();
-
-                foreach (var item in arrayArray)
+                
+                foreach (var array in arrayArray)
                 {
-                    for (int i = 0; i < item.Count; i++)
+                    foreach (var subItem in array)
                     {
                         ListItem listItem = new ListItem
                         {
-                            Value = item[i],
-                            Text = item[i]
+                            Value = subItem,
+                            Text = subItem
                         };
                         StatusList.Items.Add(listItem);
                     }
-                }                
+                } 
+                */               
             }
         }
 
@@ -116,7 +118,7 @@ namespace WebApplication1
 
         protected void UpdateStatus(object sender, EventArgs e)
         {
-            bool statusUpdated = Logs.UpdateStatus(ArchiveCote.Value, StatusList.SelectedValue);
+            bool statusUpdated = Logs.UpdateStatus(ArchiveCote.Value, Request.Form["StatusList"]);
             alertRequestSuccess.Visible = true;
             if (statusUpdated)
             {

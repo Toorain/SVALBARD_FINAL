@@ -120,7 +120,7 @@ namespace WebApplication1.WebServices
                             IssuerDir = dr["dir"].ToString(),
                             IssuerService = dr["service"].ToString(),
                             ArchiveID = dr["id"].ToString(),
-                            Localization = "",
+                            Localization = dr["localization"].ToString(),
                             Action = Convert.ToInt32(dr["action"]),
                             Status = dr["status_name"].ToString(),
                             Origin = "PAL",

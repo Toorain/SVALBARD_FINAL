@@ -43,10 +43,10 @@
                     ]
                 });
                 $("body").keydown(function (e) {
-                    if (e.keyCode == 37) { // left
+                    if (e.keyCode === 37) { // left
                         $("#tableArchive_previous").click();
                     }
-                    else if (e.keyCode == 39) { // right
+                    else if (e.keyCode === 39) { // right
                         $("#tableArchive_next").click();
                     }
                 });

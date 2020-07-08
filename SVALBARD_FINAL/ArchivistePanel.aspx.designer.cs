@@ -22,6 +22,60 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.HiddenField archivisteID;
         
         /// <summary>
+        /// ArchiveCote control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField ArchiveCote;
+        
+        /// <summary>
+        /// ArchiveAction control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField ArchiveAction;
+        
+        /// <summary>
+        /// Cote control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField Cote;
+        
+        /// <summary>
+        /// Identifier control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField Identifier;
+        
+        /// <summary>
+        /// Origin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField Origin;
+        
+        /// <summary>
+        /// userID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField userID;
+        
+        /// <summary>
         /// alertRequestSuccess control.
         /// </summary>
         /// <remarks>
@@ -49,33 +103,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertSuccessText;
         
         /// <summary>
-        /// ArchiveCote control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField ArchiveCote;
-        
-        /// <summary>
-        /// ArchiveAction control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField ArchiveAction;
-        
-        /// <summary>
-        /// StatusList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList StatusList;
-        
-        /// <summary>
         /// ModifyStatus control.
         /// </summary>
         /// <remarks>
@@ -101,15 +128,6 @@ namespace WebApplication1 {
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ModifyEmplacement;
-        
-        /// <summary>
-        /// HiddenField1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenField1;
         
         /// <summary>
         /// ModalAjouter control.
@@ -146,42 +164,6 @@ namespace WebApplication1 {
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonGeneratePdf;
-        
-        /// <summary>
-        /// Origin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField Origin;
-        
-        /// <summary>
-        /// Identifier control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField Identifier;
-        
-        /// <summary>
-        /// Cote control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField Cote;
-        
-        /// <summary>
-        /// userID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField userID;
         
         /// <summary>
         /// Master property.

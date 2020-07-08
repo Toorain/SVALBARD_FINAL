@@ -111,9 +111,7 @@ namespace WebApplication1.Models
                     
                     while (dr.Read())
                     {
-                        
-                         // For every group of status (global, ajouter, retrait, destruction) we fill a different array.
-                         
+                        // For every group of status (global, ajouter, retrait, destruction) we fill a different array.
                         switch (Convert.ToInt32(dr["group_code"]))
                         {
                             case 1:
@@ -132,9 +130,7 @@ namespace WebApplication1.Models
                                 break;
                         }
                     }
-                    
                     List<List<string>> arrayArray = new List<List<string>> {arrayGlobal, arrayAjout, arrayRetrait, arrayDestruction};
-
 
                     return arrayArray;
                 }

@@ -2,6 +2,14 @@
 <%@ Register TagPrefix="rsweb" Namespace="Microsoft.Reporting.WebForms" Assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:HiddenField runat="server" ID="archivisteID" ClientIDMode="Static" />
+    <asp:HiddenField runat="server" ID="ArchiveCote" ClientIDMode="Static"/>
+    <asp:HiddenField runat="server" ID="ArchiveAction" ClientIDMode="Static"/>
+    <asp:HiddenField runat="server" ID="Cote" ClientIDMode="Static" Value="" />
+    <asp:HiddenField runat="server" ID="Identifier" ClientIDMode="Static" Value="" />
+    <asp:HiddenField runat="server" ID="Origin" ClientIDMode="Static" Value="" />
+    <asp:HiddenField runat="server" ID="userID" ClientIDMode="Static" />
+    
+
     <!-- #region Alert -->
     <asp:Panel ID="alertRequestSuccess" runat="server" Visible="false">
         <div runat="server" ID="alertType" clientidmode="Static" class="alert alert-dismissible fade show text-center " role="alert">
@@ -22,12 +30,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <asp:HiddenField runat="server" ID="ArchiveCote" ClientIDMode="Static"/>
-                    <asp:HiddenField runat="server" ID="ArchiveAction" ClientIDMode="Static"/>
+                    
                     <div class="row">
                         <div class="col-md-6">
                             <h5>Modifier le status</h5>
-                            <asp:DropDownList ID="StatusList" runat="server" CssClass="form-control mb-1" />
+                            <select id="StatusList" name="StatusList" class="form-control mb-1" ></select>
                             <asp:Button runat="server" ID="ModifyStatus" Text="Modifier le status" CssClass="btn btn-success" OnClick="UpdateStatus" />
                         </div>
                         <div class="col-md-6">
@@ -52,7 +59,6 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <asp:HiddenField runat="server" ID="HiddenField1" ClientIDMode="Static"/>
 
                     <div runat="server" class="row" ID="ModalAjouter" ClientIDMode="Static"></div>
                 </div>
@@ -99,8 +105,5 @@
        </rsweb:ReportViewer>
     </div>
     <asp:Button runat="server" ID="ButtonGeneratePdf" ClientIDMode="Static" OnClick="GeneratePdf" CssClass="d-none" />
-    <asp:HiddenField runat="server" ID="Origin" ClientIDMode="Static" Value="" />
-    <asp:HiddenField runat="server" ID="Identifier" ClientIDMode="Static" Value="" />
-    <asp:HiddenField runat="server" ID="Cote" ClientIDMode="Static" Value="" />
-    <asp:HiddenField runat="server" ID="userID" ClientIDMode="Static" />
+    
 </asp:Content>

@@ -357,10 +357,10 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.ArchivistePanel.html",
-          "hash": "Nk1ufPmE2nBXmLR9cze3Pg=="
+          "hash": "atVNG3spfxc0drQzUfb/ww=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -549,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.Models.Logs.html",
-          "hash": "8ghKrEOn57Ci+AwWeUGryg=="
+          "hash": "KiRad9lklcTBbEao8rDhvQ=="
         }
       },
       "is_incremental": true,
@@ -689,6 +689,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/WebApplication1.WebServices.GetStatusListService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WebApplication1.WebServices.GetStatusListService.html",
+          "hash": "c2cdYk5cdFp9kcXQUbFH3g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/WebApplication1.WebServices.RetreiveRole.yml",
       "output": {
         ".html": {
@@ -729,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.WebServices.html",
-          "hash": "DOwXTany+21wpYP4Lj3RNg=="
+          "hash": "eM/T62rEeRDjqN+esUrv3Q=="
         }
       },
       "is_incremental": true,
@@ -756,7 +768,7 @@
           "hash": "txwXX5wWk4iyDbmMfAxT0Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -765,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "9WFSp9Avxn/x3GB3DKLimg=="
+          "hash": "Ru4l30YsoaaMC+oSvukCAA=="
         }
       },
       "is_incremental": false,
@@ -802,8 +814,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 57,
-          "skipped_file_count": 56
+          "total_file_count": 58,
+          "skipped_file_count": 58
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
