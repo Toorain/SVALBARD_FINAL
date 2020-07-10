@@ -28,8 +28,7 @@
                             <div class="col-lg-5">
                                 
                                 <p>Changer le status de l'utilisateur :</p>
-                                <p>Ancien status : <asp:Label runat="server" ID="UserRoleId" ClientIDMode="Static" /></p>
-                                <asp:DropDownList id="RoleList" runat="server">
+                                <asp:DropDownList id="RoleList" runat="server" CssClass="form-control">
                                     <asp:ListItem Value="5"> Juridique </asp:ListItem>
                                     <asp:ListItem Value="3"> Consultation </asp:ListItem>
                                     <asp:ListItem Value="2"> Gestion </asp:ListItem>

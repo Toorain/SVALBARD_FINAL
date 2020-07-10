@@ -40,15 +40,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertSuccessText;
         
         /// <summary>
-        /// UserRoleId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label UserRoleId;
-        
-        /// <summary>
         /// RoleList control.
         /// </summary>
         /// <remarks>

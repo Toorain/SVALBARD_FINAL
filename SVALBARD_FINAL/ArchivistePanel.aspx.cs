@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Web.UI;
+using System.Windows.Forms;
 using Microsoft.Ajax.Utilities;
 using WebApplication1.Models;
 
@@ -112,7 +113,9 @@ namespace WebApplication1
 
         protected void UpdateStatus(object sender, EventArgs e)
         {
-            bool statusUpdated = Logs.UpdateStatus(ArchiveCote.Value, Request.Form["StatusList"]);
+            string linkedCote = Logs.GetLinkedCote(ArchiveCote.Value);
+            
+            bool statusUpdated = Logs.UpdateStatus(linkedCote, Request.Form["StatusList"]);
             bool emptyEmplacement = true;
             
             if (statusUpdated && Request.Form["StatusList"] == "Ajout effectué")

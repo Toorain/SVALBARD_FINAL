@@ -109,6 +109,8 @@ if (window.location.pathname === "/AjouterArchive") {
     }
 
     function generateInputTable() {
+        let maxLimit = new Date();
+        maxLimit = maxLimit.getFullYear() + 50;
         let nombreArticles = Number($("#validationNombreArticle").val());
         let cote = $("#coteValidationServer").val();
         coteSlug = cote.substring(0, 3);
@@ -119,8 +121,8 @@ if (window.location.pathname === "/AjouterArchive") {
             inner = "<tr id='article_" + articleCount + "'>" +
                 "<td><input id='cote_" + articleCount + "' class='form-control' type='text' value='" + coteSlug + (addLeadingZeroes(actualCoteNumber)) + "' disabled /></td>" +
                 "<td><textarea class='form-control'></textarea></td>" +
-                "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
-                "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
+                "<td><input class='form-control' type='number' min='1964' max='"+ maxLimit +"' maxlength='4' oninput='checkL(this)' /></td>" +
+                "<td><input class='form-control' type='number' min='1964' max='"+ maxLimit +"' maxlength='4' oninput='checkL(this)' /></td>" +
                 "<td><textarea class='form-control' type='text' ></textarea></td>" +
                 "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
                 ((articleCount === nombreArticles)
@@ -134,6 +136,8 @@ if (window.location.pathname === "/AjouterArchive") {
     }
 
     function addArticle() {
+        let maxLimit = new Date();
+        maxLimit = maxLimit.getFullYear() + 50;
         $("#addArchiveButton").attr("disabled", "disabled");
         document.getElementById('removeButton').innerHTML = '';
         document.getElementById('removeButton').removeAttribute("id");
@@ -141,8 +145,8 @@ if (window.location.pathname === "/AjouterArchive") {
             "<tr id='article_" + articleCount + "'>" +
             "<td><input class='form-control' type='text' value='" + coteSlug + (addLeadingZeroes(actualCoteNumber += 1)) + "' disabled /></td>" +
             "<td><textarea class='form-control' rows='2'></textarea></td>" +
-            "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
-            "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
+            "<td><input class='form-control' type='number' min='1964' max='"+ maxLimit +"' maxlength='4' oninput='checkL(this)' /></td>" +
+            "<td><input class='form-control' type='number' min='1964' max='"+ maxLimit +"' maxlength='4' oninput='checkL(this)' /></td>" +
             "<td><textarea class='form-control' ></textarea></td>" +
             "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
             "<td class='text-center' id='removeButton'><div class='btn btn-danger' onclick='removeRow(articleCount)'>x</div></td>" +

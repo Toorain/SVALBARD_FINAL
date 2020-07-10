@@ -136,7 +136,6 @@
               statusList.append("<option value='" + data[0][0] + "'>" + data[0][0] + "</option>");
               statusList.append("<option value='" + data[dataOfRow.Action][0] + "'>" + data[dataOfRow.Action][0] + "</option>");
               statusList.append("<option value='" + data[dataOfRow.Action][1] + "'>" + data[dataOfRow.Action][1] + "</option>");
-              statusList.append("<option value='" + data[0][1] + "'>" + data[0][1] + "</option>");
               
               for (let i = 0; i < statusList.children().length; i++) {
                 if (dataOfRow.Status === statusList.children()[i].value){

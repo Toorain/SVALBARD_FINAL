@@ -1215,12 +1215,6 @@ references:
   commentId: F:WebApplication1.AdminPanel.userIdAdmin
   fullName: WebApplication1.AdminPanel.userIdAdmin
   nameWithType: AdminPanel.userIdAdmin
-- uid: WebApplication1.AdminPanel.UserRoleId
-  name: UserRoleId
-  href: api/WebApplication1.AdminPanel.html#WebApplication1_AdminPanel_UserRoleId
-  commentId: F:WebApplication1.AdminPanel.UserRoleId
-  fullName: WebApplication1.AdminPanel.UserRoleId
-  nameWithType: AdminPanel.UserRoleId
 - uid: WebApplication1.AfficherArchives
   name: AfficherArchives
   href: api/WebApplication1.AfficherArchives.html
@@ -2832,6 +2826,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.Logs.GetActionType
   nameWithType: Logs.GetActionType
+- uid: WebApplication1.Models.Logs.GetLinkedCote(System.String)
+  name: GetLinkedCote(String)
+  href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_GetLinkedCote_System_String_
+  commentId: M:WebApplication1.Models.Logs.GetLinkedCote(System.String)
+  fullName: WebApplication1.Models.Logs.GetLinkedCote(System.String)
+  nameWithType: Logs.GetLinkedCote(String)
+- uid: WebApplication1.Models.Logs.GetLinkedCote*
+  name: GetLinkedCote
+  href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_GetLinkedCote_
+  commentId: Overload:WebApplication1.Models.Logs.GetLinkedCote
+  isSpec: "True"
+  fullName: WebApplication1.Models.Logs.GetLinkedCote
+  nameWithType: Logs.GetLinkedCote
 - uid: WebApplication1.Models.Logs.GetStatus
   name: GetStatus()
   href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_GetStatus

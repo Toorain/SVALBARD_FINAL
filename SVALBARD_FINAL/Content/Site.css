@@ -144,7 +144,8 @@ input.invalid {
 }
 
 textarea.form-control {
-    height: calc(1.5em + 0.75rem + 2px) !important;
+    height : calc(1.5em + 0.75rem + 2px) ;
+    resize: vertical;
 }
 
 /* ------------------------------FORM SLIDER END------------------------------------------*/

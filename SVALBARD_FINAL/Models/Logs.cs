@@ -252,7 +252,7 @@ namespace WebApplication1.Models
             {
                 string cmdString = "UPDATE [dbo].[logsArchivePAL]"
                                  + " SET [status] = @val1"
-                                 + " WHERE [ID] = @val2";
+                                 + " WHERE [request_group] = @val2";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -288,6 +288,35 @@ namespace WebApplication1.Models
                     sqlConn.Open();
 
                     cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static string GetLinkedCote(string cote)
+        {
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
+            {
+                string cmdString = "SELECT [request_group]" +
+                                   " FROM [dbo].[logsArchivePAL]" +
+                                   " WHERE [ID] = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", cote);
+                    
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+
+                    string requestGroup = "";
+                    while (dr.Read())
+                    {
+                         requestGroup = dr["request_group"].ToString();
+                    }
+
+                    return requestGroup;
                 }
             }
         }
