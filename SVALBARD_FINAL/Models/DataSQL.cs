@@ -8,7 +8,6 @@ namespace WebApplication1.Models
     public class DataSql
     {
         static string _connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
-        // public int ID { get; set; }
         public string Cote { get; set; }
         public DateTime Versement { get; set; }
         public string Etablissement { get; set; }
@@ -20,6 +19,52 @@ namespace WebApplication1.Models
         public string Communication { get; set; }
         public string Localisation { get; set; }
 
+        public static bool AddArchive(string identifier)
+        {
+            LogsPal individualRow = LogsPal.SelectIndividualRow(identifier);
+            using (SqlConnection sqlConn = new SqlConnection(_connectionString))
+            {
+                string cmdString = "INSERT INTO [dbo].[ArchivesV2]"
+                                 + " ([ID] ,[versement] ,[etablissement] ,[direction] ,[service] ,[dossiers] ,[extremes] ,[elimination] ,[communication] ,[cote] ,[localisation])"
+                                 + " VALUES (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11)";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", GetLastItemArchive());
+                    cmd.Parameters.AddWithValue("@val2", individualRow.Date);
+                    cmd.Parameters.AddWithValue("@val3", individualRow.IssuerEts);
+                    cmd.Parameters.AddWithValue("@val4", individualRow.IssuerDir);
+                    cmd.Parameters.AddWithValue("@val5", individualRow.IssuerService);
+                    cmd.Parameters.AddWithValue("@val6", individualRow.Contenu);
+                    cmd.Parameters.AddWithValue("@val7", individualRow.DateMin + "-" + individualRow.DateMax);
+                    cmd.Parameters.AddWithValue("@val8", individualRow.Elimination);
+                    cmd.Parameters.AddWithValue("@val9", individualRow.Communication);
+                    cmd.Parameters.AddWithValue("@val10", individualRow.Cote);
+                    cmd.Parameters.AddWithValue("@val11", individualRow.Localization);
+
+                    sqlConn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+                
+                
+                
+                cmdString = "UPDATE [logsArchives].[dbo].[logsArchivePAL]"
+                          + " SET added = 1"
+                          + " WHERE ID = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", identifier );
+                    
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            return true;
+        }
+        
         public static void ModifyArchive(string currentRow)
         {
             var newArray = new List<DataSql>();
@@ -41,7 +86,6 @@ namespace WebApplication1.Models
                     {
                         DataSql dataSql = new DataSql
                         {
-                            // ID = Convert.ToInt32(dr["ID"].ToString()),
                             Cote = dr["cote"].ToString(),
                             Versement = string.IsNullOrEmpty(dr["versement"].ToString()) ? new DateTime(1900, 1, 1) : Convert.ToDateTime(dr["versement"].ToString()),
                             Etablissement = dr["etablissement"].ToString(),
@@ -63,7 +107,7 @@ namespace WebApplication1.Models
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(_connectionString))
             {
-                string cmdString = "SELECT TOP (1) [ID] FROM [archives].[dbo].[ArchivesV2] ORDER BY ID DESC";
+                string cmdString = "SELECT TOP (1) [ID] FROM [dbo].[ArchivesV2] ORDER BY ID DESC";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -116,7 +160,6 @@ namespace WebApplication1.Models
                     {
                         drVal = dr.HasRows ? dr["cote_ID"].ToString() : "no_entry";
                     }
-
                     return drVal;
                 }
             }
@@ -133,7 +176,7 @@ namespace WebApplication1.Models
             using (SqlConnection sqlConn = new SqlConnection(_connectionString))
             {
                 string cmdString = "SELECT request_group" +
-                                   " FROM logsArchives.dbo.logsArchivePAL" +
+                                   " FROM [dbo].[logsArchivePAL]" +
                                    " WHERE ID = @val1";
                 using (SqlCommand cmd = new SqlCommand())
                 {

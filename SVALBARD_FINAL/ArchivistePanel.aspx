@@ -34,13 +34,12 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h5>Modifier le status</h5>
-                            <select id="StatusList" name="StatusList" class="form-control mb-1" ></select>
+                            <select id="StatusList" name="StatusList" class="form-control mb-1" onchange="checkIfAdded()" ></select>
                             <asp:Button runat="server" ID="ModifyStatus" Text="Modifier le status" CssClass="btn btn-success" OnClick="UpdateStatus" />
                         </div>
-                        <div class="col-md-6">
+                        <div id="modifyLocalization" class="col-md-6">
                             <h5>Modifier l'emplacement</h5>
                             <input type="text" class="form-control mb-1" runat="server" ID="Emplacement" ClientIDMode="Static" />
-                            <asp:Button runat="server" ID="ModifyEmplacement" Text="Modifier l'emplacement" CssClass="btn btn-success" OnClick="UpdateEmplacement" />
                         </div>
                     </div>
                 </div>

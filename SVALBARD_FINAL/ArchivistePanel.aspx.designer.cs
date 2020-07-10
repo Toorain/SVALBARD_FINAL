@@ -121,15 +121,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Emplacement;
         
         /// <summary>
-        /// ModifyEmplacement control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ModifyEmplacement;
-        
-        /// <summary>
         /// ModalAjouter control.
         /// </summary>
         /// <remarks>

@@ -111,22 +111,25 @@ namespace WebApplication1.WebServices
                     
                     while (dr.Read())
                     {
-                        Logs logs = new Logs
+                        if (Convert.ToInt32(dr["added"]) != 1)
                         {
-                            ID = 0,
-                            Date = Convert.ToDateTime(dr["date"].ToString()),
-                            IssuerID = dr["user"].ToString(),
-                            IssuerEts = dr["ets"].ToString(),
-                            IssuerDir = dr["dir"].ToString(),
-                            IssuerService = dr["service"].ToString(),
-                            ArchiveID = dr["id"].ToString(),
-                            Localization = dr["localization"].ToString(),
-                            Action = Convert.ToInt32(dr["action"]),
-                            Status = dr["status_name"].ToString(),
-                            Origin = "PAL",
-                            RequestGroup = dr["request_group"].ToString()
-                        };
-                        datas.Add(logs);
+                            Logs logs = new Logs
+                            {
+                                ID = 0,
+                                Date = Convert.ToDateTime(dr["date"].ToString()),
+                                IssuerID = dr["user"].ToString(),
+                                IssuerEts = dr["ets"].ToString(),
+                                IssuerDir = dr["dir"].ToString(),
+                                IssuerService = dr["service"].ToString(),
+                                ArchiveID = dr["id"].ToString(),
+                                Localization = dr["localization"].ToString(),
+                                Action = Convert.ToInt32(dr["action"]),
+                                Status = dr["status_name"].ToString(),
+                                Origin = "PAL",
+                                RequestGroup = dr["request_group"].ToString()
+                            };
+                            datas.Add(logs); 
+                        }
                     }
                 }
             }

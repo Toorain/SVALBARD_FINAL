@@ -1724,12 +1724,6 @@ references:
   commentId: F:WebApplication1.ArchivistePanel.ModalAjouter
   fullName: WebApplication1.ArchivistePanel.ModalAjouter
   nameWithType: ArchivistePanel.ModalAjouter
-- uid: WebApplication1.ArchivistePanel.ModifyEmplacement
-  name: ModifyEmplacement
-  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_ModifyEmplacement
-  commentId: F:WebApplication1.ArchivistePanel.ModifyEmplacement
-  fullName: WebApplication1.ArchivistePanel.ModifyEmplacement
-  nameWithType: ArchivistePanel.ModifyEmplacement
 - uid: WebApplication1.ArchivistePanel.ModifyStatus
   name: ModifyStatus
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_ModifyStatus
@@ -1761,19 +1755,6 @@ references:
   commentId: F:WebApplication1.ArchivistePanel.rptViewerArchiviste
   fullName: WebApplication1.ArchivistePanel.rptViewerArchiviste
   nameWithType: ArchivistePanel.rptViewerArchiviste
-- uid: WebApplication1.ArchivistePanel.UpdateEmplacement(System.Object,System.EventArgs)
-  name: UpdateEmplacement(Object, EventArgs)
-  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_UpdateEmplacement_System_Object_System_EventArgs_
-  commentId: M:WebApplication1.ArchivistePanel.UpdateEmplacement(System.Object,System.EventArgs)
-  fullName: WebApplication1.ArchivistePanel.UpdateEmplacement(System.Object, System.EventArgs)
-  nameWithType: ArchivistePanel.UpdateEmplacement(Object, EventArgs)
-- uid: WebApplication1.ArchivistePanel.UpdateEmplacement*
-  name: UpdateEmplacement
-  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_UpdateEmplacement_
-  commentId: Overload:WebApplication1.ArchivistePanel.UpdateEmplacement
-  isSpec: "True"
-  fullName: WebApplication1.ArchivistePanel.UpdateEmplacement
-  nameWithType: ArchivistePanel.UpdateEmplacement
 - uid: WebApplication1.ArchivistePanel.UpdateStatus(System.Object,System.EventArgs)
   name: UpdateStatus(Object, EventArgs)
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_UpdateStatus_System_Object_System_EventArgs_
@@ -1812,25 +1793,6 @@ references:
   isSpec: "True"
   fullName: WebApplication1.BundleConfig.RegisterBundles
   nameWithType: BundleConfig.RegisterBundles
-- uid: WebApplication1.DataFetchService
-  name: DataFetchService
-  href: api/WebApplication1.DataFetchService.html
-  commentId: T:WebApplication1.DataFetchService
-  fullName: WebApplication1.DataFetchService
-  nameWithType: DataFetchService
-- uid: WebApplication1.DataFetchService.GetDataArchives
-  name: GetDataArchives()
-  href: api/WebApplication1.DataFetchService.html#WebApplication1_DataFetchService_GetDataArchives
-  commentId: M:WebApplication1.DataFetchService.GetDataArchives
-  fullName: WebApplication1.DataFetchService.GetDataArchives()
-  nameWithType: DataFetchService.GetDataArchives()
-- uid: WebApplication1.DataFetchService.GetDataArchives*
-  name: GetDataArchives
-  href: api/WebApplication1.DataFetchService.html#WebApplication1_DataFetchService_GetDataArchives_
-  commentId: Overload:WebApplication1.DataFetchService.GetDataArchives
-  isSpec: "True"
-  fullName: WebApplication1.DataFetchService.GetDataArchives
-  nameWithType: DataFetchService.GetDataArchives
 - uid: WebApplication1.Demandes
   name: Demandes
   href: api/WebApplication1.Demandes.html
@@ -2456,6 +2418,19 @@ references:
   commentId: T:WebApplication1.Models.DataSql
   fullName: WebApplication1.Models.DataSql
   nameWithType: DataSql
+- uid: WebApplication1.Models.DataSql.AddArchive(System.String)
+  name: AddArchive(String)
+  href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_AddArchive_System_String_
+  commentId: M:WebApplication1.Models.DataSql.AddArchive(System.String)
+  fullName: WebApplication1.Models.DataSql.AddArchive(System.String)
+  nameWithType: DataSql.AddArchive(String)
+- uid: WebApplication1.Models.DataSql.AddArchive*
+  name: AddArchive
+  href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_AddArchive_
+  commentId: Overload:WebApplication1.Models.DataSql.AddArchive
+  isSpec: "True"
+  fullName: WebApplication1.Models.DataSql.AddArchive
+  nameWithType: DataSql.AddArchive
 - uid: WebApplication1.Models.DataSql.Communication
   name: Communication
   href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_Communication
@@ -3026,6 +3001,116 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.Logs.UpdateStatus
   nameWithType: Logs.UpdateStatus
+- uid: WebApplication1.Models.LogsPal
+  name: LogsPal
+  href: api/WebApplication1.Models.LogsPal.html
+  commentId: T:WebApplication1.Models.LogsPal
+  fullName: WebApplication1.Models.LogsPal
+  nameWithType: LogsPal
+- uid: WebApplication1.Models.LogsPal.Communication
+  name: Communication
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_Communication
+  commentId: P:WebApplication1.Models.LogsPal.Communication
+  fullName: WebApplication1.Models.LogsPal.Communication
+  nameWithType: LogsPal.Communication
+- uid: WebApplication1.Models.LogsPal.Communication*
+  name: Communication
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_Communication_
+  commentId: Overload:WebApplication1.Models.LogsPal.Communication
+  isSpec: "True"
+  fullName: WebApplication1.Models.LogsPal.Communication
+  nameWithType: LogsPal.Communication
+- uid: WebApplication1.Models.LogsPal.Contenu
+  name: Contenu
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_Contenu
+  commentId: P:WebApplication1.Models.LogsPal.Contenu
+  fullName: WebApplication1.Models.LogsPal.Contenu
+  nameWithType: LogsPal.Contenu
+- uid: WebApplication1.Models.LogsPal.Contenu*
+  name: Contenu
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_Contenu_
+  commentId: Overload:WebApplication1.Models.LogsPal.Contenu
+  isSpec: "True"
+  fullName: WebApplication1.Models.LogsPal.Contenu
+  nameWithType: LogsPal.Contenu
+- uid: WebApplication1.Models.LogsPal.Cote
+  name: Cote
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_Cote
+  commentId: P:WebApplication1.Models.LogsPal.Cote
+  fullName: WebApplication1.Models.LogsPal.Cote
+  nameWithType: LogsPal.Cote
+- uid: WebApplication1.Models.LogsPal.Cote*
+  name: Cote
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_Cote_
+  commentId: Overload:WebApplication1.Models.LogsPal.Cote
+  isSpec: "True"
+  fullName: WebApplication1.Models.LogsPal.Cote
+  nameWithType: LogsPal.Cote
+- uid: WebApplication1.Models.LogsPal.DateMax
+  name: DateMax
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_DateMax
+  commentId: P:WebApplication1.Models.LogsPal.DateMax
+  fullName: WebApplication1.Models.LogsPal.DateMax
+  nameWithType: LogsPal.DateMax
+- uid: WebApplication1.Models.LogsPal.DateMax*
+  name: DateMax
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_DateMax_
+  commentId: Overload:WebApplication1.Models.LogsPal.DateMax
+  isSpec: "True"
+  fullName: WebApplication1.Models.LogsPal.DateMax
+  nameWithType: LogsPal.DateMax
+- uid: WebApplication1.Models.LogsPal.DateMin
+  name: DateMin
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_DateMin
+  commentId: P:WebApplication1.Models.LogsPal.DateMin
+  fullName: WebApplication1.Models.LogsPal.DateMin
+  nameWithType: LogsPal.DateMin
+- uid: WebApplication1.Models.LogsPal.DateMin*
+  name: DateMin
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_DateMin_
+  commentId: Overload:WebApplication1.Models.LogsPal.DateMin
+  isSpec: "True"
+  fullName: WebApplication1.Models.LogsPal.DateMin
+  nameWithType: LogsPal.DateMin
+- uid: WebApplication1.Models.LogsPal.Elimination
+  name: Elimination
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_Elimination
+  commentId: P:WebApplication1.Models.LogsPal.Elimination
+  fullName: WebApplication1.Models.LogsPal.Elimination
+  nameWithType: LogsPal.Elimination
+- uid: WebApplication1.Models.LogsPal.Elimination*
+  name: Elimination
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_Elimination_
+  commentId: Overload:WebApplication1.Models.LogsPal.Elimination
+  isSpec: "True"
+  fullName: WebApplication1.Models.LogsPal.Elimination
+  nameWithType: LogsPal.Elimination
+- uid: WebApplication1.Models.LogsPal.Observation
+  name: Observation
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_Observation
+  commentId: P:WebApplication1.Models.LogsPal.Observation
+  fullName: WebApplication1.Models.LogsPal.Observation
+  nameWithType: LogsPal.Observation
+- uid: WebApplication1.Models.LogsPal.Observation*
+  name: Observation
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_Observation_
+  commentId: Overload:WebApplication1.Models.LogsPal.Observation
+  isSpec: "True"
+  fullName: WebApplication1.Models.LogsPal.Observation
+  nameWithType: LogsPal.Observation
+- uid: WebApplication1.Models.LogsPal.SelectIndividualRow(System.String)
+  name: SelectIndividualRow(String)
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_SelectIndividualRow_System_String_
+  commentId: M:WebApplication1.Models.LogsPal.SelectIndividualRow(System.String)
+  fullName: WebApplication1.Models.LogsPal.SelectIndividualRow(System.String)
+  nameWithType: LogsPal.SelectIndividualRow(String)
+- uid: WebApplication1.Models.LogsPal.SelectIndividualRow*
+  name: SelectIndividualRow
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_SelectIndividualRow_
+  commentId: Overload:WebApplication1.Models.LogsPal.SelectIndividualRow
+  isSpec: "True"
+  fullName: WebApplication1.Models.LogsPal.SelectIndividualRow
+  nameWithType: LogsPal.SelectIndividualRow
 - uid: WebApplication1.Models.Misc
   name: Misc
   href: api/WebApplication1.Models.Misc.html
@@ -3310,6 +3395,25 @@ references:
   isSpec: "True"
   fullName: WebApplication1.WebServices.CheckCoteService.ValidateCote
   nameWithType: CheckCoteService.ValidateCote
+- uid: WebApplication1.WebServices.DataFetchService
+  name: DataFetchService
+  href: api/WebApplication1.WebServices.DataFetchService.html
+  commentId: T:WebApplication1.WebServices.DataFetchService
+  fullName: WebApplication1.WebServices.DataFetchService
+  nameWithType: DataFetchService
+- uid: WebApplication1.WebServices.DataFetchService.GetDataArchives
+  name: GetDataArchives()
+  href: api/WebApplication1.WebServices.DataFetchService.html#WebApplication1_WebServices_DataFetchService_GetDataArchives
+  commentId: M:WebApplication1.WebServices.DataFetchService.GetDataArchives
+  fullName: WebApplication1.WebServices.DataFetchService.GetDataArchives()
+  nameWithType: DataFetchService.GetDataArchives()
+- uid: WebApplication1.WebServices.DataFetchService.GetDataArchives*
+  name: GetDataArchives
+  href: api/WebApplication1.WebServices.DataFetchService.html#WebApplication1_WebServices_DataFetchService_GetDataArchives_
+  commentId: Overload:WebApplication1.WebServices.DataFetchService.GetDataArchives
+  isSpec: "True"
+  fullName: WebApplication1.WebServices.DataFetchService.GetDataArchives
+  nameWithType: DataFetchService.GetDataArchives
 - uid: WebApplication1.WebServices.DESFetchService
   name: DESFetchService
   href: api/WebApplication1.WebServices.DESFetchService.html

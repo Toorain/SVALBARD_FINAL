@@ -96,7 +96,7 @@
                         $("#archiveEtablissement").text(data.Etablissement);
                         $("#archiveDirection").text(data.Direction);
                         $("#archiveService").text(data.Service);
-                        if (data.Elimination == "") {
+                        if (data.Elimination === "") {
                             $("#archiveElimination").text("n/a");
                         } else {
                             $("#archiveElimination").text(data.Elimination);

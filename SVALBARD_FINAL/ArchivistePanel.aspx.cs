@@ -1,14 +1,8 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Windows.Forms;
-using Microsoft.Reporting.WebForms;
+using Microsoft.Ajax.Utilities;
 using WebApplication1.Models;
 
 namespace WebApplication1
@@ -119,22 +113,36 @@ namespace WebApplication1
         protected void UpdateStatus(object sender, EventArgs e)
         {
             bool statusUpdated = Logs.UpdateStatus(ArchiveCote.Value, Request.Form["StatusList"]);
+            bool emptyEmplacement = true;
+            
+            if (statusUpdated && Request.Form["StatusList"] == "Ajout effectué")
+            {
+                if (Emplacement.Value.IsNullOrWhiteSpace())
+                {
+                    emptyEmplacement = false;
+                }
+                else
+                {
+                    Logs.UpdateEmplacement(ArchiveCote.Value, Emplacement.Value);
+                    statusUpdated = DataSql.AddArchive(ArchiveCote.Value);
+                }
+            }
+            
             alertRequestSuccess.Visible = true;
-            if (statusUpdated)
+            if (statusUpdated && emptyEmplacement)
             {
                 alertSuccessText.InnerText = "Le status à été modifié avec succès";
                 alertType.Attributes["class"] += " alert-success";
             }
-            else
+            else if (!emptyEmplacement)
+            {
+                alertSuccessText.InnerText = "L'emplacement ne peut pas être vide";
+                alertType.Attributes["class"] += " alert-danger";
+            } else
             {
                 alertSuccessText.InnerText = "Une erreur est survenue !";
                 alertType.Attributes["class"] += " alert-danger";
             }
-        }
-
-        protected void UpdateEmplacement(object sender, EventArgs e)
-        {
-            Logs.UpdateEmplacement(ArchiveCote.Value, Emplacement.Value);
         }
     }
 }

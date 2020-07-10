@@ -733,6 +733,7 @@
     <Compile Include="Models\DES.cs" />
     <Compile Include="Models\EtiquetteMethods.cs" />
     <Compile Include="Models\FormData.cs" />
+    <Compile Include="Models\LogsPal.cs" />
     <Compile Include="Models\Misc.cs" />
     <Compile Include="Models\PdfMethods.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />

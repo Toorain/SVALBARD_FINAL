@@ -22,6 +22,7 @@ namespace WebApplication1.Models
         public string Origin { get; set; }
         public string RequestGroup { get; set; }
 
+
         
         /// <summary>
         /// When a request on Archive is generated (retreive/destroy), AssignArchiviste() method is called. 
