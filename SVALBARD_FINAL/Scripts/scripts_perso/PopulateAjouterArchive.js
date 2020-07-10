@@ -13,7 +13,6 @@
                 for (let i = 1; i < this.children.length - 1; i++) {
                     this.children[i].children[0].value = 1337;
                 }
-                this.children[6].children[0].value = 0;
             });
 
         }

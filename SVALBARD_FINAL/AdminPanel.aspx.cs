@@ -82,7 +82,9 @@ namespace WebApplication1
         protected void ChangeUserStatus(object sender, EventArgs e)
         {
             string userId = userIdAdmin.Value;
-            string roleId = RoleList.SelectedItem.Value;
+            string roleId = RoleList.SelectedItem.Value;            
+            MessageBox.Show(userId);
+
 
             bool updateSuccess = DatabaseUser.ChangeUserStatus(userId, roleId);
 

@@ -25,7 +25,6 @@ namespace WebApplication1.Models
 		private int DateFin { get; set;  }
 		private string Observations { get; set;  }
 		private int Elimination { get; set; }
-		private int Communication { get; set; }
 		private string RequestGroup { get; set; }
 
 		private static bool CheckDataBaseEntry(string entry)
@@ -66,7 +65,6 @@ namespace WebApplication1.Models
 					DateFin = Convert.ToInt32(jsonElm["date_fin"]),
 					Observations = jsonElm["observations"].ToString(),
 					Elimination = Convert.ToInt32(jsonElm["elimination"]),
-					Communication = Convert.ToInt32(jsonElm["communication"]),
 					RequestGroup = jsonElm["request_group"].ToString()
 				};
 				formDataList.Add(newFormData);
@@ -79,9 +77,9 @@ namespace WebApplication1.Models
 			using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
 			{
 				string cmdString = "INSERT INTO [dbo].[logsArchivePAL]"
-									+ " ([ID] , [date], [user], [userID], [ets], [dir], [service], [contenu] ,[date_min] ,[date_max] ,[observations], [prevision_elim], [autorisation_comm], [request_group], [action], [status], [added])"
+									+ " ([ID] , [date], [user], [userID], [ets], [dir], [service], [contenu] ,[date_min] ,[date_max] ,[observations], [prevision_elim], [request_group], [action], [status], [flg_treated])"
 									+ " VALUES"
-									+ " (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14, @val15, @val16, @val17 )";
+									+ " (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14, @val15, @val16)";
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = sqlConn;
@@ -106,11 +104,10 @@ namespace WebApplication1.Models
 							cmd.Parameters.AddWithValue("@val10", formData.DateFin);
 							cmd.Parameters.AddWithValue("@val11", formData.Observations);
 							cmd.Parameters.AddWithValue("@val12", formData.Elimination);
-							cmd.Parameters.AddWithValue("@val13", formData.Communication);
-							cmd.Parameters.AddWithValue("@val14", formData.RequestGroup);
+							cmd.Parameters.AddWithValue("@val13", formData.RequestGroup);
+							cmd.Parameters.AddWithValue("@val14", 1);
 							cmd.Parameters.AddWithValue("@val15", 1);
-							cmd.Parameters.AddWithValue("@val16", 1);
-							cmd.Parameters.AddWithValue("@val17", 0);
+							cmd.Parameters.AddWithValue("@val16", 0);
 
 							cmd.ExecuteNonQuery();
 						

@@ -111,7 +111,7 @@ namespace WebApplication1.WebServices
                     
                     while (dr.Read())
                     {
-                        if (Convert.ToInt32(dr["added"]) != 1)
+                        if (Convert.ToInt32(dr["flg_treated"]) != 1)
                         {
                             Logs logs = new Logs
                             {

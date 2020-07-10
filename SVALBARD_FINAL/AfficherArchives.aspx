@@ -120,11 +120,9 @@
                 <th>Dossiers</th>
                 <th>Extremes</th>
                 <th>Elimination</th>
-                <th>Communication</th>
                 <th>Localisation</th>
             </tr>
             <tr id="column-search">
-                <th class="search-field"></th>
                 <th class="search-field"></th>
                 <th class="search-field"></th>
                 <th class="search-field"></th>

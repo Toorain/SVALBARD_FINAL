@@ -263,7 +263,8 @@ namespace WebApplication1.Models
                     sqlConn.Open();
                     
                     int returned = cmd.ExecuteNonQuery();
-
+                    
+                    // ExecuteNonQuery returns the number of rows affected, if NOT 0, then ExecuteNonQuery worked and returned 1 or more.
                     return returned != 0;
                 }
             }

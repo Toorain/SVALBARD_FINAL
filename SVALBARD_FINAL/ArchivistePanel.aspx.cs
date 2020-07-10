@@ -101,7 +101,7 @@ namespace WebApplication1
             }
             else
             {
-                success = PdfMethods.GeneratePdfPal(DataSql.GetRequestGroup(Cote.Value), rptViewerArchiviste);
+                success = PdfMethods.GeneratePdfPal(LogsPal.GetRequestGroup(Cote.Value), rptViewerArchiviste);
             }
 
             if (success)

@@ -2548,19 +2548,6 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.DataSql.GetLastItemArchive
   nameWithType: DataSql.GetLastItemArchive
-- uid: WebApplication1.Models.DataSql.GetRequestGroup(System.String)
-  name: GetRequestGroup(String)
-  href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_GetRequestGroup_System_String_
-  commentId: M:WebApplication1.Models.DataSql.GetRequestGroup(System.String)
-  fullName: WebApplication1.Models.DataSql.GetRequestGroup(System.String)
-  nameWithType: DataSql.GetRequestGroup(String)
-- uid: WebApplication1.Models.DataSql.GetRequestGroup*
-  name: GetRequestGroup
-  href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_GetRequestGroup_
-  commentId: Overload:WebApplication1.Models.DataSql.GetRequestGroup
-  isSpec: "True"
-  fullName: WebApplication1.Models.DataSql.GetRequestGroup
-  nameWithType: DataSql.GetRequestGroup
 - uid: WebApplication1.Models.DataSql.Localisation
   name: Localisation
   href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_Localisation
@@ -3085,6 +3072,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.LogsPal.Elimination
   nameWithType: LogsPal.Elimination
+- uid: WebApplication1.Models.LogsPal.GetRequestGroup(System.String)
+  name: GetRequestGroup(String)
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_GetRequestGroup_System_String_
+  commentId: M:WebApplication1.Models.LogsPal.GetRequestGroup(System.String)
+  fullName: WebApplication1.Models.LogsPal.GetRequestGroup(System.String)
+  nameWithType: LogsPal.GetRequestGroup(String)
+- uid: WebApplication1.Models.LogsPal.GetRequestGroup*
+  name: GetRequestGroup
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_GetRequestGroup_
+  commentId: Overload:WebApplication1.Models.LogsPal.GetRequestGroup
+  isSpec: "True"
+  fullName: WebApplication1.Models.LogsPal.GetRequestGroup
+  nameWithType: LogsPal.GetRequestGroup
 - uid: WebApplication1.Models.LogsPal.Observation
   name: Observation
   href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_Observation
@@ -3490,12 +3490,6 @@ references:
   isSpec: "True"
   fullName: WebApplication1.WebServices.RetreiveRole.ClickedModal
   nameWithType: RetreiveRole.ClickedModal
-- uid: WebApplication1.WebServices.RetreiveRole.RoleId
-  name: RoleId
-  href: api/WebApplication1.WebServices.RetreiveRole.html#WebApplication1_WebServices_RetreiveRole_RoleId
-  commentId: F:WebApplication1.WebServices.RetreiveRole.RoleId
-  fullName: WebApplication1.WebServices.RetreiveRole.RoleId
-  nameWithType: RetreiveRole.RoleId
 - uid: WebApplication1.WebServices.SuggestCoteService
   name: SuggestCoteService
   href: api/WebApplication1.WebServices.SuggestCoteService.html

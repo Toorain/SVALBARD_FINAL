@@ -13,6 +13,15 @@ namespace WebApplication1 {
     public partial class AdminPanel {
         
         /// <summary>
+        /// userIdAdmin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField userIdAdmin;
+        
+        /// <summary>
         /// alertRequestSuccess control.
         /// </summary>
         /// <remarks>
@@ -29,15 +38,6 @@ namespace WebApplication1 {
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertSuccessText;
-        
-        /// <summary>
-        /// userIdAdmin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField userIdAdmin;
         
         /// <summary>
         /// UserRoleId control.

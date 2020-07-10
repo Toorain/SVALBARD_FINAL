@@ -14,33 +14,33 @@ namespace WebApplication1.WebServices
 	// [System.Web.Script.Services.ScriptService]
 	public class RetreiveRole : WebService
 	{
-		public string RoleId;
+		private string _roleId;
 
 		[WebMethod]
-		public void ClickedModal(string UserId)
+		public void ClickedModal(string userId)
 		{
 			string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
 			string cmdString = " SELECT Name FROM AspNetUserRoles" 
-			                   + " LEFT JOIN AspNetRoles"
-			                   + " ON AspNetUserRoles.RoleId = AspNetRoles.Id"
-			                   + " WHERE UserId = @val1";
+		                   + " LEFT JOIN AspNetRoles"
+		                   + " ON AspNetUserRoles.RoleId = AspNetRoles.Id"
+		                   + " WHERE UserId = @val1";
 			using (SqlConnection sqlConn = new SqlConnection(connectionString))
 			{
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = sqlConn;
 					cmd.CommandText = cmdString;
-					cmd.Parameters.AddWithValue("@val1", UserId);
+					cmd.Parameters.AddWithValue("@val1", userId);
 					sqlConn.Open();
 
 					var dr = cmd.ExecuteReader();
 
 					while (dr.Read())
 					{
-						RoleId = dr.GetString(0);
+						_roleId = dr.GetString(0);
 					}
-					Context.Response.Write(RoleId);
+					Context.Response.Write(_roleId);
 					Context.Response.ContentType = "text/plain";
 				}
 			}

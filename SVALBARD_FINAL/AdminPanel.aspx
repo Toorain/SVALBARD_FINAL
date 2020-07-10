@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Admin Panel" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminPanel.aspx.cs" Inherits="WebApplication1.AdminPanel" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:HiddenField ID="userIdAdmin" runat="server" ClientIDMode="Static" />
     <asp:Label runat="server" ID="JsonData" ClientIDMode="Static" CssClass="d-none"><%: JsonData %></asp:Label>
     <% if (PageRender) {%>
     <!-- #region Alert -->
@@ -25,7 +26,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-lg-5">
-                                <asp:HiddenField ID="userIdAdmin" runat="server" ClientIDMode="Static" />
+                                
                                 <p>Changer le status de l'utilisateur :</p>
                                 <p>Ancien status : <asp:Label runat="server" ID="UserRoleId" ClientIDMode="Static" /></p>
                                 <asp:DropDownList id="RoleList" runat="server">

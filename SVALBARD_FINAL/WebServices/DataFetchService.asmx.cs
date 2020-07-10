@@ -59,7 +59,6 @@ namespace WebApplication1.WebServices
                                 Dossiers = dr["dossiers"].ToString(),
                                 Extremes = dr["extremes"].ToString(),
                                 Elimination = dr["elimination"].ToString(),
-                                Communication = dr["communication"].ToString(),
                                 Localisation = dr["localisation"].ToString()
                             };
                             datas.Add(dataSql);

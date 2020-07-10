@@ -20,7 +20,7 @@ namespace WebApplication1
 		}
 		protected void GeneratePdf(object sender, EventArgs eventArgs)
 		{
-			string requestGroup = DataSql.GetRequestGroup(Identifier.Value);
+			string requestGroup = LogsPal.GetRequestGroup(Identifier.Value);
 			
 			bool success = PdfMethods.GeneratePdfPal(requestGroup, rptViewerDemandesPdf);
 

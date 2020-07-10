@@ -85,7 +85,6 @@
               <th scope="col">Date fin</th>
               <th scope="col">Observations : échantillonage, circuit, documentaire...</th>
               <th scope="col">Elimination prévue</th>
-              <th scope="col">Communication autorisée</th>
               <th scope="col">Modifier</th>
             </tr>
           </thead>

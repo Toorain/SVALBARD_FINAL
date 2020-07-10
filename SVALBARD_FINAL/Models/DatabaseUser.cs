@@ -214,7 +214,7 @@ namespace WebApplication1.Models
             + " ELSE"
             + " BEGIN"
 
-                + " SELECT*"
+                + " SELECT *"
                 + " FROM AspNetUsers"
                 + " LEFT JOIN AspNetUserRoles"
 

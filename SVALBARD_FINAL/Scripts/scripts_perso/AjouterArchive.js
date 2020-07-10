@@ -123,12 +123,6 @@ if (window.location.pathname === "/AjouterArchive") {
                 "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
                 "<td><textarea class='form-control' type='text' ></textarea></td>" +
                 "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
-                "<td>" +
-                "<select class='form-control' name='communication_allowed'>" +
-                "<option value='0'>Non</option>" +
-                "<option value='1'>Oui</option>" +
-                "</select>" +
-                "</td>" +
                 ((articleCount === nombreArticles)
                     ? "<td class='text-center' id='removeButton'><div class='btn btn-danger' onclick='removeRow(articleCount)'>x</div></td>"
                     : "<td class='text-center '>") +
@@ -151,12 +145,6 @@ if (window.location.pathname === "/AjouterArchive") {
             "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
             "<td><textarea class='form-control' ></textarea></td>" +
             "<td><input class='form-control' type='number' maxlength='4' oninput='checkL(this)' /></td>" +
-            "<td>" +
-            "<select class='form-control' name='communication_allowed'>" +
-            "<option value='0'>Non</option>" +
-            "<option value='1'>Oui</option>" +
-            "</select>" +
-            "</td>" +
             "<td class='text-center' id='removeButton'><div class='btn btn-danger' onclick='removeRow(articleCount)'>x</div></td>" +
             "</tr>");
         articleCount++;
@@ -174,9 +162,9 @@ if (window.location.pathname === "/AjouterArchive") {
         actualCoteNumber--;
         articleCount--;
     }
-    /* #########################################################################################
-       ################################# VALIDATE DATA && PUSH ################################# 
-       ######################################################################################### */
+    /* ################################################################
+       ###################### VALIDATE DATA && PUSH ###################
+       ################################################################ */
     
     function validateData() {
         let jsonData = {};
@@ -186,7 +174,7 @@ if (window.location.pathname === "/AjouterArchive") {
             // For each row in the generated Form, add values to the Dataset
             let articleData = document.getElementById("article_" + i).children;
             for (let j = 0; j < articleData.length - 1; j++) {
-                let properties = ['id', 'contenu', 'date_debut', 'date_fin', 'observations', 'elimination', 'communication'];
+                let properties = ['id', 'contenu', 'date_debut', 'date_fin', 'observations', 'elimination'];
                 data[ properties[j] ] = articleData[j].children[0].value;
             }
             data['request_group'] = $("#cote_1").val();

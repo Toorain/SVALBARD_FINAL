@@ -38,7 +38,6 @@
                         { data: 'Dossiers' },
                         { data: 'Extremes' },
                         { data: 'Elimination' },
-                        { data: 'Communication' },
                         { data: 'Localisation' }
                     ]
                 });

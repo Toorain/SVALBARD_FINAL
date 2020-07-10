@@ -50,13 +50,13 @@ $(document).ready(function () {
             $(".alert").alert('close');
             // Open/Close modal on click depending on previous status
             $("#modalGetAdmin").modal("toggle");
-            let data = datatableVariable.row(this).data();
-            $("#userIdAdmin").val(data.ID);
-            $(".userNameAdmin").text(data.UserName);
+            let dataRow = datatableVariable.row(this).data();
+            $("#userIdAdmin").val(dataRow.Id);
+            $(".userNameAdmin").text(dataRow.UserName);
             $.ajax({
                 type: "POST",
                 url: "/WebServices/RetreiveRole.asmx/ClickedModal",
-                data: "userId=" + data.ID,
+                data: { userId :dataRow.Id },
                 success: function (data) {
                     $("#UserRoleId").text(data.charAt(0).toUpperCase() + data.slice(1));
                     switch(data) {
