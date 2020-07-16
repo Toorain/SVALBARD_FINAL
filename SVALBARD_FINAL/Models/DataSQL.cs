@@ -31,7 +31,8 @@ namespace WebApplication1.Models
                 {
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
-                    cmd.Parameters.AddWithValue("@val1", GetLastItemArchive());
+                    // Gets the last ID from ArchiveV2 database, and add ONE to increment gradually.
+                    cmd.Parameters.AddWithValue("@val1", GetLastItemArchive() + 1);
                     cmd.Parameters.AddWithValue("@val2", individualRow.Date);
                     cmd.Parameters.AddWithValue("@val3", individualRow.IssuerEts);
                     cmd.Parameters.AddWithValue("@val4", individualRow.IssuerDir);

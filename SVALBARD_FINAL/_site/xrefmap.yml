@@ -1724,6 +1724,24 @@ references:
   commentId: F:WebApplication1.ArchivistePanel.ModifyStatus
   fullName: WebApplication1.ArchivistePanel.ModifyStatus
   nameWithType: ArchivistePanel.ModifyStatus
+- uid: WebApplication1.ArchivistePanel.NewNotifAjout
+  name: NewNotifAjout
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_NewNotifAjout
+  commentId: F:WebApplication1.ArchivistePanel.NewNotifAjout
+  fullName: WebApplication1.ArchivistePanel.NewNotifAjout
+  nameWithType: ArchivistePanel.NewNotifAjout
+- uid: WebApplication1.ArchivistePanel.NewNotifConsult
+  name: NewNotifConsult
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_NewNotifConsult
+  commentId: F:WebApplication1.ArchivistePanel.NewNotifConsult
+  fullName: WebApplication1.ArchivistePanel.NewNotifConsult
+  nameWithType: ArchivistePanel.NewNotifConsult
+- uid: WebApplication1.ArchivistePanel.NewNotifDestru
+  name: NewNotifDestru
+  href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_NewNotifDestru
+  commentId: F:WebApplication1.ArchivistePanel.NewNotifDestru
+  fullName: WebApplication1.ArchivistePanel.NewNotifDestru
+  nameWithType: ArchivistePanel.NewNotifDestru
 - uid: WebApplication1.ArchivistePanel.Origin
   name: Origin
   href: api/WebApplication1.ArchivistePanel.html#WebApplication1_ArchivistePanel_Origin
@@ -2800,6 +2818,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.Logs.AssignArchiviste
   nameWithType: Logs.AssignArchiviste
+- uid: WebApplication1.Models.Logs.CountNew
+  name: CountNew
+  href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_CountNew
+  commentId: P:WebApplication1.Models.Logs.CountNew
+  fullName: WebApplication1.Models.Logs.CountNew
+  nameWithType: Logs.CountNew
+- uid: WebApplication1.Models.Logs.CountNew*
+  name: CountNew
+  href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_CountNew_
+  commentId: Overload:WebApplication1.Models.Logs.CountNew
+  isSpec: "True"
+  fullName: WebApplication1.Models.Logs.CountNew
+  nameWithType: Logs.CountNew
 - uid: WebApplication1.Models.Logs.Date
   name: Date
   href: api/WebApplication1.Models.Logs.html#WebApplication1_Models_Logs_Date
@@ -3079,6 +3110,32 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.LogsPal.Elimination
   nameWithType: LogsPal.Elimination
+- uid: WebApplication1.Models.LogsPal.GetNewElementsCount
+  name: GetNewElementsCount()
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_GetNewElementsCount
+  commentId: M:WebApplication1.Models.LogsPal.GetNewElementsCount
+  fullName: WebApplication1.Models.LogsPal.GetNewElementsCount()
+  nameWithType: LogsPal.GetNewElementsCount()
+- uid: WebApplication1.Models.LogsPal.GetNewElementsCount*
+  name: GetNewElementsCount
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_GetNewElementsCount_
+  commentId: Overload:WebApplication1.Models.LogsPal.GetNewElementsCount
+  isSpec: "True"
+  fullName: WebApplication1.Models.LogsPal.GetNewElementsCount
+  nameWithType: LogsPal.GetNewElementsCount
+- uid: WebApplication1.Models.LogsPal.GetNewElementsCountIndividual(System.Int32)
+  name: GetNewElementsCountIndividual(Int32)
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_GetNewElementsCountIndividual_System_Int32_
+  commentId: M:WebApplication1.Models.LogsPal.GetNewElementsCountIndividual(System.Int32)
+  fullName: WebApplication1.Models.LogsPal.GetNewElementsCountIndividual(System.Int32)
+  nameWithType: LogsPal.GetNewElementsCountIndividual(Int32)
+- uid: WebApplication1.Models.LogsPal.GetNewElementsCountIndividual*
+  name: GetNewElementsCountIndividual
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_GetNewElementsCountIndividual_
+  commentId: Overload:WebApplication1.Models.LogsPal.GetNewElementsCountIndividual
+  isSpec: "True"
+  fullName: WebApplication1.Models.LogsPal.GetNewElementsCountIndividual
+  nameWithType: LogsPal.GetNewElementsCountIndividual
 - uid: WebApplication1.Models.LogsPal.GetRequestGroup(System.String)
   name: GetRequestGroup(String)
   href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_GetRequestGroup_System_String_
@@ -3118,6 +3175,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.LogsPal.SelectIndividualRow
   nameWithType: LogsPal.SelectIndividualRow
+- uid: WebApplication1.Models.LogsPal.WasSeen(System.String)
+  name: WasSeen(String)
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_WasSeen_System_String_
+  commentId: M:WebApplication1.Models.LogsPal.WasSeen(System.String)
+  fullName: WebApplication1.Models.LogsPal.WasSeen(System.String)
+  nameWithType: LogsPal.WasSeen(String)
+- uid: WebApplication1.Models.LogsPal.WasSeen*
+  name: WasSeen
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_WasSeen_
+  commentId: Overload:WebApplication1.Models.LogsPal.WasSeen
+  isSpec: "True"
+  fullName: WebApplication1.Models.LogsPal.WasSeen
+  nameWithType: LogsPal.WasSeen
 - uid: WebApplication1.Models.Misc
   name: Misc
   href: api/WebApplication1.Models.Misc.html
@@ -3237,6 +3307,12 @@ references:
   commentId: F:WebApplication1.SiteMaster.archivistePanel
   fullName: WebApplication1.SiteMaster.archivistePanel
   nameWithType: SiteMaster.archivistePanel
+- uid: WebApplication1.SiteMaster.CountNewElements
+  name: CountNewElements
+  href: api/WebApplication1.SiteMaster.html#WebApplication1_SiteMaster_CountNewElements
+  commentId: F:WebApplication1.SiteMaster.CountNewElements
+  fullName: WebApplication1.SiteMaster.CountNewElements
+  nameWithType: SiteMaster.CountNewElements
 - uid: WebApplication1.SiteMaster.demandesPanel
   name: demandesPanel
   href: api/WebApplication1.SiteMaster.html#WebApplication1_SiteMaster_demandesPanel
@@ -3446,12 +3522,12 @@ references:
   commentId: T:WebApplication1.WebServices.GetArchivisteRequestService
   fullName: WebApplication1.WebServices.GetArchivisteRequestService
   nameWithType: GetArchivisteRequestService
-- uid: WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste(System.String)
-  name: GetDataArchiviste(String)
-  href: api/WebApplication1.WebServices.GetArchivisteRequestService.html#WebApplication1_WebServices_GetArchivisteRequestService_GetDataArchiviste_System_String_
-  commentId: M:WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste(System.String)
-  fullName: WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste(System.String)
-  nameWithType: GetArchivisteRequestService.GetDataArchiviste(String)
+- uid: WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste(System.String,System.Int32)
+  name: GetDataArchiviste(String, Int32)
+  href: api/WebApplication1.WebServices.GetArchivisteRequestService.html#WebApplication1_WebServices_GetArchivisteRequestService_GetDataArchiviste_System_String_System_Int32_
+  commentId: M:WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste(System.String,System.Int32)
+  fullName: WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste(System.String, System.Int32)
+  nameWithType: GetArchivisteRequestService.GetDataArchiviste(String, Int32)
 - uid: WebApplication1.WebServices.GetArchivisteRequestService.GetDataArchiviste*
   name: GetDataArchiviste
   href: api/WebApplication1.WebServices.GetArchivisteRequestService.html#WebApplication1_WebServices_GetArchivisteRequestService_GetDataArchiviste_
@@ -3522,3 +3598,22 @@ references:
   isSpec: "True"
   fullName: WebApplication1.WebServices.UserRequestService.GetDataIssuer
   nameWithType: UserRequestService.GetDataIssuer
+- uid: WebApplication1.WebServices.WasSeenElementService
+  name: WasSeenElementService
+  href: api/WebApplication1.WebServices.WasSeenElementService.html
+  commentId: T:WebApplication1.WebServices.WasSeenElementService
+  fullName: WebApplication1.WebServices.WasSeenElementService
+  nameWithType: WasSeenElementService
+- uid: WebApplication1.WebServices.WasSeenElementService.WasSeenElement(System.String)
+  name: WasSeenElement(String)
+  href: api/WebApplication1.WebServices.WasSeenElementService.html#WebApplication1_WebServices_WasSeenElementService_WasSeenElement_System_String_
+  commentId: M:WebApplication1.WebServices.WasSeenElementService.WasSeenElement(System.String)
+  fullName: WebApplication1.WebServices.WasSeenElementService.WasSeenElement(System.String)
+  nameWithType: WasSeenElementService.WasSeenElement(String)
+- uid: WebApplication1.WebServices.WasSeenElementService.WasSeenElement*
+  name: WasSeenElement
+  href: api/WebApplication1.WebServices.WasSeenElementService.html#WebApplication1_WebServices_WasSeenElementService_WasSeenElement_
+  commentId: Overload:WebApplication1.WebServices.WasSeenElementService.WasSeenElement
+  isSpec: "True"
+  fullName: WebApplication1.WebServices.WasSeenElementService.WasSeenElement
+  nameWithType: WasSeenElementService.WasSeenElement

@@ -66,7 +66,10 @@ namespace WebApplication1
             if (!IsPostBack)
             {
                 archivisteID.Value = User.Identity.GetUserId();
-                
+
+                NewNotifAjout.InnerText = LogsPal.GetNewElementsCountIndividual(1).ToString();
+                NewNotifConsult.InnerText = LogsPal.GetNewElementsCountIndividual(2).ToString();
+                NewNotifDestru.InnerText = LogsPal.GetNewElementsCountIndividual(3).ToString();
                 /*
                 List<List<string>> arrayArray = Logs.GetStatus();
                 
@@ -82,7 +85,7 @@ namespace WebApplication1
                         StatusList.Items.Add(listItem);
                     }
                 } 
-                */               
+                */
             }
         }
 

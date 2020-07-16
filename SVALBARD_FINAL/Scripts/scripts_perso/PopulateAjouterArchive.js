@@ -11,7 +11,7 @@
             $("#nextBtn").click();
             $('#articleFill tr').each(function () {
                 for (let i = 1; i < this.children.length - 1; i++) {
-                    this.children[i].children[0].value = 1337;
+                    this.children[i].children[0].value = 2000;
                 }
             });
 

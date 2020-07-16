@@ -1,7 +1,15 @@
 ﻿$(document).ready(function () {
+  let newItemCount = 0;
+  let actionType = 1;
+  
+  $("#nav-consultation-tab").on("click", () => {
+    actionType = 2;
+  });
+  
   // Doesn't call WebService if not on Datatable displaying page.
   if (window.location.pathname === "/ArchivistePanel") {
     let content;
+    console.log(actionType);
     $.ajax({
       serverSide: true,
       type: "POST",
@@ -10,7 +18,8 @@
       // URL of the webservice I use to retreive data of the issuer
       url: "WebServices/GetArchivisteRequestService.asmx/GetDataArchiviste",
       // Data I send to the POST method (userID)
-      data: { userID: $("#archivisteID").val() },
+      data: { userID: $("#archivisteID").val(),
+              actionType : actionType},
       contentType: "application/x-www-form-urlencoded; charset=UTF-8",
       mimeType: "text/plain",
       crossDomain: true,
@@ -73,6 +82,10 @@
             {
               data : 'Origin',
               visible : false
+            }, 
+            {
+              data : "CountNew",
+              className : "d-none"
             }
           ]
         });
@@ -149,6 +162,28 @@
               }
             }
           });
+        });
+        $('#tableArchiviste tbody tr').on('mouseenter', function (data) {
+          if (data.currentTarget.lastChild.textContent === "1") {
+              $.ajax({
+              serverSide: true,
+              type: "POST",
+              dataType: "json",
+              async: true,
+              // URL of the webservice I use to retreive data of the issuer
+              url: "WebServices/WasSeenElementService.asmx/WasSeenElement",
+              // Data I send to the POST method (action)
+              data: {identifier: data.currentTarget.children[5].textContent },
+              contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+              mimeType: "text/plain",
+              crossDomain: true,
+              success: function () {                
+              }
+            });
+            $("#badgeNewElements").text(Number($("#badgeNewElements").text()) - 1);
+            $("#NewNotifAjout").text(Number($("#NewNotifAjout").text()) - 1);
+            data.currentTarget.lastChild.textContent = "0";
+          }
         });
       }
     });

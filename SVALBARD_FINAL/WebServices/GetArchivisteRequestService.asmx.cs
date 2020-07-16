@@ -46,20 +46,22 @@ namespace WebApplication1.WebServices
         /// Returns a JSON when a POST call is made with an unique identifier
         /// </returns>
         /// <param name="userId">An unique user identifier retreived from <see cref="Demandes.Page_Load(object, EventArgs)"/></param>
+        /// <param name="actionType">Type of action 1 (Ajout) / 2 (Consultation) / 3 (Destruction)</param>
         /// 
         [WebMethod]
-        public void GetDataArchiviste(string userId)
+        public void GetDataArchiviste(string userId, int actionType)
         {
 
             string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
-            var datas = new List<Logs>();
-
+            var dataAdd = new List<Logs>();
+            var dataConsult = new List<Logs>();
+            // Get data from LogsArchive table
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                string cmdString = "SELECT [dbo].[logsArchive].*, [dbo].[status].status_name"
+                string cmdString = "SELECT [dbo].[logsArchive].*, [dbo].[status].[status_name]"
                                  + " FROM [dbo].[logsArchive]"
                                  + " LEFT JOIN [dbo].[status]"
-                                 + " ON [dbo].[logsArchive].status = dbo.status.status_id";
+                                 + " ON [dbo].[logsArchive].[status] = [dbo].[status].[status_id]";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -89,11 +91,12 @@ namespace WebApplication1.WebServices
                                 Origin = "NOT_PAL",
                                 RequestGroup = null
                             };
-                            datas.Add(logs);
+                            dataAdd.Add(logs);
                         };
                     }
                 }
             }
+            // Get data from LogsArchivePAL table
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
                 string cmdString = "SELECT [dbo].[logsArchivePAL].*, [dbo].[status].[status_name]"
@@ -126,14 +129,28 @@ namespace WebApplication1.WebServices
                                 Action = Convert.ToInt32(dr["action"]),
                                 Status = dr["status_name"].ToString(),
                                 Origin = "PAL",
-                                RequestGroup = dr["request_group"].ToString()
+                                RequestGroup = dr["request_group"].ToString(),
+                                // Check if there is new items requested by users
+                                CountNew = Convert.ToInt32(dr["flg_new"])
                             };
-                            datas.Add(logs); 
+                            if (Convert.ToInt32(dr["action"]) == actionType)
+                            {
+                                dataAdd.Add(logs);
+                            }
                         }
                     }
                 }
             }
-            Context.Response.Write(JsonConvert.SerializeObject(datas));
+
+            switch (actionType) 
+            {
+                case 1 :
+                    Context.Response.Write(JsonConvert.SerializeObject(dataAdd));
+                    break;
+                case 2 :
+                    Context.Response.Write(JsonConvert.SerializeObject(dataConsult));
+                    break;
+            }
         }
     }
 

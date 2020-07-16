@@ -77,9 +77,9 @@ namespace WebApplication1.Models
 			using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
 			{
 				string cmdString = "INSERT INTO [dbo].[logsArchivePAL]"
-									+ " ([ID] , [date], [user], [userID], [ets], [dir], [service], [contenu] ,[date_min] ,[date_max] ,[observations], [prevision_elim], [request_group], [action], [status], [flg_treated])"
+									+ " ([ID] , [date], [user], [userID], [ets], [dir], [service], [contenu] ,[date_min] ,[date_max] ,[observations], [prevision_elim], [request_group], [action], [status], [flg_treated], [flg_new])"
 									+ " VALUES"
-									+ " (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14, @val15, @val16)";
+									+ " (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14, @val15, @val16, @val17)";
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = sqlConn;
@@ -108,6 +108,7 @@ namespace WebApplication1.Models
 							cmd.Parameters.AddWithValue("@val14", 1);
 							cmd.Parameters.AddWithValue("@val15", 1);
 							cmd.Parameters.AddWithValue("@val16", 0);
+							cmd.Parameters.AddWithValue("@val17", 1);
 
 							cmd.ExecuteNonQuery();
 						

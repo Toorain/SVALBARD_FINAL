@@ -491,6 +491,7 @@
     <Content Include="articles\intro.md" />
     <Content Include="articles\afficher_archives.md" />
     <Content Include="articles\tableaux_general.md" />
+    <Content Include="WebServices\WasSeenElementService.asmx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -805,6 +806,9 @@
     <Compile Include="WebServices\UserRequestService.asmx.cs">
       <DependentUpon>UserRequestService.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\WasSeenElementService.asmx.cs">
+      <DependentUpon>WasSeenElementService.asmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

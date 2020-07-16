@@ -65,6 +65,79 @@ namespace WebApplication1.Models
 			}
 		}
 		
+		public static int GetNewElementsCount()
+		{
+			using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
+			{
+				string cmdString = "SELECT [flg_new] FROM [dbo].[logsArchivePAL] ";
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = sqlConn;
+					cmd.CommandText = cmdString;
+
+					sqlConn.Open();
+
+					var dr = cmd.ExecuteReader();
+					int newElementsCount = 0;
+
+					while (dr.Read())
+					{
+						if (Convert.ToInt32(dr["flg_new"]) == 1)
+						{
+							newElementsCount += Convert.ToInt32(dr["flg_new"]);
+						}
+					}
+					return newElementsCount;
+				}
+			}
+		}
+		
+		public static int GetNewElementsCountIndividual(int action)
+		{
+			using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
+			{
+				string cmdString = "SELECT [flg_new] FROM [dbo].[logsArchivePAL] WHERE [action] = @val1";
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = sqlConn;
+					cmd.CommandText = cmdString;
+					cmd.Parameters.AddWithValue("@val1", action);
+
+					sqlConn.Open();
+
+					var dr = cmd.ExecuteReader();
+					int newElementsCount = 0;
+
+					while (dr.Read())
+					{
+						if (Convert.ToInt32(dr["flg_new"]) == 1)
+						{
+							newElementsCount += Convert.ToInt32(dr["flg_new"]);
+						}
+					}
+					return newElementsCount;
+				}
+			}
+		}
+
+		public static void WasSeen(string identifier)
+		{
+			using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
+			{
+				string cmdString = "UPDATE [dbo].[logsArchivePAL] SET [flg_new] = 0 WHERE ID = @val1";
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = sqlConn;
+					cmd.CommandText = cmdString;
+					cmd.Parameters.AddWithValue("@val1", identifier);
+
+					sqlConn.Open();
+
+					cmd.ExecuteNonQuery();
+				}
+			}
+		}
+		
 		/// <summary>
 		/// Get the group identifier from a single identifier.
 		/// Ex. 11W0222 was created at the same time as 11W0223 & 11W0224, if I put 11W0223 in GetRequestGroup it will return 11W0222 (which is the group identifier for this bundle of three).

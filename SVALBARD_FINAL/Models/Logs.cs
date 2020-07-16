@@ -21,6 +21,7 @@ namespace WebApplication1.Models
         public string Status { get; set; }
         public string Origin { get; set; }
         public string RequestGroup { get; set; }
+        public int CountNew { get; set; }
 
 
         
@@ -275,7 +276,7 @@ namespace WebApplication1.Models
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
             {
-                string cmdString = "UPDATE [logsArchives].[dbo].[logsArchivePAL]" +
+                string cmdString = "UPDATE [dbo].[logsArchivePAL]" +
                                    " SET [localization] = @val1" +
                                    " WHERE [ID] = @val2";
                 using (SqlCommand cmd = new SqlCommand())

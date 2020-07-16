@@ -67,30 +67,44 @@
             </div>
         </div>
     </div>
-    <span class="btn btn-success float-right" data-toggle="modal" data-target="#modalAjout">Ajouter ?quelqueChose?</span>
-    <table id="tableArchiviste" class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <!-- <th>ID</th> -->
-                <th>Date</th>
-                <th>Nom et prénom du demandeur</th>
-                <th>Etablissement du demandeur</th>
-                <th>Direction du demandeur</th>
-                <th>Service du demandeur</th>
-                <th>Cote</th>
-                <th>Groupe d'archives</th>
-                <th>Emplacement</th>
-                <th>Action</th>
-                <th>Status</th>
-                <th>???</th>
-                <th class="d-none">Origin</th>
-            </tr>
-        </thead>
-        <tfoot>
-        </tfoot>
-    </table>
-    <div id="dropdownPdfDemandes" class="dropdownPdf" data-toggle="collapse" href="#collapseElm" role="button" aria-expanded="false" aria-controls="collapseExample">
-        <h3 class="m-auto text-center">v -- Afficher le PDF -- v</h3>
+    <!-- <span class="btn btn-success float-right" data-toggle="modal" data-target="#modalAjout">Ajouter ?quelqueChose?</span> -->
+    <nav>
+      <div class="nav nav-tabs justify-content-around" id="nav-tab" role="tablist">
+        <a class="nav-item archiviste-tabs nav-link active" id="nav-ajout-tab" data-toggle="tab" href="#nav-ajout" role="tab" aria-controls="nav-ajout" aria-selected="true">Ajout <span runat="server" class="badge badge-danger" id="NewNotifAjout" clientidmode="Static"></span></a>
+        <a class="nav-item archiviste-tabs nav-link" id="nav-consultation-tab" data-toggle="tab" href="#nav-consultation" role="tab" aria-controls="nav-consultation" aria-selected="false">Consultation <span runat="server" class="badge badge-danger" ID="NewNotifConsult" clientidmode="Static"></span></a>
+        <a class="nav-item archiviste-tabs nav-link" id="nav-destruction-tab" data-toggle="tab" href="#nav-destruction" role="tab" aria-controls="nav-destruction" aria-selected="false">Destruction ou AD <span runat="server" class="badge badge-danger" ID="NewNotifDestru" clientidmode="Static"></span></a>
+      </div>
+    </nav>
+    <div class="tab-content " id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-ajout" role="tabpanel" aria-labelledby="nav-ajout-tab">
+            <table id="tableArchiviste" class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <!-- <th>ID</th> -->
+                        <th>Date</th>
+                        <th>Nom et prénom du demandeur</th>
+                        <th>Etablissement du demandeur</th>
+                        <th>Direction du demandeur</th>
+                        <th>Service du demandeur</th>
+                        <th>Cote</th>
+                        <th>Groupe d'archives</th>
+                        <th>Emplacement</th>
+                        <th>Action</th>
+                        <th>Status</th>
+                        <th>???</th>
+                        <th class="d-none">Origin</th>
+                        <th class="d-none">TEST</th>
+                    </tr>
+                </thead>
+              <tfoot>
+              </tfoot>
+            </table>
+        </div>
+      <div class="tab-pane fade" id="nav-consultation" role="tabpanel" aria-labelledby="nav-consultation-tab">...</div>
+      <div class="tab-pane fade" id="nav-destruction" role="tabpanel" aria-labelledby="nav-destruction-tab">...</div>
+    </div>
+    <div id="dropdownPdfDemandes" class="dropdownPdf text-center" data-toggle="collapse" href="#collapseElm" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <h3 class="m-auto text-center btn btn-secondary">Afficher le PDF</h3>
     </div>
     <div runat="server" clientidmode="Static" class="collapse" ID="collapseElm">
        <rsweb:ReportViewer ID="rptViewerArchiviste" runat="server" Font-Names="Verdana" Font-Size="8pt" ProcessingMode="Remote" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="1000px" Width="850px" 

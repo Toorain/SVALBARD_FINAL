@@ -9,6 +9,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using WebApplication1.Models;
 
@@ -21,6 +22,8 @@ namespace WebApplication1
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
+        // Counter is initiated at 0, then proceeds to count then number of new elements in Demandes.
+        protected int CountNewElements = 0;
         protected void Page_Init(object sender, EventArgs e)
         {
             // Le code ci-dessous vous aide à vous protéger des attaques XSRF
@@ -106,6 +109,7 @@ namespace WebApplication1
                         break;
                     // Archiviste
                     case "4":
+                        CountNewElements = LogsPal.GetNewElementsCount();
                         archivistePanel.Visible = true;
                         archivesPanel.Visible = true;
                         break;

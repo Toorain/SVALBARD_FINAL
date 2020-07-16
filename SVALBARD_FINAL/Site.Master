@@ -1,4 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+<%@ Import Namespace="System.Activities.Statements" %>
+<%@ Import Namespace="Microsoft.ReportingServices.ReportProcessing.ReportObjectModel" %>
 
 <!DOCTYPE html>
 
@@ -67,7 +69,8 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Bonjour, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li></li>
+                                <li class="white mr-1"><a runat="server" href="~/Account/Manage" title="Manage your account">Bonjour, <%: Context.User.Identity.GetUserName()  %> !</a> , vous avez <asp:Label runat="server" ID="badgeNewElements" ClientIDMode="Static" CssClass="badge badge-danger m-1"><%: CountNewElements %></asp:Label> nouveau(x) élément(s) à traiter </li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
