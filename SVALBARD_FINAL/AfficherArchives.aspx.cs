@@ -17,22 +17,9 @@ namespace WebApplication1
         private string _requestStatusText;
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<DES> desList = DES.GetDataZero("etablissement");
-
             if (!IsPostBack)
             {
-                EtsList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --" });
-                DirList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --", Selected = true });
-                ServiceList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --", Selected = true });
-                foreach (var item in desList)
-                {
-                    ListItem listItem = new ListItem()
-                    {
-                        Value = item.Name,
-                        Text = item.Name,
-                    };
-                    EtsList.Items.Insert(item.ID, listItem);
-                }
+                
             }
 
             mainContainer.Visible = false;
@@ -56,7 +43,6 @@ namespace WebApplication1
                 case "3":
                     mainContainer.Visible = true;
                     modalFooter.Visible = false;
-                    formRetrait.Visible = false;
                     consutlationMode.Attributes.Add("class", "col-md-8 offset-md-2 text-center");
                     break;
                 // 4 = Archiviste
@@ -77,120 +63,23 @@ namespace WebApplication1
             }
         }
 
-        protected void LogRetirerArchive(object sender, EventArgs e)
+        protected void LogConsulterArchive(object sender, EventArgs e)
         {
-            // Recover the name of the clicked button
-            Button btn = (Button)sender;
-            // Capture it in a variable
-            string buttonText = btn.Text;
-
-            
             bool connError = false;
-            bool canRequestArchive = true;
-            string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
-            Logs log;
 
+            string identifier = archiveCoteID.Value;
             // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(connectionString))
+            LogsPal individualRow = DataSql.GetIndividualArchive(identifier);
+            bool requestSuccessful = LogsPal.RequestArchive(individualRow);
+            
+            if (requestSuccessful)
             {
-                string cmdString = "SELECT ID, archiveID FROM logsArchive";
-                // Then request "ID" & "archiveID" columns
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = sqlConn;
-                    cmd.CommandText = cmdString;
-
-                    sqlConn.Open();
-
-                    var dr = cmd.ExecuteReader();
-                    int count = 0;
-
-                    // Count how much entries we have in the Database
-                    while (dr.Read())
-                    {
-                        if (dr["ID"].ToString() != "" || dr["ID"] != null)
-                        {
-                            count = Convert.ToInt32(dr["ID"]);
-                        }
-                        // We check if a request has already been made in the "log" table, if so user won't be able to request another withdraw
-                        if (dr["archiveID"].ToString() == archiveCoteID.Value)
-                        {
-                            // Change canRequestArchive so the next part won't be called and will send a Bootstrap alert
-                            canRequestArchive = false;
-                        }
-                    }
-                    /* String value becomes an int code
-                     * ajouter = 1
-                     * retirer = 2
-                     * detruire = 3
-                     */
-                    int codeAction;
-                    switch (buttonText.ToLower())
-                    {
-                        case "ajouter":
-                            codeAction = 1;
-                            break;
-                        case "consulter":
-                            codeAction = 2;
-                            break;
-                        case "detruire":
-                            codeAction = 3;
-                            break;
-                        default:
-                            codeAction = 0;
-                            break;
-                    }
-                    // Generate a new Logs object
-                    log = new Logs
-                    {
-                        ID = count + 1,
-                        Date = DateTime.Now,
-                        // Detects if user is logged-in, if False an alert is emmited and user is prompted to log-in, Insert does not complete.
-                        IssuerID = User.Identity.IsAuthenticated ? User.Identity.GetUserId() : Convert.ToString(connError = true),
-                        IssuerEts = EtsList.SelectedValue,
-                        IssuerDir = DirValue.Value,
-                        IssuerService = ServiceValue.Value,
-                        ArchiveID = canRequestArchive ? archiveCoteID.Value : "ALREADY REQUESTED",
-                        Localization = localization.Value,
-                        Action = codeAction
-                    };
-                } 
+                _requestStatusText = "La demande de retrait de l'archive s'est déroulée avec succès, l'archiviste vous tiendra au courant des prochaines étapes.";
+                alertRequestSuccess.Visible = true;
+                alertAlreadyRequested.Visible = false;
+                alertSuccessText.InnerText = _requestStatusText;
             }
-            // If request is allowed (not yet requested), we target Table and insert elements to it.
-            if (canRequestArchive && !connError)
-            {
-
-                string cmdString = "INSERT INTO [dbo].[logsArchive] (ID,date,issuerID,issuerEts,issuerDir,issuerService,receiverID,archiveID,localization,action,status) VALUES (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11)";
-                using (SqlConnection sqlConn = new SqlConnection(connectionString))
-                {
-                    string archivisteId = Logs.AssignArchiviste();
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = sqlConn;
-                        cmd.CommandText = cmdString;
-                        cmd.Parameters.AddWithValue("@val1", log.ID);
-                        cmd.Parameters.AddWithValue("@val2", log.Date);
-                        cmd.Parameters.AddWithValue("@val3", log.IssuerID);
-                        cmd.Parameters.AddWithValue("@val4", log.IssuerEts);
-                        cmd.Parameters.AddWithValue("@val5", log.IssuerDir);
-                        cmd.Parameters.AddWithValue("@val6", log.IssuerService);
-                        cmd.Parameters.AddWithValue("@val7", archivisteId);
-                        cmd.Parameters.AddWithValue("@val8", log.ArchiveID);
-                        cmd.Parameters.AddWithValue("@val9", log.Localization);
-                        cmd.Parameters.AddWithValue("@val10", log.Action);
-                        cmd.Parameters.AddWithValue("@val11", 1);
-
-                        sqlConn.Open();
-                        cmd.ExecuteNonQuery();
-
-                        _requestStatusText = "La demande de retrait de l'archive s'est déroulée avec succès, l'archiviste vous tiendra au courant des prochaines étapes.";
-                        alertRequestSuccess.Visible = true;
-                        alertAlreadyRequested.Visible = false;
-                        alertSuccessText.InnerText = _requestStatusText;
-                        
-                    }                    
-                }
-            } 
+            // Legacy code, should be deleted when done.
             else if(connError)
             {
                 _requestStatusText = "Merci de vous connecter";
@@ -205,9 +94,15 @@ namespace WebApplication1
                 alertRequestSuccess.Visible = false;
                 alertAlreadyRequested.Visible = true;
                 alertRequestedText.InnerText = _requestStatusText;
-            }            
+            }
+            // If request is allowed (not yet requested), we target Table and insert elements to it.
+            
         }
 
+        protected void LogRetirerArchive(object sender, EventArgs e)
+        {
+            
+        }
         protected void ModifyArchive_Click(object sender, EventArgs e)
         {
             DataSql.ModifyArchive(archiveID.Value);

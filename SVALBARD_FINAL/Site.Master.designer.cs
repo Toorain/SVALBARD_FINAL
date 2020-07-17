@@ -13,6 +13,15 @@ namespace WebApplication1 {
     public partial class SiteMaster {
         
         /// <summary>
+        /// showNewElementsCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField showNewElementsCount;
+        
+        /// <summary>
         /// archivesPanel control.
         /// </summary>
         /// <remarks>

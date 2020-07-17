@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Web;
+using System.Windows.Forms;
+using Microsoft.AspNet.Identity;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 
 namespace WebApplication1.Models
 {
@@ -10,7 +14,7 @@ namespace WebApplication1.Models
 		public int DateMin { get; set; }
 		public int DateMax { get; set; }
 		public string Observation { get; set; }
-		public int Elimination { get; set; }
+		public string Elimination { get; set; }
 		public string Communication { get; set; }
 		public string Cote { get; set; }
 		
@@ -50,7 +54,7 @@ namespace WebApplication1.Models
 							, Contenu = dr["contenu"].ToString()
 							, DateMin = Convert.ToInt32(dr["date_min"])
 							, DateMax = Convert.ToInt32(dr["date_max"])
-							, Elimination = Convert.ToInt32(dr["prevision_elim"])
+							, Elimination = dr["prevision_elim"].ToString()
 							, Communication = "NOT_USED_SINCE_2020"
 							, Observation = dr["observations"].ToString()
 							, Cote = dr["ID"].ToString()
@@ -63,6 +67,42 @@ namespace WebApplication1.Models
 					return individualRow;
 				}
 			}
+		}
+
+		public static bool RequestArchive(LogsPal logsPal)
+		{
+			string cmdString = "INSERT INTO [dbo].[logsArchivePal] ([ID], [date], [user], [userID], [ets], [dir], [service], [contenu], [date_min], [date_max], [observations], [prevision_elim], [request_group], [localization], [action], [status], [flg_treated], [flg_new]) VALUES (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14, @val15, @val16, @val17, @val18)";
+      using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
+      {
+	      using (SqlCommand cmd = new SqlCommand())
+	      {
+							int number;
+              cmd.Connection = sqlConn;
+              cmd.CommandText = cmdString;
+              cmd.Parameters.AddWithValue("@val1", logsPal.Cote);
+              cmd.Parameters.AddWithValue("@val2", DateTime.Now);
+              cmd.Parameters.AddWithValue("@val3", DatabaseUser.GetUserFirstName() + DatabaseUser.GetUserLastName());
+              cmd.Parameters.AddWithValue("@val4", HttpContext.Current.User.Identity.GetUserId());
+              cmd.Parameters.AddWithValue("@val5", logsPal.IssuerEts);
+              cmd.Parameters.AddWithValue("@val6", logsPal.IssuerDir);
+              cmd.Parameters.AddWithValue("@val7", logsPal.IssuerService);
+              cmd.Parameters.AddWithValue("@val8", logsPal.Contenu);
+              cmd.Parameters.AddWithValue("@val9", logsPal.DateMin);
+              cmd.Parameters.AddWithValue("@val10", logsPal.DateMax);
+              cmd.Parameters.AddWithValue("@val11", "");
+              cmd.Parameters.AddWithValue("@val12", Int32.TryParse(logsPal.Elimination, out number) ? Convert.ToInt32(logsPal.Elimination) : 0 );
+              cmd.Parameters.AddWithValue("@val13", logsPal.Cote);
+              cmd.Parameters.AddWithValue("@val14", logsPal.Localization);
+              cmd.Parameters.AddWithValue("@val15", 2);
+              cmd.Parameters.AddWithValue("@val16", 1);
+              cmd.Parameters.AddWithValue("@val17", 0);
+              cmd.Parameters.AddWithValue("@val18", 1);
+
+              sqlConn.Open();
+              cmd.ExecuteNonQuery();
+          }
+      }
+			return true;
 		}
 		
 		public static int GetNewElementsCount()

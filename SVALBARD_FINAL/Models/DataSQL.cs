@@ -128,6 +128,43 @@ namespace WebApplication1.Models
                 }
             }
         }
+        
+        public static LogsPal GetIndividualArchive(string identifier)
+        {
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(_connectionString))
+            {
+                string cmdString = "SELECT * FROM [dbo].[ArchivesV2] WHERE cote = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", identifier);
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    LogsPal logsPal = new LogsPal();
+                    while (dr.Read())
+                    {
+                        logsPal = new LogsPal
+                        {
+                            Cote = dr["cote"].ToString(),
+                            IssuerEts = dr["etablissement"].ToString(),
+                            IssuerDir = dr["direction"].ToString(),
+                            IssuerService = dr["service"].ToString(),
+                            Contenu = dr["dossiers"].ToString(),
+                            DateMin = Convert.ToInt32(dr["extremes"].ToString().Substring(0, dr["extremes"].ToString().IndexOf("-"))),
+                            DateMax = Convert.ToInt32(dr["extremes"].ToString().Substring( dr["extremes"].ToString().IndexOf("-") + 1)),
+                            Elimination = dr["elimination"].ToString(),
+                            Localization = dr["localisation"].ToString()
+                        };
+                    }
+                    return logsPal;
+                }
+            }
+        }
 
         public static string GetCote(string cote)
         {

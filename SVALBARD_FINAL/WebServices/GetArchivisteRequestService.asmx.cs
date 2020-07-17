@@ -20,7 +20,7 @@ namespace WebApplication1.WebServices
     [System.ComponentModel.ToolboxItem(false)]
     // Pour autoriser l'appel de ce service Web depuis un script à l'aide d'ASP.NET AJAX, supprimez les marques de commentaire de la ligne suivante. 
     // [System.Web.Script.Services.ScriptService]
-    public class GetArchivisteRequestService : System.Web.Services.WebService
+    public class GetArchivisteRequestService : WebService
     {
         /// <summary>
         /// A WebService to retreive every users in DB
@@ -51,7 +51,6 @@ namespace WebApplication1.WebServices
         [WebMethod]
         public void GetDataArchiviste(string userId, int actionType)
         {
-
             string connectionString = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
             var dataAdd = new List<Logs>();
             var dataConsult = new List<Logs>();
@@ -141,17 +140,7 @@ namespace WebApplication1.WebServices
                     }
                 }
             }
-
-            switch (actionType) 
-            {
-                case 1 :
-                    Context.Response.Write(JsonConvert.SerializeObject(dataAdd));
-                    break;
-                case 2 :
-                    Context.Response.Write(JsonConvert.SerializeObject(dataConsult));
-                    break;
-            }
+            Context.Response.Write(JsonConvert.SerializeObject(dataAdd));
         }
     }
-
 }

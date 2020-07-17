@@ -77,7 +77,7 @@
     </nav>
     <div class="tab-content " id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-ajout" role="tabpanel" aria-labelledby="nav-ajout-tab">
-            <table id="tableArchiviste" class="table table-striped table-hover">
+            <table id="tableArchiviste_1" class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <!-- <th>ID</th> -->
@@ -100,8 +100,54 @@
               </tfoot>
             </table>
         </div>
-      <div class="tab-pane fade" id="nav-consultation" role="tabpanel" aria-labelledby="nav-consultation-tab">...</div>
-      <div class="tab-pane fade" id="nav-destruction" role="tabpanel" aria-labelledby="nav-destruction-tab">...</div>
+      <div class="tab-pane fade" id="nav-consultation" role="tabpanel" aria-labelledby="nav-consultation-tab">
+          <table id="tableArchiviste_2" class="table table-striped table-hover">
+              <thead>
+                  <tr>
+                      <!-- <th>ID</th> -->
+                      <th>Date</th>
+                      <th>Nom et prénom du demandeur</th>
+                      <th>Etablissement du demandeur</th>
+                      <th>Direction du demandeur</th>
+                      <th>Service du demandeur</th>
+                      <th>Cote</th>
+                      <th>Groupe d'archives</th>
+                      <th>Emplacement</th>
+                      <th>Action</th>
+                      <th>Status</th>
+                      <th>???</th>
+                      <th class="d-none">Origin</th>
+                      <th class="d-none">TEST</th>
+                  </tr>
+              </thead>
+            <tfoot>
+            </tfoot>
+          </table>
+      </div>
+      <div class="tab-pane fade" id="nav-destruction" role="tabpanel" aria-labelledby="nav-destruction-tab">
+          <table id="tableArchiviste_3" class="table table-striped table-hover">
+              <thead>
+                  <tr>
+                      <!-- <th>ID</th> -->
+                      <th>Date</th>
+                      <th>Nom et prénom du demandeur</th>
+                      <th>Etablissement du demandeur</th>
+                      <th>Direction du demandeur</th>
+                      <th>Service du demandeur</th>
+                      <th>Cote</th>
+                      <th>Groupe d'archives</th>
+                      <th>Emplacement</th>
+                      <th>Action</th>
+                      <th>Status</th>
+                      <th>???</th>
+                      <th class="d-none">Origin</th>
+                      <th class="d-none">TEST</th>
+                  </tr>
+              </thead>
+            <tfoot>
+            </tfoot>
+          </table>
+      </div>
     </div>
     <div id="dropdownPdfDemandes" class="dropdownPdf text-center" data-toggle="collapse" href="#collapseElm" role="button" aria-expanded="false" aria-controls="collapseExample">
         <h3 class="m-auto text-center btn btn-secondary">Afficher le PDF</h3>

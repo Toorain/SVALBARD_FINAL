@@ -1,4 +1,9 @@
-﻿function isolateFirstLastName(user) {
+﻿
+if ($("#showNewElementsCount").val() !== "show") {
+    $("#visibleForArchiviste").addClass("d-none");
+}
+
+function isolateFirstLastName(user) {
 
     let split = user.split('');
     

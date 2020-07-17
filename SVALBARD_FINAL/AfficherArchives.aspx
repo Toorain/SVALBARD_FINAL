@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="AfficherArchives" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AfficherArchives.aspx.cs" Inherits="WebApplication1.AfficherArchives" EnableEventValidation="false" %>
+<%@ Register TagPrefix="rsweb" Namespace="Microsoft.Reporting.WebForms" Assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">
     <%--<div class="btn btn-danger" onclick="function getCheckedBoxes() {
@@ -35,9 +36,25 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <div class="hiddenLoad w-25 m-auto text-center">
+        <div class="hiddenLoad m-auto text-center">
+            <input id="toggleOverlay" class="float-left" type="checkbox" data-toggle="toggle" data-onstyle="secondary">
             <span class="btn btn-outline-secondary" onclick="enableTourArchive()">Découvrir l'outil d'archivage</span>
+            <span id="dropdownPdfConsultation" class="dropdownPdf text-center" data-toggle="collapse" href="#collapseElm" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <h3 class="m-auto text-center btn btn-secondary">Afficher le PDF</h3>
+            </span>
+            <div runat="server" clientidmode="Static" class="collapse" ID="collapseElm">
+               <rsweb:ReportViewer ID="rptViewerConsultation" runat="server" Font-Names="Verdana" Font-Size="8pt" ProcessingMode="Remote" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="1000px" Width="850px" 
+                   BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" 
+                   LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" 
+                   SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" 
+                   ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
+                   ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
+                   
+                   <ServerReport></ServerReport>
+               </rsweb:ReportViewer>
+            </div>
         </div>
+        
         <!-- #region Modal -->
         <div class="modal fade" id="modalGetArchive" tabindex="-1" role="dialog" aria-labelledby="modalGetArchive" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -50,8 +67,8 @@
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <div runat="server" id="consutlationMode" class="col-md-5">
-                                <p>Archive : <span id="archiveCote" ></span></p>
+                            <div runat="server" id="consutlationMode" class="col-md-6 offset-3 text-center">
+                                <p>Archive : <asp:Label ID="archiveCote" runat="server" ClientIDMode="Static" /></p>
                                 <p>Ajoutée le : <span id="archiveVersement"></span></p>
                                 <p>
                                     Par :
@@ -65,45 +82,24 @@
                                     <span>Service :
                                         <asp:Label ID="archiveService" runat="server" ClientIDMode="Static" /></span>
                                 </p>
-                                <p>Élimination : <span id="archiveElimination"></span></p>
+                                <p>Élimination : <asp:Label ID="archiveElimination" runat="server" ClientIDMode="Static" /></p>
                                 <p>
                                     Information complémentaires :
                                     <br />
-                                    <span id="archiveCommentaire"></span>
+                                    <asp:Label ID="archiveCommentaire" runat="server" ClientIDMode="Static" />
+                                    
                                 </p>
                                 <!-- Used in Scripts/scripts_datatable/dataTableArchives.js  line:75-->
                                 <asp:HiddenField ID="archiveCoteID" runat="server" ClientIDMode="Static" />
                                 <asp:HiddenField ID="archiveID" runat="server" ClientIDMode="Static" />
                                 <asp:HiddenField ID="localization" runat="server" ClientIDMode="Static" />
                             </div>
-                            <div runat="server" id="formRetrait" class="col-md-7 vertical-line">
-                                <form class="needs-validation" novalidate>
-                                    <div class="form-row">
-                                        <h5>Merci de renseigner votre établissement, la direction à laquelle vous appartenez ainsi que le service auquel vous appartenez</h5>
-                                        <small>Par exemple : SIEGE / Port de cannes / Compta</small>
-                                    </div>
-                                    <!-- TODO : Ajouter des dropdown pour limiter le choix de l'etablissment / direction / service, afin de lisser les données de la DB --> 
-                                    <div class="form-row">
-                                        <asp:DropDownList id="EtsList" CssClass="col-md-4 form-control" runat="server" ClientIDMode="Static">
-                                        </asp:DropDownList>
-                                        <asp:hiddenfield runat="server" ID="EtsValue" ClientIDMode="Static" />
-                                        
-                                        <asp:DropDownList id="DirList" CssClass="col-md-4 form-control" runat="server" ClientIDMode="Static">
-                                        </asp:DropDownList>
-                                        <asp:hiddenfield runat="server" ID="DirValue" ClientIDMode="Static" />
-                                        
-                                        <asp:DropDownList id="ServiceList" CssClass="col-md-4 form-control" runat="server" ClientIDMode="Static">
-                                        </asp:DropDownList>
-                                        <asp:hiddenfield runat="server" ID="ServiceValue" ClientIDMode="Static" />
-                                        
-                                    </div>
-                                </form>
-                            </div>
+                            
                         </div>
                     </div>
                     <div runat="server" id="modalFooter" class="modal-footer">
+                        <asp:Button runat="server" ID="btn_retirer" OnClick="LogConsulterArchive" Text="Consulter" CssClass="submitModal btn btn-warning" ClientIDMode="Static"  />
                         <asp:Button runat="server" ID="btn_detruire" OnClick="LogRetirerArchive" Text="Detruire" CssClass="submitModal btn btn-outline-danger" ClientIDMode="Static"  />
-                        <asp:Button runat="server" ID="btn_retirer" OnClick="LogRetirerArchive" Text="Consulter" CssClass="submitModal btn btn-warning" ClientIDMode="Static"  />
                     </div>
                 </div>
             </div>
@@ -137,5 +133,14 @@
         <tfoot>
         </tfoot>
     </table>
-    </div>    
+    </div>
+    <div id="overlayDropZone" class="text-center" style="display: none">
+        <div class="header-overlay">
+            <h2>Elements que je souhaite consulter</h2>
+            <div class="btn btn-success">Demande de consultation</div>
+        </div>
+        <div id="dropReceiver">
+            
+        </div>
+    </div>
 </asp:Content>

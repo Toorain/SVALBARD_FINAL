@@ -1245,6 +1245,18 @@ references:
   commentId: F:WebApplication1.AfficherArchives.alertSuccessText
   fullName: WebApplication1.AfficherArchives.alertSuccessText
   nameWithType: AfficherArchives.alertSuccessText
+- uid: WebApplication1.AfficherArchives.archiveCommentaire
+  name: archiveCommentaire
+  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_archiveCommentaire
+  commentId: F:WebApplication1.AfficherArchives.archiveCommentaire
+  fullName: WebApplication1.AfficherArchives.archiveCommentaire
+  nameWithType: AfficherArchives.archiveCommentaire
+- uid: WebApplication1.AfficherArchives.archiveCote
+  name: archiveCote
+  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_archiveCote
+  commentId: F:WebApplication1.AfficherArchives.archiveCote
+  fullName: WebApplication1.AfficherArchives.archiveCote
+  nameWithType: AfficherArchives.archiveCote
 - uid: WebApplication1.AfficherArchives.archiveCoteID
   name: archiveCoteID
   href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_archiveCoteID
@@ -1257,6 +1269,12 @@ references:
   commentId: F:WebApplication1.AfficherArchives.archiveDirection
   fullName: WebApplication1.AfficherArchives.archiveDirection
   nameWithType: AfficherArchives.archiveDirection
+- uid: WebApplication1.AfficherArchives.archiveElimination
+  name: archiveElimination
+  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_archiveElimination
+  commentId: F:WebApplication1.AfficherArchives.archiveElimination
+  fullName: WebApplication1.AfficherArchives.archiveElimination
+  nameWithType: AfficherArchives.archiveElimination
 - uid: WebApplication1.AfficherArchives.archiveEtablissement
   name: archiveEtablissement
   href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_archiveEtablissement
@@ -1287,48 +1305,37 @@ references:
   commentId: F:WebApplication1.AfficherArchives.btn_retirer
   fullName: WebApplication1.AfficherArchives.btn_retirer
   nameWithType: AfficherArchives.btn_retirer
+- uid: WebApplication1.AfficherArchives.collapseElm
+  name: collapseElm
+  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_collapseElm
+  commentId: F:WebApplication1.AfficherArchives.collapseElm
+  fullName: WebApplication1.AfficherArchives.collapseElm
+  nameWithType: AfficherArchives.collapseElm
 - uid: WebApplication1.AfficherArchives.consutlationMode
   name: consutlationMode
   href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_consutlationMode
   commentId: F:WebApplication1.AfficherArchives.consutlationMode
   fullName: WebApplication1.AfficherArchives.consutlationMode
   nameWithType: AfficherArchives.consutlationMode
-- uid: WebApplication1.AfficherArchives.DirList
-  name: DirList
-  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_DirList
-  commentId: F:WebApplication1.AfficherArchives.DirList
-  fullName: WebApplication1.AfficherArchives.DirList
-  nameWithType: AfficherArchives.DirList
-- uid: WebApplication1.AfficherArchives.DirValue
-  name: DirValue
-  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_DirValue
-  commentId: F:WebApplication1.AfficherArchives.DirValue
-  fullName: WebApplication1.AfficherArchives.DirValue
-  nameWithType: AfficherArchives.DirValue
-- uid: WebApplication1.AfficherArchives.EtsList
-  name: EtsList
-  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_EtsList
-  commentId: F:WebApplication1.AfficherArchives.EtsList
-  fullName: WebApplication1.AfficherArchives.EtsList
-  nameWithType: AfficherArchives.EtsList
-- uid: WebApplication1.AfficherArchives.EtsValue
-  name: EtsValue
-  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_EtsValue
-  commentId: F:WebApplication1.AfficherArchives.EtsValue
-  fullName: WebApplication1.AfficherArchives.EtsValue
-  nameWithType: AfficherArchives.EtsValue
-- uid: WebApplication1.AfficherArchives.formRetrait
-  name: formRetrait
-  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_formRetrait
-  commentId: F:WebApplication1.AfficherArchives.formRetrait
-  fullName: WebApplication1.AfficherArchives.formRetrait
-  nameWithType: AfficherArchives.formRetrait
 - uid: WebApplication1.AfficherArchives.localization
   name: localization
   href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_localization
   commentId: F:WebApplication1.AfficherArchives.localization
   fullName: WebApplication1.AfficherArchives.localization
   nameWithType: AfficherArchives.localization
+- uid: WebApplication1.AfficherArchives.LogConsulterArchive(System.Object,System.EventArgs)
+  name: LogConsulterArchive(Object, EventArgs)
+  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_LogConsulterArchive_System_Object_System_EventArgs_
+  commentId: M:WebApplication1.AfficherArchives.LogConsulterArchive(System.Object,System.EventArgs)
+  fullName: WebApplication1.AfficherArchives.LogConsulterArchive(System.Object, System.EventArgs)
+  nameWithType: AfficherArchives.LogConsulterArchive(Object, EventArgs)
+- uid: WebApplication1.AfficherArchives.LogConsulterArchive*
+  name: LogConsulterArchive
+  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_LogConsulterArchive_
+  commentId: Overload:WebApplication1.AfficherArchives.LogConsulterArchive
+  isSpec: "True"
+  fullName: WebApplication1.AfficherArchives.LogConsulterArchive
+  nameWithType: AfficherArchives.LogConsulterArchive
 - uid: WebApplication1.AfficherArchives.LogRetirerArchive(System.Object,System.EventArgs)
   name: LogRetirerArchive(Object, EventArgs)
   href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_LogRetirerArchive_System_Object_System_EventArgs_
@@ -1393,18 +1400,12 @@ references:
   isSpec: "True"
   fullName: WebApplication1.AfficherArchives.Page_Load
   nameWithType: AfficherArchives.Page_Load
-- uid: WebApplication1.AfficherArchives.ServiceList
-  name: ServiceList
-  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_ServiceList
-  commentId: F:WebApplication1.AfficherArchives.ServiceList
-  fullName: WebApplication1.AfficherArchives.ServiceList
-  nameWithType: AfficherArchives.ServiceList
-- uid: WebApplication1.AfficherArchives.ServiceValue
-  name: ServiceValue
-  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_ServiceValue
-  commentId: F:WebApplication1.AfficherArchives.ServiceValue
-  fullName: WebApplication1.AfficherArchives.ServiceValue
-  nameWithType: AfficherArchives.ServiceValue
+- uid: WebApplication1.AfficherArchives.rptViewerConsultation
+  name: rptViewerConsultation
+  href: api/WebApplication1.AfficherArchives.html#WebApplication1_AfficherArchives_rptViewerConsultation
+  commentId: F:WebApplication1.AfficherArchives.rptViewerConsultation
+  fullName: WebApplication1.AfficherArchives.rptViewerConsultation
+  nameWithType: AfficherArchives.rptViewerConsultation
 - uid: WebApplication1.AjouterArchive
   name: AjouterArchive
   href: api/WebApplication1.AjouterArchive.html
@@ -2547,6 +2548,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.DataSql.GetCote
   nameWithType: DataSql.GetCote
+- uid: WebApplication1.Models.DataSql.GetIndividualArchive(System.String)
+  name: GetIndividualArchive(String)
+  href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_GetIndividualArchive_System_String_
+  commentId: M:WebApplication1.Models.DataSql.GetIndividualArchive(System.String)
+  fullName: WebApplication1.Models.DataSql.GetIndividualArchive(System.String)
+  nameWithType: DataSql.GetIndividualArchive(String)
+- uid: WebApplication1.Models.DataSql.GetIndividualArchive*
+  name: GetIndividualArchive
+  href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_GetIndividualArchive_
+  commentId: Overload:WebApplication1.Models.DataSql.GetIndividualArchive
+  isSpec: "True"
+  fullName: WebApplication1.Models.DataSql.GetIndividualArchive
+  nameWithType: DataSql.GetIndividualArchive
 - uid: WebApplication1.Models.DataSql.GetLastItemArchive
   name: GetLastItemArchive()
   href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_GetLastItemArchive
@@ -3162,6 +3176,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.LogsPal.Observation
   nameWithType: LogsPal.Observation
+- uid: WebApplication1.Models.LogsPal.RequestArchive(WebApplication1.Models.LogsPal)
+  name: RequestArchive(LogsPal)
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_RequestArchive_WebApplication1_Models_LogsPal_
+  commentId: M:WebApplication1.Models.LogsPal.RequestArchive(WebApplication1.Models.LogsPal)
+  fullName: WebApplication1.Models.LogsPal.RequestArchive(WebApplication1.Models.LogsPal)
+  nameWithType: LogsPal.RequestArchive(LogsPal)
+- uid: WebApplication1.Models.LogsPal.RequestArchive*
+  name: RequestArchive
+  href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_RequestArchive_
+  commentId: Overload:WebApplication1.Models.LogsPal.RequestArchive
+  isSpec: "True"
+  fullName: WebApplication1.Models.LogsPal.RequestArchive
+  nameWithType: LogsPal.RequestArchive
 - uid: WebApplication1.Models.LogsPal.SelectIndividualRow(System.String)
   name: SelectIndividualRow(String)
   href: api/WebApplication1.Models.LogsPal.html#WebApplication1_Models_LogsPal_SelectIndividualRow_System_String_
@@ -3370,6 +3397,12 @@ references:
   isSpec: "True"
   fullName: WebApplication1.SiteMaster.Page_Load
   nameWithType: SiteMaster.Page_Load
+- uid: WebApplication1.SiteMaster.showNewElementsCount
+  name: showNewElementsCount
+  href: api/WebApplication1.SiteMaster.html#WebApplication1_SiteMaster_showNewElementsCount
+  commentId: F:WebApplication1.SiteMaster.showNewElementsCount
+  fullName: WebApplication1.SiteMaster.showNewElementsCount
+  nameWithType: SiteMaster.showNewElementsCount
 - uid: WebApplication1.SiteMaster.Unnamed_LoggingOut(System.Object,System.Web.UI.WebControls.LoginCancelEventArgs)
   name: Unnamed_LoggingOut(Object, LoginCancelEventArgs)
   href: api/WebApplication1.SiteMaster.html#WebApplication1_SiteMaster_Unnamed_LoggingOut_System_Object_System_Web_UI_WebControls_LoginCancelEventArgs_

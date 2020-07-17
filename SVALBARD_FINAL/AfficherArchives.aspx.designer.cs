@@ -58,6 +58,24 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertSuccessText;
         
         /// <summary>
+        /// collapseElm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElm;
+        
+        /// <summary>
+        /// rptViewerConsultation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerConsultation;
+        
+        /// <summary>
         /// consutlationMode control.
         /// </summary>
         /// <remarks>
@@ -65,6 +83,15 @@ namespace WebApplication1 {
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl consutlationMode;
+        
+        /// <summary>
+        /// archiveCote control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label archiveCote;
         
         /// <summary>
         /// archiveEtablissement control.
@@ -94,6 +121,24 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label archiveService;
         
         /// <summary>
+        /// archiveElimination control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label archiveElimination;
+        
+        /// <summary>
+        /// archiveCommentaire control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label archiveCommentaire;
+        
+        /// <summary>
         /// archiveCoteID control.
         /// </summary>
         /// <remarks>
@@ -121,69 +166,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.HiddenField localization;
         
         /// <summary>
-        /// formRetrait control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl formRetrait;
-        
-        /// <summary>
-        /// EtsList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList EtsList;
-        
-        /// <summary>
-        /// EtsValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField EtsValue;
-        
-        /// <summary>
-        /// DirList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DirList;
-        
-        /// <summary>
-        /// DirValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField DirValue;
-        
-        /// <summary>
-        /// ServiceList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ServiceList;
-        
-        /// <summary>
-        /// ServiceValue control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField ServiceValue;
-        
-        /// <summary>
         /// modalFooter control.
         /// </summary>
         /// <remarks>
@@ -193,15 +175,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl modalFooter;
         
         /// <summary>
-        /// btn_detruire control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_detruire;
-        
-        /// <summary>
         /// btn_retirer control.
         /// </summary>
         /// <remarks>
@@ -209,6 +182,15 @@ namespace WebApplication1 {
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_retirer;
+        
+        /// <summary>
+        /// btn_detruire control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_detruire;
         
         /// <summary>
         /// Master property.

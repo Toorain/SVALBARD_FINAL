@@ -82,6 +82,7 @@ namespace WebApplication1
             demandesPanel.Visible = false;
             adminPanel.Visible = false;
             juridiquePanel.Visible = false;
+            showNewElementsCount.Value = "no_show";
 
             var user = HttpContext.Current.User.Identity;
 
@@ -109,6 +110,7 @@ namespace WebApplication1
                         break;
                     // Archiviste
                     case "4":
+                        showNewElementsCount.Value = "show";
                         CountNewElements = LogsPal.GetNewElementsCount();
                         archivistePanel.Visible = true;
                         archivesPanel.Visible = true;

@@ -15,9 +15,6 @@ namespace WebApplication1.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            int lastItem = DataSql.GetLastItemArchive();
-            
             List<DES> desList = DES.GetDataZero("etablissement");
 
             if (!IsPostBack)

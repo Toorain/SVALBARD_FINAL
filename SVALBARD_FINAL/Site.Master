@@ -19,9 +19,13 @@
     <link rel="stylesheet" type="text/css" href="/Content/dataTables.min.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"> -->
     <link rel="stylesheet" href="/Scripts/shepherd/dist/shepherd.css"/>
+    <!-- TODO : Change that for installed library -->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 </head>
 <body>
     <form runat="server">
+        <!-- Is used in Misc.js to show 'vous avez X nouveaux messages' according to logged user rôle. -->
+        <asp:HiddenField runat="server" ID="showNewElementsCount" ClientIDMode="Static"/>
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -69,8 +73,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="navbar-nav navbar-right">
-                                <li></li>
-                                <li class="white mr-1"><a runat="server" href="~/Account/Manage" title="Manage your account">Bonjour, <%: Context.User.Identity.GetUserName()  %> !</a> , vous avez <asp:Label runat="server" ID="badgeNewElements" ClientIDMode="Static" CssClass="badge badge-danger m-1"><%: CountNewElements %></asp:Label> nouveau(x) élément(s) à traiter </li>
+                                <li class="white mr-1"><a runat="server" href="~/Account/Manage" title="Manage your account">Bonjour, <%: Context.User.Identity.GetUserName()  %> !</a><span ID="visibleForArchiviste"> , vous avez <asp:Label runat="server" ID="badgeNewElements" ClientIDMode="Static" CssClass="badge badge-danger m-1"><%: CountNewElements %></asp:Label> nouveau(x) élément(s) à traiter </span></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
@@ -105,6 +108,8 @@
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/Misc.js"></script>
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/startTourGlobal.js"></script>
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/startTourArchive.js"></script>
+<!-- TODO : Change that for installed library -->
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     <script src="https://kit.fontawesome.com/e2b0a647a5.js" crossorigin="anonymous"></script>
     <noscript>
       

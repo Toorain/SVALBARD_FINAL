@@ -64,7 +64,7 @@ input[type="select"] {
 
 /* Change the hover color on DataTable (jQuery) */
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-    background-color: #FFFFDD;
+    background-color: rgba(0, 0, 0, 0.23)
 }
 
 .modal-dialog{
@@ -100,6 +100,38 @@ tr:hover {
 
 #coteValidation {
     width: 100% !important;
+}
+
+.highlight_new {
+    background-color : #FFFFDD !important;
+}
+
+#overlayDropZone {
+    background-color: white;
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+}
+
+.header-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1 !important;
+    justify-content: center;
+    color: white;
+    background-color: #343a40;
+    height: 20%;
+}
+
+.overlay-elements {
+    border: 1px solid black;
+    padding: 5px;
+    height: 125px !important;
+    margin: 5px;
 }
 
 /* ------------------------------FORM SLIDER START----------------------------------------*/
