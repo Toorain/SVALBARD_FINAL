@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/wilmes/Documents/SVALBARD_FINAL/SVALBARD_FINAL",
+  "source_base_path": "C:/TMA/SVALBARD/SVALBARD_FINAL",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "QOT+PF6ei0xv+oyr/Ef6Yg=="
+          "hash": "OOfRmxq2g7lTAZAlB3QWFA=="
         }
       },
       "is_incremental": true,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/afficher_archives.html",
-          "hash": "VS8BQkYInw9nkZeLp3Zcxw=="
+          "hash": "nHKE8YjgIQyqTosjdiTDaw=="
         }
       },
       "is_incremental": true,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "shpKNem79VkS9WgGRharoA=="
+          "hash": "6+a6/bZkuDGpISUzhWIkNw=="
         }
       },
       "is_incremental": true,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/tableaux_general.html",
-          "hash": "9tsrK4jOQ1put0c5TGYpSg=="
+          "hash": "SGDzBf/5njGQnG2Q07xnnQ=="
         }
       },
       "is_incremental": true,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "+70ljYZwM2rjoLDLh+geVw=="
+          "hash": "pNp06qIo8C7mophvo8lzpg=="
         }
       },
       "is_incremental": true,
