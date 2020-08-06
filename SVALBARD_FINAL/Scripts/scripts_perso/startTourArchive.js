@@ -1,5 +1,5 @@
 ﻿// Doesn't call WebService if not on Datatable displaying page.*/
-if (window.location.pathname === "/AfficherArchives") {
+if (window.location.pathname === "/Pages/AfficherArchives") {
     var enableTour = false;
 
     function enableTourArchive() {

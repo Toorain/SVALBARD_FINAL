@@ -1,13 +1,9 @@
-﻿using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System;
 using System.Web.UI;
-using System.Windows.Forms;
-using Microsoft.Reporting.WebForms;
+using Microsoft.AspNet.Identity;
 using WebApplication1.Models;
 
-namespace WebApplication1
+namespace WebApplication1.Pages
 {
 	public partial class Demandes : Page
 	{

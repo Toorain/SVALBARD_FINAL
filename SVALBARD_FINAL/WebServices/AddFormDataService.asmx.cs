@@ -21,7 +21,7 @@ namespace WebApplication1.WebServices
 	{   
 
 		[WebMethod]
-		// PushData is called from FormSlider.js/ValidateData();
+		// PushData is called from AjouterArchive.js/ValidateData();
 		public bool PushData(string data)
 		{
 			return FormData.DecypherData(data);

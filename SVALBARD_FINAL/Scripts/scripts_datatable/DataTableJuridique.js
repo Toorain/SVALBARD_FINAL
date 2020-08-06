@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
     // Doesn't call WebService if not on Datatable displaying page.
-    if (window.location.pathname === "/JuridiquePanel") {
+    if (window.location.pathname === "/Pages/JuridiquePanel") {
         let jsonData = JSON.parse(document.getElementById("JsonData").innerHTML);
 
         let datatableVariable = $('#juridiqueTable').DataTable({

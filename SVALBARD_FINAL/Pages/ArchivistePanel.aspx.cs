@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNet.Identity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Web.UI;
-using System.Windows.Forms;
 using Microsoft.Ajax.Utilities;
+using Microsoft.AspNet.Identity;
 using WebApplication1.Models;
 
-namespace WebApplication1
+namespace WebApplication1.Pages
 {
     public partial class ArchivistePanel : Page
     {

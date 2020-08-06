@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1 {
+namespace WebApplication1.Pages {
     
     
     public partial class JuridiquePanel {

@@ -9,7 +9,7 @@ $(window).keydown(function (event) {
     }
 });
 
-if (window.location.pathname === "/AjouterArchive") {
+if (window.location.pathname === "/Pages/AjouterArchive") {
 
     showTab(currentTab); // Display the current tab
 

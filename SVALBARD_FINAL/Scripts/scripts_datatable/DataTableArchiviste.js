@@ -6,7 +6,7 @@
   });*/
   
   // Doesn't call WebService if not on Datatable displaying page.
-  if (window.location.pathname === "/ArchivistePanel") {
+  if (window.location.pathname === "/Pages/ArchivistePanel") {
     let content;
     for (let i = 1; i <= 3; i++) {
       $.ajax({        
@@ -15,7 +15,7 @@
         dataType: "json",
         async: true,
         // URL of the webservice I use to retreive data of the issuer
-        url: "WebServices/GetArchivisteRequestService.asmx/GetDataArchiviste",
+        url: "/WebServices/GetArchivisteRequestService.asmx/GetDataArchiviste",
         // Data I send to the POST method (userID)
         data: { userID: $("#archivisteID").val(),
           actionType : i},

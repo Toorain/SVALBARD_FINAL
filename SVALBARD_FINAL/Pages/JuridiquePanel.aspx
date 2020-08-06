@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="JuridiquePanel.aspx.cs" Inherits="WebApplication1.JuridiquePanel" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="JuridiquePanel.aspx.cs" Inherits="WebApplication1.Pages.JuridiquePanel" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <table id="juridiquePanel" class="table table-striped table-hover responsive">
         <thead>

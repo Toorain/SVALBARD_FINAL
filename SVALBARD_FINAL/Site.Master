@@ -57,12 +57,12 @@
                 <div class="navbar-collapse collapsed collapse" id="navbar-collapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" id="archivesPanel" href="~/AfficherArchives">Afficher les archives</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" id="ajouterPanel" href="~/AjouterArchive">Ajouter une archive</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" id="demandesPanel" href="~/Demandes">Mes demandes</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" id="juridiquePanel" href="~/JuridiquePanel">Juridique Panel</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" id="archivistePanel" href="~/ArchivistePanel">Archiviste Panel</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" id="adminPanel" href="~/AdminPanel">Admin Panel</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="archivesPanel" href="~/Pages/AfficherArchives">Afficher les archives</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="ajouterPanel" href="~/Pages/AjouterArchive">Ajouter une archive</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="demandesPanel" href="~/Pages/Demandes">Mes demandes</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="juridiquePanel" href="~/Pages/JuridiquePanel">Juridique Panel</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="archivistePanel" href="~/Pages/ArchivistePanel">Archiviste Panel</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="adminPanel" href="~/Pages/AdminPanel">Admin Panel</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled" >
                         <AnonymousTemplate>
@@ -109,7 +109,7 @@
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/startTourGlobal.js"></script>
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/startTourArchive.js"></script>
 <!-- TODO : Change that for installed library -->
-<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     <script src="https://kit.fontawesome.com/e2b0a647a5.js" crossorigin="anonymous"></script>
     <noscript>
       

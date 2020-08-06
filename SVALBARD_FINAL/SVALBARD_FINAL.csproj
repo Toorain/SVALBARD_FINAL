@@ -228,10 +228,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="AdminPanel.aspx" />
-    <Content Include="AjouterArchive.aspx" />
     <Content Include="api\index.md" />
-    <Content Include="ArchivistePanel.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -298,8 +295,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="docfx.json" />
     <Content Include="index.md" />
-    <Content Include="JuridiquePanel.aspx" />
     <Content Include="LICENSE.txt" />
+    <Content Include="Pages\AdminPanel.aspx" />
+    <Content Include="Pages\AfficherArchives.aspx" />
+    <Content Include="Pages\AjouterArchive.aspx" />
+    <Content Include="Pages\ArchivistePanel.aspx" />
+    <Content Include="Pages\Demandes.aspx" />
+    <Content Include="Pages\JuridiquePanel.aspx" />
     <Content Include="Scripts\scripts_datatable\DataTableJuridique.js" />
     <Content Include="Scripts\scripts_perso\DES_Script.js" />
     <Content Include="Scripts\scripts_perso\ArchivistePanel.js" />
@@ -457,9 +459,7 @@
     <Content Include="Scripts\scripts_datatable\DataTableAdmin.js" />
     <Content Include="Scripts\scripts_datatable\DataTableDemandes.js" />
     <Content Include="Default.aspx" />
-    <Content Include="Demandes.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="AfficherArchives.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Account\Web.config" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -702,33 +702,10 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminPanel.aspx.cs">
-      <DependentUpon>AdminPanel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminPanel.aspx.designer.cs">
-      <DependentUpon>AdminPanel.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AjouterArchive.aspx.cs">
-      <DependentUpon>AjouterArchive.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AjouterArchive.aspx.designer.cs">
-      <DependentUpon>AjouterArchive.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="ArchivistePanel.aspx.cs">
-      <DependentUpon>ArchivistePanel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ArchivistePanel.aspx.designer.cs">
-      <DependentUpon>ArchivistePanel.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="JuridiquePanel.aspx.cs" />
-    <Compile Include="JuridiquePanel.aspx.designer.cs" />
     <Compile Include="Models\AspNetUsersExtended.cs" />
     <Compile Include="Models\DatabaseUser.cs" />
     <Compile Include="Models\DataSQL.cs" />
@@ -738,6 +715,43 @@
     <Compile Include="Models\LogsPal.cs" />
     <Compile Include="Models\Misc.cs" />
     <Compile Include="Models\PdfMethods.cs" />
+    <Compile Include="Pages\AdminPanel.aspx.cs">
+      <DependentUpon>AdminPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminPanel.aspx.designer.cs">
+      <DependentUpon>AdminPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AfficherArchives.aspx.cs">
+      <DependentUpon>AfficherArchives.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AfficherArchives.aspx.designer.cs">
+      <DependentUpon>AfficherArchives.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AjouterArchive.aspx.cs">
+      <DependentUpon>AjouterArchive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AjouterArchive.aspx.designer.cs">
+      <DependentUpon>AjouterArchive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ArchivistePanel.aspx.cs">
+      <DependentUpon>ArchivistePanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ArchivistePanel.aspx.designer.cs">
+      <DependentUpon>ArchivistePanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Demandes.aspx.cs">
+      <DependentUpon>Demandes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Demandes.aspx.designer.cs">
+      <DependentUpon>Demandes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\JuridiquePanel.aspx.cs" />
+    <Compile Include="Pages\JuridiquePanel.aspx.designer.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="WebServices\AddFormDataService.asmx.cs">
       <DependentUpon>AddFormDataService.asmx</DependentUpon>
@@ -756,20 +770,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Demandes.aspx.cs">
-      <DependentUpon>Demandes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Demandes.aspx.designer.cs">
-      <DependentUpon>Demandes.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AfficherArchives.aspx.cs">
-      <DependentUpon>AfficherArchives.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AfficherArchives.aspx.designer.cs">
-      <DependentUpon>AfficherArchives.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

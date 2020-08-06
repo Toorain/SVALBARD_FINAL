@@ -6,7 +6,7 @@ function checkCote(cote) {
         coteExists.attr("hidden", "hidden");
         $.ajax({
             type: "POST",
-            url: "WebServices/CheckCoteService.asmx/ValidateCote",
+            url: "/WebServices/CheckCoteService.asmx/ValidateCote",
             data: {cote: coteUpper},
             mimeType: "text/plain",
             serverSide: true,

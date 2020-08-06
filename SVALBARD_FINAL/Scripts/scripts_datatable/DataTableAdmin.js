@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
     // Doesn't call WebService if not on Datatable displaying page.
-    if (window.location.pathname === "/AdminPanel") {
+    if (window.location.pathname === "/Pages/AdminPanel") {
         $("#midget-spinner").css("display", "block");
         let jsonData = JSON.parse(document.getElementById("JsonData").innerHTML);
 

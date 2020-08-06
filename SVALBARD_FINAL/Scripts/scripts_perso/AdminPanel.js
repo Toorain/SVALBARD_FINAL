@@ -1,7 +1,7 @@
 ﻿let changeUserStatus = $("#changeUserStatus");
 $(document).ready(function () {
     // Doesn't call WebService if not on Datatable displaying page
-    if (window.location.pathname === "/AdminPanel") {
+    if (window.location.pathname === "/Pages/AdminPanel") {
         $("tr").click(function () {
             setTimeout(function () {
                 if ($("#MainContent_RoleList").val() === "1") {

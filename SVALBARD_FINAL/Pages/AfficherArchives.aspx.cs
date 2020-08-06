@@ -1,16 +1,9 @@
-﻿using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data.SqlClient;
+﻿using System;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Windows.Forms;
+using Microsoft.AspNet.Identity;
 using WebApplication1.Models;
-using Button = System.Web.UI.WebControls.Button;
 
-namespace WebApplication1
+namespace WebApplication1.Pages
 {
     public partial class AfficherArchives : Page
     {

@@ -7,181 +7,127 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1 {
+namespace WebApplication1.Pages {
     
     
-    public partial class ArchivistePanel {
+    public partial class AjouterArchive {
         
         /// <summary>
-        /// archivisteID control.
+        /// LoggedUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField archivisteID;
+        protected global::System.Web.UI.WebControls.HiddenField LoggedUser;
         
         /// <summary>
-        /// ArchiveCote control.
+        /// LoggedUserId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField ArchiveCote;
+        protected global::System.Web.UI.WebControls.HiddenField LoggedUserId;
         
         /// <summary>
-        /// ArchiveAction control.
+        /// alertRequestAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField ArchiveAction;
+        protected global::System.Web.UI.WebControls.Panel alertRequestAdd;
         
         /// <summary>
-        /// Cote control.
+        /// alertAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField Cote;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertAdd;
         
         /// <summary>
-        /// Identifier control.
+        /// collapseRow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField Identifier;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseRow;
         
         /// <summary>
-        /// Origin control.
+        /// collapseElmAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField Origin;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElmAdd;
         
         /// <summary>
-        /// userID control.
+        /// rptViewerPAL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField userID;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerPAL;
         
         /// <summary>
-        /// alertRequestSuccess control.
+        /// collapseElmEtqPal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel alertRequestSuccess;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElmEtqPal;
         
         /// <summary>
-        /// alertType control.
+        /// rptViewerEtiquettePAL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertType;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerEtiquettePAL;
         
         /// <summary>
-        /// alertSuccessText control.
+        /// coteValidationServer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertSuccessText;
+        protected global::System.Web.UI.WebControls.HiddenField coteValidationServer;
         
         /// <summary>
-        /// ModifyStatus control.
+        /// coteGeneratePdf control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ModifyStatus;
+        protected global::System.Web.UI.WebControls.HiddenField coteGeneratePdf;
         
         /// <summary>
-        /// Emplacement control.
+        /// JSONFormData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Emplacement;
+        protected global::System.Web.UI.WebControls.HiddenField JSONFormData;
         
         /// <summary>
-        /// ModalAjouter control.
+        /// GeneratePdfPal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ModalAjouter;
-        
-        /// <summary>
-        /// NewNotifAjout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NewNotifAjout;
-        
-        /// <summary>
-        /// NewNotifConsult control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NewNotifConsult;
-        
-        /// <summary>
-        /// NewNotifDestru control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NewNotifDestru;
-        
-        /// <summary>
-        /// collapseElm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElm;
-        
-        /// <summary>
-        /// rptViewerArchiviste control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerArchiviste;
-        
-        /// <summary>
-        /// ButtonGeneratePdf control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonGeneratePdf;
+        protected global::System.Web.UI.WebControls.Button GeneratePdfPal;
         
         /// <summary>
         /// Master property.

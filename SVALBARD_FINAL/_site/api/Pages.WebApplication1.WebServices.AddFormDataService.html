@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class UserRequestService
+    <title>Class AddFormDataService
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class UserRequestService
+    <meta name="title" content="Class AddFormDataService
    ">
     <meta name="generator" content="docfx 2.54.0.0">
     
@@ -68,12 +68,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="WebApplication1.WebServices.UserRequestService">
+            <article class="content wrap" id="_content" data-uid="Pages.WebApplication1.WebServices.AddFormDataService">
   
   
-  <h1 id="WebApplication1_WebServices_UserRequestService" data-uid="WebApplication1.WebServices.UserRequestService" class="text-break">Class UserRequestService
+  <h1 id="Pages_WebApplication1_WebServices_AddFormDataService" data-uid="Pages.WebApplication1.WebServices.AddFormDataService" class="text-break">Class AddFormDataService
   </h1>
-  <div class="markdown level0 summary"><p>Description résumée de UserRequestService</p>
+  <div class="markdown level0 summary"><p>Description résumée de AddFormDataService</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -81,7 +81,7 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">System.ComponentModel.MarshalByValueComponent</span></div>
     <div class="level2"><span class="xref">System.Web.Services.WebService</span></div>
-    <div class="level3"><span class="xref">UserRequestService</span></div>
+    <div class="level3"><span class="xref">AddFormDataService</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -155,32 +155,31 @@
       <span class="xref">System.Object.MemberwiseClone()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="WebApplication1.WebServices.html">WebApplication1.WebServices</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Pages.WebApplication1.WebServices.html">Pages.WebApplication1.WebServices</a></h6>
   <h6><strong>Assembly</strong>: WebApplication1.dll</h6>
-  <h5 id="WebApplication1_WebServices_UserRequestService_syntax">Syntax</h5>
+  <h5 id="Pages_WebApplication1_WebServices_AddFormDataService_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[WebService(Namespace = &quot;http://tempuri.org/&quot;)]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
-public class UserRequestService : WebService, IComponent, IDisposable, IServiceProvider</code></pre>
+public class AddFormDataService : WebService, IComponent, IDisposable, IServiceProvider</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Toorain/SVALBARD_FINAL/new/dev/apiSpec/new?filename=WebApplication1_WebServices_UserRequestService_GetDataIssuer_System_String_.md&amp;value=---%0Auid%3A%20WebApplication1.WebServices.UserRequestService.GetDataIssuer(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Toorain/SVALBARD_FINAL/new/dev/apiSpec/new?filename=Pages_WebApplication1_WebServices_AddFormDataService_PushData_System_String_.md&amp;value=---%0Auid%3A%20Pages.WebApplication1.WebServices.AddFormDataService.PushData(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Toorain/SVALBARD_FINAL/blob/dev/SVALBARD_FINAL/WebServices/UserRequestService.asmx.cs/#L48">View Source</a>
+    <a href="https://github.com/Toorain/SVALBARD_FINAL/blob/dev/SVALBARD_FINAL/Pages/AddFormDataService.asmx.cs/#L23">View Source</a>
   </span>
-  <a id="WebApplication1_WebServices_UserRequestService_GetDataIssuer_" data-uid="WebApplication1.WebServices.UserRequestService.GetDataIssuer*"></a>
-  <h4 id="WebApplication1_WebServices_UserRequestService_GetDataIssuer_System_String_" data-uid="WebApplication1.WebServices.UserRequestService.GetDataIssuer(System.String)">GetDataIssuer(String)</h4>
-  <div class="markdown level1 summary"><p>A WebService to retreive every users in DB</p>
-</div>
+  <a id="Pages_WebApplication1_WebServices_AddFormDataService_PushData_" data-uid="Pages.WebApplication1.WebServices.AddFormDataService.PushData*"></a>
+  <h4 id="Pages_WebApplication1_WebServices_AddFormDataService_PushData_System_String_" data-uid="Pages.WebApplication1.WebServices.AddFormDataService.PushData(System.String)">PushData(String)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[WebMethod]
-public void GetDataIssuer(string userId)</code></pre>
+public bool PushData(string data)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -194,27 +193,26 @@ public void GetDataIssuer(string userId)</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userId</span></td>
-        <td><p>An unique user identifier retreived from <a class="xref" href="WebApplication1.Pages.Demandes.html#WebApplication1_Pages_Demandes_Page_Load_System_Object_System_EventArgs_">Page_Load(Object, EventArgs)</a></p>
-</td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WebApplication1_WebServices_UserRequestService_GetDataIssuer_System_String__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Parameter userID is given by an Ajax call in DataTablesDemandes.js :
-<example><p>
-<pre><code>$.ajax({
-serverSide: true, 
-        type: &quot;POST&quot;,
-        dataType: &quot;json&quot;,
-        async: true,
-        url: &quot;UserRequestService.asmx/GetDataIssuer&quot;,
-        data: { userID: $(&quot;#userID&quot;).val() },
-        contentType: &quot;application/x-www-form-urlencoded; charset=UTF-8&quot;, 
-        crossDomain: true,</code></pre>
-<p></example>
-Then GetDataIssuer connects to logsArchive Database and fetch this user&apos;s requests on the archive</p>
-</div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <span class="xref">System.ComponentModel.IComponent</span>
@@ -233,10 +231,10 @@ Then GetDataIssuer connects to logsArchive Database and fetch this user&apos;s r
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Toorain/SVALBARD_FINAL/new/dev/apiSpec/new?filename=WebApplication1_WebServices_UserRequestService.md&amp;value=---%0Auid%3A%20WebApplication1.WebServices.UserRequestService%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Toorain/SVALBARD_FINAL/new/dev/apiSpec/new?filename=Pages_WebApplication1_WebServices_AddFormDataService.md&amp;value=---%0Auid%3A%20Pages.WebApplication1.WebServices.AddFormDataService%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Toorain/SVALBARD_FINAL/blob/dev/SVALBARD_FINAL/WebServices/UserRequestService.asmx.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Toorain/SVALBARD_FINAL/blob/dev/SVALBARD_FINAL/Pages/AddFormDataService.asmx.cs/#L15" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

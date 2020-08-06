@@ -7,127 +7,91 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1 {
+namespace WebApplication1.Pages {
     
     
-    public partial class AjouterArchive {
+    public partial class Demandes {
         
         /// <summary>
-        /// LoggedUser control.
+        /// collapseElmPdf control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField LoggedUser;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElmPdf;
         
         /// <summary>
-        /// LoggedUserId control.
+        /// rptViewerDemandesPdf control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField LoggedUserId;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerDemandesPdf;
         
         /// <summary>
-        /// alertRequestAdd control.
+        /// ButtonGeneratePdf control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel alertRequestAdd;
+        protected global::System.Web.UI.WebControls.Button ButtonGeneratePdf;
         
         /// <summary>
-        /// alertAdd control.
+        /// collapseElmEtiquette control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertAdd;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElmEtiquette;
         
         /// <summary>
-        /// collapseRow control.
+        /// rptViewerDemandesEtiquette control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseRow;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerDemandesEtiquette;
         
         /// <summary>
-        /// collapseElmAdd control.
+        /// ButtonGenerateEtiquette control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElmAdd;
+        protected global::System.Web.UI.WebControls.Button ButtonGenerateEtiquette;
         
         /// <summary>
-        /// rptViewerPAL control.
+        /// Identifier control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerPAL;
+        protected global::System.Web.UI.WebControls.HiddenField Identifier;
         
         /// <summary>
-        /// collapseElmEtqPal control.
+        /// Cote control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl collapseElmEtqPal;
+        protected global::System.Web.UI.WebControls.HiddenField Cote;
         
         /// <summary>
-        /// rptViewerEtiquettePAL control.
+        /// userID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerEtiquettePAL;
-        
-        /// <summary>
-        /// coteValidationServer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField coteValidationServer;
-        
-        /// <summary>
-        /// coteGeneratePdf control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField coteGeneratePdf;
-        
-        /// <summary>
-        /// JSONFormData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField JSONFormData;
-        
-        /// <summary>
-        /// GeneratePdfPal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GeneratePdfPal;
+        protected global::System.Web.UI.WebControls.HiddenField userID;
         
         /// <summary>
         /// Master property.

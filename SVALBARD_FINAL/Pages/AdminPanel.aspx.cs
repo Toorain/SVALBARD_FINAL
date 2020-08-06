@@ -1,15 +1,11 @@
-﻿using Microsoft.AspNet.Identity;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Security.Principal;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 using WebApplication1.Models;
 
 namespace WebApplication1

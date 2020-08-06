@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using Microsoft.ReportingServices.DataProcessing;
+using MongoDB.Driver;
+using CommandType = System.Data.CommandType;
 
 namespace WebApplication1.Models
 {
@@ -134,11 +137,12 @@ namespace WebApplication1.Models
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(_connectionString))
             {
-                string cmdString = "SELECT * FROM [dbo].[ArchivesV2] WHERE cote = @val1";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
-                    cmd.CommandText = cmdString;
+                    /*cmd.CommandText = "SELECT * FROM [dbo].[ArchivesV2] WHERE cote = @val1";*/
+                    cmd.CommandText = "GetIndividualArchive_ArchiveV2";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@val1", identifier);
 
                     sqlConn.Open();
@@ -173,7 +177,7 @@ namespace WebApplication1.Models
             using (SqlConnection sqlConn = new SqlConnection(_connectionString))
             {
                 // Check across 2 DB and 3 tables that suggested cote is last cote + 1 even if a cote is in the waiting list. Prevents insertion of random numbers of Cote in Database.
-                string cmdString =
+                /*string cmdString =
                     "SELECT  TOP (1) cote_ID" +
                     " FROM    ( " +
                     " SELECT cote as cote_ID FROM [archives].[dbo].[ArchivesV2] WHERE cote LIKE @val1" +
@@ -182,11 +186,12 @@ namespace WebApplication1.Models
                     " UNION " +
                     " SELECT archiveID as cote_ID FROM [logsArchives].[dbo].[logsArchive] WHERE ID LIKE @val1" +
                     " ) AS cote_ID" +
-                    " ORDER BY cote_ID DESC";
+                    " ORDER BY cote_ID DESC";*/
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
-                    cmd.CommandText = cmdString;
+                    cmd.CommandText = "Get_Cote_ArchiveV2";
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@val1", cote + '%');
 
                     sqlConn.Open();

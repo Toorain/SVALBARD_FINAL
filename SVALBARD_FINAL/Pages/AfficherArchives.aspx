@@ -1,4 +1,4 @@
-﻿<%@ Page Title="AfficherArchives" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AfficherArchives.aspx.cs" Inherits="WebApplication1.AfficherArchives" EnableEventValidation="false" %>
+﻿<%@ Page Title="AfficherArchives" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AfficherArchives.aspx.cs" Inherits="WebApplication1.Pages.AfficherArchives" EnableEventValidation="false" %>
 <%@ Register TagPrefix="rsweb" Namespace="Microsoft.Reporting.WebForms" Assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">

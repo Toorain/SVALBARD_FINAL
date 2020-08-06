@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Archiviste Panel" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ArchivistePanel.aspx.cs" Inherits="WebApplication1.ArchivistePanel" %>
+﻿<%@ Page Title="Archiviste Panel" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ArchivistePanel.aspx.cs" Inherits="WebApplication1.Pages.ArchivistePanel" %>
 <%@ Register TagPrefix="rsweb" Namespace="Microsoft.Reporting.WebForms" Assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:HiddenField runat="server" ID="archivisteID" ClientIDMode="Static" />

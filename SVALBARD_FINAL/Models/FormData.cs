@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
@@ -31,11 +32,13 @@ namespace WebApplication1.Models
 		{
 			using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
 			{
-				string cmdString = $"SELECT ID FROM [dbo].[logsArchivePAL] WHERE ID = '{entry}'";
+				//string cmdString = $"SELECT ID FROM [dbo].[logsArchivePAL] WHERE ID = @val1";
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = sqlConn;
-					cmd.CommandText = cmdString;
+					cmd.CommandText = "CheckDataBaseEntry_LogsArchivePAL";
+					cmd.CommandType = CommandType.StoredProcedure;
+					cmd.Parameters.AddWithValue("@val1", entry);
 					sqlConn.Open();
 
 					var dr = cmd.ExecuteReader();
@@ -76,14 +79,15 @@ namespace WebApplication1.Models
 		{
 			using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
 			{
-				string cmdString = "INSERT INTO [dbo].[logsArchivePAL]"
+				/*string cmdString = "INSERT INTO [dbo].[logsArchivePAL]"
 									+ " ([ID] , [date], [user], [userID], [ets], [dir], [service], [contenu] ,[date_min] ,[date_max] ,[observations], [prevision_elim], [request_group], [action], [status], [flg_treated], [flg_new])"
 									+ " VALUES"
-									+ " (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14, @val15, @val16, @val17)";
+									+ " (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14, @val15, @val16, @val17)";*/
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = sqlConn;
-					cmd.CommandText = cmdString;
+					cmd.CommandText = "PushData_LogsArchivePAL";
+					cmd.CommandType = CommandType.StoredProcedure;
 					
 					sqlConn.Open();
 

@@ -2,7 +2,7 @@
         
     let modalEnabled = false;
     // Doesn't call WebService if not on Datatable displaying page.
-    if (window.location.pathname === "/AfficherArchives") {
+    if (window.location.pathname === "/Pages/AfficherArchives") {
         
         $("#toggleOverlay").on('click', () => {
             $("#overlayDropZone").removeAttr("style");
@@ -66,7 +66,7 @@
             type: "POST",
             dataType: "json",
             async: true,
-            url: "WebServices/DataFetchService.asmx/GetDataArchives",
+            url: "/WebServices/DataFetchService.asmx/GetDataArchives",
             mimeType: "text/plain",
             success: function (data) {
                 $("#midget-spinner").css("display", "none");

@@ -4,7 +4,7 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using WebApplication1.Models;
 
-namespace WebApplication1
+namespace WebApplication1.Pages
 {
 	public partial class AjouterArchive : Page
 	{

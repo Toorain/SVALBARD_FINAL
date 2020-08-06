@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Demandes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Demandes.aspx.cs" Inherits="WebApplication1.Demandes" %>
+﻿<%@ Page Title="Demandes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Demandes.aspx.cs" Inherits="WebApplication1.Pages.Demandes" %>
 <%@ Register TagPrefix="rsweb" Namespace="Microsoft.Reporting.WebForms" Assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <table id="tableDemandes" class="table table-striped table-hover responsive">

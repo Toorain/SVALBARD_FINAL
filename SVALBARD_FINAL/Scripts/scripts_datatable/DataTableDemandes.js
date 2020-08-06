@@ -1,13 +1,13 @@
 ﻿$(document).ready(function () {
     // Doesn't call WebService if not on Datatable displaying page.
-    if (window.location.pathname === "/Demandes") {
+    if (window.location.pathname === "/Pages/Demandes") {
         $.ajax({
             serverSide: true,
             type: "POST",
             dataType: "json",
             async: true,
             // URL of the webservice I use to retreive data of the issuer
-            url: "WebServices/UserRequestService.asmx/GetDataIssuer",
+            url: "/WebServices/UserRequestService.asmx/GetDataIssuer",
             // #userID has the value of User.Identity.GetUserId() method, gets the token of current user logged in.
             data: { userID: $("#userID").val() },
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",
