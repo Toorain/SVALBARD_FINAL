@@ -12,6 +12,7 @@
     }
     getCheckedBoxes()">ClickMe</div>--%>
     <div runat="server" id="mainContainer" class="container-fluid">
+        <asp:HiddenField runat="server" ID="arrayDropZoneHidden" ClientIDMode="Static" />
         <!-- #region Alert -->
         <asp:Panel ID="alertAlreadyRequested" runat="server" Visible="false">
             <div class="alert alert-warning alert-dismissible fade show text-center " role="alert">
@@ -37,7 +38,7 @@
             </div>
         </div>
         <div class="hiddenLoad m-auto text-center">
-            <input id="toggleOverlay" class="float-left" type="checkbox" data-toggle="toggle" data-onstyle="secondary">
+            <input id="toggleOverlay" class="float-left" type="checkbox" data-toggle="toggle" href="#overlayDropZone" data-onstyle="secondary" />
             <span class="btn btn-outline-secondary" onclick="enableTourArchive()">Découvrir l'outil d'archivage</span>
             <span id="dropdownPdfConsultation" class="dropdownPdf text-center" data-toggle="collapse" href="#collapseElm" role="button" aria-expanded="false" aria-controls="collapseExample">
                 <h3 class="m-auto text-center btn btn-secondary">Afficher le PDF</h3>
@@ -137,7 +138,8 @@
     <div id="overlayDropZone" class="text-center" style="display: none">
         <div class="header-overlay">
             <h2>Elements que je souhaite consulter</h2>
-            <div class="btn btn-success">Demande de consultation</div>
+            <button id="validateChoice" class="btn btn-primary" disabled>Valider mes choix</button>
+            <button runat="server" id="consultChoice" class="btn btn-success" ClientIDMode="Static">Effectuer la demande</button>
         </div>
         <div id="dropReceiver">
             

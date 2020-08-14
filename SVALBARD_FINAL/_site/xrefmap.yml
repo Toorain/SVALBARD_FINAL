@@ -2733,6 +2733,12 @@ references:
   commentId: F:WebApplication1.Pages.AfficherArchives.archiveService
   fullName: WebApplication1.Pages.AfficherArchives.archiveService
   nameWithType: AfficherArchives.archiveService
+- uid: WebApplication1.Pages.AfficherArchives.arrayDropZoneHidden
+  name: arrayDropZoneHidden
+  href: api/WebApplication1.Pages.AfficherArchives.html#WebApplication1_Pages_AfficherArchives_arrayDropZoneHidden
+  commentId: F:WebApplication1.Pages.AfficherArchives.arrayDropZoneHidden
+  fullName: WebApplication1.Pages.AfficherArchives.arrayDropZoneHidden
+  nameWithType: AfficherArchives.arrayDropZoneHidden
 - uid: WebApplication1.Pages.AfficherArchives.btn_detruire
   name: btn_detruire
   href: api/WebApplication1.Pages.AfficherArchives.html#WebApplication1_Pages_AfficherArchives_btn_detruire

@@ -537,10 +537,10 @@
       "output": {
         ".html": {
           "relative_path": "api/WebApplication1.Pages.AfficherArchives.html",
-          "hash": "mkJ5vXYKHMLL5uY93yD9QA=="
+          "hash": "11bxO7MF5Lvf7BzM5zn84A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -600,7 +600,7 @@
           "hash": "77uEJrlCiHdYBiUL15OuUg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -851,7 +851,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 61,
-          "skipped_file_count": 61
+          "skipped_file_count": 60
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

@@ -22,6 +22,15 @@ namespace WebApplication1.Pages {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl mainContainer;
         
         /// <summary>
+        /// arrayDropZoneHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField arrayDropZoneHidden;
+        
+        /// <summary>
         /// alertAlreadyRequested control.
         /// </summary>
         /// <remarks>
@@ -191,6 +200,15 @@ namespace WebApplication1.Pages {
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_detruire;
+        
+        /// <summary>
+        /// consultChoice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton consultChoice;
         
         /// <summary>
         /// Master property.

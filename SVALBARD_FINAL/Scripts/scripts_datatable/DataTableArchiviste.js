@@ -128,7 +128,9 @@
           } );
           // This is the 'Click to see more' part, when you click on <tr></tr> element you get more info about it and you can request targeted element.
           $('tbody').on('click', '.fa-search', function () {
+            
             let dataOfRow = datatableVariable.row( $(this).parents('tr') ).data();
+            console.log(dataOfRow);
             let statusList = $("#StatusList");
             statusList.empty();
             // Close all alerts with a click on Table Row
@@ -144,7 +146,7 @@
               dataType: "json",
               async: true,
               // URL of the webservice I use to retreive data of the issuer
-              url: "WebServices/GetStatusListService.asmx/GetStatusList",
+              url: "/WebServices/GetStatusListService.asmx/GetStatusList",
               // Data I send to the POST method (action)
               data: {action: dataOfRow.Action },
               contentType: "application/x-www-form-urlencoded; charset=UTF-8",
