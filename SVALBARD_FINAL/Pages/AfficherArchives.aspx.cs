@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.UI;
+using System.Windows.Forms;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using WebApplication1.Models;
 
@@ -7,6 +10,7 @@ namespace WebApplication1.Pages
 {
     public partial class AfficherArchives : Page
     {
+        private bool _requestStatus = true;
         private string _requestStatusText;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -55,22 +59,47 @@ namespace WebApplication1.Pages
                     break;
             }
         }
-
         protected void LogConsulterArchive(object sender, EventArgs e)
         {
             bool connError = false;
 
-            string identifier = archiveCoteID.Value;
-            // Connect to the Database
-            LogsPal individualRow = DataSql.GetIndividualArchive(identifier);
-            bool requestSuccessful = LogsPal.RequestArchive(individualRow);
             
-            if (requestSuccessful)
+            string identifier = arrayDropZoneHidden.Value;
+            Array identifierArr = identifier.Split(',');
+            List<LogsPal> arrLogsPal = new List<LogsPal>();
+            List<string> alreadyRequestedCotes = new List<string>();
+            
+            foreach (string id in identifierArr)
+            {
+                if (DataSql.CheckIfCoteHasAlreadyBeenRequested(id).IsNullOrWhiteSpace())
+                {
+                    arrLogsPal.Add(DataSql.GetIndividualArchive(id));
+                }
+                else
+                {
+                    alreadyRequestedCotes.Add(id);
+                    _requestStatus = false;
+                }
+            }
+
+            if (_requestStatus)
+            {
+                foreach (LogsPal itemLogsPal in arrLogsPal)
+                {
+                    LogsPal.RequestArchive(itemLogsPal);
+                }
+            }
+            
+            // Connect to the Database
+            /* LogsPal individualRow = DataSql.GetIndividualArchive(identifier);
+            bool requestSuccessful = LogsPal.RequestArchive(individualRow);
+            */
+            if (_requestStatus)
             {
                 _requestStatusText = "La demande de retrait de l'archive s'est déroulée avec succès, l'archiviste vous tiendra au courant des prochaines étapes.";
                 alertRequestSuccess.Visible = true;
                 alertAlreadyRequested.Visible = false;
-                alertSuccessText.InnerText = _requestStatusText;
+                alertSuccessText.InnerHtml = _requestStatusText;
             }
             // Legacy code, should be deleted when done.
             else if(connError)
@@ -83,13 +112,15 @@ namespace WebApplication1.Pages
             else
             {
                 // Throw an error if a request for an Archive already exists
-                _requestStatusText = "Le dossier que vous avez demandé n'existe plus dans l'archive ou une personne a déjà demandé son retrait de l'archive.";
+                _requestStatusText =
+                    "Le dossier que vous avez demandé n'existe plus dans l'archive ou une personne a déjà demandé son retrait de l'archive. <br/>" +
+                    "Côte(s) concernée(s) : " + string.Join(" / ", alreadyRequestedCotes)  + "";
                 alertRequestSuccess.Visible = false;
                 alertAlreadyRequested.Visible = true;
-                alertRequestedText.InnerText = _requestStatusText;
+                alertRequestedText.InnerHtml = _requestStatusText;
             }
             // If request is allowed (not yet requested), we target Table and insert elements to it.
-            
+           
         }
 
         protected void LogRetirerArchive(object sender, EventArgs e)

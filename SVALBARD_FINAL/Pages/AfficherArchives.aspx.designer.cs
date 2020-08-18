@@ -31,6 +31,33 @@ namespace WebApplication1.Pages {
         protected global::System.Web.UI.WebControls.HiddenField arrayDropZoneHidden;
         
         /// <summary>
+        /// archiveCoteID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField archiveCoteID;
+        
+        /// <summary>
+        /// archiveID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField archiveID;
+        
+        /// <summary>
+        /// localization control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField localization;
+        
+        /// <summary>
         /// alertAlreadyRequested control.
         /// </summary>
         /// <remarks>
@@ -148,33 +175,6 @@ namespace WebApplication1.Pages {
         protected global::System.Web.UI.WebControls.Label archiveCommentaire;
         
         /// <summary>
-        /// archiveCoteID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField archiveCoteID;
-        
-        /// <summary>
-        /// archiveID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField archiveID;
-        
-        /// <summary>
-        /// localization control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField localization;
-        
-        /// <summary>
         /// modalFooter control.
         /// </summary>
         /// <remarks>
@@ -208,7 +208,7 @@ namespace WebApplication1.Pages {
         /// Auto-generated field.
         /// To modify, move the field declaration from the designer file to a code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton consultChoice;
+        protected global::System.Web.UI.WebControls.Button consultChoice;
         
         /// <summary>
         /// Master property.

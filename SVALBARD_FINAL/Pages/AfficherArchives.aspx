@@ -13,6 +13,9 @@
     getCheckedBoxes()">ClickMe</div>--%>
     <div runat="server" id="mainContainer" class="container-fluid">
         <asp:HiddenField runat="server" ID="arrayDropZoneHidden" ClientIDMode="Static" />
+        <asp:HiddenField ID="archiveCoteID" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="archiveID" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="localization" runat="server" ClientIDMode="Static" />
         <!-- #region Alert -->
         <asp:Panel ID="alertAlreadyRequested" runat="server" Visible="false">
             <div class="alert alert-warning alert-dismissible fade show text-center " role="alert">
@@ -91,9 +94,6 @@
                                     
                                 </p>
                                 <!-- Used in Scripts/scripts_datatable/dataTableArchives.js  line:75-->
-                                <asp:HiddenField ID="archiveCoteID" runat="server" ClientIDMode="Static" />
-                                <asp:HiddenField ID="archiveID" runat="server" ClientIDMode="Static" />
-                                <asp:HiddenField ID="localization" runat="server" ClientIDMode="Static" />
                             </div>
                             
                         </div>
@@ -138,8 +138,10 @@
     <div id="overlayDropZone" class="text-center" style="display: none">
         <div class="header-overlay">
             <h2>Elements que je souhaite consulter</h2>
-            <button id="validateChoice" class="btn btn-primary" disabled>Valider mes choix</button>
-            <button runat="server" id="consultChoice" class="btn btn-success" ClientIDMode="Static">Effectuer la demande</button>
+            <div class="d-flex">
+                <button id="validateChoice" class="btn btn-primary" disabled>Valider mes choix</button>
+                <asp:Button runat="server" id="consultChoice" CssClass="btn btn-success" ClientIDMode="Static" Text="Effectuer la demande" OnClick="LogConsulterArchive" /> 
+            </div>
         </div>
         <div id="dropReceiver">
             

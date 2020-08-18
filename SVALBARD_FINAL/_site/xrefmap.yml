@@ -1814,6 +1814,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.DataSql.AddArchive
   nameWithType: DataSql.AddArchive
+- uid: WebApplication1.Models.DataSql.CheckIfCoteHasAlreadyBeenRequested(System.String)
+  name: CheckIfCoteHasAlreadyBeenRequested(String)
+  href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_CheckIfCoteHasAlreadyBeenRequested_System_String_
+  commentId: M:WebApplication1.Models.DataSql.CheckIfCoteHasAlreadyBeenRequested(System.String)
+  fullName: WebApplication1.Models.DataSql.CheckIfCoteHasAlreadyBeenRequested(System.String)
+  nameWithType: DataSql.CheckIfCoteHasAlreadyBeenRequested(String)
+- uid: WebApplication1.Models.DataSql.CheckIfCoteHasAlreadyBeenRequested*
+  name: CheckIfCoteHasAlreadyBeenRequested
+  href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_CheckIfCoteHasAlreadyBeenRequested_
+  commentId: Overload:WebApplication1.Models.DataSql.CheckIfCoteHasAlreadyBeenRequested
+  isSpec: "True"
+  fullName: WebApplication1.Models.DataSql.CheckIfCoteHasAlreadyBeenRequested
+  nameWithType: DataSql.CheckIfCoteHasAlreadyBeenRequested
 - uid: WebApplication1.Models.DataSql.Communication
   name: Communication
   href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_Communication
@@ -2757,6 +2770,12 @@ references:
   commentId: F:WebApplication1.Pages.AfficherArchives.collapseElm
   fullName: WebApplication1.Pages.AfficherArchives.collapseElm
   nameWithType: AfficherArchives.collapseElm
+- uid: WebApplication1.Pages.AfficherArchives.consultChoice
+  name: consultChoice
+  href: api/WebApplication1.Pages.AfficherArchives.html#WebApplication1_Pages_AfficherArchives_consultChoice
+  commentId: F:WebApplication1.Pages.AfficherArchives.consultChoice
+  fullName: WebApplication1.Pages.AfficherArchives.consultChoice
+  nameWithType: AfficherArchives.consultChoice
 - uid: WebApplication1.Pages.AfficherArchives.consutlationMode
   name: consutlationMode
   href: api/WebApplication1.Pages.AfficherArchives.html#WebApplication1_Pages_AfficherArchives_consutlationMode

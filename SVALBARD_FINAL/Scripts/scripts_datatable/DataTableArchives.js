@@ -1,5 +1,9 @@
 ﻿let arrayDropZone = [];
 let removedItem = "";
+let consultCount = 0;
+let rowCount = 0;
+
+
 
 $(document).ready(function () {   
         
@@ -12,9 +16,10 @@ $(document).ready(function () {
         
         $("#validateChoice").click((e) => {
             e.preventDefault();
-            console.log("Clicked");
+            // On click to validate, send an array of items present inside the dropZone.
             $("#arrayDropZoneHidden").val(arrayDropZone);
             $("#validateChoice").attr("disabled", "disabled");
+            $("#consultChoice").removeAttr("disabled", "disabled");
         });
         
         /*###########################################################################
@@ -40,8 +45,6 @@ $(document).ready(function () {
         }
         
 
-        let consultCount = 0;
-        let rowCount = 0;
         let firstIteration = true;
         let dndHandler = { draggedElement: ""};
         let allowAdd = true;
@@ -53,9 +56,12 @@ $(document).ready(function () {
         });        
         dropZone.on('drop', (e) => {
             e.preventDefault();
+            $("#consultChoice").attr("disabled", "disabled");
             
             let selectedRowDnD = dndHandler.draggedElement.children;
             // Dropzone is empty so we add something without checking.
+            
+            
             if ($("#dropReceiver")[0].children.length === 0) {              
                 allowAdd = true;
             } else {
@@ -85,15 +91,23 @@ $(document).ready(function () {
                     firstIteration = false;
                 }
 
-                let onClickEventFlow = 
-                    'arrayDropZone.forEach((item, i) => {' +
+                let onClickEventFlow =
+                    'removedItem = this.textContent;' +
+                    'arrayDropZone.forEach((item, i) => {' +                 
                         'if (item === removedItem) {' +
                             'arrayDropZone.splice(i, 1);' +
                             'removedItem = "";' +
                         '}' +
-                    '});' +
-                    'removedItem = this.textContent;' +
+                    '});' +                    
                     'this.remove();' +
+                    'for(i = 0; i < $("#dropReceiver")[0].children.length; i++ ) {' +
+                        'if ($("#dropReceiver")[0].children[i].children.length === 0) {' +
+                            '$("#dropReceiver")[0].children[i].remove();' +                            
+                            'consultCount--;' +
+                            'firstIteration = true;' +
+                            'rowCount = 10;' +
+                        '}' +
+                    '}' +
                     'document.getElementById("validateChoice").removeAttribute("disabled");';
                 
 
@@ -111,13 +125,13 @@ $(document).ready(function () {
                     firstIteration = false;
                 }
                 
-                arrayDropZone.forEach((item, i) => {
+                /*arrayDropZone.forEach((item, i) => {
                     if (item === removedItem) {
                         arrayDropZone.splice(i, 1);
                         removedItem = "";
                     }
-                });
-            }
+                });*/
+            }            
         });
         
         
@@ -174,7 +188,7 @@ $(document).ready(function () {
                         { data: 'Elimination' },
                         { data: 'Localisation' }
                     ],
-                    "createdRow": function( row ) {
+                    "createdRow" : function( row ) {
                         $(row).attr( 'draggable', 'true' );
                     },
                 });                

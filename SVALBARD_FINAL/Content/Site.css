@@ -108,10 +108,10 @@ tr:hover {
 
 #overlayDropZone {
     background-color: white;
-    height: 90%;
+    height: 75%;
     width: 40%;
     position: fixed;
-    right: 2%;
+    right: 17%;
     top: 2%;
     border-radius: 10px;
     border: black 5px dashed;
@@ -127,7 +127,8 @@ tr:hover {
     justify-content: center;
     color: white;
     background-color: #343a40;
-    height: 20%;
+    height: 150px;
+    min-height: 130px;
 }
 
 .overlay-elements {
@@ -135,6 +136,11 @@ tr:hover {
     padding: 5px;
     height: 125px !important;
     margin: 5px;
+}
+
+#validateChoice {
+    width: 300px;
+    margin-right: 10px;
 }
 
 /* ------------------------------FORM SLIDER START----------------------------------------*/

@@ -169,6 +169,34 @@ namespace WebApplication1.Models
                 }
             }
         }
+        
+        public static string CheckIfCoteHasAlreadyBeenRequested(string cote)
+        {
+
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(_connectionString))
+            {
+                string cmdString = " SELECT ID as cote_ID FROM [logsArchives].[dbo].[logsArchivePAL] WHERE ID = @val1 AND action = 2";
+                
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", cote);
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+                    var drVal = "";
+
+                    while (dr.Read())
+                    {
+                        drVal = dr.HasRows ? dr["cote_ID"].ToString() : "no_entry";
+                    }
+                    return drVal;
+                }
+            }
+        }
 
         public static string GetCote(string cote)
         {
