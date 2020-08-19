@@ -71,9 +71,9 @@
                 "defaultContent": 'icons', 'render': () => {
                   switch (content) {
                     case (1):
-                      return "<span class='d-flex'><i class='fas fa-file-pdf mr-1'></i><i class='fas fa-search'></i></span>";
+                      return "<span class='d-flex'><i class='fas fa-file-pdf mr-1 pdfConsult_" + i +"'></i><i class='fas fa-search'></i></span>";
                     case (2):
-                      return "<i class='fas fa-search'></i>";
+                      return "<span class='d-flex'><i class='fas fa-file-pdf mr-1 pdfConsult_" + i +"'></i><i class='fas fa-search'></i></span>";
                     case (3):
                       return "<i class='fas fa-search'></i>";
                   }
@@ -116,21 +116,28 @@
             let tableColumn = datatableVariable.column($(this).attr('data-columnindex'));
             tableColumn.visible(!tableColumn.visible());
           });
-
           // On Pdf icon click, we set up HiddenField value according to the row value of each element. 
 
-          $('tbody').on( 'click', '.fa-file-pdf', function () {
+          $(".pdfConsult_" + i + "").on( 'click', function () {
             let data = datatableVariable.row( $(this).parents('tr') ).data();
-            $("#Origin").val(data.Origin);
+            
             $("#Identifier").val(data.ID);
             $("#Cote").val(data.ArchiveID);
+            
+            if (data.Action === 2) {
+              $("#Origin").val("CONSULTER");
+              console.log(data);
+            } else {
+              $("#Origin").val(data.Origin);
+                          
+            }
             $("#ButtonGeneratePdf").click();
           } );
+          
           // This is the 'Click to see more' part, when you click on <tr></tr> element you get more info about it and you can request targeted element.
           $('tbody').on('click', '.fa-search', function () {
             
             let dataOfRow = datatableVariable.row( $(this).parents('tr') ).data();
-            console.log(dataOfRow);
             let statusList = $("#StatusList");
             statusList.empty();
             // Close all alerts with a click on Table Row

@@ -91,7 +91,7 @@ namespace WebApplication1.Models
               cmd.Parameters.AddWithValue("@val10", logsPal.DateMax);
               cmd.Parameters.AddWithValue("@val11", "");
               cmd.Parameters.AddWithValue("@val12", Int32.TryParse(logsPal.Elimination, out number) ? Convert.ToInt32(logsPal.Elimination) : 0 );
-              cmd.Parameters.AddWithValue("@val13", logsPal.Cote);
+              cmd.Parameters.AddWithValue("@val13", logsPal.RequestGroup );
               cmd.Parameters.AddWithValue("@val14", logsPal.Localization);
               cmd.Parameters.AddWithValue("@val15", 2);
               cmd.Parameters.AddWithValue("@val16", 1);

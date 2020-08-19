@@ -1931,12 +1931,12 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.DataSql.GetCote
   nameWithType: DataSql.GetCote
-- uid: WebApplication1.Models.DataSql.GetIndividualArchive(System.String)
-  name: GetIndividualArchive(String)
-  href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_GetIndividualArchive_System_String_
-  commentId: M:WebApplication1.Models.DataSql.GetIndividualArchive(System.String)
-  fullName: WebApplication1.Models.DataSql.GetIndividualArchive(System.String)
-  nameWithType: DataSql.GetIndividualArchive(String)
+- uid: WebApplication1.Models.DataSql.GetIndividualArchive(System.String,System.String)
+  name: GetIndividualArchive(String, String)
+  href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_GetIndividualArchive_System_String_System_String_
+  commentId: M:WebApplication1.Models.DataSql.GetIndividualArchive(System.String,System.String)
+  fullName: WebApplication1.Models.DataSql.GetIndividualArchive(System.String, System.String)
+  nameWithType: DataSql.GetIndividualArchive(String, String)
 - uid: WebApplication1.Models.DataSql.GetIndividualArchive*
   name: GetIndividualArchive
   href: api/WebApplication1.Models.DataSql.html#WebApplication1_Models_DataSql_GetIndividualArchive_
@@ -2636,6 +2636,19 @@ references:
   isSpec: "True"
   fullName: WebApplication1.Models.PdfMethods.GeneratePdf
   nameWithType: PdfMethods.GeneratePdf
+- uid: WebApplication1.Models.PdfMethods.GeneratePdfConsult(System.String,Microsoft.Reporting.WebForms.ReportViewer)
+  name: GeneratePdfConsult(String, ReportViewer)
+  href: api/WebApplication1.Models.PdfMethods.html#WebApplication1_Models_PdfMethods_GeneratePdfConsult_System_String_Microsoft_Reporting_WebForms_ReportViewer_
+  commentId: M:WebApplication1.Models.PdfMethods.GeneratePdfConsult(System.String,Microsoft.Reporting.WebForms.ReportViewer)
+  fullName: WebApplication1.Models.PdfMethods.GeneratePdfConsult(System.String, Microsoft.Reporting.WebForms.ReportViewer)
+  nameWithType: PdfMethods.GeneratePdfConsult(String, ReportViewer)
+- uid: WebApplication1.Models.PdfMethods.GeneratePdfConsult*
+  name: GeneratePdfConsult
+  href: api/WebApplication1.Models.PdfMethods.html#WebApplication1_Models_PdfMethods_GeneratePdfConsult_
+  commentId: Overload:WebApplication1.Models.PdfMethods.GeneratePdfConsult
+  isSpec: "True"
+  fullName: WebApplication1.Models.PdfMethods.GeneratePdfConsult
+  nameWithType: PdfMethods.GeneratePdfConsult
 - uid: WebApplication1.Models.PdfMethods.GeneratePdfPal(System.String,Microsoft.Reporting.WebForms.ReportViewer)
   name: GeneratePdfPal(String, ReportViewer)
   href: api/WebApplication1.Models.PdfMethods.html#WebApplication1_Models_PdfMethods_GeneratePdfPal_System_String_Microsoft_Reporting_WebForms_ReportViewer_

@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
     // Doesn't call WebService if not on Datatable displaying page.
     if (window.location.pathname === "/Pages/Demandes") {
+        let dataAction;        
         $.ajax({
             serverSide: true,
             type: "POST",
@@ -40,6 +41,7 @@
                         { data: 'ArchiveID' },
                         {
                             data: 'Action', 'render': (data) => {
+                                dataAction = data;
                                 switch (data) {
                                     case (1):
                                         return "Ajout";
@@ -51,10 +53,19 @@
                             }
                         },
                         { data : 'Status'},
-                        { "defaultContent": "<i class='mr-3 fas fa-file-pdf'></i>" +
-                                            "<i class='fas fa-tag'></i>"}
+                        { "defaultContent": "",
+                            render : function () {
+                                if (dataAction !== 2) {
+                                    return "<i class='mr-3 fas fa-file-pdf'></i>" +
+                                        "<i class='fas fa-tag'></i>"
+                                } else {
+                                    return "Aucune action";
+                                }
+                            }                   
+                        }
                     ]
                 });
+                console.log(dataAction);
                 $("body").keydown(function (e) {
                     if (e.keyCode === 37) { // left
                         $("#tableDemandes_previous").click();

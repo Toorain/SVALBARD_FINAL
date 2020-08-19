@@ -12,6 +12,8 @@ namespace WebApplication1.Pages
     {
         private bool _requestStatus = true;
         private string _requestStatusText;
+        private string _idGroup;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -62,18 +64,22 @@ namespace WebApplication1.Pages
         protected void LogConsulterArchive(object sender, EventArgs e)
         {
             bool connError = false;
-
-            
             string identifier = arrayDropZoneHidden.Value;
             Array identifierArr = identifier.Split(',');
             List<LogsPal> arrLogsPal = new List<LogsPal>();
             List<string> alreadyRequestedCotes = new List<string>();
+            bool firstCycle = true;
             
             foreach (string id in identifierArr)
             {
+                if (firstCycle)
+                {
+                    _idGroup = id;
+                    firstCycle = false;
+                }
                 if (DataSql.CheckIfCoteHasAlreadyBeenRequested(id).IsNullOrWhiteSpace())
                 {
-                    arrLogsPal.Add(DataSql.GetIndividualArchive(id));
+                    arrLogsPal.Add(DataSql.GetIndividualArchive(id, _idGroup));
                 }
                 else
                 {
@@ -82,12 +88,9 @@ namespace WebApplication1.Pages
                 }
             }
 
-            if (_requestStatus)
+            foreach (LogsPal itemLogsPal in arrLogsPal)
             {
-                foreach (LogsPal itemLogsPal in arrLogsPal)
-                {
-                    LogsPal.RequestArchive(itemLogsPal);
-                }
+                LogsPal.RequestArchive(itemLogsPal);
             }
             
             // Connect to the Database
@@ -113,8 +116,9 @@ namespace WebApplication1.Pages
             {
                 // Throw an error if a request for an Archive already exists
                 _requestStatusText =
-                    "Le dossier que vous avez demandé n'existe plus dans l'archive ou une personne a déjà demandé son retrait de l'archive. <br/>" +
-                    "Côte(s) concernée(s) : " + string.Join(" / ", alreadyRequestedCotes)  + "";
+                    "Une ou plusieurs références demandées n'existent plus dans l'archive, <br />" +
+                    "ou une personne a déjà demandé son retrait de l'archive. <br/>" +
+                    "<p class=\"text-danger\" >Ces côtes n'ont pas été ajoutées : " + string.Join(" / ", alreadyRequestedCotes)  + "</p>";
                 alertRequestSuccess.Visible = false;
                 alertAlreadyRequested.Visible = true;
                 alertRequestedText.InnerHtml = _requestStatusText;

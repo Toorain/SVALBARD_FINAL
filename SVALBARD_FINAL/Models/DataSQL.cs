@@ -132,7 +132,7 @@ namespace WebApplication1.Models
             }
         }
         
-        public static LogsPal GetIndividualArchive(string identifier)
+        public static LogsPal GetIndividualArchive(string identifier, string requestGroup = "holder")
         {
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(_connectionString))
@@ -162,7 +162,8 @@ namespace WebApplication1.Models
                             DateMin = Convert.ToInt32(dr["extremes"].ToString().Substring(0, dr["extremes"].ToString().IndexOf("-"))),
                             DateMax = Convert.ToInt32(dr["extremes"].ToString().Substring( dr["extremes"].ToString().IndexOf("-") + 1)),
                             Elimination = dr["elimination"].ToString(),
-                            Localization = dr["localisation"].ToString()
+                            Localization = dr["localisation"].ToString(),
+                            RequestGroup = requestGroup
                         };
                     }
                     return logsPal;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.UI;
+using System.Windows.Forms;
 using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using WebApplication1.Models;
@@ -61,6 +62,7 @@ namespace WebApplication1.Pages
 
                 indexOfItem++;
             }
+           
 
             if (!IsPostBack)
             {
@@ -69,6 +71,8 @@ namespace WebApplication1.Pages
                 NewNotifAjout.InnerText = LogsPal.GetNewElementsCountIndividual(1).ToString();
                 NewNotifConsult.InnerText = LogsPal.GetNewElementsCountIndividual(2).ToString();
                 NewNotifDestru.InnerText = LogsPal.GetNewElementsCountIndividual(3).ToString();
+                
+
                 /*
                 List<List<string>> arrayArray = Logs.GetStatus();
                 
@@ -101,6 +105,10 @@ namespace WebApplication1.Pages
             if (Origin.Value == "NOT_PAL")
             {
                 success = PdfMethods.GeneratePdf(Identifier.Value, Cote.Value, rptViewerArchiviste);
+            } 
+            else if (Origin.Value == "CONSULTER")
+            {
+                success = PdfMethods.GeneratePdfConsult(LogsPal.GetRequestGroup(Cote.Value), rptViewerArchiviste);
             }
             else
             {

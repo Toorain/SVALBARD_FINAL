@@ -82,15 +82,9 @@ $(document).ready(function () {
             count = 0;
             
             if (allowAdd) {
-                if(firstIteration) {
-                    $("<div class='row w-100 m-0 m-auto p-0 d-flex justify-content-around' id='consultItem_" + consultCount + "'>" +
-                        /*"<div class='d-flex justify-content-around leftCol_" + consultCount + "'></div>" +
-                        "<div class='d-flex justify-content-around rightCol_" + consultCount + "'></div>" +
-                        "</div>").appendTo("#dropReceiver"); */
-                        "</div>").appendTo("#dropReceiver");
-                    firstIteration = false;
-                }
-
+                $("<div class='row w-100 m-0 m-auto p-0 d-flex justify-content-around' id='consultItem'>" +
+                "</div>").appendTo("#dropReceiver");
+                
                 let onClickEventFlow =
                     'removedItem = this.textContent;' +
                     'arrayDropZone.forEach((item, i) => {' +                 
@@ -100,19 +94,12 @@ $(document).ready(function () {
                         '}' +
                     '});' +                    
                     'this.remove();' +
-                    'for(i = 0; i < $("#dropReceiver")[0].children.length; i++ ) {' +
-                        'if ($("#dropReceiver")[0].children[i].children.length === 0) {' +
-                            '$("#dropReceiver")[0].children[i].remove();' +                            
-                            'consultCount--;' +
-                            'firstIteration = true;' +
-                            'rowCount = 10;' +
-                        '}' +
-                    '}' +
                     'document.getElementById("validateChoice").removeAttribute("disabled");';
+
+
+                $("<div class='btn btn-secondary col-md-2 m-2 overlay-elements dropZoneElements d-flex align-items-center justify-content-center' onclick='"+ onClickEventFlow +"'>" + selectedRowDnD[0].textContent + "</div>").appendTo("#consultItem");
                 
-
-
-                if (rowCount <= 3) {
+                /*if (rowCount <= 3) {
                     $("<div class='btn btn-secondary col-md-2 m-2 overlay-elements dropZoneElements d-flex align-items-center justify-content-center' onclick='"+ onClickEventFlow +"'>" + selectedRowDnD[0].textContent + "</div>").appendTo("#consultItem_" + consultCount +"");
                     rowCount += 1;
                 } else {
@@ -123,7 +110,7 @@ $(document).ready(function () {
                         "<div onclick='"+ onClickEventFlow +"' class='btn btn-secondary col-md-2 m-2 overlay-elements d-flex align-items-center justify-content-center'>" + selectedRowDnD[0].textContent + "</div>" +
                         "</div>").appendTo("#dropReceiver");
                     firstIteration = false;
-                }
+                }*/
                 
                 /*arrayDropZone.forEach((item, i) => {
                     if (item === removedItem) {
