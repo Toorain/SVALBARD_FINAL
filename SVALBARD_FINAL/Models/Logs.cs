@@ -160,7 +160,7 @@ namespace WebApplication1.Models
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
             {
-                cmdString = "SELECT TOP (1) ID FROM [logsArchives].[dbo].[logsArchive] ORDER BY ID DESC";
+                cmdString = "SELECT TOP (1) ID FROM [dbo].[logsArchive] ORDER BY ID DESC";
 
                 using (SqlCommand cmd = new SqlCommand())
                 {

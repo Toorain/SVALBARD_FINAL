@@ -21,7 +21,7 @@ namespace WebApplication1.Pages
                 
             }
 
-            mainContainer.Visible = false;
+            /* mainContainer.Visible = false;
 
             string dbAuthorization = DatabaseUser.GetCurrentUserAuthorization(User.Identity.GetUserId());
             switch (dbAuthorization)
@@ -60,6 +60,7 @@ namespace WebApplication1.Pages
                     alertRequestedText.InnerText = _requestStatusText;
                     break;
             }
+            */
         }
         protected void LogConsulterArchive(object sender, EventArgs e)
         {

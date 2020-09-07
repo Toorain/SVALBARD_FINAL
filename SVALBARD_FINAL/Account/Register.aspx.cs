@@ -15,23 +15,23 @@ namespace WebApplication1.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<DES> desList = DES.GetDataZero("etablissement");
+            //List<DES> desList = DES.GetDataZero("etablissement");
 
-            if (!IsPostBack)
-            {
-                EtsList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --" });
-                DirList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --", Selected = true });
-                ServiceList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --", Selected = true });
-                foreach (var item in desList)
-                {
-                    ListItem listItem = new ListItem()
-                    {
-                        Value = item.Name,
-                        Text = item.Name,
-                    };
-                    EtsList.Items.Insert(item.ID, listItem);
-                } 
-            }
+            // if (!IsPostBack)
+            // {
+            //     EtsList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --" });
+            //     DirList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --", Selected = true });
+            //     ServiceList.Items.Insert(0, new ListItem() { Value = "-- CHOOSE --", Text = "-- CHOOSE --", Selected = true });
+            //     foreach (var item in desList)
+            //     {
+            //         ListItem listItem = new ListItem()
+            //         {
+            //             Value = item.Name,
+            //             Text = item.Name,
+            //         };
+            //         EtsList.Items.Insert(item.ID, listItem);
+            //     } 
+            // }
         }
         protected void CreateUser_Click(object sender, EventArgs e)
         {

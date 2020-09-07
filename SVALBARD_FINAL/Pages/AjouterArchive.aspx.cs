@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Web.UI;
+using System.Windows.Forms;
 using Microsoft.AspNet.Identity;
 using WebApplication1.Models;
 
@@ -10,12 +12,28 @@ namespace WebApplication1.Pages
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			LoggedUser.Value = User.Identity.GetUserName();
-			LoggedUserId.Value = User.Identity.GetUserId();
+			if (Request.LogonUserIdentity != null)
+			{
+				AdUser user = AdUser.GetUserInfos(AdUser.GetUserIdentity(Request.LogonUserIdentity.Name));
+				// TODO : Change this for if else under.
+				LoggedUser.Value = "ZEKRI";
+				LoggedUserId.Value = "33700";
+				if (user != null)
+				{
+					// LoggedUser.Value = user.Nom;
+					// LoggedUserId.Value = user.Id;
+				}
+				else
+				{
+					//Response.Redirect("/NotADUser.aspx");
+				}
+				
+			}
 			
-			int lastItem = DataSql.GetLastItemArchive();
+
+			// int lastItem = DataSql.GetLastItemArchive();
             
-			List<DES> desList = DES.GetDataZero("etablissement");
+			//List<DES> desList = DES.GetDataZero("etablissement");
 			
 		}
 
@@ -41,5 +59,7 @@ namespace WebApplication1.Pages
 		{
 			return EtiquetteMethods.GenerateEtiquettePal(coteGeneratePdf.Value, rptViewerEtiquettePAL);
 		}
+
+		
 	}
 }

@@ -77,18 +77,19 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             archivistePanel.Visible = false;
-            archivesPanel.Visible = false;
+            archivesPanel.Visible = true;
             ajouterPanel.Visible = false;
             demandesPanel.Visible = false;
             adminPanel.Visible = false;
             juridiquePanel.Visible = false;
             showNewElementsCount.Value = "no_show";
 
-            var user = HttpContext.Current.User.Identity;
-
-            if (user.IsAuthenticated)
+            if (Request.LogonUserIdentity != null)
             {
-                string userId = DatabaseUser.GetCurrentUserAuthorization(user.GetUserId());
+                var user = AdUser.GetUserIdentity(Request.LogonUserIdentity.Name);
+
+                string userId = AdUser.GetCurrentUserAuthorization(user);
+                
                 switch (userId)
                 {
                     // Administrateur

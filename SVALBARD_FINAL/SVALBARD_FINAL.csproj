@@ -296,12 +296,15 @@
     <Content Include="docfx.json" />
     <Content Include="index.md" />
     <Content Include="LICENSE.txt" />
+    <Content Include="NotADUser.aspx" />
+    <Content Include="NotAllowed.aspx" />
     <Content Include="Pages\AdminPanel.aspx" />
     <Content Include="Pages\AfficherArchives.aspx" />
     <Content Include="Pages\AjouterArchive.aspx" />
     <Content Include="Pages\ArchivistePanel.aspx" />
     <Content Include="Pages\Demandes.aspx" />
     <Content Include="Pages\JuridiquePanel.aspx" />
+    <Content Include="Scripts\scripts_datatable\DataTableAdminAD.js" />
     <Content Include="Scripts\scripts_datatable\DataTableJuridique.js" />
     <Content Include="Scripts\scripts_perso\DES_Script.js" />
     <Content Include="Scripts\scripts_perso\ArchivistePanel.js" />
@@ -452,6 +455,7 @@
     <Content Include="WebServices\CheckCoteService.asmx" />
     <Content Include="WebServices\DataFetchService.asmx" />
     <Content Include="WebServices\DESFetchService.asmx" />
+    <Content Include="WebServices\FetchAllUsersService.asmx" />
     <Content Include="WebServices\GetArchivisteRequestService.asmx" />
     <Content Include="WebServices\GetStatusListService.asmx" />
     <Content Include="WebServices\RetreiveRole.asmx" />
@@ -706,6 +710,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Models\AD_User.cs" />
     <Compile Include="Models\AspNetUsersExtended.cs" />
     <Compile Include="Models\DatabaseUser.cs" />
     <Compile Include="Models\DataSQL.cs" />
@@ -715,6 +720,21 @@
     <Compile Include="Models\LogsPal.cs" />
     <Compile Include="Models\Misc.cs" />
     <Compile Include="Models\PdfMethods.cs" />
+    <Compile Include="Models\UserWithRole.cs" />
+    <Compile Include="NotADUser.aspx.cs">
+      <DependentUpon>NotADUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotADUser.aspx.designer.cs">
+      <DependentUpon>NotADUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotAllowed.aspx.cs">
+      <DependentUpon>NotAllowed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotAllowed.aspx.designer.cs">
+      <DependentUpon>NotAllowed.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AdminPanel.aspx.cs">
       <DependentUpon>AdminPanel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -780,6 +800,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebServices\DESFetchService.asmx.cs">
       <DependentUpon>DESFetchService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\FetchAllUsersService.asmx.cs">
+      <DependentUpon>FetchAllUsersService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServices\GetArchivisteRequestService.asmx.cs">

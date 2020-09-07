@@ -12,57 +12,102 @@ namespace WebApplication1.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<string> databaseElements = DES.GetDatabaseElements();
+            //List<string> databaseElements = DES.GetDatabaseElements();
             
-            int indexOfItem = 0;
-            string leftSplitter = "";
+            //int indexOfItem = 0;
+            //string leftSplitter = "";
 
-            foreach (var item in databaseElements)
-            {
-                
-                List<string> tableItems = DES.GetTableElements(item);
-
-                if (indexOfItem != 0) { leftSplitter = "vertical-line"; };
-
-                // Generate a Div element with custom class
-                System.Web.UI.HtmlControls.HtmlGenericControl div = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
-                div.Attributes["class"] = "col-md-4 text-center " + leftSplitter + "";
-
-                // Generate h5 for column title
-                System.Web.UI.HtmlControls.HtmlGenericControl h5 = new System.Web.UI.HtmlControls.HtmlGenericControl("h5")
-                {
-                    InnerText = Misc.UppercaseFirst(item)
-                };
-                div.Controls.Add(h5);
-
-                // Generate two labels
-                System.Web.UI.HtmlControls.HtmlGenericControl label1 = new System.Web.UI.HtmlControls.HtmlGenericControl("label")
-                {
-                    InnerHtml = "Code de référence : <input type='text' class='form-control'/>"
-                };
-                System.Web.UI.HtmlControls.HtmlGenericControl label2 = new System.Web.UI.HtmlControls.HtmlGenericControl("label")
-                {
-                    InnerHtml = "Nom : <input type='text' class='form-control'/>"
-                };
-                div.Controls.Add(label1);
-                div.Controls.Add(label2);
-                
-                // Generate an <asp:Button>
-                System.Web.UI.WebControls.Button button = new System.Web.UI.WebControls.Button
-                {
-                    Text = "Ajouter " + Misc.UppercaseFirst(item),
-                    CssClass = "btn btn-outline-success",
-                    ID = item,
-                    ClientIDMode = ClientIDMode.Static
-                };
-                button.Click += new EventHandler(this.AddSmth);
-                div.Controls.Add(button);
-
-                ModalAjouter.Controls.Add(div);
-
-                indexOfItem++;
-            }
-           
+            // foreach (var item in databaseElements)
+            // {
+            //     
+            //     List<string> tableItems = DES.GetTableElements(item);
+            //
+            //     if (indexOfItem != 0) { leftSplitter = "vertical-line"; };
+            //
+            //     // Generate a Div element with custom class
+            //     System.Web.UI.HtmlControls.HtmlGenericControl div = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
+            //     div.Attributes["class"] = "col-md-4 text-center " + leftSplitter + "";
+            //
+            //     // Generate h5 for column title
+            //     System.Web.UI.HtmlControls.HtmlGenericControl h5 = new System.Web.UI.HtmlControls.HtmlGenericControl("h5")
+            //     {
+            //         InnerText = Misc.UppercaseFirst(item)
+            //     };
+            //     div.Controls.Add(h5);
+            //
+            //     // Generate two labels
+            //     System.Web.UI.HtmlControls.HtmlGenericControl label1 = new System.Web.UI.HtmlControls.HtmlGenericControl("label")
+            //     {
+            //         InnerHtml = "Code de référence : <input type='text' class='form-control'/>"
+            //     };
+            //     System.Web.UI.HtmlControls.HtmlGenericControl label2 = new System.Web.UI.HtmlControls.HtmlGenericControl("label")
+            //     {
+            //         InnerHtml = "Nom : <input type='text' class='form-control'/>"
+            //     };
+            //     div.Controls.Add(label1);
+            //     div.Controls.Add(label2);
+            //     
+            //     // Generate an <asp:Button>
+            //     System.Web.UI.WebControls.Button button = new System.Web.UI.WebControls.Button
+            //     {
+            //         Text = "Ajouter " + Misc.UppercaseFirst(item),
+            //         CssClass = "btn btn-outline-success",
+            //         ID = item,
+            //         ClientIDMode = ClientIDMode.Static
+            //     };
+            //     button.Click += new EventHandler(this.AddSmth);
+            //     div.Controls.Add(button);
+            //
+            //     ModalAjouter.Controls.Add(div);
+            //
+            //     indexOfItem++;
+            // }
+           // foreach (var item in databaseElements)
+           //             {
+           //                 
+           //                 List<string> tableItems = DES.GetTableElements(item);
+           //
+           //                 if (indexOfItem != 0) { leftSplitter = "vertical-line"; };
+           //
+           //                 // Generate a Div element with custom class
+           //                 System.Web.UI.HtmlControls.HtmlGenericControl div = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
+           //                 div.Attributes["class"] = "col-md-4 text-center " + leftSplitter + "";
+           //
+           //                 // Generate h5 for column title
+           //                 System.Web.UI.HtmlControls.HtmlGenericControl h5 = new System.Web.UI.HtmlControls.HtmlGenericControl("h5")
+           //                 {
+           //                     InnerText = Misc.UppercaseFirst(item)
+           //                 };
+           //                 div.Controls.Add(h5);
+           //
+           //                 // Generate two labels
+           //                 System.Web.UI.HtmlControls.HtmlGenericControl label1 = new System.Web.UI.HtmlControls.HtmlGenericControl("label")
+           //                 {
+           //                     InnerHtml = "Code de référence : <input type='text' class='form-control'/>"
+           //                 };
+           //                 System.Web.UI.HtmlControls.HtmlGenericControl label2 = new System.Web.UI.HtmlControls.HtmlGenericControl("label")
+           //                 {
+           //                     InnerHtml = "Nom : <input type='text' class='form-control'/>"
+           //                 };
+           //                 div.Controls.Add(label1);
+           //                 div.Controls.Add(label2);
+           //                 
+           //                 // Generate an <asp:Button>
+           //                 System.Web.UI.WebControls.Button button = new System.Web.UI.WebControls.Button
+           //                 {
+           //                     Text = "Ajouter " + Misc.UppercaseFirst(item),
+           //                     CssClass = "btn btn-outline-success",
+           //                     ID = item,
+           //                     ClientIDMode = ClientIDMode.Static
+           //                 };
+           //                 button.Click += new EventHandler(this.AddSmth);
+           //                 div.Controls.Add(button);
+           //
+           //                 ModalAjouter.Controls.Add(div);
+           //
+           //                 indexOfItem++;
+           //             }
+                      
 
             if (!IsPostBack)
             {
@@ -95,7 +140,7 @@ namespace WebApplication1.Pages
         void AddSmth(Object sender, EventArgs e)
         {
             System.Web.UI.WebControls.Button btn = (System.Web.UI.WebControls.Button)sender;
-            DES.AddSmth(btn.ID);
+            // DES.AddSmth(btn.ID);
         }
         
         protected void GeneratePdf(object sender, EventArgs eventArgs)

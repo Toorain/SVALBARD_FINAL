@@ -11,15 +11,10 @@ $(document).ready(function () {
             orderCellsTop: true,
             data: jsonData,
             columns: [
-                {
-                    data: 'UserName', 'render': (data) => {
-                        let pos = data.indexOf("@");
-                        return arrayToWork = data.substring(0, pos).replace(".", " ").split(" ").join(" ");
-                    }
-                },
+                { data: 'NomAffiche' },
                 { data: 'Id' },
-                { data: 'Email' },
-                { data: 'PhoneNumber' }
+                { data: 'AdresseMail' },
+                { data: 'Telephone' }
             ]
         });
         $("body").keydown(function (e) {
@@ -58,21 +53,22 @@ $(document).ready(function () {
                 url: "/WebServices/RetreiveRole.asmx/ClickedModal",
                 data: { userId :dataRow.Id },
                 success: function (data) {
+                    console.log(data);
                     $("#UserRoleId").text(data.charAt(0).toUpperCase() + data.slice(1));
                     switch(data) {
-                        case "admin":
+                        case "1":
                             mainContentRoleList.find(mainContentRoleList.val("1")).attr("selected", "selected");
                             break;
-                        case "gestionnaire":
+                        case "2":
                             mainContentRoleList.find(mainContentRoleList.val("2")).attr("selected", "selected");
                             break;
-                        case "consultation":
+                        case "3":
                             mainContentRoleList.find(mainContentRoleList.val("3")).attr("selected", "selected");
                             break;
-                        case "archiviste":
+                        case "4":
                             mainContentRoleList.find(mainContentRoleList.val("4")).attr("selected", "selected");
                             break;
-                        case "juridique":
+                        case "5":
                             mainContentRoleList.find(mainContentRoleList.val("5")).attr("selected", "selected");
                             break;
                     }

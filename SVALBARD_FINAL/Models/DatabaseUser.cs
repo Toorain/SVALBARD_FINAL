@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Security.Principal;
 using System.Web;
 using System.Windows.Forms;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 
 namespace WebApplication1.Models
@@ -10,6 +11,9 @@ namespace WebApplication1.Models
     public class DatabaseUser
     {
         private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        private static readonly string ConnectionStringOther = ConfigurationManager.ConnectionStrings["Patrimoine"].ConnectionString;
+
+        
         private static string _id;
         public string Id { get; set; }
         public string Email { get; set; }
@@ -19,6 +23,42 @@ namespace WebApplication1.Models
         private static string GetUserIdentity()
         {
             return HttpContext.Current.User.Identity.Name;
+        }
+
+        
+        
+        /// <summary>
+        /// Check in CUBA/PATRIMOINE/AD_CCIT as CCINCA if user is in there, if not, user can't use the application.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static bool IsUserAllowed(string user)
+        {
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionStringOther))
+            {
+                string cmdString = "SELECT Nom FROM [dbo].[AD_CCIT] WHERE Nom = @val1 AND CompanyID = @val2";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", user);
+                    cmd.Parameters.AddWithValue("@val2", "CCINCA");
+
+
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        if (!dr["Nom"].ToString().IsNullOrWhiteSpace())
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+            }
         }
         public static string GetUserFirstName()
         {
@@ -31,11 +71,11 @@ namespace WebApplication1.Models
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
                     cmd.Parameters.AddWithValue("@val1", _id);
-
+        
                     sqlConn.Open();
-
+        
                     var dr = cmd.ExecuteReader();
-
+        
                     while (dr.Read())
                     {
                         return dr["first_name"].ToString();
@@ -56,11 +96,11 @@ namespace WebApplication1.Models
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
                     cmd.Parameters.AddWithValue("@val1", _id);
-
+        
                     sqlConn.Open();
-
+        
                     var dr = cmd.ExecuteReader();
-
+        
                     while (dr.Read())
                     {
                         return dr["last_name"].ToString();
@@ -81,11 +121,11 @@ namespace WebApplication1.Models
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
                     cmd.Parameters.AddWithValue("@val1", _id);
-
+        
                     sqlConn.Open();
-
+        
                     var dr = cmd.ExecuteReader();
-
+        
                     while (dr.Read())
                     {
                         return dr["ets"].ToString();
@@ -106,11 +146,11 @@ namespace WebApplication1.Models
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
                     cmd.Parameters.AddWithValue("@val1", _id);
-
+        
                     sqlConn.Open();
-
+        
                     var dr = cmd.ExecuteReader();
-
+        
                     while (dr.Read())
                     {
                         return dr["dir"].ToString();
@@ -131,11 +171,11 @@ namespace WebApplication1.Models
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
                     cmd.Parameters.AddWithValue("@val1", _id);
-
+        
                     sqlConn.Open();
-
+        
                     var dr = cmd.ExecuteReader();
-
+        
                     while (dr.Read())
                     {
                         return dr["service"].ToString();
@@ -144,89 +184,34 @@ namespace WebApplication1.Models
                 }
             }
         }
-
-        public static bool IsUserAdmin(IIdentity user)
-        {
-            // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
-            {
-                string cmdString = "SELECT * FROM AspNetUserRoles";
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = sqlConn;
-                    cmd.CommandText = cmdString;
-
-                    sqlConn.Open();
-
-                    var dr = cmd.ExecuteReader();
-
-                    while (dr.Read())
-                    {
-                        if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "1")
-                        {
-                            return true;
-                        }
-                    }
-                    return false;
-                }
-            }
-        }
-        public static string GetCurrentUserAuthorization(string currentUser)
-        {
-            if (currentUser != null)
-            {
-                // Connect to the Database
-                using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
-                {
-                    string cmdString = "SELECT RoleId FROM AspNetUserRoles WHERE UserId = @val1";
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = sqlConn;
-                        cmd.CommandText = cmdString;
-                        cmd.Parameters.AddWithValue("@val1", currentUser);
-
-                        sqlConn.Open();
-
-                        var dr = cmd.ExecuteReader();
-                        string currentUserRoleId = "";
-                        while (dr.Read())
-                        {
-                           currentUserRoleId = dr["RoleId"].ToString();
-                        }
-                        return currentUserRoleId;
-                    }
-                }
-            } else
-            {
-                return "NoUser";
-            }
-        }
-
+        
+        
+       
+        
         public static bool ChangeUserStatus(string userId, string roleId)
         {
             string cmdString =
-            "IF EXISTS(SELECT 'True' FROM AspNetUserRoles WHERE UserId = @val1)"
+            "IF EXISTS(SELECT 'True' FROM [dbo].[ApplicationUser] WHERE id = @val1)"
             + " BEGIN"
-                + " UPDATE AspNetUserRoles"
-                + " SET UserId = @val1, RoleId = @val2"
-                + " WHERE UserId = @val1;"
+                + " UPDATE [dbo].[ApplicationUser]"
+                + " SET role = @val2"
+                + " WHERE Id = @val1;"
             + " END"
             + " ELSE"
             + " BEGIN"
-
-                + " SELECT *"
-                + " FROM AspNetUsers"
-                + " LEFT JOIN AspNetUserRoles"
-
-                + " ON AspNetUsers.Id = AspNetUserRoles.UserId"
-
-                + " WHERE Id = @val1 "
-
-                + " INSERT INTO dbo.AspNetUserRoles(UserId, RoleId)"
-
-                + " VALUES(@val1, @val2);"
+                + " INSERT INTO Archives_Users.dbo.ApplicationUser (Id, first_name, last_name, ets, dir, service, role) "
+                + " SELECT "
+                + " PATRIMOINE.dbo.AD_CCIT.id, "
+                + " PATRIMOINE.dbo.AD_CCIT.Prenom, "
+                + " PATRIMOINE.dbo.AD_CCIT.Nom, "
+                + " PATRIMOINE.dbo.AD_CCIT.Site, "
+                + " PATRIMOINE.dbo.AD_CCIT.Direction,"
+                + " PATRIMOINE.dbo.AD_CCIT.Service,"
+                + " @val2 "
+                + " FROM PATRIMOINE.dbo.AD_CCIT "
+                + " WHERE id = @val1 "
             + " END";
-
+        
             using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -235,7 +220,7 @@ namespace WebApplication1.Models
                     cmd.CommandText = cmdString;
                     cmd.Parameters.AddWithValue("@val1", userId);
                     cmd.Parameters.AddWithValue("@val2", roleId);
-
+        
                     sqlConn.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -251,7 +236,7 @@ namespace WebApplication1.Models
         public static string GetArchiviste()
         {
             string archivisteId = "";
-
+        
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
@@ -261,11 +246,11 @@ namespace WebApplication1.Models
                 {
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
-
+        
                     sqlConn.Open();
-
+        
                     var dr = cmd.ExecuteReader();
-
+        
                     while (dr.Read())
                     {
                         archivisteId = dr[0].ToString();

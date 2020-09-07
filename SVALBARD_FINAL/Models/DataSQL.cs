@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using Microsoft.ReportingServices.DataProcessing;
-using MongoDB.Driver;
 using CommandType = System.Data.CommandType;
 
 namespace WebApplication1.Models
@@ -54,7 +52,7 @@ namespace WebApplication1.Models
                 
                 
                 
-                cmdString = "UPDATE [logsArchives].[dbo].[logsArchivePAL]"
+                cmdString = "UPDATE [Archives_Logs].[dbo].[logsArchivePAL]"
                           + " SET flg_treated = 1"
                           + " WHERE ID = @val1";
                 using (SqlCommand cmd = new SqlCommand())
@@ -177,7 +175,7 @@ namespace WebApplication1.Models
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(_connectionString))
             {
-                string cmdString = " SELECT ID as cote_ID FROM [logsArchives].[dbo].[logsArchivePAL] WHERE ID = @val1 AND action = 2";
+                string cmdString = " SELECT ID as cote_ID FROM [Archives_Logs].[dbo].[logsArchivePAL] WHERE ID = @val1 AND action = 2";
                 
                 using (SqlCommand cmd = new SqlCommand())
                 {

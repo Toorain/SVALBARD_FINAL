@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Web;
 using System.Windows.Forms;
 using Microsoft.Ajax.Utilities;
 using Newtonsoft.Json;
@@ -28,7 +29,7 @@ namespace WebApplication1.Models
 		private int Elimination { get; set; }
 		private string RequestGroup { get; set; }
 
-		private static bool CheckDataBaseEntry(string entry)
+		private static bool IsInDataBase(string entry)
 		{
 			using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
 			{
@@ -43,11 +44,11 @@ namespace WebApplication1.Models
 
 					var dr = cmd.ExecuteReader();
 
-					return !dr.Read();
+					return dr.Read();
 				}
 			}
 		}
-		public static bool DecypherData(string data)
+		public static bool DecypherData(string data, string user)
 		{
 			List<FormData> formDataList = new List<FormData>();
 			// Recover JSON data, from a string to a JSON.
@@ -72,17 +73,19 @@ namespace WebApplication1.Models
 				};
 				formDataList.Add(newFormData);
 			}
-			return PushData(formDataList);
+			return PushData(formDataList, user);
 		}
 
-		private static bool PushData(List<FormData> data)
+		private static bool PushData(List<FormData> data, string user)
 		{
+			AdUser adUser = AdUser.GetUserInfos(user);
+			
 			using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
 			{
-				/*string cmdString = "INSERT INTO [dbo].[logsArchivePAL]"
-									+ " ([ID] , [date], [user], [userID], [ets], [dir], [service], [contenu] ,[date_min] ,[date_max] ,[observations], [prevision_elim], [request_group], [action], [status], [flg_treated], [flg_new])"
-									+ " VALUES"
-									+ " (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14, @val15, @val16, @val17)";*/
+				// string cmdString = "INSERT INTO [dbo].[logsArchivePAL]"
+				// 					+ " ([ID] , [date], [user], [userID], [ets], [dir], [service], [contenu] ,[date_min] ,[date_max] ,[observations], [prevision_elim], [request_group], [action], [status], [flg_treated], [flg_new])"
+				// 					+ " VALUES"
+				// 					+ " (@val1, @val2, @val3, @val4, @val5, @val6, @val7, @val8, @val9, @val10, @val11, @val12, @val13, @val14, @val15, @val16, @val17)";
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = sqlConn;
@@ -92,17 +95,19 @@ namespace WebApplication1.Models
 					sqlConn.Open();
 
 					bool validData = false;
+					
 					foreach (FormData formData in data)
 					{
-						if (CheckDataBaseEntry(formData.Id))
+						
+						if (!IsInDataBase(formData.Id))
 						{
 							cmd.Parameters.AddWithValue("@val1", formData.Id);
 							cmd.Parameters.AddWithValue("@val2", DateTime.Now);
 							cmd.Parameters.AddWithValue("@val3", formData.User);
 							cmd.Parameters.AddWithValue("@val4", formData.UserId);
-							cmd.Parameters.AddWithValue("@val5", DatabaseUser.GetUserEts());
-							cmd.Parameters.AddWithValue("@val6", DatabaseUser.GetUserDir());
-							cmd.Parameters.AddWithValue("@val7", DatabaseUser.GetUserService());
+							cmd.Parameters.AddWithValue("@val5", adUser.Site);
+							cmd.Parameters.AddWithValue("@val6", adUser.Direction);
+							cmd.Parameters.AddWithValue("@val7", adUser.Service);
 							cmd.Parameters.AddWithValue("@val8", formData.Contenu);
 							cmd.Parameters.AddWithValue("@val9", formData.DateDebut);
 							cmd.Parameters.AddWithValue("@val10", formData.DateFin);

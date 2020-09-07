@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.Services;
+using System.Windows.Forms;
 
 namespace WebApplication1.WebServices
 {
@@ -21,10 +22,8 @@ namespace WebApplication1.WebServices
 		{
 			string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
-			string cmdString = " SELECT Name FROM AspNetUserRoles" 
-		                   + " LEFT JOIN AspNetRoles"
-		                   + " ON AspNetUserRoles.RoleId = AspNetRoles.Id"
-		                   + " WHERE UserId = @val1";
+			string cmdString = " SELECT role FROM [dbo].[ApplicationUser]"
+		                   + " WHERE Id = @val1";
 			using (SqlConnection sqlConn = new SqlConnection(connectionString))
 			{
 				using (SqlCommand cmd = new SqlCommand())
@@ -36,10 +35,18 @@ namespace WebApplication1.WebServices
 
 					var dr = cmd.ExecuteReader();
 
-					while (dr.Read())
+					if (dr.HasRows)
 					{
-						_roleId = dr.GetString(0);
+						while (dr.Read())
+						{
+							_roleId = dr["role"].ToString();
+						}
 					}
+					else
+					{
+						_roleId = "3";
+					}
+
 					Context.Response.Write(_roleId);
 					Context.Response.ContentType = "text/plain";
 				}

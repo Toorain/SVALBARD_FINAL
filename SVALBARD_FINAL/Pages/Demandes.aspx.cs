@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web.UI;
-using Microsoft.AspNet.Identity;
 using WebApplication1.Models;
 
 namespace WebApplication1.Pages
@@ -9,9 +8,26 @@ namespace WebApplication1.Pages
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			AdUser user = new AdUser();
+			
+			if (Request.LogonUserIdentity != null)
+			{
+				user = AdUser.GetUserInfos(AdUser.GetUserIdentity(Request.LogonUserIdentity.Name));
+			}
+			
+			userID.Value = "33700";
+			
 			if(!IsPostBack)
 			{
-				userID.Value = User.Identity.GetUserId();
+				// TODO : Uncomment all that and remove userID.Value above
+				if (user != null)
+				{
+					//userID.Value = user.Id;
+				}
+				else
+				{
+					//Response.Redirect("/NotADUser.aspx");
+				}
 			}
 		}
 		protected void GeneratePdf(object sender, EventArgs eventArgs)

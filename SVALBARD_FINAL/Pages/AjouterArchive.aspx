@@ -34,8 +34,7 @@
                 SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" 
                 ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px"
                 ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
-                
-                <ServerReport></ServerReport>
+              <ServerReport></ServerReport>
             </rsweb:ReportViewer>
           </div>
         </div>
@@ -98,6 +97,7 @@
             <asp:HiddenField runat="server" ID="JSONFormData" ClientIDMode="Static" />
             <!-- OnClick="AddArchive" -->
             <asp:Button runat="server" ID="GeneratePdfPal" OnClick="GeneratePdfPal_Click" ClientIDMode="Static" CssClass="btn btn-outline-success d-none" Text="Générer le bordereau" />
+            
           </div>
         </div>
       </div>

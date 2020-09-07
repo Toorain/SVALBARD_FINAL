@@ -81,8 +81,8 @@ namespace WebApplication1.Models
               cmd.CommandText = cmdString;
               cmd.Parameters.AddWithValue("@val1", logsPal.Cote);
               cmd.Parameters.AddWithValue("@val2", DateTime.Now);
-              cmd.Parameters.AddWithValue("@val3", DatabaseUser.GetUserFirstName() + DatabaseUser.GetUserLastName());
-              cmd.Parameters.AddWithValue("@val4", HttpContext.Current.User.Identity.GetUserId());
+              cmd.Parameters.AddWithValue("@val3", Default.SessionUser.NomAffiche);
+              cmd.Parameters.AddWithValue("@val4", Default.SessionUser.Id);
               cmd.Parameters.AddWithValue("@val5", logsPal.IssuerEts);
               cmd.Parameters.AddWithValue("@val6", logsPal.IssuerDir);
               cmd.Parameters.AddWithValue("@val7", logsPal.IssuerService);
