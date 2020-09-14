@@ -14,18 +14,20 @@ using System.Web.UI.WebControls;
 	    private string _loggedUser;
 	    protected void Page_Load(object sender, EventArgs e)
 				{
-					if (Request.LogonUserIdentity != null)
+					if (Request.LogonUserIdentity == null) return;
+					_loggedUser = AdUser.GetUserIdentity(Request.LogonUserIdentity.Name);
+
+					if (AdUser.GetUserInfos(_loggedUser) == null)
 					{
-						_loggedUser = AdUser.GetUserIdentity(Request.LogonUserIdentity.Name);
-						
-						SessionUser = AdUser.GetUserInfos(_loggedUser);
+						Response.Redirect("/NotADUser.aspx");
+						return;
+					}
 
-						// TODO : Remove that after tests IMPORTANT
-						/*if (!DatabaseUser.IsUserAllowed(_loggedUser))
-						{
-							Response.Redirect("/NotAllowed.aspx");
-						} */
-
+					SessionUser = AdUser.GetUserInfos(_loggedUser);
+					
+					if (!DatabaseUser.IsUserAllowed(_loggedUser))
+					{
+						Response.Redirect("/NotAllowed.aspx");
 					}
 				}
 	    

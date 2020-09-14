@@ -103,6 +103,43 @@ namespace WebApplication1.Models
 		
 		public static AdUser GetUserInfos(string user)
 		{
+			using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+			{
+				string cmdString = "SELECT [id],[last_name],[first_name],[full_name],[mail],[ets],[dir],[service],[telephone] FROM [Archives_Users].[dbo].[ApplicationUser] WHERE last_name = @val1";
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = sqlConn;
+					cmd.CommandText = cmdString;
+					cmd.Parameters.AddWithValue("@val1", user);
+
+					sqlConn.Open();
+
+					var dr = cmd.ExecuteReader();
+
+					
+					while (dr.Read())
+					{
+						if (dr.HasRows)
+						{
+							AdUser adUserObj = new AdUser
+							{
+								Id = dr["id"].ToString().ToUpper(),
+								Nom = dr["last_name"].ToString(),
+								Prenom = dr["first_name"].ToString(),
+								NomAffiche = dr["full_name"].ToString(),
+								AdresseMail = dr["mail"].ToString(),
+								Site = dr["ets"].ToString(),
+								Direction = dr["dir"].ToString(),
+								Service = dr["service"].ToString(),
+								Telephone = dr["telephone"].ToString()
+							};
+							return adUserObj;
+						}
+					}
+					sqlConn.Close();
+				}
+			}
+			
 			using (SqlConnection sqlConn = new SqlConnection(ConnectionStringPatrimoine))
 			{
 				string cmdString = "SELECT [id],[Nom],[Prenom],[NomAffiche],[AdresseMail],[Site],[Direction],[Service],[telephone] FROM [dbo].[AD_CCIT] WHERE Nom = @val1 AND CompanyID = @val2";
@@ -116,7 +153,7 @@ namespace WebApplication1.Models
 					sqlConn.Open();
 
 					var dr = cmd.ExecuteReader();
-
+					
 					while (dr.Read())
 					{
 						AdUser adUserObj = new AdUser

@@ -11,7 +11,7 @@ namespace WebApplication1.Models
     public class DatabaseUser
     {
         private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        private static readonly string ConnectionStringOther = ConfigurationManager.ConnectionStrings["Patrimoine"].ConnectionString;
+        private static readonly string ConnectionStringPatrimoine = ConfigurationManager.ConnectionStrings["Patrimoine"].ConnectionString;
 
         
         private static string _id;
@@ -34,9 +34,14 @@ namespace WebApplication1.Models
         /// <returns></returns>
         public static bool IsUserAllowed(string user)
         {
-            using (SqlConnection sqlConn = new SqlConnection(ConnectionStringOther))
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionStringPatrimoine))
             {
-                string cmdString = "SELECT Nom FROM [dbo].[AD_CCIT] WHERE Nom = @val1 AND CompanyID = @val2";
+                string cmdString = " SELECT * FROM ( "
+                                 + " (SELECT Nom COLLATE DATABASE_DEFAULT AS NAME FROM [PATRIMOINE].[dbo].[AD_CCIT] WHERE CompanyID = @val1) "
+                                 + " UNION "
+                                 + " (SELECT last_name COLLATE DATABASE_DEFAULT AS NAME FROM Archives_Users.dbo.ApplicationUser) "
+                                 + " )  AS TableC WHERE TableC.NAME = @val1 ";
+                    //"SELECT Nom FROM [dbo].[AD_CCIT] WHERE Nom = @val1 AND CompanyID = @val2";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -51,7 +56,7 @@ namespace WebApplication1.Models
 
                     while (dr.Read())
                     {
-                        if (!dr["Nom"].ToString().IsNullOrWhiteSpace())
+                        if (!dr["NAME"].ToString().IsNullOrWhiteSpace())
                         {
                             return true;
                         }
@@ -184,10 +189,7 @@ namespace WebApplication1.Models
                 }
             }
         }
-        
-        
-       
-        
+
         public static bool ChangeUserStatus(string userId, string roleId)
         {
             string cmdString =
@@ -199,16 +201,19 @@ namespace WebApplication1.Models
             + " END"
             + " ELSE"
             + " BEGIN"
-                + " INSERT INTO Archives_Users.dbo.ApplicationUser (Id, first_name, last_name, ets, dir, service, role) "
+                + " INSERT INTO [Archives_Users].[dbo].[ApplicationUser] (Id, first_name, last_name, full_name, mail, ets, dir, service, telephone, role) "
                 + " SELECT "
-                + " PATRIMOINE.dbo.AD_CCIT.id, "
-                + " PATRIMOINE.dbo.AD_CCIT.Prenom, "
-                + " PATRIMOINE.dbo.AD_CCIT.Nom, "
-                + " PATRIMOINE.dbo.AD_CCIT.Site, "
-                + " PATRIMOINE.dbo.AD_CCIT.Direction,"
-                + " PATRIMOINE.dbo.AD_CCIT.Service,"
+                + " [PATRIMOINE].[dbo].[AD_CCIT].id, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].Prenom, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].Nom, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].NomAffiche, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].AdresseMail, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].Site, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].Direction, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].Service, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].telephone, "
                 + " @val2 "
-                + " FROM PATRIMOINE.dbo.AD_CCIT "
+                + " FROM [PATRIMOINE].[dbo].[AD_CCIT] "
                 + " WHERE id = @val1 "
             + " END";
         

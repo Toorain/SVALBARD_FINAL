@@ -213,7 +213,7 @@ if (window.location.pathname === "/Pages/AjouterArchive") {
                     $("#addArchiveButton").removeAttr("disabled");
                     alertContainer.removeClass("alert-danger");
                     alertContainer.addClass("alert-success");
-                    alertAdd.html("Vos données sont valides, rendez-vous dans l'onglet <a href='/Demandes'>demandes</a> pour suivre votre requête.");
+                    alertAdd.html("Vos données sont valides, rendez-vous dans l'onglet <a href='Demandes'>demandes</a> pour suivre votre requête.");
                     alertContainer.removeClass("d-none");
                     $("#coteGeneratePdf").val($("#cote_1").val());
                     $("#validateForm").addClass("d-none");

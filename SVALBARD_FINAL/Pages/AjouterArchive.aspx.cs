@@ -16,8 +16,8 @@ namespace WebApplication1.Pages
 			{
 				AdUser user = AdUser.GetUserInfos(AdUser.GetUserIdentity(Request.LogonUserIdentity.Name));
 				// TODO : Change this for if else under.
-				LoggedUser.Value = "ZEKRI";
-				LoggedUserId.Value = "33700";
+				LoggedUser.Value = "VALLOTTI";
+				LoggedUserId.Value = "34021";
 				if (user != null)
 				{
 					// LoggedUser.Value = user.Nom;
@@ -59,7 +59,5 @@ namespace WebApplication1.Pages
 		{
 			return EtiquetteMethods.GenerateEtiquettePal(coteGeneratePdf.Value, rptViewerEtiquettePAL);
 		}
-
-		
 	}
 }

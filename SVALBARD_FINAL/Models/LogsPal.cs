@@ -25,7 +25,7 @@ namespace WebApplication1.Models
 			using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
 			{
 				string cmdString = "SELECT *" +
-				                   " FROM [logsArchives].[dbo].[logsArchivePAL]" +
+				                   " FROM [dbo].[logsArchivePAL]" +
 				                   " WHERE [ID] = @val1";
 				using (SqlCommand cmd = new SqlCommand())
 				{

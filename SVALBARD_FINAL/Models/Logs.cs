@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace WebApplication1.Models
 {
     public class Logs
     {
-        private static readonly string ConnectionStringArchives = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
-
         public int ID { get; set; }
         public DateTime Date { get; set; }
         public string IssuerID { get; set; }
@@ -24,7 +23,8 @@ namespace WebApplication1.Models
         public int CountNew { get; set; }
 
 
-        
+        private static readonly string ConnectionStringArchives = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
+
         /// <summary>
         /// When a request on Archive is generated (retreive/destroy), AssignArchiviste() method is called. 
         /// Use this method to find an Archiviste in the database and assign it to a request.

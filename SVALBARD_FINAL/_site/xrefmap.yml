@@ -2783,19 +2783,6 @@ references:
   commentId: T:WebApplication1.NotADUser
   fullName: WebApplication1.NotADUser
   nameWithType: NotADUser
-- uid: WebApplication1.NotADUser.Master
-  name: Master
-  href: api/WebApplication1.NotADUser.html#WebApplication1_NotADUser_Master
-  commentId: P:WebApplication1.NotADUser.Master
-  fullName: WebApplication1.NotADUser.Master
-  nameWithType: NotADUser.Master
-- uid: WebApplication1.NotADUser.Master*
-  name: Master
-  href: api/WebApplication1.NotADUser.html#WebApplication1_NotADUser_Master_
-  commentId: Overload:WebApplication1.NotADUser.Master
-  isSpec: "True"
-  fullName: WebApplication1.NotADUser.Master
-  nameWithType: NotADUser.Master
 - uid: WebApplication1.NotADUser.Page_Load(System.Object,System.EventArgs)
   name: Page_Load(Object, EventArgs)
   href: api/WebApplication1.NotADUser.html#WebApplication1_NotADUser_Page_Load_System_Object_System_EventArgs_
@@ -2815,19 +2802,6 @@ references:
   commentId: T:WebApplication1.NotAllowed
   fullName: WebApplication1.NotAllowed
   nameWithType: NotAllowed
-- uid: WebApplication1.NotAllowed.Master
-  name: Master
-  href: api/WebApplication1.NotAllowed.html#WebApplication1_NotAllowed_Master
-  commentId: P:WebApplication1.NotAllowed.Master
-  fullName: WebApplication1.NotAllowed.Master
-  nameWithType: NotAllowed.Master
-- uid: WebApplication1.NotAllowed.Master*
-  name: Master
-  href: api/WebApplication1.NotAllowed.html#WebApplication1_NotAllowed_Master_
-  commentId: Overload:WebApplication1.NotAllowed.Master
-  isSpec: "True"
-  fullName: WebApplication1.NotAllowed.Master
-  nameWithType: NotAllowed.Master
 - uid: WebApplication1.NotAllowed.Page_Load(System.Object,System.EventArgs)
   name: Page_Load(Object, EventArgs)
   href: api/WebApplication1.NotAllowed.html#WebApplication1_NotAllowed_Page_Load_System_Object_System_EventArgs_
@@ -3260,12 +3234,6 @@ references:
   commentId: F:WebApplication1.Pages.AjouterArchive.rptViewerPAL
   fullName: WebApplication1.Pages.AjouterArchive.rptViewerPAL
   nameWithType: AjouterArchive.rptViewerPAL
-- uid: WebApplication1.Pages.AjouterArchive.TestCallDB
-  name: TestCallDB
-  href: api/WebApplication1.Pages.AjouterArchive.html#WebApplication1_Pages_AjouterArchive_TestCallDB
-  commentId: F:WebApplication1.Pages.AjouterArchive.TestCallDB
-  fullName: WebApplication1.Pages.AjouterArchive.TestCallDB
-  nameWithType: AjouterArchive.TestCallDB
 - uid: WebApplication1.Pages.ArchivistePanel
   name: ArchivistePanel
   href: api/WebApplication1.Pages.ArchivistePanel.html

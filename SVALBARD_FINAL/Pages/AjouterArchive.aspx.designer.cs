@@ -94,15 +94,6 @@ namespace WebApplication1.Pages {
         protected global::Microsoft.Reporting.WebForms.ReportViewer rptViewerEtiquettePAL;
         
         /// <summary>
-        /// TestCallDB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton TestCallDB;
-        
-        /// <summary>
         /// coteValidationServer control.
         /// </summary>
         /// <remarks>

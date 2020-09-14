@@ -11,17 +11,5 @@ namespace WebApplication1 {
     
     
     public partial class NotAllowed {
-        
-        /// <summary>
-        /// Master property.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated property.
-        /// </remarks>
-        public new WebApplication1.SiteMaster Master {
-            get {
-                return ((WebApplication1.SiteMaster)(base.Master));
-            }
-        }
     }
 }
