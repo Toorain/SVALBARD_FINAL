@@ -19,8 +19,7 @@
     <link rel="stylesheet" type="text/css" href="/Content/dataTables.min.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"> -->
     <link rel="stylesheet" href="/Scripts/shepherd/dist/shepherd.css"/>
-    <!-- TODO : Change that for installed library -->
-    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <link href="Content/bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
@@ -99,8 +98,7 @@
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/Misc.js"></script>
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/startTourGlobal.js"></script>
     <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/startTourArchive.js"></script>
-<!-- TODO : Change that for installed library -->
-    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <script src="Content/bootstrap-4.0.0/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/e2b0a647a5.js" crossorigin="anonymous"></script>
     <noscript>
       

@@ -41,7 +41,7 @@
       </div>
       <p class="h3 text-center m-4">Veuillez renseigner toutes les information pour effectuer une demande d'ajout à l'archive :</p>
       <!-- TODO : REMOVE AFTER TESTS ARE COMPLETE ON FORM -->
-      <div class="btn btn-warning text-center" onclick="populateForm()">POPULATE FORM</div>
+      <!-- <div class="btn btn-warning text-center" onclick="populateForm()">POPULATE FORM</div> -->
 
       <!-- One "tab" for each step in the form: -->
       <div class="tab">
