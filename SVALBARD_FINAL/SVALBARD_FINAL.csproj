@@ -228,10 +228,27 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="AdminPanel.aspx" />
-    <Content Include="AjouterArchive.aspx" />
     <Content Include="api\index.md" />
-    <Content Include="ArchivistePanel.aspx" />
+    <Content Include="Content\bootstrap-4.0.0\css\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-4.0.0\css\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-4.0.0\css\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-4.0.0\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-4.0.0\css\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-4.0.0\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-4.0.0\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-4.0.0\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-4.0.0\css\bootstrap.css" />
+    <Content Include="Content\bootstrap-4.0.0\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-4.0.0\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-4.0.0\css\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap-4.0.0\js\bootstrap.bundle.js" />
+    <Content Include="Content\bootstrap-4.0.0\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap-4.0.0\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\bootstrap-4.0.0\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\bootstrap-4.0.0\js\bootstrap.js" />
+    <Content Include="Content\bootstrap-4.0.0\js\bootstrap.js.map" />
+    <Content Include="Content\bootstrap-4.0.0\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-4.0.0\js\bootstrap.min.js.map" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -298,10 +315,23 @@
     <Content Include="Content\Site.css" />
     <Content Include="docfx.json" />
     <Content Include="index.md" />
-    <Content Include="Scripts\scripts_perso\AfficherArchive.js" />
+    <Content Include="LICENSE.txt" />
+    <Content Include="NotADUser.aspx" />
+    <Content Include="NotAllowed.aspx" />
+    <Content Include="Pages\AdminPanel.aspx" />
+    <Content Include="Pages\AfficherArchives.aspx" />
+    <Content Include="Pages\AjouterArchive.aspx" />
+    <Content Include="Pages\ArchivistePanel.aspx" />
+    <Content Include="Pages\Demandes.aspx" />
+    <Content Include="Pages\JuridiquePanel.aspx" />
+    <Content Include="Scripts\scripts_datatable\DataTableAdminAD.js" />
+    <Content Include="Scripts\scripts_datatable\DataTableJuridique.js" />
+    <Content Include="Scripts\scripts_perso\DES_Script.js" />
     <Content Include="Scripts\scripts_perso\ArchivistePanel.js" />
     <Content Include="Scripts\scripts_perso\CheckCote.js" />
-    <Content Include="Scripts\scripts_perso\FormSlider.js" />
+    <Content Include="Scripts\scripts_perso\AjouterArchive.js" />
+    <Content Include="Scripts\scripts_perso\Misc.js" />
+    <Content Include="Scripts\scripts_perso\PopulateAjouterArchive.js" />
     <Content Include="Scripts\scripts_perso\startTourArchive.js" />
     <Content Include="Scripts\scripts_perso\startTourGlobal.js" />
     <Content Include="Scripts\scripts_datatable\DataTableArchiviste.js" />
@@ -369,8 +399,8 @@
     <Content Include="Scripts\shepherd\landing\js\welcome.js" />
     <Content Include="Scripts\shepherd\LICENSE" />
     <Content Include="Scripts\shepherd\package.json" />
-    <Content Include="Scripts\shepherd\patches\rollup-plugin-eslint+7.0.0.patch" />
     <Content Include="Scripts\shepherd\README.md" />
+    <Content Include="Scripts\shepherd\RELEASE.md" />
     <Content Include="Scripts\shepherd\rollup.config.js" />
     <Content Include="Scripts\shepherd\src\js\components\shepherd-button.svelte" />
     <Content Include="Scripts\shepherd\src\js\components\shepherd-cancel-icon.svelte" />
@@ -439,20 +469,20 @@
     <Content Include="Scripts\shepherd\test\unit\utils\general.spec.js" />
     <Content Include="Scripts\shepherd\yarn.lock" />
     <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="TestReport.aspx" />
     <Content Include="toc.yml" />
     <Content Include="WebServices\AddFormDataService.asmx" />
     <Content Include="WebServices\CheckCoteService.asmx" />
     <Content Include="WebServices\DataFetchService.asmx" />
     <Content Include="WebServices\DESFetchService.asmx" />
+    <Content Include="WebServices\FetchAllUsersService.asmx" />
+    <Content Include="WebServices\GetArchivisteRequestService.asmx" />
+    <Content Include="WebServices\GetStatusListService.asmx" />
     <Content Include="WebServices\RetreiveRole.asmx" />
     <Content Include="Scripts\scripts_perso\AdminPanel.js" />
     <Content Include="Scripts\scripts_datatable\DataTableAdmin.js" />
     <Content Include="Scripts\scripts_datatable\DataTableDemandes.js" />
     <Content Include="Default.aspx" />
-    <Content Include="Demandes.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="AfficherArchives.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Account\Web.config" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -484,6 +514,7 @@
     <Content Include="articles\intro.md" />
     <Content Include="articles\afficher_archives.md" />
     <Content Include="articles\tableaux_general.md" />
+    <Content Include="WebServices\WasSeenElementService.asmx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -694,45 +725,73 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminPanel.aspx.cs">
-      <DependentUpon>AdminPanel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminPanel.aspx.designer.cs">
-      <DependentUpon>AdminPanel.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AjouterArchive.aspx.cs">
-      <DependentUpon>AjouterArchive.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AjouterArchive.aspx.designer.cs">
-      <DependentUpon>AjouterArchive.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="ArchivistePanel.aspx.cs">
-      <DependentUpon>ArchivistePanel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ArchivistePanel.aspx.designer.cs">
-      <DependentUpon>ArchivistePanel.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\AD_User.cs" />
+    <Compile Include="Models\AspNetUsersExtended.cs" />
     <Compile Include="Models\DatabaseUser.cs" />
     <Compile Include="Models\DataSQL.cs" />
     <Compile Include="Models\DES.cs" />
+    <Compile Include="Models\EtiquetteMethods.cs" />
     <Compile Include="Models\FormData.cs" />
+    <Compile Include="Models\LogsPal.cs" />
     <Compile Include="Models\Misc.cs" />
     <Compile Include="Models\PdfMethods.cs" />
-    <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="TestReport.aspx.cs">
-      <DependentUpon>TestReport.aspx</DependentUpon>
+    <Compile Include="Models\UserWithRole.cs" />
+    <Compile Include="NotADUser.aspx.cs">
+      <DependentUpon>NotADUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TestReport.aspx.designer.cs">
-      <DependentUpon>TestReport.aspx</DependentUpon>
+    <Compile Include="NotADUser.aspx.designer.cs">
+      <DependentUpon>NotADUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NotAllowed.aspx.cs">
+      <DependentUpon>NotAllowed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotAllowed.aspx.designer.cs">
+      <DependentUpon>NotAllowed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminPanel.aspx.cs">
+      <DependentUpon>AdminPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminPanel.aspx.designer.cs">
+      <DependentUpon>AdminPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AfficherArchives.aspx.cs">
+      <DependentUpon>AfficherArchives.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AfficherArchives.aspx.designer.cs">
+      <DependentUpon>AfficherArchives.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AjouterArchive.aspx.cs">
+      <DependentUpon>AjouterArchive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AjouterArchive.aspx.designer.cs">
+      <DependentUpon>AjouterArchive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ArchivistePanel.aspx.cs">
+      <DependentUpon>ArchivistePanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ArchivistePanel.aspx.designer.cs">
+      <DependentUpon>ArchivistePanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Demandes.aspx.cs">
+      <DependentUpon>Demandes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Demandes.aspx.designer.cs">
+      <DependentUpon>Demandes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\JuridiquePanel.aspx.cs" />
+    <Compile Include="Pages\JuridiquePanel.aspx.designer.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="WebServices\AddFormDataService.asmx.cs">
       <DependentUpon>AddFormDataService.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -751,20 +810,6 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Demandes.aspx.cs">
-      <DependentUpon>Demandes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Demandes.aspx.designer.cs">
-      <DependentUpon>Demandes.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AfficherArchives.aspx.cs">
-      <DependentUpon>AfficherArchives.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AfficherArchives.aspx.designer.cs">
-      <DependentUpon>AfficherArchives.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -775,6 +820,16 @@
     <Compile Include="WebServices\DESFetchService.asmx.cs">
       <DependentUpon>DESFetchService.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\FetchAllUsersService.asmx.cs">
+      <DependentUpon>FetchAllUsersService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\GetArchivisteRequestService.asmx.cs">
+      <DependentUpon>GetArchivisteRequestService.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\GetStatusListService.asmx.cs">
+      <DependentUpon>GetStatusListService.asmx</DependentUpon>
     </Compile>
     <Compile Include="WebServices\RetreiveRole.asmx.cs">
       <DependentUpon>RetreiveRole.asmx</DependentUpon>
@@ -794,6 +849,9 @@
     <Compile Include="WebServices\UserRequestService.asmx.cs">
       <DependentUpon>UserRequestService.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServices\WasSeenElementService.asmx.cs">
+      <DependentUpon>WasSeenElementService.asmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -1,34 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Security.Principal;
 using System.Web;
+using System.Windows.Forms;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 
-namespace WebApplication1
+namespace WebApplication1.Models
 {
     public class DatabaseUser
     {
         private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        private static readonly string ConnectionStringPatrimoine = ConfigurationManager.ConnectionStrings["Patrimoine"].ConnectionString;
 
-        public string ID { get; set; }
+        
+        private static string _id;
+        public string Id { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string UserName { get; set; }
 
-        
-        public static bool IsUserAdmin(IIdentity user)
+        private static string GetUserIdentity()
         {
-            // Connect to the Database
-            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+            return HttpContext.Current.User.Identity.Name;
+        }
+
+        
+        
+        /// <summary>
+        /// Check in CUBA/PATRIMOINE/AD_CCIT as CCINCA if user is in there, if not, user can't use the application.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static bool IsUserAllowed(string user)
+        {
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionStringPatrimoine))
             {
-                string cmdString = "SELECT * FROM AspNetUserRoles";
+                string cmdString = " SELECT * FROM ( "
+                                 + " (SELECT Nom COLLATE DATABASE_DEFAULT AS NAME FROM [PATRIMOINE].[dbo].[AD_CCIT] WHERE CompanyID = @val1) "
+                                 + " UNION "
+                                 + " (SELECT last_name COLLATE DATABASE_DEFAULT AS NAME FROM Archives_Users.dbo.ApplicationUser) "
+                                 + " )  AS TableC WHERE TableC.NAME = @val1 ";
+                    //"SELECT Nom FROM [dbo].[AD_CCIT] WHERE Nom = @val1 AND CompanyID = @val2";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", user);
+                    cmd.Parameters.AddWithValue("@val2", "CCINCA");
+
 
                     sqlConn.Open();
 
@@ -36,7 +56,7 @@ namespace WebApplication1
 
                     while (dr.Read())
                     {
-                        if (user.GetUserId() == dr["UserId"].ToString() && dr["RoleId"].ToString() == "1")
+                        if (!dr["NAME"].ToString().IsNullOrWhiteSpace())
                         {
                             return true;
                         }
@@ -45,71 +65,167 @@ namespace WebApplication1
                 }
             }
         }
-        public static string GetCurrentUserAuthorization(string CurrentUser)
+        public static string GetUserFirstName()
         {
-            if (CurrentUser != null)
+            _id = GetUserIdentity();
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
-                // Connect to the Database
-                using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+                string cmdString = "SELECT first_name FROM AspNetUsersExtended WHERE Id = @val1";
+                using (SqlCommand cmd = new SqlCommand())
                 {
-                    string cmdString = "SELECT RoleId FROM AspNetUserRoles WHERE UserId = @val1";
-                    using (SqlCommand cmd = new SqlCommand())
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", _id);
+        
+                    sqlConn.Open();
+        
+                    var dr = cmd.ExecuteReader();
+        
+                    while (dr.Read())
                     {
-                        cmd.Connection = sqlConn;
-                        cmd.CommandText = cmdString;
-                        cmd.Parameters.AddWithValue("@val1", CurrentUser);
-
-                        sqlConn.Open();
-
-                        var dr = cmd.ExecuteReader();
-                        string CurrentUserRoleId = "";
-                        while (dr.Read())
-                        {
-                           CurrentUserRoleId = dr["RoleId"].ToString();
-                        }
-                        return CurrentUserRoleId;
+                        return dr["first_name"].ToString();
                     }
+                    return "";
                 }
-            } else
+            }
+        }
+        
+        public static string GetUserLastName()
+        {
+            _id = GetUserIdentity();
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
-                return "NoUser";
+                string cmdString = "SELECT last_name FROM AspNetUsersExtended WHERE Id = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", _id);
+        
+                    sqlConn.Open();
+        
+                    var dr = cmd.ExecuteReader();
+        
+                    while (dr.Read())
+                    {
+                        return dr["last_name"].ToString();
+                    }
+                    return "";
+                }
+            }
+        }
+        
+        public static string GetUserEts()
+        {
+            _id = GetUserIdentity();
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+            {
+                string cmdString = "SELECT ets FROM AspNetUsersExtended WHERE Id = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", _id);
+        
+                    sqlConn.Open();
+        
+                    var dr = cmd.ExecuteReader();
+        
+                    while (dr.Read())
+                    {
+                        return dr["ets"].ToString();
+                    }
+                    return "";
+                }
+            }
+        }
+        
+        public static string GetUserDir()
+        {
+            _id = GetUserIdentity();
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+            {
+                string cmdString = "SELECT dir FROM AspNetUsersExtended WHERE Id = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", _id);
+        
+                    sqlConn.Open();
+        
+                    var dr = cmd.ExecuteReader();
+        
+                    while (dr.Read())
+                    {
+                        return dr["dir"].ToString();
+                    }
+                    return "";
+                }
+            }
+        }
+        
+        public static string GetUserService()
+        {
+            _id = GetUserIdentity();
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
+            {
+                string cmdString = "SELECT service FROM AspNetUsersExtended WHERE Id = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", _id);
+        
+                    sqlConn.Open();
+        
+                    var dr = cmd.ExecuteReader();
+        
+                    while (dr.Read())
+                    {
+                        return dr["service"].ToString();
+                    }
+                    return "";
+                }
             }
         }
 
-        public static bool ChangeUserStatus(string UserId, string RoleId)
+        public static bool ChangeUserStatus(string userId, string roleId)
         {
             string cmdString =
-            "IF EXISTS(SELECT 'True' FROM AspNetUserRoles WHERE UserId = @val1)"
+            "IF EXISTS(SELECT 'True' FROM [dbo].[ApplicationUser] WHERE id = @val1)"
             + " BEGIN"
-                + " UPDATE AspNetUserRoles"
-                + " SET UserId = @val1, RoleId = @val2"
-                + " WHERE UserId = @val1;"
+                + " UPDATE [dbo].[ApplicationUser]"
+                + " SET role = @val2"
+                + " WHERE Id = @val1;"
             + " END"
             + " ELSE"
             + " BEGIN"
-
-                + " SELECT*"
-                + " FROM AspNetUsers"
-                + " LEFT JOIN AspNetUserRoles"
-
-                + " ON AspNetUsers.Id = AspNetUserRoles.UserId"
-
-                + " WHERE Id = @val1 "
-
-                + " INSERT INTO dbo.AspNetUserRoles(UserId, RoleId)"
-
-                + " VALUES(@val1, @val2);"
+                + " INSERT INTO [Archives_Users].[dbo].[ApplicationUser] (Id, first_name, last_name, full_name, mail, ets, dir, service, telephone, role) "
+                + " SELECT "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].id, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].Prenom, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].Nom, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].NomAffiche, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].AdresseMail, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].Site, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].Direction, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].Service, "
+                + " [PATRIMOINE].[dbo].[AD_CCIT].telephone, "
+                + " @val2 "
+                + " FROM [PATRIMOINE].[dbo].[AD_CCIT] "
+                + " WHERE id = @val1 "
             + " END";
-
+        
             using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
-                    cmd.Parameters.AddWithValue("@val1", UserId);
-                    cmd.Parameters.AddWithValue("@val2", RoleId);
-
+                    cmd.Parameters.AddWithValue("@val1", userId);
+                    cmd.Parameters.AddWithValue("@val2", roleId);
+        
                     sqlConn.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -125,7 +241,7 @@ namespace WebApplication1
         public static string GetArchiviste()
         {
             string archivisteId = "";
-
+        
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(ConnectionString))
             {
@@ -135,11 +251,11 @@ namespace WebApplication1
                 {
                     cmd.Connection = sqlConn;
                     cmd.CommandText = cmdString;
-
+        
                     sqlConn.Open();
-
+        
                     var dr = cmd.ExecuteReader();
-
+        
                     while (dr.Read())
                     {
                         archivisteId = dr[0].ToString();

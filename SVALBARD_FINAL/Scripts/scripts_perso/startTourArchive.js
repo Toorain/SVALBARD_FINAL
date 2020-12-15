@@ -1,5 +1,5 @@
 ﻿// Doesn't call WebService if not on Datatable displaying page.*/
-if (window.location.pathname === "/AfficherArchives") {
+if (window.location.pathname === "/Pages/AfficherArchives") {
     var enableTour = false;
 
     function enableTourArchive() {
@@ -136,6 +136,32 @@ if (window.location.pathname === "/AfficherArchives") {
         });
 
         tour.addStep({
+            title: 'Drag & Drop',
+            text: `\n<p>\n Vous pouvez attraper un élément et le glisser dans le panneau qui s'affiche sur la droite\n </p>\n
+                    \n<p>\n Cette action vous permet de choisir plusieurs archives afin de les consulter. \n </p>\n`,
+            attachTo: {
+                element: '',
+                on: ''
+            },
+            buttons: [
+                {
+                    action() {
+                        return this.back();
+                    },
+                    classes: 'shepherd-button-secondary',
+                    text: 'Retour'
+                },
+                {
+                    action() {
+                        return this.next();
+                    },
+                    text: 'Suivant'
+                }
+            ],
+            id: 'creating'
+        });
+
+        /*tour.addStep({
             title: 'Actions sur une archive',
             text: `\n<p>\n En cliquant sur une ligne vous pouvez faire apparaître les actions possibles sur cette archive.\n </p>\n
         \n<p>\n \n </p>\n`,
@@ -159,7 +185,7 @@ if (window.location.pathname === "/AfficherArchives") {
                 }
             ],
             id: 'creating'
-        });
+        });*/
 
         tour.addStep({
             title: 'Pagination ',
@@ -167,7 +193,7 @@ if (window.location.pathname === "/AfficherArchives") {
                     \n<p>\n PRO TIP : Il est possible de naviguer avec les flèches directionnelles.\n </p>\n`,
             attachTo: {
                 element: '#tableArchive_paginate',
-                on: 'bottom'
+                on: 'top'
             },
             buttons: [
                 {
@@ -185,7 +211,7 @@ if (window.location.pathname === "/AfficherArchives") {
                 }
             ],
             id: 'creating'
-        });
+        });        
 
         if (enableTour) {
             tour.start();

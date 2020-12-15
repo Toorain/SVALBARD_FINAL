@@ -1,14 +1,9 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.Services;
 using System.Windows.Forms;
 
-namespace WebApplication1
+namespace WebApplication1.WebServices
 {
 	/// <summary>
 	/// Description résumée de RetreiveRole
@@ -20,33 +15,39 @@ namespace WebApplication1
 	// [System.Web.Script.Services.ScriptService]
 	public class RetreiveRole : WebService
 	{
-		public string RoleId;
+		private string _roleId;
 
 		[WebMethod]
-		public void ClickedModal(string UserId)
+		public void ClickedModal(string userId)
 		{
 			string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
-			string cmdString = " SELECT Name FROM AspNetUserRoles" 
-			                   + " LEFT JOIN AspNetRoles"
-			                   + " ON AspNetUserRoles.RoleId = AspNetRoles.Id"
-			                   + " WHERE UserId = @val1";
+			string cmdString = " SELECT role FROM [dbo].[ApplicationUser]"
+		                   + " WHERE Id = @val1";
 			using (SqlConnection sqlConn = new SqlConnection(connectionString))
 			{
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = sqlConn;
 					cmd.CommandText = cmdString;
-					cmd.Parameters.AddWithValue("@val1", UserId);
+					cmd.Parameters.AddWithValue("@val1", userId);
 					sqlConn.Open();
 
 					var dr = cmd.ExecuteReader();
 
-					while (dr.Read())
+					if (dr.HasRows)
 					{
-						RoleId = dr.GetString(0);
+						while (dr.Read())
+						{
+							_roleId = dr["role"].ToString();
+						}
 					}
-					Context.Response.Write(RoleId);
+					else
+					{
+						_roleId = "3";
+					}
+
+					Context.Response.Write(_roleId);
 					Context.Response.ContentType = "text/plain";
 				}
 			}

@@ -1,13 +1,12 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.Services;
-using System.Windows.Forms;
+using Newtonsoft.Json;
 using WebApplication1.Models;
 
-namespace WebApplication1
+namespace WebApplication1.WebServices
 {
     /// <summary>
     /// Description résumée de DataFetchService
@@ -22,17 +21,16 @@ namespace WebApplication1
         /// <summary>
         /// GetDataArchives method recovers all datas and returns them as json
         /// </summary>
-        /// <param name="elimEnabled">Used to enable 'éliminé' elements in the returned json.</param>
         /// <remarks>This method is used in DataTableArchives.js</remarks>
         [WebMethod]        
         public void GetDataArchives()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["Archives"].ConnectionString;
 
-            List<DataSQL> datas = new List<DataSQL>();
+            List<DataSql> datas = new List<DataSql>();
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                string cmdString = "SELECT * FROM ArchivesV2";
+                string cmdString = "SELECT versement, etablissement, direction, service, dossiers, extremes, elimination, communication, cote, localisation FROM ArchivesV2";
                 using (SqlCommand cmd = new SqlCommand()) 
                 {
                     cmd.Connection = sqlConn;
@@ -49,9 +47,8 @@ namespace WebApplication1
                            && !dr["communication"].ToString().ToLower().Contains("éliminé")
                            && !dr["communication"].ToString().ToLower().Contains("eliminé"))
                         {
-                            DataSQL dataSql = new DataSQL
+                            DataSql dataSql = new DataSql
                             {
-                                // ID = Convert.ToInt32(dr["ID"].ToString()),
                                 Cote = dr["cote"].ToString(),
                                 Versement = string.IsNullOrEmpty(dr["versement"].ToString())
                                     ? new DateTime(1900, 1, 1)
@@ -62,7 +59,6 @@ namespace WebApplication1
                                 Dossiers = dr["dossiers"].ToString(),
                                 Extremes = dr["extremes"].ToString(),
                                 Elimination = dr["elimination"].ToString(),
-                                Communication = dr["communication"].ToString(),
                                 Localisation = dr["localisation"].ToString()
                             };
                             datas.Add(dataSql);

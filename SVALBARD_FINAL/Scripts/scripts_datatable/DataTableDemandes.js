@@ -1,14 +1,15 @@
 ﻿$(document).ready(function () {
     // Doesn't call WebService if not on Datatable displaying page.
-    if (window.location.pathname === "/Demandes") {
+    if (window.location.pathname === "/Pages/Demandes") {
+        let dataAction;        
         $.ajax({
             serverSide: true,
             type: "POST",
             dataType: "json",
             async: true,
             // URL of the webservice I use to retreive data of the issuer
-            url: "WebServices/UserRequestService.asmx/GetDataIssuer",
-            // Data I send to the POST method (userID)
+            url: "../WebServices/UserRequestService.asmx/GetDataIssuer",
+            // #userID has the value of User.Identity.GetUserId() method, gets the token of current user logged in.
             data: { userID: $("#userID").val() },
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",
             mimeType: "text/plain",
@@ -40,28 +41,36 @@
                         { data: 'ArchiveID' },
                         {
                             data: 'Action', 'render': (data) => {
+                                dataAction = data;
                                 switch (data) {
                                     case (1):
                                         return "Ajout";
-                                        break;
                                     case (2):
                                         return "Consultation";
-                                        break;
                                     case (3):
                                         return "Destruction";
-                                        break;
-                                };
+                                }
                             }
                         },
                         { data : 'Status'},
-                        { "defaultContent": "<i class='fas fa-file-pdf'></i>" }
+                        { "defaultContent": "",
+                            render : function () {
+                                if (dataAction !== 2) {
+                                    return "<i class='mr-3 fas fa-file-pdf'></i>" +
+                                        "<i class='fas fa-tag'></i>"
+                                } else {
+                                    return "Aucune action";
+                                }
+                            }                   
+                        }
                     ]
                 });
+                console.log(dataAction);
                 $("body").keydown(function (e) {
-                    if (e.keyCode == 37) { // left
+                    if (e.keyCode === 37) { // left
                         $("#tableDemandes_previous").click();
                     }
-                    else if (e.keyCode == 39) { // right
+                    else if (e.keyCode === 39) { // right
                         $("#tableDemandes_next").click();
                     }
                 });
@@ -79,11 +88,21 @@
                             break;
                     }
                 });*/
-                $('#tableDemandes tbody').on( 'click', '.fas', function () {
+                // Triggers create and open PDF for each row.
+                $('#tableDemandes tbody').on( 'click', '.fa-file-pdf', function () {
                     let data = datatableVariable.row( $(this).parents('tr') ).data();
-                    $("#Identifier").val(data.ID);
-                    $("#Cote").val(data.ArchiveID);
+                    $("#Identifier").val(data.ArchiveID);
                     $("#ButtonGeneratePdf").click();
+                } );
+                /*$('#tableDemandes tbody').on( 'click', '#pdfAll', function () {
+                    let data = datatableVariable.row( $(this).parents('tr') ).data();
+                    $("#Identifier").val(data.ArchiveID);
+                    $("#ButtonGeneratePdf").click();
+                } );*/
+                $('#tableDemandes tbody').on( 'click', '.fa-tag', function () {
+                    let data = datatableVariable.row( $(this).parents('tr') ).data();
+                    $("#Identifier").val(data.ArchiveID);
+                    $("#ButtonGenerateEtiquette").click();
                 } );
                 $('#tableDemandes tfoot th').each(function () {
                     let placeHolderTitle = $('#tableDemandes thead th').eq($(this).index()).text();

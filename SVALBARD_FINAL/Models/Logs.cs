@@ -1,17 +1,13 @@
-﻿using Microsoft.Ajax.Utilities;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace WebApplication1
+namespace WebApplication1.Models
 {
     public class Logs
     {
-        private static readonly string ConnectionStringArchives = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
-
         public int ID { get; set; }
         public DateTime Date { get; set; }
         public string IssuerID { get; set; }
@@ -22,8 +18,13 @@ namespace WebApplication1
         public string Localization { get; set; }
         public int Action { get; set; }
         public string Status { get; set; }
+        public string Origin { get; set; }
+        public string RequestGroup { get; set; }
+        public int CountNew { get; set; }
 
-        
+
+        private static readonly string ConnectionStringArchives = ConfigurationManager.ConnectionStrings["LogsArchives"].ConnectionString;
+
         /// <summary>
         /// When a request on Archive is generated (retreive/destroy), AssignArchiviste() method is called. 
         /// Use this method to find an Archiviste in the database and assign it to a request.
@@ -112,9 +113,7 @@ namespace WebApplication1
                     
                     while (dr.Read())
                     {
-                        
-                         // For every group of status (global, ajouter, retrait, destruction) we fill a different array.
-                         
+                        // For every group of status (global, ajouter, retrait, destruction) we fill a different array.
                         switch (Convert.ToInt32(dr["group_code"]))
                         {
                             case 1:
@@ -133,9 +132,7 @@ namespace WebApplication1
                                 break;
                         }
                     }
-                    
                     List<List<string>> arrayArray = new List<List<string>> {arrayGlobal, arrayAjout, arrayRetrait, arrayDestruction};
-
 
                     return arrayArray;
                 }
@@ -163,7 +160,7 @@ namespace WebApplication1
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
             {
-                cmdString = "SELECT TOP (1) ID FROM [logsArchives].[dbo].[logsArchive] ORDER BY ID DESC";
+                cmdString = "SELECT TOP (1) ID FROM [dbo].[logsArchive] ORDER BY ID DESC";
 
                 using (SqlCommand cmd = new SqlCommand())
                 {
@@ -219,16 +216,16 @@ namespace WebApplication1
             }
             return count;
         }
-
-        protected static int StatusNameToStatusCode(string statusName)
+        
+        private static int StatusNameToStatusCode(string statusName)
         {
             int statusCode = 0;
             using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
             {
                 
-                string cmdString = "SELECT [status_code]" +
-                                   " FROM [status]" +
-                                   " WHERE [status_name] = @val1";
+                string cmdString = "SELECT [status_code]" 
+                                 + " FROM [status]"
+                                 + " WHERE [status_name] = @val1";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -248,15 +245,15 @@ namespace WebApplication1
             }
         }
 
-        public static void UpdateStatus(string identifier, string statusValue)
+        public static bool UpdateStatus(string identifier, string statusValue)
         {
             int statusCode = StatusNameToStatusCode(statusValue);
             // Connect to the Database
             using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
             {
-                string cmdString = "UPDATE [dbo].[logsArchive]" +
-                                    " SET [status] = @val1" +
-                                    " WHERE [archiveID] = @val2";
+                string cmdString = "UPDATE [dbo].[logsArchivePAL]"
+                                 + " SET [status] = @val1"
+                                 + " WHERE [request_group] = @val2";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConn;
@@ -265,8 +262,62 @@ namespace WebApplication1
                     cmd.Parameters.AddWithValue("@val2", identifier);
                     
                     sqlConn.Open();
+                    
+                    int returned = cmd.ExecuteNonQuery();
+                    
+                    // ExecuteNonQuery returns the number of rows affected, if NOT 0, then ExecuteNonQuery worked and returned 1 or more.
+                    return returned != 0;
+                }
+            }
+        }
+        
+        public static void UpdateEmplacement(string identifier, string emplacementValue)
+        {
+            // Connect to the Database
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
+            {
+                string cmdString = "UPDATE [dbo].[logsArchivePAL]" +
+                                   " SET [localization] = @val1" +
+                                   " WHERE [ID] = @val2";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", emplacementValue);
+                    cmd.Parameters.AddWithValue("@val2", identifier);
+                    
+                    sqlConn.Open();
 
                     cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static string GetLinkedCote(string cote)
+        {
+            using (SqlConnection sqlConn = new SqlConnection(ConnectionStringArchives))
+            {
+                string cmdString = "SELECT [request_group]" +
+                                   " FROM [dbo].[logsArchivePAL]" +
+                                   " WHERE [ID] = @val1";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = sqlConn;
+                    cmd.CommandText = cmdString;
+                    cmd.Parameters.AddWithValue("@val1", cote);
+                    
+                    sqlConn.Open();
+
+                    var dr = cmd.ExecuteReader();
+
+
+                    string requestGroup = "";
+                    while (dr.Read())
+                    {
+                         requestGroup = dr["request_group"].ToString();
+                    }
+
+                    return requestGroup;
                 }
             }
         }

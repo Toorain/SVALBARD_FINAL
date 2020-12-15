@@ -1,4 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+<%@ Import Namespace="System.Activities.Statements" %>
+<%@ Import Namespace="Microsoft.ReportingServices.ReportProcessing.ReportObjectModel" %>
 
 <!DOCTYPE html>
 
@@ -7,19 +9,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - <%: appName %></title>
+    <title><%: Page.Title %> - <%: AppName %></title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="Content/dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Content/dataTables.min.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"> -->
-    <link rel="stylesheet" href="./Scripts/shepherd/dist/shepherd.css"/>
+    <link rel="stylesheet" href="/Scripts/shepherd/dist/shepherd.css"/>
+    <link href="Content/bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
+        <!-- Is used in Misc.js to show 'vous avez X nouveaux messages' according to logged user rôle. -->
+        <asp:HiddenField runat="server" ID="showNewElementsCount" ClientIDMode="Static"/>
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -46,30 +51,22 @@
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/"><%: appName %></a>
+                    <a class="navbar-brand" runat="server" href="~/"><%: AppName %></a>
                 </div>
                 <div class="navbar-collapse collapsed collapse" id="navbar-collapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" id="archivesPanel" href="~/AfficherArchives">Afficher les archives</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" id="ajouterPanel" href="~/AjouterArchive">Ajouter une archive</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" id="demandesPanel" href="~/Demandes">Mes demandes</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" id="archivistePanel" href="~/ArchivistePanel">Archiviste Panel</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" id="adminPanel" href="~/AdminPanel">Admin Panel</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="archivesPanel" href="~/Pages/AfficherArchives">Afficher les archives</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="ajouterPanel" href="~/Pages/AjouterArchive">Ajouter une archive</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="demandesPanel" href="~/Pages/Demandes">Mes demandes</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="juridiquePanel" href="~/Pages/JuridiquePanel">Juridique Panel</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="archivistePanel" href="~/Pages/ArchivistePanel">Archiviste Panel</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="adminPanel" href="~/Pages/AdminPanel">Admin Panel</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled" >
-                        <AnonymousTemplate>
-                            <ul class="navbar-nav ml-auto" id="connexion-block">
-                                <li class="nav-item" id="inscrire-block"><a class="nav-link" runat="server" href="~/Account/Register" >Inscrire</a></li>
-                                <li class="nav-item"><a class="nav-link" runat="server" href="~/Account/Login">Se connecter</a></li>
-                            </ul>
-                        </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
+                                <li class="white mr-1"><span ID="visibleForArchiviste"> , vous avez <asp:Label runat="server" ID="badgeNewElements" ClientIDMode="Static" CssClass="badge badge-danger m-1"><%: CountNewElements %></asp:Label> nouveau(x) élément(s) à traiter </span></li>
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
@@ -82,23 +79,26 @@
         </div>
     </form>
     <footer>
-        <p>&copy; 2020 - <%: DateTime.Now.Year %> | <%: appName %></p>
+        <p>&copy; 2020 - <%: DateTime.Now.Year %> | <%: AppName %></p>
     </footer>
-    <script type="text/javascript" charset="utf8" src="./Content/datatables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Content/datatables.min.js"></script>
     <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script> -->
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableArchives.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableArchiviste.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableDemandes.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_datatable/DataTableAdmin.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/FetchData.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/AdminPanel.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/ArchivistePanel.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/AfficherArchive.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/CheckCote.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/shepherd/dist/shepherd.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/FormSlider.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/startTourGlobal.js"></script>
-    <script type="text/javascript" charset="utf8" src="./Scripts/scripts_perso/startTourArchive.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_datatable/DataTableArchives.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_datatable/DataTableArchiviste.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_datatable/DataTableDemandes.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_datatable/DataTableAdmin.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/FetchData.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/AdminPanel.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/ArchivistePanel.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/DES_Script.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/CheckCote.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/PopulateAjouterArchive.js"></script>    
+    <script type="text/javascript" charset="utf8" src="/Scripts/shepherd/dist/shepherd.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/AjouterArchive.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/Misc.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/startTourGlobal.js"></script>
+    <script type="text/javascript" charset="utf8" src="/Scripts/scripts_perso/startTourArchive.js"></script>
+    <script src="Content/bootstrap-4.0.0/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/e2b0a647a5.js" crossorigin="anonymous"></script>
     <noscript>
       

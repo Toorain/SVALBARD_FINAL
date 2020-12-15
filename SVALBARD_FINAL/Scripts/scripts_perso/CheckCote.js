@@ -1,17 +1,18 @@
-﻿function checkCote(cote) {
+﻿let coteExists = $("#coteExists");
+function checkCote(cote) {
     // AUTO COMPLETE with suggested "cote"
     if (cote.split('').length >= 3) {
         let coteUpper = cote.toUpperCase();
-        $("#coteExists").attr("hidden", "hidden");
+        coteExists.attr("hidden", "hidden");
         $.ajax({
             type: "POST",
-            url: "WebServices/CheckCoteService.asmx/ValidateCote",
+            url: "../WebServices/CheckCoteService.asmx/ValidateCote",
             data: {cote: coteUpper},
             mimeType: "text/plain",
             serverSide: true,
             dataType: "xml",
             success: (data) => {
-                let returnedData = data.activeElement.innerHTML;
+                let returnedData = $(data).find("string").text();
                 let suggestedCote;
                 if(returnedData !== "") {
                     let returnedSpliced = coteUpper.split('').splice(0, 3).join('');
@@ -35,23 +36,23 @@
                                     suggestedCote = tempArr.join('');
                                 }
                             }
-                            /!*$("#coteExists").html(
+                            /!*coteExists.html(
                                 "La cote " + returnedData + " existe déjà, pour le préfixe " + returnedSpliced + " nous vous suggerons d'utiliser  <strong>" + returnedSpliced + suggestedCote + "</strong>"
                             );*!/
                             $("#coteValidation").val(returnedSpliced + suggestedCote);
-                            $("#coteExists").removeAttr("hidden");
+                            coteExists.removeAttr("hidden");
                         },
                         failure: function (response) {                        
                             alert(response);
                         }
                     }); */
 
-                    //$("#coteExists").innerText =  ;
+                    //coteExists.innerText =  ;
                 } else {
-                    $("#coteExists").html(
+                    coteExists.html(
                         "Le préfixe " + returnedData + " n'est pas utilisable"
                     );
-                    $("#coteExists").removeAttr("hidden");
+                    coteExists.removeAttr("hidden");
                     $("#coteValidation").attr("disabled", "disabled");
                 }
             },
@@ -60,7 +61,6 @@
                 $("#EtsValue").val($("#EtsList").val());
                 $("#DirValue").val($("#DirList").val());
                 $("#ServiceValue").val($("#ServiceList").val());
-                console.log($("#EtsValue").val());
             },
             failure: function (response) {
                 alert(response);
@@ -73,8 +73,17 @@
 }
 
 function resetInput () {
-    $("#coteExists").attr("hidden", "hidden");
+    coteExists.attr("hidden", "hidden");
     $('#coteValidation').val('');
     $("#coteValidation").removeAttr("disabled");
+}
+
+function addLeadingZeroes(givenNumber) {
+    let len = givenNumber.toString().length;
+    let returnedNumber = givenNumber.toString();
+    for (let i = len; i < 4; i++) {
+        returnedNumber = "0" + returnedNumber;
+    }
+    return returnedNumber;
 }
 

@@ -9,17 +9,21 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
+using WebApplication1.Models;
 
 namespace WebApplication1
 {
     
     public partial class SiteMaster : MasterPage
     {
-        public const string appName = "SVALBARD";
+        protected const string AppName = "SVALBARD";
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
+        // Counter is initiated at 0, then proceeds to count then number of new elements in Demandes.
+        protected int CountNewElements = 0;
         protected void Page_Init(object sender, EventArgs e)
         {
             // Le code ci-dessous vous aide à vous protéger des attaques XSRF
@@ -73,16 +77,19 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             archivistePanel.Visible = false;
-            archivesPanel.Visible = false;
+            archivesPanel.Visible = true;
             ajouterPanel.Visible = false;
             demandesPanel.Visible = false;
             adminPanel.Visible = false;
+            juridiquePanel.Visible = false;
+            showNewElementsCount.Value = "no_show";
 
-            var user = HttpContext.Current.User.Identity;
-
-            if (user.IsAuthenticated)
+            if (Request.LogonUserIdentity != null)
             {
-                string userId = DatabaseUser.GetCurrentUserAuthorization(user.GetUserId());
+                var user = AdUser.GetUserIdentity(Request.LogonUserIdentity.Name);
+
+                string userId = AdUser.GetCurrentUserAuthorization(user);
+                
                 switch (userId)
                 {
                     // Administrateur
@@ -104,8 +111,16 @@ namespace WebApplication1
                         break;
                     // Archiviste
                     case "4":
+                        showNewElementsCount.Value = "show";
+                        CountNewElements = LogsPal.GetNewElementsCount();
                         archivistePanel.Visible = true;
                         archivesPanel.Visible = true;
+                        break;
+                    case "5":
+                        archivesPanel.Visible = true;
+                        ajouterPanel.Visible = true;
+                        demandesPanel.Visible = true;
+                        juridiquePanel.Visible = true;
                         break;
                     default:
                         archivistePanel.Visible = false;
