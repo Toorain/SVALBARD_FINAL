@@ -143,7 +143,7 @@ $(document).ready(function () {
             type: "POST",
             dataType: "json",
             async: true,
-            url: "/WebServices/DataFetchService.asmx/GetDataArchives",
+            url: "../WebServices/DataFetchService.asmx/GetDataArchives",
             mimeType: "text/plain",
             success: function (data) {
                 $("#midget-spinner").css("display", "none");

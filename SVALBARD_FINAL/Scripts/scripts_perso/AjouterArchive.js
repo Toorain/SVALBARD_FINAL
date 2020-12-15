@@ -202,7 +202,7 @@ if (window.location.pathname === "/Pages/AjouterArchive") {
             type: "POST",
             dataType: "text",
             async: true,
-            url: "/WebServices/AddFormDataService.asmx/PushData",
+            url: "../WebServices/AddFormDataService.asmx/PushData",
             data: {
                 data : JSON.stringify(jsonData),
                 user : $('#LoggedUser').val()

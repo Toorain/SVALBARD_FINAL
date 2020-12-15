@@ -15,18 +15,18 @@ namespace WebApplication1.Pages
 				user = AdUser.GetUserInfos(AdUser.GetUserIdentity(Request.LogonUserIdentity.Name));
 			}
 			
-			userID.Value = "33700";
+			// userID.Value = "33700";
 			
 			if(!IsPostBack)
 			{
 				// TODO : Uncomment all that and remove userID.Value above
 				if (user != null)
 				{
-					//userID.Value = user.Id;
+					userID.Value = user.Id;
 				}
 				else
 				{
-					//Response.Redirect("/NotADUser.aspx");
+					Response.Redirect("/NotADUser.aspx");
 				}
 			}
 		}

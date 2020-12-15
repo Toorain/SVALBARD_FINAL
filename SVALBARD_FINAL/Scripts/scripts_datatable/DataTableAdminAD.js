@@ -10,7 +10,7 @@ $(document).ready(function () {
       dataType: "json",
       async: true,
       // URL of the webservice I use to retreive data of the issuer
-      url: "/WebServices/FetchAllUsersService.asmx/FetchAllUsers",
+      url: "../WebServices/FetchAllUsersService.asmx/FetchAllUsers",
       contentType: "application/x-www-form-urlencoded; charset=UTF-8",
       mimeType: "text/plain",
       crossDomain: true,

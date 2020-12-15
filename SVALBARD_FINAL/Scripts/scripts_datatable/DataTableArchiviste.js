@@ -15,7 +15,7 @@
         dataType: "json",
         async: true,
         // URL of the webservice I use to retreive data of the issuer
-        url: "/WebServices/GetArchivisteRequestService.asmx/GetDataArchiviste",
+        url: "../WebServices/GetArchivisteRequestService.asmx/GetDataArchiviste",
         // Data I send to the POST method (userID)
         data: { userID: $("#archivisteID").val(),
           actionType : i},
@@ -153,7 +153,7 @@
               dataType: "json",
               async: true,
               // URL of the webservice I use to retreive data of the issuer
-              url: "/WebServices/GetStatusListService.asmx/GetStatusList",
+              url: "../WebServices/GetStatusListService.asmx/GetStatusList",
               // Data I send to the POST method (action)
               data: {action: dataOfRow.Action },
               contentType: "application/x-www-form-urlencoded; charset=UTF-8",

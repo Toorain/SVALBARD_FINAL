@@ -16,16 +16,16 @@ namespace WebApplication1.Pages
 			{
 				AdUser user = AdUser.GetUserInfos(AdUser.GetUserIdentity(Request.LogonUserIdentity.Name));
 				// TODO : Change this for if else under.
-				LoggedUser.Value = "VALLOTTI";
-				LoggedUserId.Value = "34021";
+				//LoggedUser.Value = "VALLOTTI";
+				//LoggedUserId.Value = "34021";
 				if (user != null)
 				{
-					// LoggedUser.Value = user.Nom;
-					// LoggedUserId.Value = user.Id;
+					LoggedUser.Value = user.Nom;
+					LoggedUserId.Value = user.Id;
 				}
 				else
 				{
-					//Response.Redirect("/NotADUser.aspx");
+					Response.Redirect("/NotADUser.aspx");
 				}
 				
 			}

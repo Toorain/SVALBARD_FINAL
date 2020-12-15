@@ -334,7 +334,6 @@
     <Content Include="Scripts\shepherd\cypress.json" />
     <Content Include="Scripts\shepherd\dist\shepherd.css" />
     <Content Include="Scripts\shepherd\dist\shepherd.min.js" />
-    <Content Include="Scripts\shepherd\dist\shepherd.min.js.map" />
     <Content Include="Scripts\shepherd\docs-src\tutorials\01-install.md" />
     <Content Include="Scripts\shepherd\docs-src\tutorials\02-usage.md" />
     <Content Include="Scripts\shepherd\docs-src\tutorials\03-styling.md" />

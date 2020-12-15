@@ -50,7 +50,7 @@ $(document).ready(function () {
             $(".userNameAdmin").text(dataRow.UserName);
             $.ajax({
                 type: "POST",
-                url: "/WebServices/RetreiveRole.asmx/ClickedModal",
+                url: "../WebServices/RetreiveRole.asmx/ClickedModal",
                 data: { userId :dataRow.Id },
                 success: function (data) {
                     console.log(data);
